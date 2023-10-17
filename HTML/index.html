@@ -26,10 +26,8 @@
 <body>
 
     ------------------------------------------------------------------------------------
-
     <!-- 移動式標題列 -->
     <nav class="navbar navbar-expand-lg bg-light fixed-top ">
-
         <!-- 飛機logo首頁 -->
         <div class="d-flex jutisfy-content-start"> <a href="http://127.0.0.1:5500/HTML/Home.html">
                 <img src="../img/logo-evaair-header.png" alt="長榮logo" class="img-fluid w-75">
@@ -51,54 +49,53 @@
                         </li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    <li class="nav-item dropdown">
+                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         優惠與訂票
-                    </a>
-                    <ul class="dropdown-menu">
+                         </a>
+                         <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Action</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li>
                             <hr class="dropdown-divider">
+                    </li>
+                         <li>
+                            <a class="dropdown-item" href="#">Something else here</a>
                         </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        </ul>
+                    <li class="nav-item dropdown">
+                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         行程管理
-                    </a>
-                    <ul class="dropdown-menu">
+                         </a>
+                         <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Action</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li>
                             <hr class="dropdown-divider">
-                        </li>
+                    </li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         無限萬里遊
-                    </a>
-                    <ul class="dropdown-menu">
+                        </a>
+                        <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Action</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                             <hr class="dropdown-divider">
+                    </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
             </ul>
         </div>
-
     </nav>
-
-
     <hr>
-    --------------------------------------------------------------------------------------------------------------------------
-    <!-- <ul class="nav">
+
+        <!-- <ul class="nav">
         <li class="nav-item">優惠與訂票</li>
         <ul class="dropdown1 nav">
             <a class="nav-item" href="https://www.evaair.com/zh-tw/plan-and-book/special-offers/eva-choices/">
@@ -137,30 +134,12 @@
     </ul>
     </nav> -->
 
-
-       <!-- JavaScript 代码 -->
-       <script>
-        // 获取菜单项和下拉菜单
-        var menuItem = document.querySelector('#li1');
-        var dropdown = document.querySelector('.dropdown1');
-
-        // 添加点击事件处理程序
-        menuItem.addEventListener('click', function (event) {
-            // 阻止默认链接点击事件
-            event.preventDefault();
-
-            // 切换下拉菜单的显示状态
-            dropdown.classList.toggle('show');
-        });
-    </script>
-
-
-
-
+    --------------------------------------------------------------------------------------------------------------------------
+    <!-- JavaScript -->
     <!-- 動畫測試 -->
     <!-- Slideshow container -->
-    <div class="slideshow-container">
-
+   <a href="https://www.evaair.com/zh-tw/index.html">模仿首頁</a> 
+    <div class="slideshow_container">
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
@@ -184,8 +163,6 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
     <br>
-
-
     <!-- The dots/circles -->
     <div style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span>
@@ -196,21 +173,15 @@
     <script>
                 let slideIndex = 1;
                 let slideInterval;
-                showSlides(slideIndex);
-                
+                showSlides(slideIndex);             
 
                 function startSlideShow() {
                 slideInterval = setInterval(function() {
                     plusSlides(1); // 自動前進到下一張幻燈片
-                }, 2000); // 2秒切換一次
+                }, 1500); // 2秒切換一次
                 }                
 
-                startSlideShow(); // 啟動自動輪播
-
-      
-
-
-
+                startSlideShow(); // 啟動自動輪播    
                 // Next/previous controls
                 function plusSlides(n) {
                     showSlides(slideIndex += n);
@@ -218,12 +189,10 @@
                     clearInterval(slideInterval);
                     startSlideShow(); // 開始新的自動輪播計時器
                 }
-
                 // Thumbnail image controls
                 function currentSlide(n) {
                 showSlides(slideIndex = n);
                 }
-
                 function showSlides(n) {
                 let i;
                 let slides = document.getElementsByClassName("mySlides");
@@ -237,36 +206,26 @@
                     dots[i].className = dots[i].className.replace(" active", "");
                 }
                 slides[slideIndex-1].style.display = "block";
-                dots[slideIndex-1].className += " active";               
-
-                }   
-
-
-
+                dots[slideIndex-1].className += " active";              
+                }  
     </script>
-
-
-
     <hr>
     --------------------------------------------------------------------------------------------------------------------------
     <!-- 切換問卷區 -->
     <ul class="nav nav-fill nav-pills  flex-md-row  flex-column style=" list-style-type: none; display: inline-block;">
-        <li class="nav-item "><a href="#github" class="nav-link" data-bs-toggle="pill">機票</a></li>
-        <li class="nav-item "><a href="#twitter" class="nav-link" data-bs-toggle="pill">訂房</a></li>
-        <li class="nav-item "><a href="#examples" class="nav-link" data-bs-toggle="pill">長榮假期</a></li>
+        <li class="nav-item "><a href="#tickets" class="nav-link" data-bs-toggle="pill">機票</a></li>
+        <li class="nav-item "><a href="#book_room" class="nav-link" data-bs-toggle="pill">航班到離動態</a></li>
+        <li class="nav-item "><a href="#vacation" class="nav-link" data-bs-toggle="pill">預辦登機/報到</a></li>
     </ul>
-
-
     <!-- 隱藏式問卷 -->
-    <div class="tab-content ">
-        <div class="tab-pane" id="github">
+    <div class="tab-content">
+        <div class="tab-pane" id="tickets">
             <div style="position: relative; left: 40px;">
                 <form action="">
                     <input type="radio" name="機票" id="go">單程
                     <input type="radio" name="機票" id="gocome">來回
                     <a href="https://booking.evaair.com/flyeva/EVA/B2C/booking-multi.aspx?lang=zh-tw"
                         style="display: inline-block; padding: 50px;"> 不同點進出/中途停留/多個城市</a>
-
 
                     <h4>預訂飯店，賺取無限萬哩遊哩程！</h4>
                     <div>
@@ -278,17 +237,14 @@
                         </div>
                     </div>
             </div>
-            <br><br>
-            <input id="goto" type="text" placeholder="國家、城市、地區或景點等"
-                style="width: 500px; position: relative; top: -4px; height: 30px;" list="地點">
+            <br><br>            
+            <input id="goto" type="text" placeholder="國家、城市、地區或景點等" style="width: 500px; position: relative; top: -4px; height: 30px;" list="地點">
             <datalist id="地點">
                 <option value="台北">台北</option>
                 <option value="台中">台中</option>
                 <option value="高雄">高雄</option>
             </datalist>
-
-            <br>
-            <br>
+            <br><br>
             <div style="display: inline-block"><label for="datein">入住日期</label>
                 <input type="date" id="datein">
             </div>
@@ -297,34 +253,25 @@
             </div>
 
             <button class="btn bg-success" style="color: white;">搜尋</button>
-
+            <!-- 搜尋需要用js -->
             </form>
         </div>
-        <div class="tab-pane" id="twitter">
+        <div class="tab-pane" id="預備">
             <h1>Twitter</h1>
             <p>4546554545645646548468864</p>
         </div>
-        <div class="tab-pane" id="examples">
+        <div class="tab-pane" id="book_room">
             <h1>Examples</h1>
             <p>567856785678</p>
         </div>
-        <div class="tab-pane" id="about">
+        <div class="tab-pane" id="vacation">
             <h1>About</h1>
             <p>1234567894</p>
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
+------------------------------------------------------------------------------------------------------------------------
+<hr>
     <!-- 智能服務區 小超人 -->
     <a href="https://evachat.evaair.com/EVAAIRWebChat/index.html?fromTitle=%0A%20%0A%20%20%20%20%20%20%20%20%E9%A6%96%E9%A0%81%20-%20%E9%95%B7%E6%A6%AE%E8%88%AA%E7%A9%BA%20%7C%20%E5%8F%B0%E7%81%A3%20Taiwan%20(%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87)%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20&fromDevice=WEB_SITE&fromUrl=https://www.evaair.com/zh-tw/index.html&tenantCode=23225229-01&r=2020120301"
         target="_blank">
@@ -337,51 +284,68 @@
             </figcaption>
         </figure>
     </a>
+------------------------------------------------------------------------------------
+   
+   
+<div class="row">
+    <div class="col-12"><h2 style="text-align: center;">最新熱門經濟艙來回優惠</h2>
+    </div> 
+
+    <div class="row" >
+        <div class="col-3">
+            <figure style="object-fit: contain;">
+                <img class="hots" src="../img/ICN-1.jpg" alt="景點說明" style="object-fit: contain;">
+                <a href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    <figcaption class="textt"><b>台北(TPE)-首爾(ICN)</b>
+                        <div>TWD 12000起</div>
+                    </figcaption>
+                </a>
+            </figure>            
+        </div>
+        
+        <div class="col-3">
+            <figure style="object-fit: contain;">
+                <img class="hots" src="../img/KIX-1.jpg" alt="景點說明" style="object-fit: contain;">
+                <a href="https://booking.evsaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    <figcaption class="textt"><b>台北(TPE)-大阪(KTX)</b>
+                        <div>TWD 9500起</div>
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
+
+        <div class="col-3">
+            <figure>
+                <img class="hots" src="../img/BKK-1.jpg" alt="景點說明" style="object-fit: contain;">
+                <a
+                    href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    <figcaption class="textt"><b>台北 (TPE) -曼谷(BBK)</b>
+                        <div class="orange">TWD 9000起</div>
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
+
+        <div class="col-3">
+            d
+        </div>     
+    </div>
+    <div class="row">
+        <div class="col-3">e</div>
+        <div class="col-3">f</div>
+        <div class="col-3">g</div>
+        <div class="col-3">h</div>
+    </div>
+</div>
 
 
-
-
-
-    <h2 style="text-align: center;">最新熱門經濟艙來回優惠</h2>
 
     <!-- 照片區 -->
-    <div class="blockp" style="width: 1000px; position: relative; left: 200px; ">
-        <figure style="object-fit: contain;">
-            <img class="hots" src="../img/NRT-1.jpg" alt="景點說明" style="object-fit: contain;">
-            <a
-                href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
-                <figcaption class="textt"><b>台北(TPE)-東京(NRT)</b>
-                    <div>TWD 10000起</div>
-                </figcaption>
-            </a>
-        </figure>
-        <figure style="object-fit: contain;">
-            <img class="hots" src="../img/ICN-1.jpg" alt="景點說明" style="object-fit: contain;">
-            <a
-                href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
-                <figcaption class="textt"><b>台北(TPE)-首爾(ICN)</b>
-                    <div>TWD 12000起</div>
-                </figcaption>
-            </a>
-        </figure>
-        <figure style="object-fit: contain;">
-            <img class="hots" src="../img/KIX-1.jpg" alt="景點說明" style="object-fit: contain;">
-            <a
-                href="https://booking.evsaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
-                <figcaption class="textt"><b>台北(TPE)-大阪(KTX)</b>
-                    <div>TWD 9500起</div>
-                </figcaption>
-            </a>
-        </figure>
-        <figure>
-            <img class="hots" src="../img/BKK-1.jpg" alt="景點說明" style="object-fit: contain;">
-            <a
-                href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
-                <figcaption class="textt"><b>台北 (TPE) -曼谷(BBK)</b>
-                    <div class="orange">TWD 9000起</div>
-                </figcaption>
-            </a>
-        </figure>
+    <div style="width: 1000px; position: relative; left: 200px; ">
+       
+
+
+ 
     </div>
 
     </div>
