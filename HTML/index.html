@@ -134,31 +134,8 @@
     </ul>
     </nav> -->
 
-<<<<<<< HEAD:HTML/Home.html
-
-    <!-- JavaScript 代码 -->
-    <script>
-        // 获取菜单项和下拉菜单
-        var menuItem = document.querySelector('#li1');
-        var dropdown = document.querySelector('.dropdown1');
-
-        // 添加点击事件处理程序
-        menuItem.addEventListener('click', function (event) {
-            // 阻止默认链接点击事件
-            event.preventDefault();
-
-            // 切换下拉菜单的显示状态
-            dropdown.classList.toggle('show');
-        });
-    </script>
-
-
-
-
-=======
     --------------------------------------------------------------------------------------------------------------------------
     <!-- JavaScript -->
->>>>>>> 9e50d5d2ba212a17fc620cdf2b97ae10bd50ecbe:HTML/index.html
     <!-- 動畫測試 -->
     <!-- Slideshow container -->
    <a href="https://www.evaair.com/zh-tw/index.html">模仿首頁</a> 
@@ -194,57 +171,6 @@
     </div>
 
     <script>
-<<<<<<< HEAD:HTML/Home.html
-        let slideIndex = 1;
-        let slideInterval;
-        showSlides(slideIndex);
-
-
-        function startSlideShow() {
-            slideInterval = setInterval(function () {
-                plusSlides(1); // 自動前進到下一張幻燈片
-            }, 2000); // 2秒切換一次
-        }
-
-        startSlideShow(); // 啟動自動輪播
-
-
-
-
-
-        // Next/previous controls
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-            // 使用者操作後，重設自動輪播計時器
-            clearInterval(slideInterval);
-            startSlideShow(); // 開始新的自動輪播計時器
-        }
-
-        // Thumbnail image controls
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-
-        }
-
-
-
-=======
                 let slideIndex = 1;
                 let slideInterval;
                 showSlides(slideIndex);             
@@ -282,7 +208,6 @@
                 slides[slideIndex-1].style.display = "block";
                 dots[slideIndex-1].className += " active";              
                 }  
->>>>>>> 9e50d5d2ba212a17fc620cdf2b97ae10bd50ecbe:HTML/index.html
     </script>
     <hr>
     --------------------------------------------------------------------------------------------------------------------------
