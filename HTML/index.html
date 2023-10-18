@@ -142,20 +142,25 @@
     <div class="slideshow_container">
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="../img/img_lights_wide.jpg" style="width:100%">
+            <div class="numbertext">1 / 4</div>
+            <img src="../長榮航空img/跑登場景1.jpg" style="width:100%">
             <div class="text">優美極光</div>
         </div>
 
         <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="../img/img_mountains_wide.jpg" style="width:100%">
+            <div class="numbertext">2 / 4</div>
+            <img src="../長榮航空img/跑登場景2.jpg" style="width:100%">
             <div class="text">雄偉高山</div>
         </div>
 
         <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="../img/img_nature_wide.jpg" style="width:100%">
+            <div class="numbertext">3 / 4</div>
+            <img src="../長榮航空img/跑登場景3.jpg" style="width:100%">
+            <div class="text">大自然美景</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="../長榮航空img/跑登場景4.jpg" style="width:100%">
             <div class="text">大自然美景</div>
         </div>
         <!-- Next and previous buttons -->
@@ -168,6 +173,7 @@
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
     </div>
 
     <script>
@@ -185,9 +191,10 @@
                 // Next/previous controls
                 function plusSlides(n) {
                     showSlides(slideIndex += n);
-                    // 使用者操作後，重設自動輪播計時器
+                // 使用者操作後，重設自動輪播計時器
                     clearInterval(slideInterval);
-                    startSlideShow(); // 開始新的自動輪播計時器
+                    startSlideShow(); 
+                // 開始新的自動輪播計時器
                 }
                 // Thumbnail image controls
                 function currentSlide(n) {
@@ -202,6 +209,7 @@
                 for (i = 0; i < slides.length; i++) {
                     slides[i].style.display = "none";
                 }
+
                 for (i = 0; i < dots.length; i++) {
                     dots[i].className = dots[i].className.replace(" active", "");
                 }
@@ -293,8 +301,8 @@
 
     <div class="row" >
         <div class="col-3">
-            <figure style="object-fit: contain;">
-                <img class="hots" src="../img/ICN-1.jpg" alt="景點說明" style="object-fit: contain;">
+            <figure    style="object-fit: contain;">
+                <img class="hots" src="../img/ICN-1.jpg" alt="景點說明" style="  object-fit: contain;">
                 <a href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
                     <figcaption class="textt"><b>台北(TPE)-首爾(ICN)</b>
                         <div>TWD 12000起</div>
