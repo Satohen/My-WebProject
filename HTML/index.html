@@ -11,20 +11,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 
+       
+
+        <!-- 網頁標題icon -->
+        <link rel="icon" href="../長榮航空img/長榮小icon.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="../長榮航空img/長榮小icon.png" type="image/x-icon" />
+
+
+        <!-- 測試用 找框架 -->
+        <style>
+            .pic{
+                border:1px black solid;
+                width: 450;
+                height:300;                                         
+            }
+        </style>
 
 
     <link rel="stylesheet" href="./animation.css">
 
 
     <title>航空首頁</title>
+    
 </head>
 
 <body>
-
     ------------------------------------------------------------------------------------
     <!-- 移動式標題列 -->
     <nav class="navbar navbar-expand-lg bg-light fixed-top ">
@@ -33,10 +48,14 @@
                 <img src="../img/logo-evaair-header.png" alt="長榮logo" class="img-fluid w-75">
             </a>
         </div>
+
+ 
+
         <!-- 下拉式標題 -->
-        <div class="container-fluid ">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between ">
-                <li class="nav-item dropdown">
+        <div class="container-fluid">
+ 
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between  w-50">
+                <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         企業商務旅行
@@ -91,6 +110,29 @@
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
             </ul>
+           
+   
+           <!-- 登入及註冊 -->
+           <div class="ms-auto">
+            <button class="btn">登入</button>
+            <span>|</span>
+            <button class="btn">註冊</button>
+            </div>
+                <!-- 搜尋 問號icon -->
+                
+                <div>         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                  </svg>
+                </div>
+                <div class="ms-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg>
+                </div>
+                
+
+         
         </div>
     </nav>
     <hr>
@@ -139,28 +181,28 @@
     <!-- 動畫測試 -->
     <!-- Slideshow container -->
    <a href="https://www.evaair.com/zh-tw/index.html">模仿首頁</a> 
-    <div class="slideshow_container">
+    <div class="slideshow_container " >
         <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
+        <div class="mySlides fade ">
             <div class="numbertext">1 / 4</div>
-            <img src="../長榮航空img/跑登場景1.jpg" style="width:100%">
+            <img src="../長榮航空img/跑登場景1.jpg"  class="img-fluid" style="  width:100% ; object-fit: contain;">
             <div class="text">優美極光</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 4</div>
-            <img src="../長榮航空img/跑登場景2.jpg" style="width:100%">
+            <img src="../長榮航空img/跑登場景2.jpg" class="img-fluid" style="width:100% ; object-fit: contain;">
             <div class="text">雄偉高山</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 4</div>
-            <img src="../長榮航空img/跑登場景3.jpg" style="width:100%">
+            <img src="../長榮航空img/跑登場景3.jpg" class="img-fluid" style="width:100% ; object-fit: contain;">
             <div class="text">大自然美景</div>
         </div>
         <div class="mySlides fade">
             <div class="numbertext">4 / 4</div>
-            <img src="../長榮航空img/跑登場景4.jpg" style="width:100%">
+            <img src="../長榮航空img/跑登場景4.jpg" class="img-fluid" style="width:100% ; object-fit: contain;">
             <div class="text">大自然美景</div>
         </div>
         <!-- Next and previous buttons -->
@@ -220,17 +262,18 @@
     <hr>
     --------------------------------------------------------------------------------------------------------------------------
     <!-- 切換問卷區 -->
-    <ul class="nav nav-fill nav-pills  flex-md-row  flex-column style=" list-style-type: none; display: inline-block;">
-        <li class="nav-item "><a href="#tickets" class="nav-link" data-bs-toggle="pill">機票</a></li>
+    <ul class="nav nav-fill nav-pills  flex-md-row  flex-column ">
+        <li class="nav-item "><a href="#tickets" class="nav-link active " data-bs-toggle="pill">機票</a></li>
         <li class="nav-item "><a href="#book_room" class="nav-link" data-bs-toggle="pill">航班到離動態</a></li>
         <li class="nav-item "><a href="#vacation" class="nav-link" data-bs-toggle="pill">預辦登機/報到</a></li>
     </ul>
     <!-- 隱藏式問卷 -->
-    <div class="tab-content">
-        <div class="tab-pane" id="tickets">
-            <div style="position: relative; left: 40px;">
+    <div class="tab-content bg-success">
+        <!-- 這裡先預設做動 -->
+        <div class="tab-pane active" id="tickets "> 
+            <div class="" style="position: relative; left: 40px;">
                 <form action="">
-                    <input type="radio" name="機票" id="go">單程
+                    <input type="radio" name="機票" id="go" >單程
                     <input type="radio" name="機票" id="gocome">來回
                     <a href="https://booking.evaair.com/flyeva/EVA/B2C/booking-multi.aspx?lang=zh-tw"
                         style="display: inline-block; padding: 50px;"> 不同點進出/中途停留/多個城市</a>
@@ -295,14 +338,14 @@
 ------------------------------------------------------------------------------------
    
    
-<div class="row">
+<div class="row" >
     <div class="col-12"><h2 style="text-align: center;">最新熱門經濟艙來回優惠</h2>
     </div> 
 
     <div class="row" >
         <div class="col-3">
-            <figure    style="object-fit: contain;">
-                <img class="hots" src="../img/ICN-1.jpg" alt="景點說明" style="  object-fit: contain;">
+            <figure>
+                <img class="img-fluid" src="../img/首爾.jpg" alt="景點說明"  style="object-fit: contain;">
                 <a href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
                     <figcaption class="textt"><b>台北(TPE)-首爾(ICN)</b>
                         <div>TWD 12000起</div>
@@ -312,11 +355,11 @@
         </div>
         
         <div class="col-3">
-            <figure style="object-fit: contain;">
-                <img class="hots" src="../img/KIX-1.jpg" alt="景點說明" style="object-fit: contain;">
+            <figure>
+                <img class="img-fluid" src="../img/大阪.jpg" alt="景點說明" style="object-fit: contain;">
                 <a href="https://booking.evsaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
                     <figcaption class="textt"><b>台北(TPE)-大阪(KTX)</b>
-                        <div>TWD 9500起</div>
+                        <div>TWD 15438</div>
                     </figcaption>
                 </a>
             </figure>
@@ -324,25 +367,73 @@
 
         <div class="col-3">
             <figure>
-                <img class="hots" src="../img/BKK-1.jpg" alt="景點說明" style="object-fit: contain;">
+                <img class="img-fluid" src="../img/曼谷.jpg" alt="景點說明"   style="object-fit: contain;">
                 <a
                     href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
                     <figcaption class="textt"><b>台北 (TPE) -曼谷(BBK)</b>
-                        <div class="orange">TWD 9000起</div>
+                        <div class="orange">TWD 9603</div>
                     </figcaption>
                 </a>
             </figure>
         </div>
 
         <div class="col-3">
-            d
+            <figure>
+                <img class="img-fluid" src="../img/東京.jpg" alt="景點說明"   style="object-fit: contain;">
+                <a
+                    href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    <figcaption class="textt"><b>台北 (TPE) -東京(HND)</b>
+                        <div class="orange">TWD 15930</div>
+                    </figcaption>
+                </a>
+            </figure>
         </div>     
     </div>
     <div class="row">
-        <div class="col-3">e</div>
-        <div class="col-3">f</div>
-        <div class="col-3">g</div>
-        <div class="col-3">h</div>
+        <div class="col-3">
+            <figure>
+                <img class="img-fluid" src="../img/到東京.jpg" alt="景點說明"   style="object-fit: contain;">
+                <a
+                    href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    <figcaption class="textt"><b>台北 (TPE) -東京(HND)</b>
+                        <div class="orange">TWD 16689</div>
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
+        <div class="col-3">
+            <figure>
+                <img class="img-fluid" src="../img/到沖繩.jpg" alt="景點說明"   style="object-fit: contain;">
+                <a
+                    href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    <figcaption class="textt"><b>台北 (TPE) -沖繩(OKA)</b>
+                        <div class="orange">TWD 9606</div>
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
+        <div class="col-3">
+            <figure>
+                <img class="img-fluid" src="../img/到福岡.jpg" alt="景點說明"   style="object-fit: contain;">
+                <a
+                    href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    <figcaption class="textt"><b>台北 (TPE) -福岡(FUK)</b>
+                        <div class="orange">TWD 13041</div>
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
+        <div class="col-3">
+            <figure>
+                <img class="img-fluid" src="../img/到香港.jpg" alt="景點說明"   style="object-fit: contain;">
+                <a
+                    href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    <figcaption class="textt"><b>台北 (TPE) -香港(HKG)</b>
+                        <div class="orange">TWD 9055</div>
+                    </figcaption>
+                </a>
+            </figure>   
+        </div>
     </div>
 </div>
 
