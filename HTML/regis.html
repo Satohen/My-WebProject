@@ -186,7 +186,7 @@
     <hr />
 
     <!-- 註冊畫面 -->
-
+  <div style="background-image:url(../長榮航空img/飛翔背景桌布.jpg); object-fit: contain;">
     <div>
       <header style="text-align: center; font-size: 44px"><b>註冊</b></header>
     </div>
@@ -212,63 +212,62 @@
     </div>
 
     <!-- 註冊表格 -->
-    <div class="mb-10">
+    <div>
       <form action="">
-        <h1 class="center">會員帳號</h1>
-        <label for="">E-Mail帳號 *</label>
-        <p>
-          為確保您可收到長榮航空的電子郵件，請將eservice@mh1.evaair.com加入您的通訊錄
-        </p>
-        <input type="email" name="" id="" /><br /><br />
+        <table class=" ps-3 "  style="margin-left: 500px;">
+        <thead><th></th><h1 class="center">會員帳號</h1></thead>
+        <tr><td><label for="">E-Mail帳號 *</label></td></tr>
+        <tr><td><p>為確保您可收到長榮航空的電子郵件，請將eservice@mh1.evaair.com加入您的通訊錄</p></td></tr>
+        <tr><td><input type="email" name="" id="" /></td></tr>
+        <tr><td><label for="">設定密碼 *</label>
+        <p>密碼請輸入8-30字元，最少1個大寫字母、最少1個小寫字母、最少1個數字、最少1個特殊符號(常見特殊符號字元如：!、#、$、^、*……等)，其他字元不接受。</p>        </td><</tr>
 
-        <label for="">設定密碼 * </label> <br />
-        <p>
-          密碼請輸入8-30字元，最少1個大寫字母、最少1個小寫字母、最少1個數字、最少1個特殊符號(常見特殊符號字元如：!、#、$、^、*……等)，其他字元不接受。
-        </p>
-        <input type="password" name="" id="" /><br /><br />
-        <label for="">確認密碼 * </label><br />
+        <tr><td> <input type="password" name="" id="" /></td></tr>
+        <tr><td> <label for="">確認密碼 * </label><br />
         <input type="password" name="" id="" />
-
-        <h1 class="center">個人資料</h1>
-        <label for="">英文姓名(與護照一致) *</label>
-        <p>範例:LIN</p>
-        <input type="text" name="" id="" /><br /><br />
-
-        <label for="">英文名+中間名 (與護照一致) * </label> <br />
-        <p>範例: SHIHLUNJOSEPH</p>
-        <input type="text" name="" id="" /><br /><br />
-
-        <label for="">中文姓</label><br />
-        <input type="text" name="" id="" /><br />
-        <label for="">中文名</label><br />
-        <input type="text" name="" id="" /><br />
-
-        <label for="">性別*</label><br />
-        <input type="radio" name="sex" value="男性" />男性<input
-          type="radio"
-          name="sex"
-          value="女性"
-          class="ms-5"
-        />女性<br /><br />
-
-        <label for="">生日*</label><br />
-        <p>年/月/日</p>
-        <select name="" id=""></select>
-        <select name="" id=""></select>
-        <select name="" id=""></select>
-        <br />
-        <label for="">國籍/地區 *</label><br />
-        <select name="" id=""></select>
-        <br /><br /><br />
-        <h2>手機號碼</h2>
-        <br />
-        <label for="">國家/地區代碼 * </label><br />
-        <select name="" id=""></select
-        ><br />
-        <label for="">手機號碼 * </label><br />
-        <input type="text" name="" id="" />
+        </td></tr>
+        <thead><th><h1 class="center">個人資料</h1></th></thead>
+        <tr><td><label for="">英文姓名(與護照一致) *</label>
+          <p>範例:LIN</p>
+          <input type="text" name="" id="" />
+        </td></tr>
+        <tr><td><label for="">英文名+中間名 (與護照一致) * </label>
+                <p>範例: SHIHLUNJOSEPH</p>
+                 <input type="text" name="" id="" />
+            </td>
+        </tr>
+        <tr><td><label for="">中文姓</label><br />
+                <input type="text" name="" id="" /><br />
+                <label for="">中文名</label><br />
+                <input type="text" name="" id="" /><br />
+            </td>
+         </tr>
+         <tr><td><label for="">性別*</label><br>
+                  <input type="radio" name="sex" value="男性" />男性
+                  <input   type="radio" name="sex"  value="女性"  class="ms-5">女性
+         </td></tr>
+         <tr><td> <label for="">生日*</label>
+                  <p>年/月/日</p>
+                  <select name="" id=""></select>
+                  <select name="" id=""></select>
+                  <select name="" id=""></select>
+                </td>
+          </tr>
+          <tr><td><label for="">國籍/地區 *</label><br>   
+                  <select name="" id=""></select>
+          </td></tr>
+          <tr><td><h3>手機號碼</h3>                  
+                  <label for="">國家/地區代碼 * </label><br /> <select name="" id=""></select>
+                  <br />
+                  <label for="">手機號碼 * </label><br />
+                  <input type="text" name="" id="" />
+                </td>        
+           </tr>           
       </form>
     </div>
+
+
+  </div>
 
     <script></script>
   </body>

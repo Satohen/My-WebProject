@@ -9,18 +9,34 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Liu">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 安插bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+    
+    
+    
+        <!-- 安插jquery -->       
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+    // 程式放在這裏
+                // $(document).ready(function(){
+                //     $("#btn-plus1").click(function(){
+                //         $("#adult_quantity").innerHTML++;
+                //     })
+                // })            
 
+
+    </script>
 
 
     <!-- 網頁標題icon -->
     <link rel="icon" href="../長榮航空img/長榮小icon.png" type="image/x-icon" />
     <link rel="shortcut icon" href="../長榮航空img/長榮小icon.png" type="image/x-icon" />
-
+>
 
     <!-- 測試用 找框架 -->
     <style>
@@ -53,8 +69,6 @@
                 <img src="../img/logo-evaair-header.png" alt="長榮logo" class="img-fluid w-75">
             </a>
         </div>
-
-
 
         <!-- 下拉式標題 -->
         <div class="container-fluid">
@@ -272,65 +286,229 @@
     <hr>
     --------------------------------------------------------------------------------------------------------------------------
     <!-- 切換問卷區 -->
-    <ul class="nav nav-fill nav-pills  flex-md-row  flex-column ">
-        <li class="nav-item "><a href="#tickets" class="nav-link active " data-bs-toggle="pill">機票</a></li>
-        <li class="nav-item "><a href="#book_room" class="nav-link" data-bs-toggle="pill">航班到離動態</a></li>
-        <li class="nav-item "><a href="#vacation" class="nav-link" data-bs-toggle="pill">預辦登機/報到</a></li>
+    <ul class="nav nav-fill nav-pills  flex-md-row  flex-column">
+        <li class="nav-item nav-link"><a href="#tickets"    class="btn btn-success" data-bs-toggle="pill">機票</a></li>
+        <li class="nav-item nav-link"><a href="#fligt_status" class="btn btn-success" data-bs-toggle="pill">航班到離動態</a></li>
+        <li class="nav-item nav-link"><a href="#check_in"    class="btn btn-success" data-bs-toggle="pill">預辦登機/報到</a></li>
     </ul>
+
     <!-- 隱藏式問卷 -->
-    <div class="tab-content bg-success">
+    <div class="tab-content ">
         <!-- 這裡先預設做動 -->
-        <div class="tab-pane active" id="tickets ">
-            <div class="" style="position: relative; left: 40px;">
+        <div class="tab-pane bg-light" id="tickets">
+            <div class="">
                 <form action="">
-                    <input type="radio" name="機票" id="go">單程
-                    <input type="radio" name="機票" id="gocome">來回
-                    <a href="https://booking.evaair.com/flyeva/EVA/B2C/booking-multi.aspx?lang=zh-tw"
-                        style="display: inline-block; padding: 50px;"> 不同點進出/中途停留/多個城市</a>
+                    <table class=" ps-3 "  style="margin-left: 550px;">
+                        <thead><th style="column-span: 2;"><h3>機票</h3></th></thead>
 
-                    <h4>預訂飯店，賺取無限萬哩遊哩程！</h4>
-                    <div>
-                        <div style="position:absolute ; left: 0;">
-                            <label for="goto"> 你要去哪裡？
-                        </div>
-                        <div style="position: absolute; right: 40px; display: inline-block;">
-                            </label><span>合作夥伴:</span><span id="book">Bookin.com</span>
-                        </div>
-                    </div>
-            </div>
-            <br><br>
-            <input id="goto" type="text" placeholder="國家、城市、地區或景點等"
-                style="width: 500px; position: relative; top: -4px; height: 30px;" list="地點">
-            <datalist id="地點">
-                <option value="台北">台北</option>
-                <option value="台中">台中</option>
-                <option value="高雄">高雄</option>
-            </datalist>
-            <br><br>
-            <div style="display: inline-block"><label for="datein">入住日期</label>
-                <input type="date" id="datein">
-            </div>
-            <div style="display: inline-block "><label for="dateout">退房日期</label>
-                <input type="date" id="dateout">
-            </div>
+                        <tr><td><input type="radio" name="行程" id="go"><label for="go">單程</label><input type="radio" name="行程" class="ms-5" id="comeback"><label for="comeback">來回</label></td>
+                            <td><a href="https://booking.evaair.com/flyeva/EVA/B2C/booking-multi.aspx?lang=zh-tw"> 
+                                不同點進出/中途停留/多個城市</a>
+                            </td>
+                            <td></td>
+                        </tr>                        
+                        <tr><td><label for="departure_0">出發地*</label></th><th><label for="destination_0">目的地*</label></td></tr>
+                        <br>
+                        <tr><td><select type="text" name="" id="departure_0">
+                            <option value="台北-桃園">台北-桃園</option>
+                            <option value="台北-松山">台北-松山</option>
+                            </td> 
+                            <td><select type="text" id="destination_0">                            
+                                <option value="東京">東京</option>
+                                <option value="大阪">大阪</option>
+                                <option value="沖繩">沖繩</option>
+                                <option value="首爾">首爾</option>
+                                <option value="曼谷">曼谷</option>
+                                <option value="香港">香港</option>
+                                <option value="福岡">福岡</option>
+                            </td></tr>
+                        <tr><td style="column-span: 2;"><h3>查詢選擇</h3></td></tr>
+                        <tr><td><label for="goday">出發日期*</label></td><td><label for="backday">回程日期*</label></td></tr>
+                        <br>
+                        <br>
+                        <tr><td><input type="date" name="" id="goday"> <td><input type="date" name="" id="backday"></td></tr>
+                        <tr><td style="column-span: 2;"><label for="cabin">艙等*</label></td></tr>                        
+                        <tr><td  style="column-span: 2;"><select type="text" id="cabin">
+                            <option value="頭等艙">頭等艙</option>
+                            <option value="商務艙">商務艙</option>
+                            <option value="經濟艙">經濟艙</option>
 
-            <button class="btn bg-success" style="color: white;">搜尋</button>
-            <!-- 搜尋需要用js -->
+
+                        </td></tr>
+                        <tr><td><label for="adult_quantity">大人 *(12歲以上)</label></td> 
+                            <td><label for="children_quantity">小孩 *(2-11)</label></td>
+                            <td><label for="baby_quantity">嬰兒 *(2歲以下)</label></td>                        
+                        </tr>
+                        <!-- 注意type要設定為button才不會傳出去 -->
+                        <tr><td><button class="btn btn-success" id="btn-plus1" type="button">+</button><input type="number" id="adult_quantity">
+                            <button id="btn_minus" type="button" class="btn btn-success">-</button></td> 
+                            <td><button class="btn btn-success" id="btn-plus2" type="button">+</button><input type="number" id="children_quantity">
+                                <button id="btn_minus1" type="button" class="btn btn-success" >-</button></td>
+                            <td><button class="btn btn-success" id="btn-plus3" type="button">+</button><input type="number" id="baby_quantity">
+                                <button id="btn_minus2"  type="button" class="btn btn-success">-</button></td>                                                     
+                        </tr>
+                        <tr><td class="" style="column-span: 2;">使用信用卡優惠</td></tr>
+                        <tr><td><input type="radio" name="card_choice" id="use_card"><label for="use_card">是</label></td><td><input type="radio" name="card_choice" id="no_card"><label for="no_card">否</label></td></tr>
+                                      
+                        <tr><td><button class="btn btn-success">訂票</button></tr>
+                    </table>
+                    <!-- +-的js -->
+                    <script>
+
+                        // addEventListener增加事件
+                        function add() {
+                          document.getElementById("btn-plus1").addEventListener("click", function () {
+                            // 獲得當前數量值                            
+                            var currentQuantity = parseInt(document.getElementById("adult_quantity").value);                      
+                            // 增加數量並更新輸入框的值
+                            if (!isNaN(currentQuantity)) {
+                                document.getElementById("adult_quantity").value = currentQuantity + 1;
+                            } else {
+                                document.getElementById("adult_quantity").value = 1;
+                            }
+                          });
+                        }                      
+
+                        function add1() {
+                          document.getElementById("btn-plus2").addEventListener("click", function () {
+                            // 獲得當前數量值                            
+                            var currentQuantity = parseInt(document.getElementById("children_quantity").value);                      
+                            // 增加數量並更新輸入框的值
+                            if (!isNaN(currentQuantity)) {
+                                document.getElementById("children_quantity").value = currentQuantity + 1;
+                            } else {
+                                document.getElementById("children_quantity").value = 1;
+                            }
+                          });
+                        }          
+
+                        
+                        function add2() {
+                          document.getElementById("btn-plus3").addEventListener("click", function () {
+                            // 獲得當前數量值                            
+                            var currentQuantity = parseInt(document.getElementById("baby_quantity").value);                      
+                            // 增加數量並更新輸入框的值
+                            if (!isNaN(currentQuantity)) {
+                                document.getElementById("baby_quantity").value = currentQuantity + 1;
+                            } else {
+                                document.getElementById("baby_quantity").value = 1;
+                            }
+                          });
+                        } 
+                        
+                        function minus(){
+                            document.getElementById("btn_minus").addEventListener("click",function(){
+                            var currentQuantity  = parseInt(document.getElementById("adult_quantity").value);
+                            if(!isNaN(currentQuantity) && currentQuantity != 0 ){
+                                document.getElementById("adult_quantity").value = currentQuantity - 1;
+                            } else{
+                                document.getElementById("adult_quantity").value = 0 ;
+                            }
+                            })
+                        }
+
+                        function minus1(){
+                            document.getElementById("btn_minus1").addEventListener("click",function(){
+                            var currentQuantity  = parseInt(document.getElementById("children_quantity").value);
+                            if(!isNaN(currentQuantity) && currentQuantity != 0 ){
+                                document.getElementById("children_quantity").value = currentQuantity - 1;
+                            }else{
+                                document.getElementById("children_quantity").value = 0 ;
+
+                            }
+                            })
+                        }
+                        function minus2(){
+                            document.getElementById("btn_minus2").addEventListener("click",function(){
+                            var currentQuantity  = parseInt(document.getElementById("baby_quantity").value);
+                            if(!isNaN(currentQuantity) && currentQuantity != 0 ){
+                                document.getElementById("baby_quantity").value = currentQuantity - 1;
+                            }else{
+                                document.getElementById("baby_quantity").value = 0 ;
+                            }
+                            })
+                        }
+
+
+
+                        add();
+                        add1();       
+                        add2();
+                        minus();
+                        minus1();
+                        minus2();
+                      </script>
+                      
+
+                </form>
+            </div>
+        </div>
+
+
+            <!-- 搜尋需要用js -->       
+
+        <!-- 表格2 -->
+        <div class="tab-pane bg-light" id="fligt_status">
+            <form action="" class="border">
+            <table class=" ps-2"  style="margin-left: 550px;">   
+                <thead><th for="departure"><h3>出發地與目的地</h3></th></thead>            
+                <tr><td><label for="departure">出發地*</label></td><td><label for="destination">目的地*</label></td></tr>
+                <br>
+                <tr><td><select type="text" name="" id="departure"> 
+                        <option value="台北-桃園">台北-桃園</option>
+                        <option value="台北-松山">台北-松山</option>d> 
+                        <td><select type="text" id="destination">
+                        <option value="東京">東京</option>
+                        <option value="大阪">大阪</option>
+                        <option value="沖繩">沖繩</option>
+                        <option value="首爾">首爾</option>
+                        <option value="曼谷">曼谷</option>
+                        <option value="香港">香港</option>
+                        <option value="福岡">福岡</option>                    
+                    </td>
+                </tr>
+                <tr><td style="column-span: 2;"><h3>查詢選擇</h3></td></tr>
+                <tr><td><label for="goal">航班出發/抵達*</label></td><td><label for="arrival_time">日期*</label></td></tr>
+                <br>
+                <tr><td><select type="text" name="" id="goal"> 
+                    <option value="出發">出發</option>
+                    <option value="抵達">抵達</option>                   
+                    <td><input type="date" name="" id="arrival_time"></td></tr>
+                <tr><td><button class="btn btn-success">搜尋</button></tr>
+
+            </table>
             </form>
         </div>
-        <div class="tab-pane" id="預備">
-            <h1>Twitter</h1>
-            <p>4546554545645646548468864</p>
+        <!-- 表格3 -->
+        <div class="tab-pane bg-light" id="check_in">
+            <form action="">
+            <table class=" ps-2" style="margin-left: 550px;"> 
+                <thead><th style="column-span:3;"><h3>訂位代號/機票號碼登入</h3></th></thead>            
+                <tr><td style="column-span: 3;"><label for="vicket_number">訂位代號/機票號碼/電子雜項交換券</label></td></tr>
+                <br>
+                <tr><td style="column-span: 3;"><p> 請輸入訂位代號共6位數字或英文字母，亦可輸入機票或電子雜項交換券號碼共 13位數字。</p></td></tr>
+                <tr><td><input type="text" id="vicket_number" style="column-span: 3;"></td></tr>
+                <br><br>
+                <tr><td style="column-span: 3;">
+                        <label for="family_name">姓 *</label>
+                        <p>(例如:陳禹暘，[姓]填入CHEN)</p>
+                        <input type="text" name="" id="family_name">
+                     </td>
+                </tr>
+                <br><br>
+                <tr><td style="column-span: 3;">
+                    <label for="first_name">名*</label>
+                    <p>(例如:陳禹暘，[名]填入YUYANG。若您的訂位姓名只有「姓」，請直接略過此欄位。)</p>
+                    <input type="text" name="" id="first_name">
+                    </td>
+                </tr>  
+                <tr><td class="center"><button class="btn btn-success">登入</button></tr>            
+            </table>
+            </form>
+         </div>
         </div>
-        <div class="tab-pane" id="book_room">
-            <h1>Examples</h1>
-            <p>567856785678</p>
-        </div>
-        <div class="tab-pane" id="vacation">
-            <h1>About</h1>
-            <p>1234567894</p>
-        </div>
-    </div>
+
+
 
     ------------------------------------------------------------------------------------------------------------------------
     <hr>
@@ -450,7 +628,6 @@
             </div>
         </div>
         <p>★上述票價已包含稅金、燃油附加費，並視機位預訂狀況隨時變動。</p>
-
     </div>
 
 
@@ -474,13 +651,6 @@
                     <td></td>
                 </tr>
     </table>
-
-
-
-
-
-
 </body>
-
 
 </html>
