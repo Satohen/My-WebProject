@@ -27,9 +27,7 @@
                 //     $("#btn-plus1").click(function(){
                 //         $("#adult_quantity").innerHTML++;
                 //     })
-                // })            
-
-
+                // })           
     </script>
 
 
@@ -301,7 +299,7 @@
                     <table class=" ps-3 "  style="margin-left: 550px;">
                         <thead><th style="column-span: 2;"><h3>機票</h3></th></thead>
 
-                        <tr><td><input type="radio" name="行程" id="go"><label for="go">單程</label><input type="radio" name="行程" class="ms-5" id="comeback"><label for="comeback">來回</label></td>
+                        <tr><td><input type="radio" name="行程"  id="comeback" data-confirm="1"checked><label for="comeback">來回</label> <input  class="ms-5"type="radio" name="行程" id="go" data-confirm="0" ><label for="go" >單程</label></td>
                             <td><a href="https://booking.evaair.com/flyeva/EVA/B2C/booking-multi.aspx?lang=zh-tw"> 
                                 不同點進出/中途停留/多個城市</a>
                             </td>
@@ -323,10 +321,10 @@
                                 <option value="福岡">福岡</option>
                             </td></tr>
                         <tr><td style="column-span: 2;"><h3>查詢選擇</h3></td></tr>
-                        <tr><td><label for="goday">出發日期*</label></td><td><label for="backday">回程日期*</label></td></tr>
+                        <tr><td><label for="goday">出發日期*</label></td><td ><label id="backday_label" for="backday">回程日期*</label></td></tr>
                         <br>
                         <br>
-                        <tr><td><input type="date" name="" id="goday"> <td><input type="date" name="" id="backday"></td></tr>
+                        <tr><td><input type="date"  name="" id="goday"> <td><input type="date" name="" id="backday" ></td></tr>
                         <tr><td style="column-span: 2;"><label for="cabin">艙等*</label></td></tr>                        
                         <tr><td  style="column-span: 2;"><select type="text" id="cabin">
                             <option value="頭等艙">頭等艙</option>
@@ -349,13 +347,20 @@
                         </tr>
                         <tr><td class="" style="column-span: 2;">使用信用卡優惠</td></tr>
                         <tr><td><input type="radio" name="card_choice" id="use_card"><label for="use_card">是</label></td><td><input type="radio" name="card_choice" id="no_card"><label for="no_card">否</label></td></tr>
-                                      
+                            <!-- 隱藏的表單(信用卡優惠) -->
+                        <tr id="cupon" style="display: none; column-span: 2;"><td>國泰世華銀行
+                            <br>
+                                <input type="radio" name="discount" id="discount_95"> <label  for="discount_95">國泰世華長榮航空聯名無限卡/極致御璽卡/御璽卡年度95折購票優惠 </label> 
+                            <br>
+                                <input type="radio" name="discount" id="discount_90"> <label   for="discount_90">國泰世華長榮航空聯名極致無限卡年度購票9折優惠</label>                                    
                         <tr><td><button class="btn btn-success">訂票</button></tr>
                     </table>
-                    <!-- +-的js -->
-                    <script>
 
-                        // addEventListener增加事件
+                    <!-- +-的js 安插jquery -->
+                    <script type="text/javascript">
+                        // 做日期判斷
+
+                        // addEventListener增加監聽事件才能click
                         function add() {
                           document.getElementById("btn-plus1").addEventListener("click", function () {
                             // 獲得當前數量值                            
@@ -380,7 +385,7 @@
                                 document.getElementById("children_quantity").value = 1;
                             }
                           });
-                        }          
+                        }        
 
                         
                         function add2() {
@@ -428,15 +433,81 @@
                             }
                             })
                         }
+                        function credic (){
+                            document.getElementById("use_card").addEventListener("click",function(){
+                                
+                                
+                                document.getElementById("cupon").style.display = "table-row";
 
+                            })}                    
 
-
+                    //來回標籤
+                            function goonce() {
+                             document.getElementById("go").addEventListener("click", function () {             
+                             document.getElementById("backday_label").style.display = "none" ;
+                             document.getElementById("backday").style.display = "none" ;
+                            })};
+                             function comehome() {
+                             document.getElementById("comeback").addEventListener("click", function () {
+                             document.getElementById("backday_label").style.display = "table-row" ;
+                             document.getElementById("backday").style.display = "table-row" ;
+                            })};
+                                
                         add();
                         add1();       
                         add2();
                         minus();
                         minus1();
                         minus2();
+                        credic();
+                        goonce() 
+                        comehome()
+
+
+
+
+                             //  判斷日期
+                            // 获取今天的日期  gpt 產生
+                            var today = new Date();
+                            var dd = today.getDate();
+                            var mm = today.getMonth() + 1; // 月份从0开始，所以要加1
+                            var yyyy = today.getFullYear();
+                                                    
+                            // 如果日期和月份是单数，前面添加0
+                            if (dd < 10) {
+                              dd = dd.toString().padStart(2, '0');
+                            }
+                            if (mm < 10) {
+                              mm = mm.toString().padStart(2, '0');
+                            }
+                            
+                            // 日期設置今天日期
+                            today = yyyy + '-' + mm + '-' + dd;
+                            
+                            // 日期输入
+                            var godayInput = document.getElementById("goday");
+                            
+                            // 出發日期最小值今天
+                            godayInput.setAttribute("min", today);
+                            // 回程日期最小為今天
+                            $(document).ready(function( ) {
+                                $("#backday").prop("min", today);
+                            });
+                            // 第二列表單的
+                            使用jquery
+                            $(document).ready( function(){
+                                $("#arrival_time").prop("min", today);                           
+
+                            });
+                        
+
+
+
+
+
+
+
+
                       </script>
                       
 
@@ -629,9 +700,6 @@
         </div>
         <p>★上述票價已包含稅金、燃油附加費，並視機位預訂狀況隨時變動。</p>
     </div>
-
-
-
     <!-- 更多服務區 -->
     <table class="table">
         <thead>

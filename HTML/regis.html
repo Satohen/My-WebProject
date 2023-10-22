@@ -186,7 +186,7 @@
     <hr />
 
     <!-- 註冊畫面 -->
-  <div style="background-image:url(../長榮航空img/飛翔背景桌布.jpg); object-fit: contain;">
+  <div style="background-color: lightcyan;">
     <div>
       <header style="text-align: center; font-size: 44px"><b>註冊</b></header>
     </div>
@@ -216,59 +216,89 @@
       <form action="">
         <table class=" ps-3 "  style="margin-left: 500px;">
         <thead><th></th><h1 class="center">會員帳號</h1></thead>
-        <tr><td><label for="">E-Mail帳號 *</label></td></tr>
+        <tr><td><label for="email_0">E-Mail帳號 *</label></td></tr>
         <tr><td><p>為確保您可收到長榮航空的電子郵件，請將eservice@mh1.evaair.com加入您的通訊錄</p></td></tr>
-        <tr><td><input type="email" name="" id="" /></td></tr>
-        <tr><td><label for="">設定密碼 *</label>
-        <p>密碼請輸入8-30字元，最少1個大寫字母、最少1個小寫字母、最少1個數字、最少1個特殊符號(常見特殊符號字元如：!、#、$、^、*……等)，其他字元不接受。</p>        </td><</tr>
+        <tr><td><input type="email" name="" id="email_0" /></td></tr>
+        <tr><td><label for="password_1">設定密碼 *</label>
+        <p>密碼請輸入8-30字元，最少1個大寫字母、最少1個小寫字母、最少1個數字、最少1個特殊符號(常見特殊符號字元如：!、#、$、^、*……等)，其他字元不接受。</p></td><</tr>
 
-        <tr><td> <input type="password" name="" id="" /></td></tr>
-        <tr><td> <label for="">確認密碼 * </label><br />
-        <input type="password" name="" id="" />
+        <tr><td> <input type="password" name="" id="password_1" /></td></tr>
+        <tr><td> <label for="password_2">確認密碼 * </label><br />
+        <input type="password" name="" id="password_2" />
         </td></tr>
         <thead><th><h1 class="center">個人資料</h1></th></thead>
-        <tr><td><label for="">英文姓名(與護照一致) *</label>
+        <tr><td><label for="en-fname">英文姓名(與護照一致) *</label>
           <p>範例:LIN</p>
-          <input type="text" name="" id="" />
+          <input type="text" name="" id="en-fname" />
         </td></tr>
-        <tr><td><label for="">英文名+中間名 (與護照一致) * </label>
+        <tr><td><label for="en_name">英文名+中間名 (與護照一致) * </label>
                 <p>範例: SHIHLUNJOSEPH</p>
-                 <input type="text" name="" id="" />
+                 <input type="text" name="" id="en_name" />
             </td>
         </tr>
-        <tr><td><label for="">中文姓</label><br />
-                <input type="text" name="" id="" /><br />
-                <label for="">中文名</label><br />
-                <input type="text" name="" id="" /><br />
+        <tr><td><label for="ch_name">中文姓</label><br />
+                <input type="text" name="" id="ch_name" /><br />
+                <label for="ch_fname">中文名</label><br />
+                <input type="text" name="" id="ch_fname" /><br />
             </td>
          </tr>
          <tr><td><label for="">性別*</label><br>
-                  <input type="radio" name="sex" value="男性" />男性
-                  <input   type="radio" name="sex"  value="女性"  class="ms-5">女性
+                  <input type="radio" name="sex" value="男性" id="male" > <label for="male">男性</label>
+                  <input id=""   type="radio" name="sex"  value="女性"  class="ms-5" id="fmale"><label for="fmale">女性</label>
          </td></tr>
          <tr><td> <label for="">生日*</label>
                   <p>年/月/日</p>
-                  <select name="" id=""></select>
-                  <select name="" id=""></select>
-                  <select name="" id=""></select>
+                  <select  name="" id="year"></select>
+
+                  <select name="" id="month"></select>
+
+                  <select name="" id="day"></select>
+
                 </td>
           </tr>
-          <tr><td><label for="">國籍/地區 *</label><br>   
-                  <select name="" id=""></select>
           </td></tr>
-          <tr><td><h3>手機號碼</h3>                  
-                  <label for="">國家/地區代碼 * </label><br /> <select name="" id=""></select>
-                  <br />
-                  <label for="">手機號碼 * </label><br />
-                  <input type="text" name="" id="" />
+          <tr><td><h3>手機號碼</h3>                 
+                  <label for="phone_number">手機號碼 * </label><br />
+                  <input type="text" name="" id="phone_number" />
                 </td>        
-           </tr>           
+           </tr>
+           <tr><td><button class="btn btn-success">註冊</button></td></tr>           
       </form>
     </div>
 
 
   </div>
+  <!-- 寫入 生日 年月日選項 -->
+    <script>
+      var currentYear  = new Date().getFullYear();
+      var currentMonth  = new Date().getMonth();
+      var currentMonth  = new Date().getMonth();
 
-    <script></script>
+      for(i=1900;i<=currentYear;i++){
+       var k = document.createElement("option");
+       k.value = i;
+       k.text = i;
+       document.getElementById("year").appendChild(k);
+      }
+
+      for(j=1; j<=12 ; j++){
+        var x = document.createElement("option");
+        x.value = j;
+        x.text = j;
+        document.getElementById("month").appendChild(x);}
+
+
+        for(j=1; j<= 31 ; j++){
+        var y = document.createElement("option");
+        y.value = j;
+        y.text = j;
+        document.getElementById("day").appendChild(y);
+
+      }
+
+
+
+
+    </script>
   </body>
 </html>
