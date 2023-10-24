@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <h1>
+            待辦事項清單
+            <a href="Create.html" class="btn btn-outline-success btn-md float-right">
+                新增
+            </a>
+        </h1>
+    
+        <table id="jobList" class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        項目名稱
+                    </th>
+                    <th>
+                        是否已完工
+                    </th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Job A
+                    </td>
+                    <td>
+                        <input class="check-box" disabled="disabled"
+                            type="checkbox" />
+                    </td>
+                    <td>
+                        <span class="float-right">
+                            <a href="edit.html" class="btn btn-outline-primary btn-sm">編輯</a> |
+                            <a href="delete.html" class="btn btn-outline-danger btn-sm">刪除</a>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+    </div>    
+
+<script>
+
+    var todoTable = [
+        {todoTableId: 1, title: "Job XXX", isComplete: 1},
+        {todoTableId: 2, title: "Job YYY", isComplete: 0},
+        {todoTableId: 3, title: "Job ZZZ", isComplete: 1}
+    ];
+
+
+
+</script>    
+</body>
+</html>
+
+
+
+
