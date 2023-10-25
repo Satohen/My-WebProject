@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>會員</title>
+    <meta name="description" content="Free Web tutorials" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Liu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- 網頁標題icon -->
+    <link rel="icon" href="../長榮航空img/長榮小icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../長榮航空img/長榮小icon.png" type="image/x-icon" />
+</head>
+
+<body>
+    <!-- 移動式標題列 -->
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+        <!-- 飛機logo首頁 -->
+        <div class="d-flex jutisfy-content-start">
+            <a href="./index.html">
+                <img src="../img/logo-evaair-header.png" alt="長榮logo" class="img-fluid w-75" />
+            </a>
+        </div>
+        <!-- 下拉式標題 -->
+        <div class="container-fluid">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between w-50">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        企業商務旅行
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        優惠與訂票
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        行程管理
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        無限萬里遊
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- 登入及註冊 -->
+            <div class="ms-auto">
+                <a href="./login.html" class="btn">登入</a>
+                <span>|</span>
+                <a href="./regis.html" class="btn">註冊</a>
+            </div>
+            <!-- 搜尋 問號icon -->
+
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-question-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                </svg>
+            </div>
+            <div class="ms-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </div>
+        </div>
+    </nav>
+    <hr />
+
+
+    <!-- 會員畫面 -->
+
+    <div style="position: relative;  margin-top: 150px;">
+        <table>
+
+            <thead>
+                <tr class="row">
+
+                    <th class="col-4"></th>
+                    <th class="col-4">
+                        <h1>會員卡</h1>
+                    </th>
+                    <th class="col-4"> </th>
+
+                </tr>
+
+
+                <tr class="row">
+                    <th class="col-4">
+
+                    </th>
+                    <th class="col-3">
+                        <figure>
+                            <img src="../長榮航空img/綠卡.png" alt="">
+
+                            <figcaption>
+                                您目前的會員卡籍是綠卡
+                            </figcaption>
+                        </figure>
+                    </th>
+                    <th class="col-4">
+                        <p>會員卡號： 3342791001
+                        </p>
+                        <p> <a href="" class="btn btn-success">會員資料</a> 填寫進階資訊獲得500哩唷
+                        </p>
+
+                        <p class="small"> 有效期限</p>
+                        <p style="position:relative; margin-top: -20px;">永久有效</p>
+                        
+                        
+
+                 
+
+            </thead>
+          
+            <tbody>
+
+
+
+          
+                <tr class="row mt-5">
+
+                    <td class="col-3"></td>
+                    <td class="col-4">
+                        <h2>更多優惠</h2>
+                        <p>想要有更多優惠嗎?晉升銀卡可享受額外15%的卡籍加贈獎勵哩程喔!還有各項的訂位、選位及機場服務，趕快安排下趟旅程吧!
+                        </p>
+
+
+                        <h2>晉升卡籍</h2>
+                        現會籍效期連續12個月內</p>
+                        <p> 計算區間：2023年4月1日-2023年10月20日
+                            截止日： 2024年3月31日
+                            不含五日內累計之長榮/立榮、星空聯盟航班哩程
+
+                     
+
+
+                    </td>
+                    <td class="col-4">
+
+                      
+                        <p>
+                        <a href="" class="btn btn-success">各卡籍優惠待遇</a>
+                        <p>
+
+                        </p>
+                    </td>
+
+
+                </tr>
+                <tr class="row">
+                    <td class="col-3"></td>
+                    <td class="col-4">   <p>
+                        <b>卡籍哩程 + 航段數 銀卡/星盟銀卡</b>
+                        <br>
+                        您已累積0哩 +0次有效航段<br>
+                        只需30,000哩 +4有效航段</p>
+                        <!-- 進度條 -->
+                        <div class="progress"> 
+                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="30000"></div>
+                        </div>
+                        <div class="progress-text">  
+                            0/30,000 哩              
+                        </div>
+
+                        <div class="progress"> 
+                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="4"></div>
+                        </div>
+                        <div class="progress-text">  
+                            0/4 有效航段
+                        </div>
+
+                   </td>
+                    <td class="col-4">
+                        <p><b>或航段數 銀卡/星盟銀卡</b>
+                            <br>
+                            您已累積0次有效航段<br>
+                            只需26次有效航段</p>
+ 
+                        <div class="progress"> 
+                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="26"></div>
+                        </div>
+                        <div class="progress-text">  
+                            0/26 有效航段</td>
+                        </div>
+
+
+                </tr>
+
+
+            </tbody>
+
+        </table>
+
+
+        <!-- 會員資料 -->
+
+        <table class="mt-5">
+
+
+            <thead></thead>
+            <th></th>
+
+            <tr>
+                <td>會員資料
+                    基本資訊
+                    進階資訊
+                    其他設定
+                    * 必填欄位
+
+                    個人資料
+                    基本資料包含您的個人資料與E-mail、手機號碼等聯絡資料。
+
+                    護照上的英文姓名
+                    LIU WE***N
+
+                    會員卡籍
+                    GC
+
+                    會員卡號
+                    3342791001
+
+                    中文姓
+                    劉
+
+                    中文名
+                    *亨
+
+                    國籍/地區*
+
+                    TAIWAN
+                    身分證字號
+                    Q1******8
+
+                    性別*
+
+                    男性
+
+                    女性
+                    生日
+                    西元1**6年0*月1*日
+
+                    Email帳號*
+                    若您變更的資料中有包含E-mail，本公司將於5分鐘內寄送認證通知信至您更新的E-mail信箱，請於1小時內依說明完成認證，否則不會變更成功，為確保您可收到長榮航空的電子郵件，請將eservice@mh1.evaair.com加入您的通訊錄
+
+                    c*********6@gmail.com
+                    檢查E-Mail帳號是否可用!
+
+                    將上述E-mail帳號作為登入帳號之使用
+                    手機號碼*
+
+                    國碼*
+
+                    TAIWAN 886
+                    手機號碼*
+                    098*****10
+                    更新</td>
+            </tr>
+
+
+
+
+
+        </table>
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>
