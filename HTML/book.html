@@ -277,17 +277,6 @@
       <h1 class="fs-2 ps-5 pt-2" style="color: white">選擇-航班/票價</h1>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
     <!-- 當日航班種時間 -->
     <div style="background-color: azure">
       <table>
@@ -314,46 +303,49 @@
         </tr>
       </table>
     </div>
-
     <!-- 套用別人做的選項選項 -->
     <div class="container">
-      <div>
+      <div>      
         <h2 id="date_selectday">出發日期</h2>
-        <p>2023年 十二月</p>
+        <label id="date_month" >12</label>
         <div class="g-scrolling-carousel carousel">
           <div class="items">
-            <a href="http://example.com" target="_blank"><b>星期一 </b></a>
-            <a href="http://example.com" target="_blank"><b>星期二 </b></a>
-            <a href="http://example.com" target="_blank"><b>星期三 </b></a>
-            <a href="http://example.com" target="_blank"><b>星期四 </b></a>
-            <a href="http://example.com" target="_blank"><b>星期五 </b></a>
-            <a href="http://example.com" target="_blank"><b>星期六 </b></a>
-            <a href="http://example.com" target="_blank"><b>星期七 </b></a>
-            <a href="http://example.com" target="_blank"><b>星期一 </b></a>
-            <a href="http://example.com" target="_blank"><b>星期二 </b></a>
-            <a href="http://example.com" target="_blank"><b>星期三 </b>></a>
-            <a href="http://example.com" target="_blank"><b>星期四 ></b>></a>
-            <a href="http://example.com" target="_blank"><b>星期五 </b>></a>
+            <a class="btn border" id="w1"><b>星期一</b></a>
+            <a class="btn border" id="w2"><b>星期二</b></a>
+            <a class="btn border" id="w3"><b>星期三</b></a>
+            <a class="btn border" id="w4"><b>星期四</b></a>
+            <a class="btn border" id="w5"><b>星期五</b></a>
+            <a class="btn border" id="w6"><b>星期六</b></a>
+            <a class="btn border" id="w7"><b>星期七</b></a>
+            <a class="btn border" id="w8"><b>星期一</b></a>
+            <a class="btn border" id="w9"><b>星期二</b></a>
+            <a class="btn border" id="w10"><b>星期三</b></a>
+            <a class="btn border" id="w11"><b>星期四</b></a>
+            <a class="btn border" id="w12"><b>星期五</b></a>
           </div>
         </div>
       </div>
+    </div>
+<br>
+
+    <div class="container">
       <div>
         <h2>回程日期</h2>
-        <p>2023年 十二月</p>
-        <div class="g-scrolling-carousel carousel">
+        <p id="date_month1">2023年 十二月</p>
+        <div class="g-scrolling-carousel carousel mb-3">
           <div class="items">
-            <a href="http://example.com" target="_blank"><b>星期一</b></a>
-            <a href="http://example.com" target="_blank"><b>星期二</b></a>
-            <a href="http://example.com" target="_blank"><b>星期三</b></a>
-            <a href="http://example.com" target="_blank"><b>星期四</b></a>
-            <a href="http://example.com" target="_blank"><b>星期五</b></a>
-            <a href="http://example.com" target="_blank"><b>星期六</b></a>
-            <a href="http://example.com" target="_blank"><b>星期七</b></a>
-            <a href="http://example.com" target="_blank"><b>星期一</b></a>
-            <a href="http://example.com" target="_blank"><b>星期二</b></a>
-            <a href="http://example.com" target="_blank"><b>星期三</b>></a>
-            <a href="http://example.com" target="_blank"><b>星期四</b>></a>
-            <a href="http://example.com" target="_blank"><b>星期五</b>></a>
+            <a class="btn border" id="w13"><b>星期一</b></a>
+            <a class="btn border" id="w14"><b>星期二</b></a>
+            <a class="btn border" id="w15"><b>星期三</b></a>
+            <a class="btn border" id="w16"><b>星期四</b></a>
+            <a class="btn border" id="w17"><b>星期五</b></a>
+            <a class="btn border" id="w18"><b>星期六</b></a>
+            <a class="btn border" id="w19"><b>星期七</b></a>
+            <a class="btn border" id="w20"><b>星期一</b></a>
+            <a class="btn border" id="w21"><b>星期二</b></a>
+            <a class="btn border" id="w22"><b>星期三</b></a>
+            <a class="btn border" id="w23"><b>星期四</b></a>
+            <a class="btn border" id="w24"><b>星期五</b></a>
           </div>
         </div>
       </div>
@@ -413,26 +405,24 @@
       >
         <table class="table table-bordered table-warning">
           <tr  >
-            <td><span>1 旅客</span><br /><span>1 成人</span></td>
+          <td><span>1 旅客</span><br/><span id="AD" >1</span>成人<span id="CH">0</span>小孩<span id="BA">0</span>嬰兒</td>
           </tr>
           <tr id="go_col" style="display:none;"  >
             <td>
               <span id="date_1">2024年 03月 07日 星期四</span><br />
-              <span id="date_1">14:00 東京(NRT)</span><br />
-              <span id="date_1">17:05 台北(TPE)</span><br />
-              <span id="date_1">飛行時間 04:05, 直飛航班</span><br />
-              <span id="date_1">訂位艙等代碼 V</span><br />
-              <span id="date_1">票價類型 經濟艙</span><br />
+              <span id="dep1">14:00 東京(NRT)</span><br />
+              <span id="des1">17:05 台北(TPE)</span><br />
+              <span id="time1">飛行時間 04:05, 直飛航班</span><br />
+              <span >票價類型 經濟艙</span><br />
               價格:<span id="dol_1"></span>
             </td>
           </tr>
           <tr id="back_col" style="display:none ;" >
             <td >
               <span id="date_2">2024年 03月 07日 星期四</span><br />
-              <span>14:00 東京(NRT)</span><br />
-              <span>17:05 台北(TPE)</span><br />
-              <span>飛行時間 04:05, 直飛航班</span><br />
-              <span>訂位艙等代碼 V</span><br />
+              <span id="dep2">14:00 東京(NRT)</span><br />
+              <span id="des2">17:05 台北(TPE)</span><br />
+              <span id="time2">飛行時間 04:05, 直飛航班</span><br />
               <span>票價類型 經濟艙</span><br />
               價格:<span id="dol_2"></span>
             </td>
@@ -446,12 +436,16 @@
               所有旅客的來回行程價格
               (包含附加服務、稅金和燃油附加費用-若機票未使用或部分使用，未使用之稅金可退款。訂位服務費不可退款。) <br>
               <button id="continue" class="btn btn-success">繼續</button>
-
-            </td>
-
-    
+            </td>    
         </table>
       </div>
+
+ 
+
+
+
+
+
 
 
 
@@ -562,38 +556,137 @@
 
           <!-- 動態日期 -->
         <script>
-
- 
-          function datetran1(dateValue) {
-         var datetran0 = dateValue.getFullYear();
-          var datetran2 = dateValue.getMonth() + 1;
-         var datetran3 = dateValue.getDate();
-          var options = { weekday: 'long' };
+          // 有年月日的
+        function datetran1(dateValue) {
+        var datetran0 = dateValue.getFullYear();
+        var datetran2 = dateValue.getMonth() + 1;
+        var datetran3 = dateValue.getDate();
+        var options = { weekday: 'long' };
         var datetran4 = dateValue.toLocaleDateString('zh-TW', options);
         var datetranf = datetran0 + "年" + datetran2 + "月" + datetran3 + "日" + datetran4;
         return datetranf;
          }
- // 初始化日期
- var initialDate = new Date($("#goday_1").val());
-  var initialDateString = datetran1(initialDate);
-  $("#date_1").text(initialDateString);
+        //  只有年月的
+          function datetran2(dateValue) {
+          var datetran0 = dateValue.getFullYear();
+           var datetran2 = dateValue.getMonth() + 1;
+          var datetranf = datetran0 + "年" + datetran2 + "月";
+          return datetranf;
+        }
+        // 日期置入滾動視窗
+        function datetran3(dateValue) {
+        var datetran0 = dateValue.getDate();
+        var option = { weekday: 'long' };
+        var datetran2 = dateValue.toLocaleDateString('zh-TW', option);
+        var datetranf = datetran0 + "日" + "<br>" + datetran2;
+        return datetranf;
+        }
 
-  $("#goday_1").on("change", function () {
-    var dateValue = new Date($("#goday_1").val());
-    $("#day_1").text($("#goday_1").val());
-    var datetranf = datetran1(dateValue);
-    $("#date_1").text(datetranf);
-  });
-
-  $("#backday_2").on("change", function () {
-    $("#day_2").text($("#backday_2").val());
-  });
 
 
 
-</script>
-    
 
+ 
+
+
+
+     
+
+
+  
+
+
+
+
+
+
+
+
+       // 初始化 DATE 裡面的日期
+         var initialDate = new Date($("#goday_1").val());
+         var initialDateString = datetran1(initialDate);
+         var initialDateString2 = datetran2(initialDate);
+        $("#date_1").text(initialDateString);
+        $("#day_1").text($("#goday_1").val());
+        $("#date_month").text(initialDateString2);
+
+        
+
+
+        //當日其變更 
+        $("#goday_1").on("change", function () {
+        const dateValue = new Date($("#goday_1").val());
+         $("#day_1").text($("#goday_1").val());
+        var datetranf = datetran1(dateValue);
+        $("#date_1").text(datetranf);
+        // 設定月那裡變更
+        var datetranf1 = datetran2(dateValue);
+        $("#date_month").text(datetranf1);
+          // 將每一天置入星期X表格
+         for (let i = 1; i <= 12; i++) {
+         const newDate = new Date(dateValue);
+         const x = datetran3(newDate);
+         $(`#w`+i).html(x);
+         dateValue.setDate(dateValue.getDate() + 1); // 每次增加一天
+         const formattedDate = `${newDate.getFullYear()}-${(newDate.getMonth() + 1).toString().padStart(2, '0')}-${newDate.getDate().toString().padStart(2, '0')}`;
+         $(`#w${i}`).val(formattedDate);
+        // 點選時將日期輸入到的填充入其視窗
+        $(`#w`+i).on("click", function(){
+        const selectedDate = $(this).val();
+        $("#goday_1").val(selectedDate); 
+        $("#goday_1").trigger('change'); // 手动触发change事件        
+        });    
+        };
+        });
+
+
+        
+
+
+        // 初始化 DATE 第二欄位 裡面的日期
+        var initialDate1 = new Date($("#backday_2").val());
+        var initialDateString1= datetran2(initialDate1);
+        $("#date_2").text(initialDateString1);
+        $("#day_2").text($("#backday_2").val());
+        $("#date_month1").text(initialDateString1);
+
+        // 當日其變更
+        $("#backday_2").on("change", function () {
+        var dateValue1 = new Date($("#backday_2").val());
+        $("#day_2").text($("#backday_2").val());
+        var datetranf1 = datetran1(dateValue1);
+        $("#date_2").text(datetranf1);
+        // 設定月那裡變更
+        var datetranf2 = datetran2(dateValue1)
+        $("#date_month1").text(datetranf2);
+
+
+
+
+
+         // 將每一天置入星期X表格
+         for (let i = 13; i <= 24; i++) {
+         const newDate = new Date(dateValue1);
+         const x = datetran3(newDate);
+         $(`#w`+i).html(x);
+         $(`#w`+i).val(dateValue1);
+         dateValue1.setDate(dateValue1.getDate() + 1); // 每次增加一天
+         const formattedDate = `${newDate.getFullYear()}-${(newDate.getMonth() + 1).toString().padStart(2, '0')}-${newDate.getDate().toString().padStart(2, '0')}`;
+         $(`#w${i}`).val(formattedDate);
+        // 問題
+        // 點選時將日期輸入到的填充入其視窗
+        $(`#w`+i).on("click", function(){
+        const selectedDate = $(this).val();
+        $("#backday_2").val(selectedDate); 
+        $("#backday_2").trigger('change'); // 手动触发change事件
+        });    
+        }});       
+
+       
+
+   
+      </script>
+           
           
 
       
@@ -679,6 +772,7 @@
           goColVisible = true;
           var buttonText = $(this).text();
           tick1 = parseInt(buttonText.replace(/TWD/g, ''));
+          Ticket1 = (tick1 * parseInt($("#AD").text()))+(tick1*parseInt($("#CH").text())*0.8)+ (tick1*parseInt($("#BA").text())*0.5)
            $("#dol_1").text(buttonText)
 
           if (goColVisible && backColVisible) {
@@ -690,12 +784,14 @@
         $("#table_2 .btn.price-button").on("click",function (){
         var buttonText = $(this).text();
         tick2 = parseInt(buttonText.replace(/TWD/g, ''));
+        Ticket2 = (tick2 * parseInt($("#AD").text()))+(tick2*parseInt($("#CH").text())*0.8)+ (tick2*parseInt($("#BA").text())*0.5)
+
          $("#dol_2").text(buttonText)
         if(goColVisible){
         $("#back_col").show();
         $("#total_col").show();
         backColVisible = true;
-        var sum = tick1 + tick2
+        var sum = Ticket1 + Ticket2
         $(".total_price").text(sum)
         var tax =Math.round(sum * 0.2) 
         $("#tax").text(tax)
