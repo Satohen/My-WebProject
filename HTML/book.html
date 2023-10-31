@@ -628,10 +628,11 @@
          const x = datetran3(newDate);
          $(`#w`+i).html(x);
          dateValue.setDate(dateValue.getDate() + 1); // 每次增加一天
-         const formattedDate = `${newDate.getFullYear()}-${(newDate.getMonth() + 1).toString().padStart(2, '0')}-${newDate.getDate().toString().padStart(2, '0')}`;
-         $(`#w${i}`).val(formattedDate);
+
         // 點選時將日期輸入到的填充入其視窗
         $(`#w`+i).on("click", function(){
+        const formattedDate = `${newDate.getFullYear()}-${(newDate.getMonth() + 1).toString().padStart(2, '0')}-${newDate.getDate().toString().padStart(2, '0')}`;
+         $(`#w${i}`).val(formattedDate);
         const selectedDate = $(this).val();
         $("#goday_1").val(selectedDate); 
         $("#goday_1").trigger('change'); // 手动触发change事件        
@@ -671,11 +672,12 @@
          $(`#w`+i).html(x);
          $(`#w`+i).val(dateValue1);
          dateValue1.setDate(dateValue1.getDate() + 1); // 每次增加一天
-         const formattedDate = `${newDate.getFullYear()}-${(newDate.getMonth() + 1).toString().padStart(2, '0')}-${newDate.getDate().toString().padStart(2, '0')}`;
-         $(`#w${i}`).val(formattedDate);
+       
         // 問題
         // 點選時將日期輸入到的填充入其視窗
         $(`#w`+i).on("click", function(){
+        const formattedDate = `${newDate.getFullYear()}-${(newDate.getMonth() + 1).toString().padStart(2, '0')}-${newDate.getDate().toString().padStart(2, '0')}`;
+        $(`#w${i}`).val(formattedDate);
         const selectedDate = $(this).val();
         $("#backday_2").val(selectedDate); 
         $("#backday_2").trigger('change'); // 手动触发change事件
