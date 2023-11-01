@@ -5,5 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <input type="date" id="datePicker" />
+    <div id="flightInfo"></div>
+
+    <script>
+      // 示例航班数据，实际上你需要加载真实数据
+      const flightData = {
+        "2023-11-01": {
+          TSA_NRT: "Flight A - Taipei to Tokyo",
+          TSA_KIX: "Flight B - Taipei to Osaka",
+          TPE_HND: "Flight C - Taipei to Tokyo",
+        },
+        "2023-11-02": {
+          TSA_NRT: "Flight X - Taipei to Tokyo",
+          TSA_KIX: "Flight Y - Taipei to Osaka",
+          TPE_HND: "Flight Z - Taipei to Tokyo",
+        },
+        // 添加更多日期和航班信息
+      };
+
+      const datePicker = document.getElementById("datePicker");
+      const flightInfo = document.getElementById("flightInfo");
+
+      // 监听日期选择的更改事件
+      datePicker.addEventListener("change", function () {
+        const selectedDate = datePicker.value;
+        const selectedFlights = flightData[selectedDate];
+
+        if (selectedFlights) {
+          // 如果有相应日期的航班信息，更新页面
+          flightInfo.innerHTML = `<h2>Flights for ${selectedDate}</h2>`;
+          for (const [route, info] of Object.entries(selectedFlights)) {
+            flightInfo.innerHTML += `<p>${route}: ${info}</p>`;
+          }
+        } else {
+          // 如果没有航班信息，显示提示
+          flightInfo.innerHTML = "<p>No flights available for this date.</p>";
+        }
+      });
+    </script>
+  </body>
 </html>
