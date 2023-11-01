@@ -150,7 +150,7 @@
   </div>
   <!-- 顯示欄位 -->
   <div class="" style="margin-top: 60px; margin-left: 10%;">
-    <fieldset style="object-fit: contain; border: 2px solid lightslategray; width: 80%; height: 500px;">
+    <fieldset style="object-fit: contain; border: 2px solid lightslategray; width: 80%; ">
       <legend>航班到離動態</legend>
       <table id="jobList" class="table" style="object-fit: contain; width: 100%; "   >
         <thead>
@@ -191,7 +191,7 @@
           <td id="f_goal">抵達</td>
           <td></td>
         </tr>
-        <tbody>
+        <tbody id="tbody">
           <tr>
             <td>班機編號
             </td>
@@ -224,62 +224,126 @@
     </fieldset>
   </div>
 
-  <h5 id="flightInfo"></h5>
+  <script type="text/javascript" src="search.js"></script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script>
-
-
-    // 示例航班数据，实际上你需要加载真实数据
-    const flightData = {
-      "2023-11-01": {
-        台北桃園_東京: "Flight A - Taipei to Tokyo",
-        TSA_KIX: "Flight B - Taipei to Osaka",
-        TPE_HND: "Flight C - Taipei to Tokyo",
+<script>
+var TPTO = [
+      {
+        todoTableId: 1, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
+        flightStatus: "已出發", departureAirport: "桃園機場", arrivalAirport: "香港機場",
+        scheduledDeparture: "2023/11/01 07:10", actualDeparture: "2023/11/01 07:10",
+        scheduledArrival: "2023/11/01 09:10", estimatedArrival: "2023/11/01 09:10",
+        isComplete: 1
       },
-      "2023-11-02": {
-        TSA_NRT: "Flight X - Taipei to Tokyo",
-        TSA_KIX: "Flight Y - Taipei to Osaka",
-        TPE_HND: "Flight Z - Taipei to Tokyo",
+      {
+        todoTableId: 2, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
+        flightStatus: "已出發", departureAirport: "桃園機場", arrivalAirport: "香港機場",
+        scheduledDeparture: "2023/11/01 07:10", actualDeparture: "2023/11/01 07:10",
+        scheduledArrival: "2023/11/01 09:10", estimatedArrival: "2023/11/01 09:10",
+        isComplete: 1
       },
-      // 添加更多日期和航班信息
-    };
-
-    const datePicker = document.getElementById("datePicker");
-    const flightInfo = document.getElementById("flightInfo");
-
-    // 監聽日期選擇更改事件
-    datePicker.addEventListener("change", function () {
-      const selectedDate = datePicker.value;
-      const selectedFlights = flightData[selectedDate];
-
-      if (selectedFlights) {
-        // 如果有相应日期的航班信息，更新页面
-        flightInfo.innerHTML = `<h2>Flights for ${selectedDate}</h2>`;
-        for (const [route, info] of Object.entries(selectedFlights)) {
-          flightInfo.innerHTML += `<p>${route}: ${info}</p>`;
-        }
-      } else {
-        // 如果没有航班信息，显示提示
-        flightInfo.innerHTML = "<p>No flights available for this date.</p>";
+      {
+        todoTableId: 3, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
+        flightStatus: "已出發", departureAirport: "桃園機場", arrivalAirport: "香港機場",
+        scheduledDeparture: "2023/11/01 07:10", actualDeparture: "2023/11/01 07:10",
+        scheduledArrival: "2023/11/01 09:10", estimatedArrival: "2023/11/01 09:10",
+        isComplete: 1
       }
-    });
+    ]; 
+    
+    var TPHK = [
+      {
+        todoTableId: 1, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
+        flightStatus: "已出發", departureAirport: "桃園機場", arrivalAirport: "香港機場",
+        scheduledDeparture: "2023/11/01 07:10", actualDeparture: "2023/11/01 07:10",
+        scheduledArrival: "2023/11/01 09:10", estimatedArrival: "2023/11/01 09:10",
+        isComplete: 1
+      },
+      {
+        todoTableId: 2, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
+        flightStatus: "已出發", departureAirport: "桃園機場", arrivalAirport: "香港機場",
+        scheduledDeparture: "2023/11/01 07:10", actualDeparture: "2023/11/01 07:10",
+        scheduledArrival: "2023/11/01 09:10", estimatedArrival: "2023/11/01 09:10",
+        isComplete: 1
+      },
+      {
+        todoTableId: 3, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
+        flightStatus: "已出發", departureAirport: "桃園機場", arrivalAirport: "香港機場",
+        scheduledDeparture: "2023/11/01 07:10", actualDeparture: "2023/11/01 07:10",
+        scheduledArrival: "2023/11/01 09:10", estimatedArrival: "2023/11/01 09:10",
+        isComplete: 1
+      }
+    ];
+    var TPOS = [
+      {
+        todoTableId: 1, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
+        flightStatus: "已出發", departureAirport: "桃園機場", arrivalAirport: "香港機場",
+        scheduledDeparture: "2023/11/01 07:10", actualDeparture: "2023/11/01 07:10",
+        scheduledArrival: "2023/11/01 09:10", estimatedArrival: "2023/11/01 09:10",
+        isComplete: 1
+      },
+      {
+        todoTableId: 2, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
+        flightStatus: "已出發", departureAirport: "桃園機場", arrivalAirport: "香港機場",
+        scheduledDeparture: "2023/11/01 07:10", actualDeparture: "2023/11/01 07:10",
+        scheduledArrival: "2023/11/01 09:10", estimatedArrival: "2023/11/01 09:10",
+        isComplete: 1
+      },
+      {
+        todoTableId: 3, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
+        flightStatus: "已出發", departureAirport: "桃園機場", arrivalAirport: "香港機場",
+        scheduledDeparture: "2023/11/01 07:10", actualDeparture: "2023/11/01 07:10",
+        scheduledArrival: "2023/11/01 09:10", estimatedArrival: "2023/11/01 09:10",
+        isComplete: 1
+      }
+    ];
+// GPT產生
+function filterAndPopulateTable(date, departure, destination) {
+  // 选择要筛选的数据，例如 TPTO, TPHK, TPOS
+  var selectedData = [];
+  if (departure === "台北-桃園" && destination === "東京") {
+    selectedData = TPTO;
+  } else if (departure === "台北-桃園" && destination === "大阪") {
+    selectedData = TPHK;
+  } else if (departure === "台北-桃園" && destination === "沖繩") {
+    selectedData = TPOS;
+  }
+
+  // 清空表格
+  $("#tbody").empty();
+
+  // 填充表格
+  $.each(selectedData, function (index, item) {
+    var trHtml = `
+      <tr>
+        <td id="f_id">${item.flightNumber}</td>
+        <td id="f_agenda">${item.itinerary}</td>
+        <td id="f_status">${item.flightStatus}</td>
+        <td id="f_go">${item.departureAirport}</td>
+        <td id="f_goal">${item.arrivalAirport}</td>
+        <td></td>
+      </tr>
+    `;
+    $("#tbody").append(trHtml);
+  });
+}
+
+// 监听日期、出发地和目的地的变化
+$("#datePicker, #input_go, #input_back").on("change", function () {
+  var selectedDate = $("#datePicker").val();
+  var selectedDeparture = $("#input_go").val();
+  var selectedDestination = $("#input_back").val();
+
+  // 调用筛选和填充表格的函数
+  filterAndPopulateTable(selectedDate, selectedDeparture, selectedDestination);
+});
+
+
+    
+    
+
+</script>
 
 
 
@@ -290,6 +354,11 @@
 
 
 
+
+
+
+
+<script>
 
 
 
@@ -324,7 +393,7 @@
     $.get("/todo/list", function (e) {
       //todoTable = JSON.parse(e);
       todoTable = e;
-      $("#jobList tbody").empty();
+      $("#tbody").empty();
       $.each(todoTable, function (index, item) {
         var trHtml = `
         <tr>
@@ -335,27 +404,9 @@
             <td id="f_go">${item.departureAirport}</td>
             <td id="f_goal">${item.arrivalAirport}</td>
             <td></td>
-          </tr>
-          <tr>
-            <td>班機編號
-            </td>
-            <td>行程</td>
-            <td>航班狀態</td>
-            <td>出發</td>
-            <td>抵達</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>班機編號
-            </td>
-            <td>行程</td>
-            <td>航班狀態</td>
-            <td>出發</td>
-            <td>抵達</td>
-            <td></td>
-          </tr>            
+          </tr>    
             `;
-        $("#jobList tbody").append(trHtml);
+        $("#tbody").append(trHtml);
       })
 
     })
