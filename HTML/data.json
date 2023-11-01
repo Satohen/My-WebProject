@@ -1,0 +1,41 @@
+[
+	{
+		"todoTableId": 1,
+		"flightNumber": "BR867",
+		"itinerary": "台北桃園 (TPE) 到香港 (HKG)",
+		"flightStatus": "已出發",
+		"departureAirport": "桃園機場",
+		"arrivalAirport": "香港機場",
+		"scheduledDeparture": "2023/11/01 07:10",
+		"actualDeparture": "2023/11/01 07:10",
+		"scheduledArrival": "2023/11/01 09:10",
+		"estimatedArrival": "2023/11/01 09:10",
+		"isComplete": 0
+	},
+	{
+		"todoTableId": 2,
+		"flightNumber": "B534",
+		"itinerary": "台北桃園 (TPE) 到大阪 (KIX)",
+		"flightStatus": "延误",
+		"departureAirport": "桃園機場",
+		"arrivalAirport": "大阪機場",
+		"scheduledDeparture": "2023/11/01 10:10",
+		"actualDeparture": "2023/11/01 10:20",
+		"scheduledArrival": "2023/11/01 12:10",
+		"estimatedArrival": "2023/11/01 12:30",
+		"isComplete": 1
+	},
+	{
+		"todoTableId": 3,
+		"flightNumber": "C312",
+		"itinerary": "台北松山 (TSA) 到 曼谷 (BKK)",
+		"flightStatus": "正常",
+		"departureAirport": "松山機場",
+		"arrivalAirport": "曼谷機場",
+		"scheduledDeparture": "2023/11/01 15:10",
+		"actualDeparture": "2023/11/01 15:10",
+		"scheduledArrival": "2023/11/01 17:10",
+		"estimatedArrival": "2023/11/01 16:50",
+		"isComplete": 0
+	}
+]

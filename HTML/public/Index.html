@@ -1,70 +1,691 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 10. 文件相關資訊 -->
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Liu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 安插bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    
+    
+    
+        <!-- 安插jquery -->       
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+    
+    </script>
+
+
+    <!-- 網頁標題icon -->
+    <link rel="icon" href="../長榮航空img/長榮小icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../長榮航空img/長榮小icon.png" type="image/x-icon" />
+>
+
+    <!-- 測試用 找框架 -->
+    <style>
+        .pic {
+            border: 1px black solid;
+            width: 450;
+            height: 300;
+        }
+
+        /* 置中框架 */
+        .center {
+            text-align: center;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="./animation.css">
+
+
+    <title>航空首頁</title>
+
 </head>
+
 <body>
-    <div class="container">
-
-        <h1>
-            待辦事項清單
-            <a href="Create.html" class="btn btn-outline-success btn-md float-right">
-                新增
+    ------------------------------------------------------------------------------------
+    <!-- 移動式標題列 -->
+    <nav class="navbar navbar-expand-lg bg-light fixed-top ">
+        <!-- 飛機logo首頁 -->
+        <div class="d-flex jutisfy-content-start"> <a href="./index.html">
+                <img src="../img/logo-evaair-header.png" alt="長榮logo" class="img-fluid w-75">
             </a>
-        </h1>
-    
-        <table id="jobList" class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>
-                        項目名稱
-                    </th>
-                    <th>
-                        是否已完工
-                    </th>
-                    <th>&nbsp;</th>
+        </div>
+
+        <!-- 下拉式標題 -->
+        <div class="container-fluid">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between  w-50">
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        企業商務旅行
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        優惠與訂票
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </li>
+                    </ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        行程管理
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        無限萬里遊
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+            </ul>
+
+
+            <!-- 登入及註冊 -->
+            <div class="ms-auto">
+                <a href="./login.html" class="btn">登入</a>
+                <span>|</span>
+                <a href="./regis.html" class="btn">註冊</a>
+            </div>
+            <!-- 搜尋 問號icon -->
+
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-question-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                </svg>
+            </div>
+            <div class="ms-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </div>
+
+
+
+        </div>
+    </nav>
+    <hr>
+
+    <!-- <ul class="nav">
+        <li class="nav-item">優惠與訂票</li>
+        <ul class="dropdown1 nav">
+            <a class="nav-item" href="https://www.evaair.com/zh-tw/plan-and-book/special-offers/eva-choices/">
+
+        </ul>
+
+        <li>行程管理</li>
+        <ul class="dropdown2">
+            <li>機票定位</li>
+            <li>管理行程</li>
+            <li>其他</li>
+        </ul>
+        <li class="">飛行準備</li>
+        <ul class="dropdown3">
+            <li>機隊介紹</li>
+            <li>機艙體驗</li>
+            <li>行李資訊</li>
+            <li>機場服務</li>
+            <li>特別需求與協助</li>
+            <li>航班到離查詢</li>
+        </ul>
+        <li>無限萬里遊</li>
+        <ul class="dropdown4">
+            <li>加入會員</li>
+            <li>關於無限萬里遊</li>
+            <li>里程獎勵計畫</li>
+            <li>會員獨享優惠</li>
+            <li>帳戶管理</li>
+        </ul>
+        <li>企業商務旅行</li>
+        <ul class="dropdown5">
+            <li>主題活動</li>
+            <li>熱門活動</li>
+            <li>限時促銷</li>
+        </ul>
+    </ul>
+    </nav> -->
+
+    --------------------------------------------------------------------------------------------------------------------------
+    <!-- JavaScript -->
+    <!-- 動畫滾輪 -->
+    <!-- Slideshow container -->
+    <a href="https://www.evaair.com/zh-tw/index.html">模仿首頁</a>
+    <div class="slideshow_container ">
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade ">
+            <div class="numbertext">1 / 3</div>
+            <img src="../長榮航空img/跑登場景1.jpg" class="img-fluid" style="  width:100% ; object-fit: contain;">
+            <div class="text h-25 w-25" style="border-radius: 50%; background: lightcoral;">聯名卡</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="../長榮航空img/跑登場景2.jpg" class="img-fluid" style="width:100% ; object-fit: contain;">
+            <div class="text h-25 w-25" style="border-radius: 50%; background: lightcoral;">最優服務</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="../長榮航空img/跑登場景3.jpg" class="img-fluid" style="width:100% ; object-fit: contain;">
+            <div class="text  h-25 w-25" style="border-radius: 50%; background: lightcoral;">日本雙人行</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" style="color: lightgray; font-size: 75px; text-decoration: none;" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" style="color: lightgray; font-size: 75px; text-decoration: none;" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <script>
+        let slideIndex = 1;
+        let slideInterval;
+        showSlides(slideIndex);
+        function startSlideShow() {
+        slideInterval = setInterval(function () {
+        plusSlides(1); // 自動前進到下一張幻燈片
+        }, 2000);  }// 2秒切換一次      
+
+        startSlideShow(); // 啟動自動輪播    
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+            // 使用者操作後，重設自動輪播計時器
+            clearInterval(slideInterval);
+            startSlideShow();
+            // 開始新的自動輪播計時器
+        }
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }  
+    </script>
+    <hr>
+    --------------------------------------------------------------------------------------------------------------------------
+    <!-- 切換問卷區 -->
+    <ul class="nav nav-fill nav-pills  flex-md-row  flex-column">
+        <li class="nav-item nav-link"><a href="#tickets"    class="btn btn-success" data-bs-toggle="pill">機票</a></li>
+        <li class="nav-item nav-link"><a href="#fligt_status" class="btn btn-success" data-bs-toggle="pill">航班到離動態</a></li>
+        <li class="nav-item nav-link"><a href="#check_in"    class="btn btn-success" data-bs-toggle="pill">預辦登機/報到</a></li>
+    </ul>
+
+    <!-- 隱藏式問卷 -->
+    <div class="tab-content ">
+        <!-- 這裡先預設做動 -->
+        <div class="tab-pane bg-light" id="tickets">
+            <div class="">
+                <form action="">
+                    <table class=" ps-3 "  style="margin-left: 550px;">
+                        <thead><th style="column-span: 2;"><h3>機票</h3></th></thead>
+
+                        <tr><td><input type="radio" name="行程"  id="comeback" data-confirm="1"checked><label for="comeback">來回</label> <input  class="ms-5"type="radio" name="行程" id="go" data-confirm="0" ><label for="go" >單程</label></td>
+                            <td><a href="https://booking.evaair.com/flyeva/EVA/B2C/booking-multi.aspx?lang=zh-tw"> 
+                                不同點進出/中途停留/多個城市</a>
+                            </td>
+                            <td></td>
+                        </tr>                        
+                        <tr><td><label for="departure_0">出發地*</label></th><th><label for="destination_0">目的地*</label></td></tr>
+                        <br>
+                        <tr><td><select type="text" name="" id="departure_0">
+                            <option value="台北-桃園">台北-桃園</option>
+                            <option value="台北-松山">台北-松山</option>
+                            </td> 
+                            <td><select type="text" id="destination_0">                            
+                                <option value="東京">東京</option>
+                                <option value="大阪">大阪</option>
+                                <option value="沖繩">沖繩</option>
+                                <option value="首爾">首爾</option>
+                                <option value="曼谷">曼谷</option>
+                                <option value="香港">香港</option>
+                                <option value="福岡">福岡</option>
+                            </td></tr>
+                        <tr><td style="column-span: 2;"><h3>查詢選擇</h3></td></tr>
+                        <tr><td><label for="goday">出發日期*</label></td><td ><label id="backday_label" for="backday">回程日期*</label></td></tr>
+                        <br>
+                        <br>
+                        <tr><td><input type="date"  name="" id="goday"> <td><input type="date" name="" id="backday" ></td></tr>
+                        <tr><td style="column-span: 2;"><label for="cabin">艙等*</label></td></tr>                        
+                        <tr><td  style="column-span: 2;"><select type="text" id="cabin">
+                            <option value="頭等艙">頭等艙</option>
+                            <option value="商務艙">商務艙</option>
+                            <option value="經濟艙">經濟艙</option>
+
+
+                        </td></tr>
+                        <tr><td><label for="adult_quantity">大人 *(12歲以上)</label></td> 
+                            <td><label for="children_quantity">小孩 *(2-11)</label></td>
+                            <td><label for="baby_quantity">嬰兒 *(2歲以下)</label></td>                        
+                        </tr>
+                        <!-- 注意type要設定為button才不會傳出去 -->
+                        <tr><td><button class="btn btn-success" id="btn-plus1" type="button">+</button><input type="number" id="adult_quantity">
+                            <button id="btn_minus" type="button" class="btn btn-success">-</button></td> 
+                            <td><button class="btn btn-success" id="btn-plus2" type="button">+</button><input type="number" id="children_quantity">
+                                <button id="btn_minus1" type="button" class="btn btn-success" >-</button></td>
+                            <td><button class="btn btn-success" id="btn-plus3" type="button">+</button><input type="number" id="baby_quantity">
+                                <button id="btn_minus2"  type="button" class="btn btn-success">-</button></td>                                                     
+                        </tr>
+                        <tr><td class="" style="column-span: 2;">使用信用卡優惠</td></tr>
+                        <tr><td><input type="radio" name="card_choice" id="use_card"><label for="use_card">是</label></td><td><input type="radio" name="card_choice" id="no_card"><label for="no_card">否</label></td></tr>
+                            <!-- 隱藏的表單(信用卡優惠) -->
+                        <tr id="cupon" style="display: none; column-span: 2;"><td>國泰世華銀行
+                            <br>
+                                <input type="radio" name="discount" id="discount_95"> <label  for="discount_95">國泰世華長榮航空聯名無限卡/極致御璽卡/御璽卡年度95折購票優惠 </label> 
+                            <br>
+                                <input type="radio" name="discount" id="discount_90"> <label   for="discount_90">國泰世華長榮航空聯名極致無限卡年度購票9折優惠</label>                                    
+                        <tr><td><a class="btn btn-success" href="./book.html" >訂票</a></tr>
+                    </table>
+
+                    <!-- +-的js 安插jquery -->
+                    <script type="text/javascript">
+                        // 做日期判斷
+
+                        // addEventListener增加監聽事件才能click
+                        function add() {
+                          document.getElementById("btn-plus1").addEventListener("click", function () {
+                            // 獲得當前數量值                            
+                            var currentQuantity = parseInt(document.getElementById("adult_quantity").value);                      
+                            // 增加數量並更新輸入框的值
+                            if (!isNaN(currentQuantity)) {
+                                document.getElementById("adult_quantity").value = currentQuantity + 1;
+                            } else {
+                                document.getElementById("adult_quantity").value = 1;
+                            }
+                          });
+                        }                      
+
+                        function add1() {
+                          document.getElementById("btn-plus2").addEventListener("click", function () {
+                            // 獲得當前數量值                            
+                            var currentQuantity = parseInt(document.getElementById("children_quantity").value);                      
+                            // 增加數量並更新輸入框的值
+                            if (!isNaN(currentQuantity)) {
+                                document.getElementById("children_quantity").value = currentQuantity + 1;
+                            } else {
+                                document.getElementById("children_quantity").value = 1;
+                            }
+                          });
+                        }      
+
+                        
+                        function add2() {
+                          document.getElementById("btn-plus3").addEventListener("click", function () {
+                            // 獲得當前數量值                            
+                            var currentQuantity = parseInt(document.getElementById("baby_quantity").value);                      
+                            // 增加數量並更新輸入框的值
+                            if (!isNaN(currentQuantity)) {
+                                document.getElementById("baby_quantity").value = currentQuantity + 1;
+                            } else {
+                                document.getElementById("baby_quantity").value = 1;
+                            }
+                          });
+                        } 
+                        
+                        function minus(){
+                            document.getElementById("btn_minus").addEventListener("click",function(){
+                            var currentQuantity  = parseInt(document.getElementById("adult_quantity").value);
+                            if(!isNaN(currentQuantity) && currentQuantity != 0 ){
+                                document.getElementById("adult_quantity").value = currentQuantity - 1;
+                            } else{
+                                document.getElementById("adult_quantity").value = 0 ;
+                            }
+                            })
+                        }
+
+                        function minus1(){
+                            document.getElementById("btn_minus1").addEventListener("click",function(){
+                            var currentQuantity  = parseInt(document.getElementById("children_quantity").value);
+                            if(!isNaN(currentQuantity) && currentQuantity != 0 ){
+                                document.getElementById("children_quantity").value = currentQuantity - 1;
+                            }else{
+                                document.getElementById("children_quantity").value = 0 ;
+
+                            }
+                            })
+                        }
+                        function minus2(){
+                            document.getElementById("btn_minus2").addEventListener("click",function(){
+                            var currentQuantity  = parseInt(document.getElementById("baby_quantity").value);
+                            if(!isNaN(currentQuantity) && currentQuantity != 0 ){
+                                document.getElementById("baby_quantity").value = currentQuantity - 1;
+                            }else{
+                                document.getElementById("baby_quantity").value = 0 ;
+                            }
+                            })
+                        }
+                        function credic (){
+                            document.getElementById("use_card").addEventListener("click",function(){
+                                
+                                
+                                document.getElementById("cupon").style.display = "table-row";
+
+                            })}                    
+
+                    //來回標籤
+                            function goonce() {
+                             document.getElementById("go").addEventListener("click", function () {             
+                             document.getElementById("backday_label").style.display = "none" ;
+                             document.getElementById("backday").style.display = "none" ;
+                            })};
+                             function comehome() {
+                             document.getElementById("comeback").addEventListener("click", function () {
+                             document.getElementById("backday_label").style.display = "table-row" ;
+                             document.getElementById("backday").style.display = "table-row" ;
+                            })};
+                                
+                        add();
+                        add1();       
+                        add2();
+                        minus();
+                        minus1();
+                        minus2();
+                        credic();
+                        goonce() 
+                        comehome()
+                        //  判斷日期
+                        // 获取今天的日期  gpt 產生
+                            var today = new Date();
+                            var dd = today.getDate();
+                            var mm = today.getMonth() + 1; // 月份从0开始，所以要加1
+                            var yyyy = today.getFullYear();                         
+                        // 如果日期和月份是单数，前面添加0
+                            if (dd < 10) {
+                              dd = dd.toString().padStart(2, '0');
+                            }
+                            if (mm < 10) {
+                              mm = mm.toString().padStart(2, '0');
+                            }
+                        // 日期設置今天日期
+                            today = yyyy + '-' + mm + '-' + dd;
+                        // 日期输入
+                            var godayInput = document.getElementById("goday");
+                        // 出發日期最小值今天
+                            godayInput.setAttribute("min", today);
+                            // 回程日期最小為今天
+                            $(document).ready(function( ) {
+                                $("#backday").prop("min", today);
+                            });
+                        // 第二列表單的
+                            使用jquery
+                            $(document).ready( function(){
+                                $("#arrival_time").prop("min", today);                           
+
+                            });                
+                      </script>                     
+                </form>
+            </div>
+        </div>
+
+
+            <!-- 搜尋需要用js -->       
+
+        <!-- 表格2 -->
+        <div class="tab-pane bg-light" id="fligt_status">
+            <form action="" class="border">
+            <table class=" ps-2"  style="margin-left: 550px;">   
+                <thead><th for="departure"><h3>出發地與目的地</h3></th></thead>            
+                <tr><td><label for="departure">出發地*</label></td><td><label for="destination">目的地*</label></td></tr>
+                <br>
+                <tr><td><select type="text" name="" id="departure"> 
+                        <option value="台北-桃園">台北-桃園</option>
+                        <option value="台北-松山">台北-松山</option>d> 
+                        <td><select type="text" id="destination">
+                        <option value="東京">東京</option>
+                        <option value="大阪">大阪</option>
+                        <option value="沖繩">沖繩</option>
+                        <option value="首爾">首爾</option>
+                        <option value="曼谷">曼谷</option>
+                        <option value="香港">香港</option>
+                        <option value="福岡">福岡</option>                    
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        Job A
-                    </td>
-                    <td>
-                        <input class="check-box" disabled="disabled"
-                            type="checkbox" />
-                    </td>
-                    <td>
-                        <span class="float-right">
-                            <a href="edit.html" class="btn btn-outline-primary btn-sm">編輯</a> |
-                            <a href="delete.html" class="btn btn-outline-danger btn-sm">刪除</a>
-                        </span>
-                    </td>
+                <tr><td style="column-span: 2;"><h3>查詢選擇</h3></td></tr>
+                <tr><td><label for="goal">航班出發/抵達*</label></td><td><label for="arrival_time">日期*</label></td></tr>
+                <br>
+                <tr><td><select type="text" name="" id="goal"> 
+                    <option value="出發">出發</option>
+                    <option value="抵達">抵達</option>                   
+                    <td><input type="date" name="" id="arrival_time"></td></tr>
+                <tr><td><a class="btn btn-success" href="./Search_Flight.html">搜尋</a></tr>
+            </table>
+            </form>
+        </div>
+        <!-- 表格3 -->
+        <div class="tab-pane bg-light" id="check_in">
+            <form action="">
+            <table class=" ps-2" style="margin-left: 550px;"> 
+                <thead><th style="column-span:3;"><h3>訂位代號/機票號碼登入</h3></th></thead>            
+                <tr><td style="column-span: 3;"><label for="vicket_number">訂位代號/機票號碼/電子雜項交換券</label></td></tr>
+                <br>
+                <tr><td style="column-span: 3;"><p> 請輸入訂位代號共6位數字或英文字母，亦可輸入機票或電子雜項交換券號碼共 13位數字。</p></td></tr>
+                <tr><td><input type="text" id="vicket_number" style="column-span: 3;"></td></tr>
+                <br><br>
+                <tr><td style="column-span: 3;">
+                        <label for="family_name">姓 *</label>
+                        <p>(例如:陳禹暘，[姓]填入CHEN)</p>
+                        <input type="text" name="" id="family_name">
+                     </td>
                 </tr>
-            </tbody>
-        </table>
-    
-    </div>    
+                <br><br>
+                <tr><td style="column-span: 3;">
+                    <label for="first_name">名*</label>
+                    <p>(例如:陳禹暘，[名]填入YUYANG。若您的訂位姓名只有「姓」，請直接略過此欄位。)</p>
+                    <input type="text" name="" id="first_name">
+                    </td>
+                </tr>  
+                <tr><td class="center"><button class="btn btn-success">登入</button></tr>            
+            </table>
+            </form>
+         </div>
+        </div>
 
-<script>
-
-    var todoTable = [
-        {todoTableId: 1, title: "Job XXX", isComplete: 1},
-        {todoTableId: 2, title: "Job YYY", isComplete: 0},
-        {todoTableId: 3, title: "Job ZZZ", isComplete: 1}
-    ];
 
 
+    ------------------------------------------------------------------------------------------------------------------------
+    <hr>
+    <!-- 智能服務區 小超人 -->
+    <a href="https://evachat.evaair.com/EVAAIRWebChat/index.html?fromTitle=%0A%20%0A%20%20%20%20%20%20%20%20%E9%A6%96%E9%A0%81%20-%20%E9%95%B7%E6%A6%AE%E8%88%AA%E7%A9%BA%20%7C%20%E5%8F%B0%E7%81%A3%20Taiwan%20(%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87)%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20&fromDevice=WEB_SITE&fromUrl=https://www.evaair.com/zh-tw/index.html&tenantCode=23225229-01&r=2020120301"
+        target="_blank">
 
-</script>    
+        <figure id="smart" class="position-fixed bottom-0 end-0">
+            <img src="../img/bot.gif" style="object-fit: contain; height: 70px;
+                width:70px; z-index: 1;">
+            <figcaption style="object-fit: contain; font-size:17px; color: black;">
+                智能服務
+            </figcaption>
+        </figure>
+    </a>
+    ------------------------------------------------------------------------------------
+
+
+    <div class="row">
+        <div class="col-12">
+            <h2 style="text-align: center;">最新熱門經濟艙來回優惠</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <figure>
+                    <img class="img-fluid" src="../img/首爾.jpg" alt="景點說明" style="object-fit: contain;">
+                    <a
+                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                        <figcaption class="textt"><b>台北(TPE)-首爾(ICN)</b>
+                            <div>TWD 12000起</div>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+
+            <div class="col-3">
+                <figure>
+                    <img class="img-fluid" src="../img/大阪.jpg" alt="景點說明" style="object-fit: contain; ">
+                    <a
+                        href="https://booking.evsaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                        <figcaption class="textt"><b>台北(TPE)-大阪(KTX)</b>
+                            <div>TWD 15438</div>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+
+            <div class="col-3">
+                <figure>
+                    <img class="img-fluid" src="../img/曼谷.jpg" alt="景點說明" style="object-fit: contain;">
+                    <a
+                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                        <figcaption class="textt"><b>台北 (TPE) -曼谷(BBK)</b>
+                            <div class="orange">TWD 9603</div>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+
+            <div class="col-3">
+                <figure>
+                    <img class="img-fluid" src="../img/東京.jpg" alt="景點說明" style="object-fit: contain;">
+                    <a
+                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                        <figcaption class="textt"><b>台北 (TPE) -東京(HND)</b>
+                            <div class="orange">TWD 15930</div>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <figure>
+                    <img class="img-fluid" src="../img/到東京.jpg" alt="景點說明" style="object-fit: contain;">
+                    <a
+                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                        <figcaption class="textt"><b>台北 (TPE) -東京(HND)</b>
+                            <div class="orange">TWD 16689</div>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="col-3">
+                <figure>
+                    <img class="img-fluid" src="../img/到沖繩.jpg" alt="景點說明" style="object-fit: contain;">
+                    <a
+                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                        <figcaption class="textt"><b>台北 (TPE) -沖繩(OKA)</b>
+                            <div class="orange">TWD 9606</div>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="col-3">
+                <figure>
+                    <img class="img-fluid" src="../img/到福岡.jpg" alt="景點說明" style="object-fit: contain;">
+                    <a
+                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                        <figcaption class="textt"><b>台北 (TPE) -福岡(FUK)</b>
+                            <div class="orange">TWD 13041</div>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="col-3">
+                <figure>
+                    <img class="img-fluid" src="../img/到香港.jpg" alt="景點說明" style="object-fit: contain;">
+                    <a
+                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                        <figcaption class="textt"><b>台北 (TPE) -香港(HKG)</b>
+                            <div class="orange">TWD 9055</div>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+        <p>★上述票價已包含稅金、燃油附加費，並視機位預訂狀況隨時變動。</p>
+    </div>
+    <!-- 更多服務區 -->
+    <table class="table">
+        <thead>
+            <th class="fs-2 center" style="column-span:3;">更多服務 </th>
+         
+        <thead>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+    </table>
 </body>
+
 </html>
-
-
-
-
