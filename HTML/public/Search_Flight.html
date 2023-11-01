@@ -19,8 +19,8 @@
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript"></script>
   <!-- 網頁標題icon -->
-  <link rel="icon" href="../長榮航空img/長榮小icon.png" type="image/x-icon" />
-  <link rel="shortcut icon" href="../長榮航空img/長榮小icon.png" type="image/x-icon" />
+  <link rel="icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
   </script>
 </head>
 
@@ -32,7 +32,7 @@
   <nav class="navbar navbar-expand-lg bg-light fixed-top ">
     <!-- 飛機logo首頁 -->
     <div class="d-flex jutisfy-content-start"> <a href="./index.html">
-        <img src="../img/logo-evaair-header.png" alt="長榮logo" class="img-fluid w-75">
+        <img src="./img/logo-evaair-header.png" alt="長榮logo" class="img-fluid w-75">
       </a>
     </div>
 
@@ -117,7 +117,7 @@
 
 
   <!-- 選擇欄位 -->
-  <div class="" style="margin-top: 60px;">
+  <div class="" style="margin-top: 60px; margin-left: 10%;">
     <table id="select_table">
       <tr>
         <th>
@@ -227,7 +227,12 @@
   <script type="text/javascript" src="search.js"></script>
 
 
-<script>
+
+
+
+
+<!-- 靜態使用 -->
+<!-- <script>
 var TPTO = [
       {
         todoTableId: 1, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
@@ -298,15 +303,21 @@ var TPTO = [
         isComplete: 1
       }
     ];
+
+
+
+
+    
+
 // GPT產生
 function filterAndPopulateTable(date, departure, destination) {
   // 选择要筛选的数据，例如 TPTO, TPHK, TPOS
   var selectedData = [];
-  if (departure === "台北-桃園" && destination === "東京") {
+  if (departure == "台北-桃園" && destination == "東京") {
     selectedData = TPTO;
-  } else if (departure === "台北-桃園" && destination === "大阪") {
+  } else if (departure == "台北-桃園" && destination == "大阪") {
     selectedData = TPHK;
-  } else if (departure === "台北-桃園" && destination === "沖繩") {
+  } else if (departure == "台北-桃園" && destination == "沖繩") {
     selectedData = TPOS;
   }
 
@@ -338,12 +349,7 @@ $("#datePicker, #input_go, #input_back").on("change", function () {
   // 调用筛选和填充表格的函数
   filterAndPopulateTable(selectedDate, selectedDeparture, selectedDestination);
 });
-
-
-    
-    
-
-</script>
+</script> -->
 
 
 
@@ -390,42 +396,34 @@ $("#datePicker, #input_go, #input_back").on("change", function () {
 
 
 
-    $.get("/todo/list", function (e) {
-      //todoTable = JSON.parse(e);
-      todoTable = e;
-      $("#tbody").empty();
-      $.each(todoTable, function (index, item) {
-        var trHtml = `
+    // 試試看
+
+    $.get("/todo/item/destination/HKG", function (e) {
+  todoTable = e;
+  $("#tbody").empty();
+
+  if (departure == "台北-桃園" && destination == "東京") {
+    $.each(todoTable, function (index, item) {
+      var trHtml = `
         <tr>
-            <td id="f_id">${item.flightNumber}
-            </td>
-            <td id="f_agenda">${item.itinerary}</td>
-            <td id="f_status">${item.flightStatus}</td>
-            <td id="f_go">${item.departureAirport}</td>
-            <td id="f_goal">${item.arrivalAirport}</td>
-            <td></td>
-          </tr>    
-            `;
-        $("#tbody").append(trHtml);
-      })
+          <td id="f_id">${item.flightNumber}</td>
+          <td id="f_agenda">${item.itinerary}</td>
+          <td id="f_status">${item.flightStatus}</td>
+          <td id="f_go">${item.departureAirport}</td>
+          <td id="f_goal">${item.arrivalAirport}</td>
+          <td></td>
+        </tr>
+      `;
+      $("#tbody").append(trHtml);
+    });
+  } else if (departure == "台北-桃園" && destination == "大阪") {
+    // 处理台北到大阪的情况
+  } else if (departure == "台北-桃園" && destination == "沖繩") {
+    // 处理台北到沖繩的情况
+  }
+});
 
-    })
-
-
-    function doEdit(e) {
-      sessionStorage.setItem("todoTableId", e);
-    }
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 

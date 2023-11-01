@@ -88,3 +88,20 @@ app.delete("/todo/delete/:id", function (req, res) {
   fs.writeFileSync("./data.json", JSON.stringify(todoList, null, "\t"));
   res.send("row deleted.");
 });
+
+// 這邊開始自己魔改
+app.get("/todo/item/destination/:code", function (req, res) {
+  var data = fs.readFileSync(dataFileName);
+  var todoList = JSON.parse(data);
+  var destinationCode = req.params.code; // 获取路由参数中的目的地代码
+
+  // 过滤出与指定目的地代码相匹配的航班
+  var flightsToDestination = todoList[destinationCode];
+
+  if (flightsToDestination) {
+    res.set("Content-Type", "application/json");
+    res.send(JSON.stringify(flightsToDestination));
+  } else {
+    res.send("No flights to the specified destination found.");
+  }
+});

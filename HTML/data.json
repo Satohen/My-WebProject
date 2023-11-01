@@ -1,41 +1,312 @@
-[
-	{
-		"todoTableId": 1,
-		"flightNumber": "BR867",
-		"itinerary": "台北桃園 (TPE) 到香港 (HKG)",
-		"flightStatus": "已出發",
-		"departureAirport": "桃園機場",
-		"arrivalAirport": "香港機場",
-		"scheduledDeparture": "2023/11/01 07:10",
-		"actualDeparture": "2023/11/01 07:10",
-		"scheduledArrival": "2023/11/01 09:10",
-		"estimatedArrival": "2023/11/01 09:10",
-		"isComplete": 0
-	},
-	{
-		"todoTableId": 2,
-		"flightNumber": "B534",
-		"itinerary": "台北桃園 (TPE) 到大阪 (KIX)",
-		"flightStatus": "延误",
-		"departureAirport": "桃園機場",
-		"arrivalAirport": "大阪機場",
-		"scheduledDeparture": "2023/11/01 10:10",
-		"actualDeparture": "2023/11/01 10:20",
-		"scheduledArrival": "2023/11/01 12:10",
-		"estimatedArrival": "2023/11/01 12:30",
-		"isComplete": 1
-	},
-	{
-		"todoTableId": 3,
-		"flightNumber": "C312",
-		"itinerary": "台北松山 (TSA) 到 曼谷 (BKK)",
-		"flightStatus": "正常",
-		"departureAirport": "松山機場",
-		"arrivalAirport": "曼谷機場",
-		"scheduledDeparture": "2023/11/01 15:10",
-		"actualDeparture": "2023/11/01 15:10",
-		"scheduledArrival": "2023/11/01 17:10",
-		"estimatedArrival": "2023/11/01 16:50",
-		"isComplete": 0
-	}
-]
+{
+  "HKG": [
+    {
+      "todoTableId": 1,
+      "flightNumber": "BR867",
+      "itinerary": "台北桃園 (TPE) 到香港 (HKG)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "香港機場",
+      "scheduledDeparture": "07:10",
+      "actualDeparture": "07:10",
+      "scheduledArrival": "09:10",
+      "estimatedArrival": "09:10"
+    },
+    {
+      "todoTableId": 2,
+      "flightNumber": "BR868",
+      "itinerary": "台北桃園 (TPE) 到香港 (HKG)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "香港機場",
+      "scheduledDeparture": "10:10",
+      "actualDeparture": "10:10",
+      "scheduledArrival": "12:10",
+      "estimatedArrival": "12:20"
+    },
+    {
+      "todoTableId": 3,
+      "flightNumber": "BR869",
+      "itinerary": "台北桃園 (TPE) 到香港 (HKG)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "香港機場",
+      "scheduledDeparture": "15:10",
+      "actualDeparture": "15:10",
+      "scheduledArrival": "17:10",
+      "estimatedArrival": "17:10"
+    }
+  ],
+
+  "KIX": [
+    {
+      "todoTableId": 1,
+      "flightNumber": "B534",
+      "itinerary": "台北桃園 (TPE) 到大阪 (KIX)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "大阪機場",
+      "scheduledDeparture": "06:30",
+      "actualDeparture": "06:30",
+      "scheduledArrival": "10:00",
+      "estimatedArrival": "10:00"
+    },
+    {
+      "todoTableId": 2,
+      "flightNumber": "B535",
+      "itinerary": "台北桃園 (TPE) 到大阪 (KIX)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "大阪機場",
+      "scheduledDeparture": "08:30",
+      "actualDeparture": "08:30",
+      "scheduledArrival": "12:00",
+      "estimatedArrival": "12:00"
+    },
+    {
+      "todoTableId": 3,
+      "flightNumber": "B536",
+      "itinerary": "台北桃園 (TPE) 到大阪 (KIX)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "大阪機場",
+      "scheduledDeparture": "13:00",
+      "actualDeparture": "13:00",
+      "scheduledArrival": "16:30",
+      "estimatedArrival": "16:30"
+    }
+  ],
+
+  "BKK": [
+    {
+      "todoTableId": 1,
+      "flightNumber": "C311",
+      "itinerary": "台北桃園 (TPE) 到 曼谷 (BKK)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "曼谷機場",
+      "scheduledDeparture": "07:50",
+      "actualDeparture": "07:50",
+      "scheduledArrival": "11:00",
+      "estimatedArrival": "11:00"
+    },
+    {
+      "todoTableId": 2,
+      "flightNumber": "C312",
+      "itinerary": "台北桃園 (TPE) 到 曼谷 (BKK)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "曼谷機場",
+      "scheduledDeparture": "08:40",
+      "actualDeparture": "08:40",
+      "scheduledArrival": "12:00",
+      "estimatedArrival": "12:00"
+    },
+    {
+      "todoTableId": 3,
+      "flightNumber": "C313",
+      "itinerary": "台北桃園 (TPE) 到 曼谷 (BKK)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "曼谷機場",
+      "scheduledDeparture": "20:45",
+      "actualDeparture": "20:45",
+      "scheduledArrival": "23:40",
+      "estimatedArrival": "23:40"
+    }
+  ],
+  "NRT": [
+    {
+      "todoTableId": 1,
+      "flightNumber": "BR184",
+      "itinerary": "台北桃園 (TPE) 到 東京 (NRT)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "成田機場",
+      "scheduledDeparture": "07:50",
+      "actualDeparture": "07:50",
+      "scheduledArrival": "12:00",
+      "estimatedArrival": "12:00"
+    },
+    {
+      "todoTableId": 2,
+      "flightNumber": "BR185",
+      "itinerary": "台北桃園 (TPE) 到 東京 (NRT)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "成田機場",
+      "scheduledDeparture": "08:50",
+      "actualDeparture": "08:50",
+      "scheduledArrival": "13:00",
+      "estimatedArrival": "13:00"
+    },
+    {
+      "todoTableId": 3,
+      "flightNumber": "BR196",
+      "itinerary": "台北桃園 (TPE) 到 東京 (NRT)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "成田機場",
+      "scheduledDeparture": "15:25",
+      "actualDeparture": "15:45",
+      "scheduledArrival": "19:20",
+      "estimatedArrival": "19:20"
+    }
+  ],
+
+  "OKA": [
+    {
+      "todoTableId": 1,
+      "flightNumber": "BR112",
+      "itinerary": "台北桃園 (TPE) 到 沖繩 (OKA)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "沖繩機場",
+      "scheduledDeparture": "07:00",
+      "actualDeparture": "07:00",
+      "scheduledArrival": "09:20",
+      "estimatedArrival": "09:20"
+    },
+    {
+      "todoTableId": 2,
+      "flightNumber": "BR189",
+      "itinerary": "台北桃園 (TPE) 到 沖繩 (OKA)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "沖繩機場",
+      "scheduledDeparture": "08:50",
+      "actualDeparture": "08:50",
+      "scheduledArrival": "11:10",
+      "estimatedArrival": "11:10"
+    },
+    {
+      "todoTableId": 3,
+      "flightNumber": "BR186",
+      "itinerary": "台北桃園 (TPE) 到 沖繩 (OKA)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "沖繩機場",
+      "scheduledDeparture": "16:50",
+      "actualDeparture": "16:50",
+      "scheduledArrival": "19:10",
+      "estimatedArrival": "19:10"
+    }
+  ],
+
+  "ICN": [
+    {
+      "todoTableId": 1,
+      "flightNumber": "BR170",
+      "itinerary": "台北桃園 (TPE) 到 首爾 (ICN)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "仁川機場",
+      "scheduledDeparture": "07:00",
+      "actualDeparture": "07:00",
+      "scheduledArrival": "10:20",
+      "estimatedArrival": "10:20"
+    },
+    {
+      "todoTableId": 2,
+      "flightNumber": "BR171",
+      "itinerary": "台北桃園 (TPE) 到 首爾 (ICN)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "仁川機場",
+      "scheduledDeparture": "09:30",
+      "actualDeparture": "09:30",
+      "scheduledArrival": "11:50",
+      "estimatedArrival": "11:50"
+    },
+    {
+      "todoTableId": 3,
+      "flightNumber": "BR172",
+      "itinerary": "台北桃園 (TPE) 到 首爾 (ICN)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "仁川機場",
+      "scheduledDeparture": "15:10",
+      "actualDeparture": "15:15",
+      "scheduledArrival": "18:50",
+      "estimatedArrival": "18:50"
+    }
+  ],
+
+  "FUK": [
+    {
+      "todoTableId": 1,
+      "flightNumber": "BR106",
+      "itinerary": "台北桃園 (TPE) 到 福岡 (FUK)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "福岡機場",
+      "scheduledDeparture": "08:10",
+      "actualDeparture": "08:10",
+      "scheduledArrival": "11:20",
+      "estimatedArrival": "11:20"
+    },
+    {
+      "todoTableId": 2,
+      "flightNumber": "BR102",
+      "itinerary": "台北桃園 (TPE) 到 福岡 (FUK)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "福岡機場",
+      "scheduledDeparture": "13:30",
+      "actualDeparture": "13:30",
+      "scheduledArrival": "16:30",
+      "estimatedArrival": "16:30"
+    },
+    {
+      "todoTableId": 3,
+      "flightNumber": "BR103",
+      "itinerary": "台北桃園 (TPE) 到 福岡 (FUK)",
+      "flightStatus": "未出發",
+      "departureAirport": "桃園機場",
+      "arrivalAirport": "福岡機場",
+      "scheduledDeparture": "16:25",
+      "actualDeparture": "16:25",
+      "scheduledArrival": "19:55",
+      "estimatedArrival": "19:55"
+    }
+  ],
+
+  "HND": [
+    {
+      "todoTableId": 1,
+      "flightNumber": "BR191",
+      "itinerary": "台北松山 (TSA) 到 東京 (HND)",
+      "flightStatus": "未出發",
+      "departureAirport": "松山機場",
+      "arrivalAirport": "羽田機場",
+      "scheduledDeparture": "07:10",
+      "actualDeparture": "07:10",
+      "scheduledArrival": "11:00",
+      "estimatedArrival": "11:00"
+    },
+    {
+      "todoTableId": 2,
+      "flightNumber": "BR190",
+      "itinerary": "台北松山 (TSA) 到 東京 (HND)",
+      "flightStatus": "未出發",
+      "departureAirport": "松山機場",
+      "arrivalAirport": "羽田機場",
+      "scheduledDeparture": "13:00",
+      "actualDeparture": "13:00",
+      "scheduledArrival": "17:00",
+      "estimatedArrival": "17:00"
+    },
+    {
+      "todoTableId": 3,
+      "flightNumber": "BR192",
+      "itinerary": "台北松山 (TSA) 到 東京 (HND)",
+      "flightStatus": "未出發",
+      "departureAirport": "松山機場",
+      "arrivalAirport": "羽田機場",
+      "scheduledDeparture": "16:25",
+      "actualDeparture": "16:25",
+      "scheduledArrival": "20:15",
+      "estimatedArrival": "20:15"
+    }
+  ]
+}
