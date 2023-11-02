@@ -1078,8 +1078,21 @@
         })
 
       </script>
+<script>
+<!-- 獲取主頁輸入的資料 -->
+// 获取查询参数
+var urlParams = new URLSearchParams(window.location.search);
+var cabin = urlParams.get("cabin");
+var adultQuantity = urlParams.get("adultQuantity");
+var childrenQuantity = urlParams.get("childrenQuantity");
+var babyQuantity = urlParams.get("babyQuantity");
 
-
+// 然后，你可以在页面上使用这些值，例如，填充表单字段
+document.getElementById("cabinField").value = cabin;
+document.getElementById("adultQuantityField").value = adultQuantity;
+document.getElementById("childrenQuantityField").value = childrenQuantity;
+document.getElementById("babyQuantityField").value = babyQuantity;
+</script>
 
   </body>
 </html>

@@ -691,6 +691,28 @@
                     <td></td>
                 </tr>
     </table>
+
+<script>
+    // 獲取 表一的數值到訂購票的頁面
+    var cabin = document.getElementById("cabin").value;
+    var adultQuantity = document.getElementById("adult_quantity").value;
+    var childrenQuantity = document.getElementById("children_quantity").value;
+    var babyQuantity = document.getElementById("baby_quantity").value;
+    
+    // 构建重定向URL，附加数据作为查询参数
+    var redirectTo = "book.html?cabin=" + cabin +
+                    "&adultQuantity=" + adultQuantity +
+                    "&childrenQuantity=" + childrenQuantity +
+                    "&babyQuantity=" + babyQuantity;
+    
+    // 执行重定向
+    window.location.href = redirectTo;
+    
+
+</script>
+
+
+
 </body>
 
 </html>
