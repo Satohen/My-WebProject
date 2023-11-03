@@ -1,5 +1,5 @@
 {
-  "HKG": [
+  "TPEHKG": [
     {
       "todoTableId": 1,
       "flightNumber": "BR867",
@@ -38,7 +38,7 @@
     }
   ],
 
-  "KIX": [
+  "TPEKIX": [
     {
       "todoTableId": 1,
       "flightNumber": "B534",
@@ -77,7 +77,7 @@
     }
   ],
 
-  "BKK": [
+  "TPEBKK": [
     {
       "todoTableId": 1,
       "flightNumber": "C311",
@@ -115,7 +115,7 @@
       "estimatedArrival": "23:40"
     }
   ],
-  "NRT": [
+  "TPEHND": [
     {
       "todoTableId": 1,
       "flightNumber": "BR184",
@@ -154,7 +154,7 @@
     }
   ],
 
-  "OKA": [
+  "TPEOKA": [
     {
       "todoTableId": 1,
       "flightNumber": "BR112",
@@ -193,7 +193,7 @@
     }
   ],
 
-  "ICN": [
+  "TPEICN": [
     {
       "todoTableId": 1,
       "flightNumber": "BR170",
@@ -232,7 +232,7 @@
     }
   ],
 
-  "FUK": [
+  "TPEFUK": [
     {
       "todoTableId": 1,
       "flightNumber": "BR106",
@@ -271,7 +271,7 @@
     }
   ],
 
-  "HND": [
+  "TSAHND": [
     {
       "todoTableId": 1,
       "flightNumber": "BR191",

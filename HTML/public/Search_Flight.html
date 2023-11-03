@@ -178,20 +178,21 @@
           </td>
           <td>行程</td>
           <td>航班狀態</td>
-          <td>出發</td>
-          <td>抵達</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td id="f_id">班機編號
-          </td>
-          <td id="f_agenda">行程</td>
-          <td id="f_status">航班狀態</td>
-          <td id="f_go">出發</td>
-          <td id="f_goal">抵達</td>
-          <td></td>
+          <td>啟程點</td>
+          <td>目的地</td>
+          <td>出發時間</td>
+          <td>抵達時間</td>
         </tr>
         <tbody id="tbody">
+          <tr>
+            <td id="f_id">班機編號
+            </td>
+            <td id="f_agenda">行程</td>
+            <td id="f_status">航班狀態</td>
+            <td id="f_go">出發</td>
+            <td id="f_goal">抵達</td>
+            <td></td>          
+          </tr>
           <tr>
             <td>班機編號
             </td>
@@ -354,77 +355,67 @@ $("#datePicker, #input_go, #input_back").on("change", function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
 <script>
 
 
 
     // 模仿老師
-    var todoTable = [
-      {
-        todoTableId: 1, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
-        flightStatus: "已出發", departureAirport: "桃園機場", arrivalAirport: "香港機場",
-        scheduledDeparture: "2023/11/01 07:10", actualDeparture: "2023/11/01 07:10",
-        scheduledArrival: "2023/11/01 09:10", estimatedArrival: "2023/11/01 09:10",
-        isComplete: 1
-      },
-      {
-        todoTableId: 2, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
-        flightStatus: "已出發", departureAirport: "桃園機場", arrivalAirport: "香港機場",
-        scheduledDeparture: "2023/11/01 07:10", actualDeparture: "2023/11/01 07:10",
-        scheduledArrival: "2023/11/01 09:10", estimatedArrival: "2023/11/01 09:10",
-        isComplete: 1
-      },
-      {
-        todoTableId: 3, flightNumber: "BR867", itinerary: "台北桃園 (TPE) 到香港 (HKG)",
-        flightStatus: "已出發", departureAirport: "桃園機場", arrivalAirport: "香港機場",
-        scheduledDeparture: "2023/11/01 07:10", actualDeparture: "2023/11/01 07:10",
-        scheduledArrival: "2023/11/01 09:10", estimatedArrival: "2023/11/01 09:10",
-        isComplete: 1
-      }
-    ];
+
 
 
 
 
     // 試試看
+     // 這裡需要添加其他目的地的映射
 
-    $.get("/todo/item/destination/HKG", function (e) {
-  todoTable = e;
-  $("#tbody").empty();
+  var destinationMapping = {
+  "香港": "HKG",
+  "大阪": "KIX",
+  "曼谷": "BKK",
+  "東京": "NRT",
+  "沖繩": "OKA",
+  "首爾": "ICN",
+  "福岡": "FUK",
+  "東京": "HND",
+  "台北-桃園":"TPE",
+  "台北-松山":"TSA"
+};
 
-  if (departure == "台北-桃園" && destination == "東京") {
-    $.each(todoTable, function (index, item) {
-      var trHtml = `
-        <tr>
-          <td id="f_id">${item.flightNumber}</td>
-          <td id="f_agenda">${item.itinerary}</td>
-          <td id="f_status">${item.flightStatus}</td>
-          <td id="f_go">${item.departureAirport}</td>
-          <td id="f_goal">${item.arrivalAirport}</td>
-          <td></td>
-        </tr>
-      `;
-      $("#tbody").append(trHtml);
+
+
+$("#tbody").empty();
+$("#input_go, #input_back").on("change", function () {
+  var departure = $("#input_go").val();
+  var destination = $("#input_back").val();
+  
+  // 使用映射查找英文縮寫
+  var departureCode = destinationMapping[departure];
+  var destinationCode = destinationMapping[destination];
+  var key = departureCode + destinationCode;
+  
+  if (key) {
+    $("#tbody").empty();
+    // 發送 GET 請求到伺服器路由，使用英文縮寫
+    $.get("/todo/item/destination/"+key, function (data) {
+      $.each(data, function (index, item) {
+        var trHtml = `
+          <tr>
+            <td id="f_id">${item.flightNumber}</td>
+            <td id="f_agenda">${item.itinerary}</td>
+            <td id="f_status">${item.flightStatus}</td>
+            <td id="f_go">${item.departureAirport}</td>
+            <td id="f_goal">${item.arrivalAirport}</td>
+            <td>${item.scheduledDeparture}</td>
+            <td>${item.scheduledArrival}</td>
+          </tr>
+        `;
+        $("#tbody").append(trHtml);
+      });
     });
-  } else if (departure == "台北-桃園" && destination == "大阪") {
-    // 处理台北到大阪的情况
-  } else if (departure == "台北-桃園" && destination == "沖繩") {
-    // 处理台北到沖繩的情况
+  } else {
+    alert("未找到目的地。");
   }
 });
-
-    
-
 
 
 
