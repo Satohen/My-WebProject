@@ -93,9 +93,9 @@ app.delete("/todo/delete/:id", function (req, res) {
 app.get("/todo/item/destination/:code", function (req, res) {
   var data = fs.readFileSync(dataFileName);
   var todoList = JSON.parse(data);
-  var destinationCode = req.params.code; // 获取路由参数中的目的地代码
+  var destinationCode = req.params.code; //獲取參數中的目的地CODE
 
-  // 过滤出与指定目的地代码相匹配的航班
+  // 指定目的地CODE相配的航班
   var flightsToDestination = todoList[destinationCode];
 
   if (flightsToDestination) {
