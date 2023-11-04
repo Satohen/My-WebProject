@@ -10,7 +10,14 @@
       "scheduledDeparture": "07:10",
       "actualDeparture": "07:10",
       "scheduledArrival": "09:10",
-      "estimatedArrival": "09:10"
+      "estimatedArrival": "09:10",
+      "商務艙基本 Basic": 10544,
+      "商務艙經典 Standard": 12189,
+      "商務艙尊寵 Up": 16113,
+      "經濟艙基本 Basic": 3807,
+      "經濟艙經典 Standard": 5457,
+      "經濟艙尊寵 Up": 9231,
+      "飛行時間": "02:00"
     },
     {
       "todoTableId": 2,
@@ -22,7 +29,14 @@
       "scheduledDeparture": "10:10",
       "actualDeparture": "10:10",
       "scheduledArrival": "12:10",
-      "estimatedArrival": "12:20"
+      "estimatedArrival": "12:20",
+      "商務艙基本 Basic": 10544,
+      "商務艙經典 Standard": 12189,
+      "商務艙尊寵 Up": 16113,
+      "經濟艙基本 Basic": 3807,
+      "經濟艙經典 Standard": 5457,
+      "經濟艙尊寵 Up": 9231,
+      "飛行時間": "02:00"
     },
     {
       "todoTableId": 3,
@@ -34,7 +48,14 @@
       "scheduledDeparture": "15:10",
       "actualDeparture": "15:10",
       "scheduledArrival": "17:10",
-      "estimatedArrival": "17:10"
+      "estimatedArrival": "17:10",
+      "商務艙基本 Basic": 10544,
+      "商務艙經典 Standard": 12189,
+      "商務艙尊寵 Up": 16113,
+      "經濟艙基本 Basic": 3807,
+      "經濟艙經典 Standard": 5457,
+      "經濟艙尊寵 Up": 9231,
+      "飛行時間": "02:00"
     }
   ],
 
@@ -49,7 +70,14 @@
       "scheduledDeparture": "06:30",
       "actualDeparture": "06:30",
       "scheduledArrival": "10:00",
-      "estimatedArrival": "10:00"
+      "estimatedArrival": "10:00",
+      "商務艙基本 Basic": 17209,
+      "商務艙經典 Standard": 22859,
+      "商務艙尊寵 Up": 27463,
+      "經濟艙基本 Basic": 7693,
+      "經濟艙經典 Standard": 10298,
+      "經濟艙尊寵 Up": 14275,
+      "飛行時間": "03:25"
     },
     {
       "todoTableId": 2,
@@ -61,7 +89,14 @@
       "scheduledDeparture": "08:30",
       "actualDeparture": "08:30",
       "scheduledArrival": "12:00",
-      "estimatedArrival": "12:00"
+      "estimatedArrival": "12:00",
+      "商務艙基本 Basic": 17209,
+      "商務艙經典 Standard": 22859,
+      "商務艙尊寵 Up": 27463,
+      "經濟艙基本 Basic": 7693,
+      "經濟艙經典 Standard": 10298,
+      "經濟艙尊寵 Up": 14275,
+      "飛行時間": "03:25"
     },
     {
       "todoTableId": 3,
@@ -73,7 +108,14 @@
       "scheduledDeparture": "13:00",
       "actualDeparture": "13:00",
       "scheduledArrival": "16:30",
-      "estimatedArrival": "16:30"
+      "estimatedArrival": "16:30",
+      "商務艙基本 Basic": 17209,
+      "商務艙經典 Standard": 22859,
+      "商務艙尊寵 Up": 27463,
+      "經濟艙基本 Basic": 7693,
+      "經濟艙經典 Standard": 10298,
+      "經濟艙尊寵 Up": 14275,
+      "飛行時間": "03:25"
     }
   ],
 
@@ -88,7 +130,14 @@
       "scheduledDeparture": "07:50",
       "actualDeparture": "07:50",
       "scheduledArrival": "11:00",
-      "estimatedArrival": "11:00"
+      "estimatedArrival": "11:00",
+      "商務艙基本 Basic": 13696,
+      "商務艙經典 Standard": 18076,
+      "商務艙尊寵 Up": 20509,
+      "經濟艙基本 Basic": 4053,
+      "經濟艙經典 Standard": 6448,
+      "經濟艙尊寵 Up": 12539,
+      "飛行時間": "03:10"
     },
     {
       "todoTableId": 2,
@@ -100,7 +149,14 @@
       "scheduledDeparture": "08:40",
       "actualDeparture": "08:40",
       "scheduledArrival": "12:00",
-      "estimatedArrival": "12:00"
+      "estimatedArrival": "12:00",
+      "商務艙基本 Basic": 13696,
+      "商務艙經典 Standard": 18076,
+      "商務艙尊寵 Up": 20509,
+      "經濟艙基本 Basic": 4053,
+      "經濟艙經典 Standard": 6448,
+      "經濟艙尊寵 Up": 12539,
+      "飛行時間": "03:10"
     },
     {
       "todoTableId": 3,
@@ -112,7 +168,14 @@
       "scheduledDeparture": "20:45",
       "actualDeparture": "20:45",
       "scheduledArrival": "23:40",
-      "estimatedArrival": "23:40"
+      "estimatedArrival": "23:40",
+      "商務艙基本 Basic": 13696,
+      "商務艙經典 Standard": 18076,
+      "商務艙尊寵 Up": 20509,
+      "經濟艙基本 Basic": 4053,
+      "經濟艙經典 Standard": 6448,
+      "經濟艙尊寵 Up": 12539,
+      "飛行時間": "03:10"
     }
   ],
   "TPEHND": [
@@ -126,7 +189,14 @@
       "scheduledDeparture": "07:50",
       "actualDeparture": "07:50",
       "scheduledArrival": "12:00",
-      "estimatedArrival": "12:00"
+      "estimatedArrival": "12:00",
+      "商務艙基本 Basic": 18082,
+      "商務艙經典 Standard": 24557,
+      "商務艙尊寵 Up": 31463,
+      "經濟艙基本 Basic": 7519,
+      "經濟艙經典 Standard": 9657,
+      "經濟艙尊寵 Up": 15413,
+      "飛行時間": "03:35"
     },
     {
       "todoTableId": 2,
@@ -138,7 +208,14 @@
       "scheduledDeparture": "08:50",
       "actualDeparture": "08:50",
       "scheduledArrival": "13:00",
-      "estimatedArrival": "13:00"
+      "estimatedArrival": "13:00",
+      "商務艙基本 Basic": 18082,
+      "商務艙經典 Standard": 24557,
+      "商務艙尊寵 Up": 31463,
+      "經濟艙基本 Basic": 7519,
+      "經濟艙經典 Standard": 9657,
+      "經濟艙尊寵 Up": 15413,
+      "飛行時間": "03:35"
     },
     {
       "todoTableId": 3,
@@ -150,7 +227,14 @@
       "scheduledDeparture": "15:25",
       "actualDeparture": "15:45",
       "scheduledArrival": "19:20",
-      "estimatedArrival": "19:20"
+      "estimatedArrival": "19:20",
+      "商務艙基本 Basic": 18082,
+      "商務艙經典 Standard": 24557,
+      "商務艙尊寵 Up": 31463,
+      "經濟艙基本 Basic": 7519,
+      "經濟艙經典 Standard": 9657,
+      "經濟艙尊寵 Up": 15413,
+      "飛行時間": "03:35"
     }
   ],
 
@@ -165,7 +249,14 @@
       "scheduledDeparture": "07:00",
       "actualDeparture": "07:00",
       "scheduledArrival": "09:20",
-      "estimatedArrival": "09:20"
+      "estimatedArrival": "09:20",
+      "商務艙基本 Basic": 14523,
+      "商務艙經典 Standard": 16942,
+      "商務艙尊寵 Up": 18663,
+      "經濟艙基本 Basic": 4057,
+      "經濟艙經典 Standard": 8614,
+      "經濟艙尊寵 Up": 12480,
+      "飛行時間": "02:20"
     },
     {
       "todoTableId": 2,
@@ -177,7 +268,14 @@
       "scheduledDeparture": "08:50",
       "actualDeparture": "08:50",
       "scheduledArrival": "11:10",
-      "estimatedArrival": "11:10"
+      "estimatedArrival": "11:10",
+      "商務艙基本 Basic": 14523,
+      "商務艙經典 Standard": 16942,
+      "商務艙尊寵 Up": 18663,
+      "經濟艙基本 Basic": 4057,
+      "經濟艙經典 Standard": 8614,
+      "經濟艙尊寵 Up": 12480,
+      "飛行時間": "02:20"
     },
     {
       "todoTableId": 3,
@@ -189,7 +287,14 @@
       "scheduledDeparture": "16:50",
       "actualDeparture": "16:50",
       "scheduledArrival": "19:10",
-      "estimatedArrival": "19:10"
+      "estimatedArrival": "19:10",
+      "商務艙基本 Basic": 14523,
+      "商務艙經典 Standard": 16942,
+      "商務艙尊寵 Up": 18663,
+      "經濟艙基本 Basic": 4057,
+      "經濟艙經典 Standard": 8614,
+      "經濟艙尊寵 Up": 12480,
+      "飛行時間": "02:20"
     }
   ],
 
@@ -204,7 +309,14 @@
       "scheduledDeparture": "07:00",
       "actualDeparture": "07:00",
       "scheduledArrival": "10:20",
-      "estimatedArrival": "10:20"
+      "estimatedArrival": "10:20",
+      "商務艙基本 Basic": 16963,
+      "商務艙經典 Standard": 18863,
+      "商務艙尊寵 Up": 21713,
+      "經濟艙基本 Basic": 5341,
+      "經濟艙經典 Standard": 8115,
+      "經濟艙尊寵 Up": 11801,
+      "飛行時間": "03:20"
     },
     {
       "todoTableId": 2,
@@ -216,7 +328,14 @@
       "scheduledDeparture": "09:30",
       "actualDeparture": "09:30",
       "scheduledArrival": "11:50",
-      "estimatedArrival": "11:50"
+      "estimatedArrival": "11:50",
+      "商務艙基本 Basic": 16963,
+      "商務艙經典 Standard": 18863,
+      "商務艙尊寵 Up": 21713,
+      "經濟艙基本 Basic": 5341,
+      "經濟艙經典 Standard": 8115,
+      "經濟艙尊寵 Up": 11801,
+      "飛行時間": "03:20"
     },
     {
       "todoTableId": 3,
@@ -228,7 +347,14 @@
       "scheduledDeparture": "15:10",
       "actualDeparture": "15:15",
       "scheduledArrival": "18:50",
-      "estimatedArrival": "18:50"
+      "estimatedArrival": "18:50",
+      "商務艙基本 Basic": 16963,
+      "商務艙經典 Standard": 18863,
+      "商務艙尊寵 Up": 21713,
+      "經濟艙基本 Basic": 5341,
+      "經濟艙經典 Standard": 8115,
+      "經濟艙尊寵 Up": 11801,
+      "飛行時間": "03:20"
     }
   ],
 
@@ -243,7 +369,14 @@
       "scheduledDeparture": "08:10",
       "actualDeparture": "08:10",
       "scheduledArrival": "11:20",
-      "estimatedArrival": "11:20"
+      "estimatedArrival": "11:20",
+      "商務艙基本 Basic": 15968,
+      "商務艙經典 Standard": 21065,
+      "商務艙尊寵 Up": 25713,
+      "經濟艙基本 Basic": 5981,
+      "經濟艙經典 Standard": 8755,
+      "經濟艙尊寵 Up": 12521,
+      "飛行時間": "03:10"
     },
     {
       "todoTableId": 2,
@@ -255,7 +388,14 @@
       "scheduledDeparture": "13:30",
       "actualDeparture": "13:30",
       "scheduledArrival": "16:30",
-      "estimatedArrival": "16:30"
+      "estimatedArrival": "16:30",
+      "商務艙基本 Basic": 15968,
+      "商務艙經典 Standard": 21065,
+      "商務艙尊寵 Up": 25713,
+      "經濟艙基本 Basic": 5981,
+      "經濟艙經典 Standard": 8755,
+      "經濟艙尊寵 Up": 12521,
+      "飛行時間": "03:10"
     },
     {
       "todoTableId": 3,
@@ -267,7 +407,14 @@
       "scheduledDeparture": "16:25",
       "actualDeparture": "16:25",
       "scheduledArrival": "19:55",
-      "estimatedArrival": "19:55"
+      "estimatedArrival": "19:55",
+      "商務艙基本 Basic": 15968,
+      "商務艙經典 Standard": 21065,
+      "商務艙尊寵 Up": 25713,
+      "經濟艙基本 Basic": 5981,
+      "經濟艙經典 Standard": 8755,
+      "經濟艙尊寵 Up": 12521,
+      "飛行時間": "03:10"
     }
   ],
 
@@ -282,7 +429,14 @@
       "scheduledDeparture": "07:10",
       "actualDeparture": "07:10",
       "scheduledArrival": "11:00",
-      "estimatedArrival": "11:00"
+      "estimatedArrival": "11:00",
+      "商務艙基本 Basic": 18082,
+      "商務艙經典 Standard": 24557,
+      "商務艙尊寵 Up": 31463,
+      "經濟艙基本 Basic": 7955,
+      "經濟艙經典 Standard": 9657,
+      "經濟艙尊寵 Up": 14517,
+      "飛行時間": "03:00"
     },
     {
       "todoTableId": 2,
@@ -294,7 +448,14 @@
       "scheduledDeparture": "13:00",
       "actualDeparture": "13:00",
       "scheduledArrival": "17:00",
-      "estimatedArrival": "17:00"
+      "estimatedArrival": "17:00",
+      "商務艙基本 Basic": 18082,
+      "商務艙經典 Standard": 24557,
+      "商務艙尊寵 Up": 31463,
+      "經濟艙基本 Basic": 7955,
+      "經濟艙經典 Standard": 9657,
+      "經濟艙尊寵 Up": 14517,
+      "飛行時間": "03:00"
     },
     {
       "todoTableId": 3,
@@ -306,7 +467,14 @@
       "scheduledDeparture": "16:25",
       "actualDeparture": "16:25",
       "scheduledArrival": "20:15",
-      "estimatedArrival": "20:15"
+      "estimatedArrival": "20:15",
+      "商務艙基本 Basic": 18082,
+      "商務艙經典 Standard": 24557,
+      "商務艙尊寵 Up": 31463,
+      "經濟艙基本 Basic": 7955,
+      "經濟艙經典 Standard": 9657,
+      "經濟艙尊寵 Up": 14517,
+      "飛行時間": "03:00"
     }
   ]
 }

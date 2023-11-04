@@ -281,13 +281,13 @@
             />
           </th>
           <th>
-            <h1 id="taipei">台北</h1>
+            <h1 id="taipei"></h1>
           </th>
           <th>
             <h1>-></h1>
           </th>
           <th>
-            <h1 id="tokyo">香港</h1>
+            <h1 id="tokyo"></h1>
           </th>
           <th>
             <h1 id="day_1" style="text-align: end; width: 1000px">日期</h1>
@@ -369,7 +369,7 @@
               <span id="dep1">14:00 東京(NRT)</span><br />
               <span id="des1">17:05 台北(TPE)</span><br />
               <span id="time1">飛行時間 04:05, 直飛航班</span><br />
-              票價類型: <span id="cabin" data-cabin="cabin1">經濟艙</span><br />
+              票價類型: <span id="cabin">經濟艙</span><br />
               價格:<span id="dol_1"></span>
             </td>
           </tr>
@@ -380,8 +380,7 @@
               <span id="dep2">14:00 東京(NRT)</span><br />
               <span id="des2">17:05 台北(TPE)</span><br />
               <span id="time2">飛行時間 04:05, 直飛航班</span><br />
-              票價類型: <span id="cabin2" data-cabin="cabin1">經濟艙</span
-              ><br />
+              票價類型: <span id="cabin2">經濟艙</span><br />
               價格:<span id="dol_2"></span>
             </td>
           </tr>
@@ -419,6 +418,7 @@
               </tr>
             </thead>
             <tr>
+              <tbody id="tbody">
               <td>
                 <span id="btn1_1">07:00 臺灣桃園機場 (TPE)</span> 直飛
                 <span id="btn1_2">08:50 香港國際機場 (HKG)</span>
@@ -427,7 +427,7 @@
               </td>
               <td>
                 <div class="btn price-button btn1_1">
-                  TWD: <span>3812</span>
+                  TWD <span>3812</span>
                 </div>
               </td>
               <td><div class="btn price-button btn1_2">TWD: 5602</div></td>
@@ -460,52 +460,12 @@
               <td><div class="btn price-button btn3_2">TWD 5600</div></td>
               <td><div class="btn price-button btn3_3">TWD 10448</div></td>
             </tr>
-            <tr>
-              <td>
-                <span id="btn4_1"> 08:05 臺灣桃園機場 (TPE)</span> 直飛航班<span
-                  id="btn4_2"
-                >
-                  10:05 香港國際機場 (HKG)
-                </span>
-                <span id="btn4_3">直飛航班</span>
-                <span id="btn4_4">飛行時間: 01:50 </span> EVA Air (BR891)
-              </td>
-              <td><div class="btn price-button btn4_1">TWD 4407</div></td>
-              <td><div class="btn price-button btn4_2">TWD 5600</div></td>
-              <td><div class="btn price-button btn4_3">TWD 10448</div></td>
-            </tr>
-            <tr>
-              <td>
-                <span id="btn5_1"> 10:10 臺灣桃園機場 (TPE)</span> 直飛航班<span
-                  id="btn5_2"
-                  >12:10 香港國際機場 (HKG)
-                </span>
-                <span id="btn5_3">直飛航班</span>
-                <span id="btn5_4">飛行時間: 01:50 </span> EVA Air (BR891)
-              </td>
-              <td><div class="btn price-button btn5_1">TWD 4407</div></td>
-              <td><div class="btn price-button btn5_2">TWD 5600</div></td>
-              <td><div class="btn price-button btn5_3">TWD 10448</div></td>
-            </tr>
-            <tr>
-              <td>
-                <span id="btn6_1">14:15 臺灣桃園機場 (TPE)</span> 直飛航班<span
-                  id="btn6_2"
-                  >16:16 香港國際機場 (HKG)
-                </span>
-                <span id="btn6_3">直飛航班</span>
-                <span id="btn6_4">飛行時間: 01:50 </span> EVA Air (BR891)
-              </td>
-              <td><div class="btn price-button btn6_1">TWD 4407</div></td>
-              <td><div class="btn price-button btn6_2">TWD 5600</div></td>
-              <td><div class="btn price-button btn6_3">TWD 10448</div></td>
-            </tr>
+          </tbody>
           </table>
         </form>
       </div>
 
       <!-- 當日航班種時間 -->
-
       <div style="background-color: azure">
         <table>
           <tr>
@@ -517,13 +477,13 @@
               />
             </th>
             <th>
-              <h1 id="tokyo_1">香港</h1>
+              <h1 id="tokyo_1"></h1>
             </th>
             <th>
               <h1>-></h1>
             </th>
             <th>
-              <h1 id="taipei_1">台北</h1>
+              <h1 id="taipei_1"></h1>
             </th>
             <th>
               <h1 id="day_2" style="text-align: end; width: 1000px">日期</h1>
@@ -721,6 +681,7 @@
             </tr>
           </thead>
           <tr>
+            <tbody id="tbody_1">
             <td>
               <span id="btn7_1">11:15 香港國際機場 (HKG) </span> 直飛航班<span
                 id="btn7_2"
@@ -762,73 +723,36 @@
             <td><div class="btn price-button btn9_2">TWD 5600</div></td>
             <td><div class="btn price-button btn9_3">TWD 10448</div></td>
           </tr>
-          <tr>
-            <td>
-              <span id="btn10_1">19:40 香港國際機場 (HKG) </span> 直飛航班<span
-                id="btn10_2"
-                >21:25 臺灣桃園機場 (TPE)
-              </span>
-              <span id="btn10_3">直飛航班</span>
-              <span id="btn10_4"> 飛行時間: 01:50 </span> EVA Air (BR891)
-            </td>
-            <td><div class="btn price-button btn10_1">TWD 4407</div></td>
-            <td><div class="btn price-button btn10_2">TWD 5600</div></td>
-            <td><div class="btn price-button btn10_3">TWD 10448</div></td>
-          </tr>
-          <tr>
-            <td>
-              <span id="btn11_1"> 21:50 香港國際機場 (HKG) </span> 直飛航班<span
-                id="btn11_2"
-              >
-                23:35臺灣桃園機場 (TPE)
-              </span>
-              <span id="btn11_3">直飛航班</span>
-              <span id="btn11_4"> 飛行時間: 01:50 </span> EVA Air (BR891)
-            </td>
-            <td><div class="btn price-button btn11_1">TWD 4407</div></td>
-            <td><div class="btn price-button btn11_2">TWD 5600</div></td>
-            <td><div class="btn price-button btn11_3">TWD 10448</div></td>
-          </tr>
-          <tr>
-            <td>
-              <span id="btn12_1"> 15:20 香港國際機場 (HKG) </span> 直飛航班<span
-                id="btn12_2"
-                >17:10 臺灣桃園機場 (TPE)
-              </span>
-              <span id="btn12_3">直飛航班</span>
-              <span id="btn12_4"> 飛行時間: 01:50 </span> EVA Air (BR891)
-            </td>
-            <td><div class="btn price-button btn12_1">TWD 4407</div></td>
-            <td><div class="btn price-button btn12_2">TWD 5600</div></td>
-            <td><div class="btn price-button btn12_3">TWD 10448</div></td>
-          </tr>
         </table>
+      </tbody>
       </div>
 
       <!-- 點選添加票種 -->
       <!-- 第一行 -->
       <!-- // 第二欄位_1為第一欄配的是經濟艙種類 -->
       <script>
+        var urlParams = new URLSearchParams(window.location.search);
+        var cabin_get = urlParams.get("cabin");
         $(".btn1_1").on("click", function () {
           $("#date_1").text($("#btn1_1").text());
           $("#dep1").text($("#btn1_2").text());
           $("#des1").text($("#btn1_3").text());
           $("#time1").text($("#btn1_4").text());
-          $("#cabin").text($(".cabin_1").text());
+          $("#cabin").html(`${cabin_get}基本 Basic`);
         });
         $(".btn1_2").on("click", function () {
           $("#date_1").text($("#btn1_1").text());
           $("#dep1").text($("#btn1_2").text());
           $("#des1").text($("#btn1_3").text());
           $("#time1").text($("#btn1_4").text());
-          $("#cabin").text($(".cabin_2").text());
+          $("#cabin").html(`${cabin_get}經典 Standard`);
         });
         $(".btn1_3").on("click", function () {
           $("#date_1").text($("#btn1_1").text());
           $("#dep1").text($("#btn1_2").text());
           $("#des1").text($("#btn1_3").text());
           $("#time1").text($("#btn1_4").text());
-          $("#cabin").text($(".cabin_3").text());
+          $("#cabin").html(`${cabin_get}尊寵 Up`);
         });
         // 第二行
         $(".btn2_1").on("click", function () {
@@ -836,21 +760,21 @@
           $("#dep1").text($("#btn2_2").text());
           $("#des1").text($("#btn2_3").text());
           $("#time1").text($("#btn2_4").text());
-          $("#cabin").text($(".cabin_1").text());
+          $("#cabin").html(`${cabin_get}基本 Basic`);
         });
         $(".btn2_2").on("click", function () {
           $("#date_1").text($("#btn2_1").text());
           $("#dep1").text($("#btn2_2").text());
           $("#des1").text($("#btn2_3").text());
           $("#time1").text($("#btn2_4").text());
-          $("#cabin").text($(".cabin_2").text());
+          $("#cabin").html(`${cabin_get}經典 Standard`);
         });
         $(".btn2_3").on("click", function () {
           $("#date_1").text($("#btn2_1").text());
           $("#dep1").text($("#btn2_2").text());
           $("#des1").text($("#btn2_3").text());
           $("#time1").text($("#btn2_4").text());
-          $("#cabin").text($(".cabin_3").text());
+          $("#cabin").html(`${cabin_get}尊寵 Up`);
         });
         // 第三行
         $(".btn3_1").on("click", function () {
@@ -858,114 +782,43 @@
           $("#dep1").text($("#btn3_2").text());
           $("#des1").text($("#btn3_3").text());
           $("#time1").text($("#btn3_4").text());
-          $("#cabin").text($(".cabin_1").text());
+          $("#cabin").html(`${cabin_get}基本 Basic`);
         });
         $(".btn3_2").on("click", function () {
           $("#date_1").text($("#btn3_1").text());
           $("#dep1").text($("#btn3_2").text());
           $("#des1").text($("#btn3_3").text());
           $("#time1").text($("#btn3_4").text());
-          $("#cabin").text($(".cabin_2").text());
+          $("#cabin").html(`${cabin_get}經典 Standard`);
         });
         $(".btn3_3").on("click", function () {
           $("#date_1").text($("#btn3_1").text());
           $("#dep1").text($("#btn3_2").text());
           $("#des1").text($("#btn3_3").text());
           $("#time1").text($("#btn3_4").text());
-          $("#cabin").text($(".cabin_3").text());
+          $("#cabin").html(`${cabin_get}尊寵 Up`);
         });
-        // 第四行
-        $(".btn4_1").on("click", function () {
-          $("#date_1").text($("#btn4_1").text());
-          $("#dep1").text($("#btn4_2").text());
-          $("#des1").text($("#btn4_3").text());
-          $("#time1").text($("#btn4_4").text());
-          $("#cabin").text($(".cabin_1").text());
-        });
-        $(".btn4_2").on("click", function () {
-          $("#date_1").text($("#btn4_1").text());
-          $("#dep1").text($("#btn4_2").text());
-          $("#des1").text($("#btn4_3").text());
-          $("#time1").text($("#btn4_4").text());
-          $("#cabin").text($(".cabin_2").text());
-        });
-        $(".btn4_3").on("click", function () {
-          $("#date_1").text($("#btn4_1").text());
-          $("#dep1").text($("#btn4_2").text());
-          $("#des1").text($("#btn4_3").text());
-          $("#time1").text($("#btn4_4").text());
-          $("#cabin").text($(".cabin_3").text());
-        });
-        // 第五行
-        $(".btn5_1").on("click", function () {
-          $("#date_1").text($("#btn5_1").text());
-          $("#dep1").text($("#btn5_2").text());
-          $("#des1").text($("#btn5_3").text());
-          $("#time1").text($("#btn5_4").text());
-          $("#cabin").text($(".cabin_1").text());
-        });
-        $(".btn5_2").on("click", function () {
-          $("#date_1").text($("#btn5_1").text());
-          $("#dep1").text($("#btn5_2").text());
-          $("#des1").text($("#btn5_3").text());
-          $("#time1").text($("#btn5_4").text());
-          $("#cabin").text($(".cabin_2").text());
-        });
-        $(".btn5_3").on("click", function () {
-          $("#date_1").text($("#btn5_1").text());
-          $("#dep1").text($("#btn5_2").text());
-          $("#des1").text($("#btn5_3").text());
-          $("#time1").text($("#btn5_4").text());
-          $("#cabin").text($(".cabin_3").text());
-        });
-        // 第六行
-        $(".btn6_1").on("click", function () {
-          $("#date_1").text($("#btn6_1").text());
-          $("#dep1").text($("#btn6_2").text());
-          $("#des1").text($("#btn6_3").text());
-          $("#time1").text($("#btn6_4").text());
-          $("#cabin").text($(".cabin_1").text());
-        });
-        $(".btn6_2").on("click", function () {
-          $("#date_1").text($("#btn6_1").text());
-          $("#dep1").text($("#btn6_2").text());
-          $("#des1").text($("#btn6_3").text());
-          $("#time1").text($("#btn6_4").text());
-          $("#cabin").text($(".cabin_2").text());
-        });
-        $(".btn6_3").on("click", function () {
-          $("#date_1").text($("#btn6_1").text());
-          $("#dep1").text($("#btn6_2").text());
-          $("#des1").text($("#btn6_3").text());
-          $("#time1").text($("#btn6_4").text());
-          $("#cabin").text($(".cabin_3").text());
-        });
-      </script>
 
-      <!-- 點選添加票種 -->
-      <!-- 第二表格第一行 -->
-      <!-- // 第二欄位_1為第一欄配的是經濟艙種類 -->
-      <script>
         $(".btn7_1").on("click", function () {
           $("#date_2").text($("#btn7_1").text());
           $("#dep2").text($("#btn7_2").text());
           $("#des2").text($("#btn7_3").text());
           $("#time2").text($("#btn7_4").text());
-          $("#cabin2").text($(".cabin1").text());
+          $("#cabin2").html(`${cabin_get}基本 Basic`);
         });
         $(".btn7_2").on("click", function () {
           $("#date_2").text($("#btn7_1").text());
           $("#dep2").text($("#btn7_2").text());
           $("#des2").text($("#btn7_3").text());
           $("#time2").text($("#btn7_4").text());
-          $("#cabin2").text($(".cabin2").text());
+          $("#cabin2").html(`${cabin_get}經典 Standard`);
         });
         $(".btn7_3").on("click", function () {
           $("#date_2").text($("#btn7_1").text());
           $("#dep2").text($("#btn7_2").text());
           $("#des2").text($("#btn7_3").text());
           $("#time2").text($("#btn7_4").text());
-          $("#cabin2").text($(".cabin3").text());
+          $("#cabin2").html(`${cabin_get}尊寵 Up`);
         });
         // 第二行
         $(".btn8_1").on("click", function () {
@@ -973,21 +826,21 @@
           $("#dep2").text($("#btn8_2").text());
           $("#des2").text($("#btn8_3").text());
           $("#time2").text($("#btn8_4").text());
-          $("#cabin2").text($(".cabin1").text());
+          $("#cabin2").html(`${cabin_get}基本 Basic`);
         });
         $(".btn8_2").on("click", function () {
           $("#date_2").text($("#btn8_1").text());
           $("#dep2").text($("#btn8_2").text());
           $("#des2").text($("#btn8_3").text());
           $("#time2").text($("#btn8_4").text());
-          $("#cabin2").text($(".cabin2").text());
+          $("#cabin2").html(`${cabin_get}經典 Standard`);
         });
         $(".btn8_3").on("click", function () {
           $("#date_2").text($("#btn8_1").text());
           $("#dep2").text($("#btn8_2").text());
           $("#des2").text($("#btn8_3").text());
           $("#time2").text($("#btn8_4").text());
-          $("#cabin2").text($(".cabin3").text());
+          $("#cabin2").html(`${cabin_get}尊寵 Up`);
         });
         // 第三行
         $(".btn9_1").on("click", function () {
@@ -995,89 +848,25 @@
           $("#dep2").text($("#btn9_2").text());
           $("#des2").text($("#btn9_3").text());
           $("#time2").text($("#btn9_4").text());
-          $("#cabin2").text($(".cabin1").text());
+          $("#cabin2").html(`${cabin_get}基本 Basic`);
         });
         $(".btn9_2").on("click", function () {
           $("#date_2").text($("#btn9_1").text());
           $("#dep2").text($("#btn9_2").text());
           $("#des2").text($("#btn9_3").text());
           $("#time2").text($("#btn9_4").text());
-          $("#cabin2").text($(".cabin2").text());
+          $("#cabin2").html(`${cabin_get}經典 Standard`);
         });
         $(".btn9_3").on("click", function () {
           $("#date_2").text($("#btn9_1").text());
           $("#dep2").text($("#btn9_2").text());
           $("#des2").text($("#btn9_3").text());
           $("#time2").text($("#btn9_4").text());
-          $("#cabin2").text($(".cabin3").text());
+          $("#cabin2").html(`${cabin_get}尊寵 Up`);
         });
-        // 第四行
-        $(".btn10_1").on("click", function () {
-          $("#date_2").text($("#btn10_1").text());
-          $("#dep2").text($("#btn10_2").text());
-          $("#des2").text($("#btn10_3").text());
-          $("#time2").text($("#btn10_4").text());
-          $("#cabin2").text($(".cabin1").text());
-        });
-        $(".btn10_2").on("click", function () {
-          $("#date_2").text($("#btn10_1").text());
-          $("#dep2").text($("#btn10_2").text());
-          $("#des2").text($("#btn10_3").text());
-          $("#time2").text($("#btn10_4").text());
-          $("#cabin2").text($(".cabin2").text());
-        });
-        $(".btn10_3").on("click", function () {
-          $("#date_2").text($("#btn10_1").text());
-          $("#dep2").text($("#btn10_2").text());
-          $("#des2").text($("#btn10_3").text());
-          $("#time2").text($("#btn10_4").text());
-          $("#cabin2").text($(".cabin3").text());
-        });
-        // 第五行
-        $(".btn11_1").on("click", function () {
-          $("#date_2").text($("#btn11_1").text());
-          $("#dep2").text($("#btn11_2").text());
-          $("#des2").text($("#btn11_3").text());
-          $("#time2").text($("#btn11_4").text());
-          $("#cabin2").text($(".cabin1").text());
-        });
-        $(".btn11_2").on("click", function () {
-          $("#date_2").text($("#btn11_1").text());
-          $("#dep2").text($("#btn11_2").text());
-          $("#des2").text($("#btn11_3").text());
-          $("#time2").text($("#btn11_4").text());
-          $("#cabin2").text($(".cabin2").text());
-        });
-        $(".btn11_3").on("click", function () {
-          $("#date_2").text($("#btn11_1").text());
-          $("#dep2").text($("#btn11_2").text());
-          $("#des2").text($("#btn11_3").text());
-          $("#time2").text($("#btn11_4").text());
-          $("#cabin2").text($(".cabin3").text());
-        });
-        // 第六行
-        $(".btn12_1").on("click", function () {
-          $("#date_2").text($("#btn12_1").text());
-          $("#dep2").text($("#btn12_2").text());
-          $("#des2").text($("#btn12_3").text());
-          $("#time2").text($("#btn12_4").text());
-          $("#cabin2").text($(".cabin1").text());
-        });
-        $(".btn12_2").on("click", function () {
-          $("#date_2").text($("#btn12_1").text());
-          $("#dep2").text($("#btn12_2").text());
-          $("#des2").text($("#btn12_3").text());
-          $("#time2").text($("#btn12_4").text());
-          $("#cabin2").text($(".cabin2").text());
-        });
-        $(".btn12_3").on("click", function () {
-          $("#date_2").text($("#btn12_1").text());
-          $("#dep2").text($("#btn12_2").text());
-          $("#des2").text($("#btn12_3").text());
-          $("#time2").text($("#btn12_4").text());
-          $("#cabin2").text($(".cabin3").text());
-        });
+      </script>
 
+      <script>
         // 觸發網頁讀取時做動
         document.addEventListener("DOMContentLoaded", function () {
           // 获取查询参数
@@ -1164,6 +953,82 @@
               $("#total_col").show(); // 顯示按鈕
             }
           }
+        });
+      </script>
+
+      <script>
+
+
+    // 你的 JavaScript 代码
+
+
+        //  填寫表格divbutoon 使用NODEJS
+        var destinationMapping = {
+          香港: "HKG",
+          大阪: "KIX",
+          曼谷: "BKK",
+          東京: "NRT",
+          沖繩: "OKA",
+          首爾: "ICN",
+          福岡: "FUK",
+          東京: "HND",
+          "台北-桃園": "TPE",
+          "台北-松山": "TSA",
+        };
+        $("#tbody").empty();
+
+
+
+
+
+
+      document.addEventListener("DOMContentLoaded", function ()  {
+
+
+        var departure = $("#taipei").text();
+        var destination = $("#tokyo").text();
+        var departure2 = $("#taipei").text();
+        var destination2 = $("#tokyo").text();
+        console.log(departure)
+        console.log(destination)
+        // 使用映射查找英文縮寫  使用組合來找到對應的班機
+        var departureCode = destinationMapping[departure];
+        var destinationCode = destinationMapping[destination];
+        var key = departureCode + destinationCode;
+        console.log(departureCode)
+        console.log(destinationCode)
+        console.log(key)
+
+
+
+
+          if (key) {       
+            $("#tbody").empty();
+            // 發送 GET 請求到伺服器路由，使用英文縮寫
+            $.get("/todo/item/destination/")+key, function(data){
+              $.each(data, function(index, item){
+                var trHtml = ` <td>
+                <span id="btn1_1">${item.scheduledDeparture + item.departureAirport}</span> 直飛
+                <span id="btn1_2">${item.scheduledArrival + item.arrivalAirport}</span>
+                <span id="btn1_3">直飛航班</span>
+                <span id="btn1_4">飛行時間:${item.飛行時間}</span>${item.flightNumber}
+              </td>
+              <td>
+                <div class="btn price-button btn1_1">
+                  TWD <span>${item.經濟艙基本Basic}</span>
+                </div>
+              </td>
+              <td><div class="btn price-button btn1_2"${item.經濟艙經典Standard}</div></td>
+              <td><div class="btn price-button btn1_3"${item.經濟艙尊寵Up}></td>
+            </tr>`;
+            $("#tobody").append(trHtml);
+              })
+            }
+         
+            }   else{
+              alert("未找到該項目")
+              }
+
         });
       </script>
     </div>
