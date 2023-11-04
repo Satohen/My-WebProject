@@ -388,7 +388,7 @@ $("#input_go, #input_back").on("change", function () {
   var departure = $("#input_go").val();
   var destination = $("#input_back").val();
   
-  // 使用映射查找英文縮寫
+  // 使用映射查找英文縮寫  使用組合來找到對應的班機
   var departureCode = destinationMapping[departure];
   var destinationCode = destinationMapping[destination];
   var key = departureCode + destinationCode;

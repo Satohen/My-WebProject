@@ -116,10 +116,6 @@
         </a>
       </div>
 
-
-
-
-
       <!-- 下拉式標題 -->
       <div class="container-fluid">
         <ul
@@ -251,17 +247,13 @@
     </nav>
     <hr />
 
-
-
-
-
     <!-- 搜尋表格 -->
     <div class="mt-5" style="background-color: lightyellow">
       <div style="display: inline-block">
         <table class="row">
           <tr>
             <th>出發日期</th>
-            <th>抵達日期</th>
+            <th>回程日期</th>
           </tr>
           <tr>
             <td><input type="date" id="goday_1" /></td>
@@ -269,7 +261,7 @@
           </tr>
         </table>
       </div>
-      <div style="display: inline-block;  margin-right: 200px">
+      <div style="display: inline-block; margin-right: 200px">
         <button class="btn btn-success" style="width: 250px">搜尋</button>
       </div>
     </div>
@@ -298,16 +290,16 @@
             <h1 id="tokyo">香港</h1>
           </th>
           <th>
-            <h1 id="day_1" style="text-align: end; width: 1000px;">日期</h1>
+            <h1 id="day_1" style="text-align: end; width: 1000px">日期</h1>
           </th>
         </tr>
       </table>
     </div>
     <!-- 套用別人做的選項選項 -->
     <div class="container">
-      <div>      
+      <div>
         <h2 id="date_selectday">出發日期</h2>
-        <label id="date_month" >12</label>
+        <label id="date_month">12</label>
         <div class="g-scrolling-carousel carousel">
           <div class="items">
             <a class="btn border" id="w1"><b>星期一</b></a>
@@ -326,52 +318,7 @@
         </div>
       </div>
     </div>
-<br>
-
-    <div class="container">
-      <div>
-        <h2>回程日期</h2>
-        <p id="date_month1">2023年 十二月</p>
-        <div class="g-scrolling-carousel carousel mb-3">
-          <div class="items">
-            <a class="btn border" id="w13"><b>星期一</b></a>
-            <a class="btn border" id="w14"><b>星期二</b></a>
-            <a class="btn border" id="w15"><b>星期三</b></a>
-            <a class="btn border" id="w16"><b>星期四</b></a>
-            <a class="btn border" id="w17"><b>星期五</b></a>
-            <a class="btn border" id="w18"><b>星期六</b></a>
-            <a class="btn border" id="w19"><b>星期七</b></a>
-            <a class="btn border" id="w20"><b>星期一</b></a>
-            <a class="btn border" id="w21"><b>星期二</b></a>
-            <a class="btn border" id="w22"><b>星期三</b></a>
-            <a class="btn border" id="w23"><b>星期四</b></a>
-            <a class="btn border" id="w24"><b>星期五</b></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 滾動功能 -->
-    <script src="../google-scrolling-carousel/jquery.gScrollingCarousel.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(".carousel .items").gScrollingCarousel();
-        $(".carousel-two .items").gScrollingCarousel({
-          mouseScrolling: false,
-          draggable: true,
-          snapOnDrag: false,
-          mobileNative: false,
-        });
-        $(".carousel-three .items").gScrollingCarousel({
-          scrollAmount: "single",
-        });
-        $(".carousel-four .items").gScrollingCarousel({
-          mouseScrolling: true,
-          draggable: false,
-          snapOnDrag: false,
-        });
-      });
-    </script>
+    <br />
 
     <!-- 日期設定MIN -->
     <script>
@@ -390,11 +337,11 @@
         // 日期输入
         return today;
       }
-      function setdate(x){
-        const today = transfer();   
+      function setdate(x) {
+        const today = transfer();
         var godayInput = document.getElementById(x);
-         // 出發日期最小值今天       
-        godayInput.setAttribute("min", today);       
+        // 出發日期最小值今天
+        godayInput.setAttribute("min", today);
       }
       setdate("goday_1");
       setdate("backday_2");
@@ -408,303 +355,380 @@
         style="width: 350px; margin-top: 290px; margin-right: 150px"
       >
         <table class="table table-bordered table-warning">
-          <tr  >
-          <td><span>1 旅客</span><br/><span id="AD" >1</span>成人<span id="CH">0</span>小孩<span id="BA">0</span>嬰兒</td>
-          </tr>
-          <tr id="go_col" style="display:none;"  >
+          <tr>
             <td>
-              啟程: <span id="gd"></span><br>
+              <span id="SUM_P"> </span>:旅客<br />
+              <span id="AD">0</span>:成人<span id="CH">0</span>:小孩
+              <span id="BA">0</span>:嬰兒
+            </td>
+          </tr>
+          <tr id="go_col" style="display: none">
+            <td>
+              啟程: <span id="gd"></span><br />
               <span id="date_1">2024年 03月 07日 星期四</span><br />
               <span id="dep1">14:00 東京(NRT)</span><br />
               <span id="des1">17:05 台北(TPE)</span><br />
               <span id="time1">飛行時間 04:05, 直飛航班</span><br />
-              票價類型: <span id="cabin">經濟艙</span><br />
+              票價類型: <span id="cabin" data-cabin="cabin1">經濟艙</span><br />
               價格:<span id="dol_1"></span>
             </td>
-
           </tr>
-          <tr id="back_col" style="display:none ;" >
-            <td >
-              回程: <span id="bd"></span><br>
+          <tr id="back_col" style="display: none">
+            <td>
+              回程: <span id="bd"></span><br />
               <span id="date_2">2024年 03月 07日 星期四</span><br />
               <span id="dep2">14:00 東京(NRT)</span><br />
               <span id="des2">17:05 台北(TPE)</span><br />
               <span id="time2">飛行時間 04:05, 直飛航班</span><br />
-              票價類型: <span id="cabin2">經濟艙</span><br />
+              票價類型: <span id="cabin2" data-cabin="cabin1">經濟艙</span
+              ><br />
               價格:<span id="dol_2"></span>
             </td>
           </tr>
           <!-- 兩個一起做同步動作 -->
-          <tr  id="total_col" style="display: block; display: none;">
+          <tr id="total_col" style="display: block; display: none">
             <td>
-              總計:TWD <span class="total_price">13,610</span><br />
-              票價及航空公司附加費:TWD<span class="total_price">13,610</span><br>
-              稅金及其他費用:TWD<span id="tax">1,101</span><br>
+              總計:TWD <span class="total_price"></span><br />
+              票價及航空公司附加費:TWD<span class="total_price"></span><br />
+              稅金及其他費用:TWD<span id="tax"></span><br />
               所有旅客的來回行程價格
-              (包含附加服務、稅金和燃油附加費用-若機票未使用或部分使用，未使用之稅金可退款。訂位服務費不可退款。) <br>
+              (包含附加服務、稅金和燃油附加費用-若機票未使用或部分使用，未使用之稅金可退款。訂位服務費不可退款。)
+              <br />
               <button id="continue" class="btn btn-success">繼續</button>
-            </td>    
+            </td>
+          </tr>
         </table>
       </div>
 
- 
-
-
-
-
-
-
-
-
-
-
-<!-- 啟程選單 -->
+      <!-- 啟程選單 -->
       <div class="container">
-      <form action="">
-        <table id="table_1" class="table table-striped table-bordered">
-          <thead>
-            <tr class="table-row">
-              <th class="col-4">時間</th>
-              <th class="col-2 cabin_1">經濟艙基本 Basic</th>
-              <th class="col-2 cabin_2">經濟艙經典Standard</th>
-              <th class="col-2 cabin_3">經濟艙尊寵 Up</th>
-            </tr>
-          </thead>
-          <tr>
-            <td>
-              <span id="btn1_1">07:00 臺灣桃園機場 (TPE)</span> 直飛 <span id="btn1_2">08:50 香港國際機場 (HKG)</span> <span id="btn1_3">直飛航班</span>
-              <span id="btn1_4">飛行時間: 01:50</span>  EVA Air (BR891)
-            </td>
-            <td><div class="btn price-button btn1_1">TWD 3812</div></td>
-            <td><div class="btn price-button btn1_2">TWD 5602</div></td>
-            <td><div class="btn price-button btn1_3">TWD 10448</div></td>
-          </tr>
-          <tr>
-            <td>
-              <span id="btn2_1"> 12:15 臺灣桃園機場 (TPE)</span> 直飛航班<span id="btn2_2">14:10 香港國際機場 (HKG)</span> <span id="btn2_3">直飛航班</span>
-              <span id="btn2_4">飛行時間: 01:50</span>  EVA Air (BR891)           
-            </td>
-            <td><div class="btn price-button btn2_1">TWD 4407</div></td>
-            <td><div class="btn price-button btn2_2">TWD 5600</div></td>
-            <td><div class="btn price-button btn2_3">TWD 10448</div></td>
-          </tr>
-          <tr>
-            <td>
-              <span id="btn3_1"> 16:35 臺灣桃園機場 (TPE)</span> 直飛航班<span id="btn3_2"> 18:30 香港國際機場 (HKG) </span> <span id="btn3_3">直飛航班</span>
-              <span id="btn3_4">飛行時間: 01:50 </span>  EVA Air (BR891)              
-            </td>
-            <td><div class="btn price-button btn3_1">TWD 4407</div></td>
-            <td><div class="btn price-button btn3_2">TWD 5600</div></td>
-            <td><div class="btn price-button btn3_3">TWD 10448</div></td>
-          </tr>
-          <tr>
-            <td>
-              <span id="btn4_1"> 08:05 臺灣桃園機場 (TPE)</span> 直飛航班<span id="btn4_2">  10:05 香港國際機場 (HKG) </span> <span id="btn4_3">直飛航班</span>
-              <span id="btn4_4">飛行時間: 01:50 </span>  EVA Air (BR891)             
-             
-            </td>
-            <td><div class="btn price-button btn4_1">TWD 4407</div></td>
-            <td><div class="btn price-button btn4_2">TWD 5600</div></td>
-            <td><div class="btn price-button btn4_3">TWD 10448</div></td>
-          </tr>
-          <tr>
-            <td>
-              <span id="btn5_1"> 10:10 臺灣桃園機場 (TPE)</span> 直飛航班<span id="btn5_2">12:10 香港國際機場 (HKG) </span> <span id="btn5_3">直飛航班</span>
-              <span id="btn5_4">飛行時間: 01:50 </span>  EVA Air (BR891) 
-            </td>
-            <td><div class="btn price-button btn5_1">TWD 4407</div></td>
-            <td><div class="btn price-button btn5_2">TWD 5600</div></td>
-            <td><div class="btn price-button btn5_3">TWD 10448</div></td>
-          </tr>
-          <tr>
-            <td>
-              <span id="btn6_1">14:15 臺灣桃園機場 (TPE)</span> 直飛航班<span id="btn6_2">16:16 香港國際機場 (HKG) </span> <span id="btn6_3">直飛航班</span>
-              <span id="btn6_4">飛行時間: 01:50 </span>  EVA Air (BR891)             
-            </td>
-            <td><div class="btn price-button btn6_1">TWD 4407</div></td>
-            <td><div class="btn price-button btn6_2">TWD 5600</div></td>
-            <td><div class="btn price-button btn6_3">TWD 10448</div></td>
-          </tr>
-        </table>
-      </form>
-    </div>
-
-
-
-
-
-    
-          <!-- 當日航班種時間 -->
-
-          <div style="background-color: azure">
-            <table>
-              <tr>
-                <th>
-                  <img
-                    src="./長榮航空img/小綠飛機.webp"
-                    alt=""
-                    style="width: 70px; height: 70px"
-                  />
+        <form action="">
+          <table id="table_1" class="table table-striped table-bordered">
+            <thead>
+              <tr class="table-row">
+                <th class="col-4">時間</th>
+                <th class="col-2">
+                  <span data-cabin="cabin1">經濟艙</span>基本 Basic
                 </th>
-                <th>
-                  <h1 id="tokyo_1">香港</h1>
+                <th class="col-2">
+                  <span data-cabin="cabin2">經濟艙</span>經典 Standard
                 </th>
-                <th>
-                  <h1>-></h1>
-                </th>
-                <th>
-                  <h1 id="taipei_1">台北</h1>
-                </th>
-                <th>
-                  <h1 id="day_2"  style="text-align: end; width: 1000px;">日期</h1>
+                <th class="col-2">
+                  <span data-cabin="cabin3">經濟艙</span>尊寵 Up
                 </th>
               </tr>
-            </table>
-          </div>
+            </thead>
+            <tr>
+              <td>
+                <span id="btn1_1">07:00 臺灣桃園機場 (TPE)</span> 直飛
+                <span id="btn1_2">08:50 香港國際機場 (HKG)</span>
+                <span id="btn1_3">直飛航班</span>
+                <span id="btn1_4">飛行時間: 01:50</span> EVA Air (BR891)
+              </td>
+              <td>
+                <div class="btn price-button btn1_1">
+                  TWD: <span>3812</span>
+                </div>
+              </td>
+              <td><div class="btn price-button btn1_2">TWD: 5602</div></td>
+              <td><div class="btn price-button btn1_3">TWD: 10448</div></td>
+            </tr>
+            <tr>
+              <td>
+                <span id="btn2_1"> 12:15 臺灣桃園機場 (TPE)</span> 直飛航班<span
+                  id="btn2_2"
+                  >14:10 香港國際機場 (HKG)</span
+                >
+                <span id="btn2_3">直飛航班</span>
+                <span id="btn2_4">飛行時間: 01:50</span> EVA Air (BR891)
+              </td>
+              <td><div class="btn price-button btn2_1">TWD 4407</div></td>
+              <td><div class="btn price-button btn2_2">TWD 5600</div></td>
+              <td><div class="btn price-button btn2_3">TWD 10448</div></td>
+            </tr>
+            <tr>
+              <td>
+                <span id="btn3_1"> 16:35 臺灣桃園機場 (TPE)</span> 直飛航班<span
+                  id="btn3_2"
+                >
+                  18:30 香港國際機場 (HKG)
+                </span>
+                <span id="btn3_3">直飛航班</span>
+                <span id="btn3_4">飛行時間: 01:50 </span> EVA Air (BR891)
+              </td>
+              <td><div class="btn price-button btn3_1">TWD 4407</div></td>
+              <td><div class="btn price-button btn3_2">TWD 5600</div></td>
+              <td><div class="btn price-button btn3_3">TWD 10448</div></td>
+            </tr>
+            <tr>
+              <td>
+                <span id="btn4_1"> 08:05 臺灣桃園機場 (TPE)</span> 直飛航班<span
+                  id="btn4_2"
+                >
+                  10:05 香港國際機場 (HKG)
+                </span>
+                <span id="btn4_3">直飛航班</span>
+                <span id="btn4_4">飛行時間: 01:50 </span> EVA Air (BR891)
+              </td>
+              <td><div class="btn price-button btn4_1">TWD 4407</div></td>
+              <td><div class="btn price-button btn4_2">TWD 5600</div></td>
+              <td><div class="btn price-button btn4_3">TWD 10448</div></td>
+            </tr>
+            <tr>
+              <td>
+                <span id="btn5_1"> 10:10 臺灣桃園機場 (TPE)</span> 直飛航班<span
+                  id="btn5_2"
+                  >12:10 香港國際機場 (HKG)
+                </span>
+                <span id="btn5_3">直飛航班</span>
+                <span id="btn5_4">飛行時間: 01:50 </span> EVA Air (BR891)
+              </td>
+              <td><div class="btn price-button btn5_1">TWD 4407</div></td>
+              <td><div class="btn price-button btn5_2">TWD 5600</div></td>
+              <td><div class="btn price-button btn5_3">TWD 10448</div></td>
+            </tr>
+            <tr>
+              <td>
+                <span id="btn6_1">14:15 臺灣桃園機場 (TPE)</span> 直飛航班<span
+                  id="btn6_2"
+                  >16:16 香港國際機場 (HKG)
+                </span>
+                <span id="btn6_3">直飛航班</span>
+                <span id="btn6_4">飛行時間: 01:50 </span> EVA Air (BR891)
+              </td>
+              <td><div class="btn price-button btn6_1">TWD 4407</div></td>
+              <td><div class="btn price-button btn6_2">TWD 5600</div></td>
+              <td><div class="btn price-button btn6_3">TWD 10448</div></td>
+            </tr>
+          </table>
+        </form>
+      </div>
 
-          <!-- 動態日期 -->
-        <script>
-          // 有年月日的
+      <!-- 當日航班種時間 -->
+
+      <div style="background-color: azure">
+        <table>
+          <tr>
+            <th>
+              <img
+                src="./長榮航空img/小綠飛機.webp"
+                alt=""
+                style="width: 70px; height: 70px"
+              />
+            </th>
+            <th>
+              <h1 id="tokyo_1">香港</h1>
+            </th>
+            <th>
+              <h1>-></h1>
+            </th>
+            <th>
+              <h1 id="taipei_1">台北</h1>
+            </th>
+            <th>
+              <h1 id="day_2" style="text-align: end; width: 1000px">日期</h1>
+            </th>
+          </tr>
+        </table>
+      </div>
+
+      <!-- 動態日期 -->
+      <script>
+        // 有年月日的
         function datetran1(dateValue) {
-        var datetran0 = dateValue.getFullYear();
-        var datetran2 = dateValue.getMonth() + 1;
-        var datetran3 = dateValue.getDate();
-        var options = { weekday: 'long' };
-        var datetran4 = dateValue.toLocaleDateString('zh-TW', options);
-        var datetranf = datetran0 + "年" + datetran2 + "月" + datetran3 + "日" + datetran4;
-        return datetranf;
-         }
-        //  只有年月的
-          function datetran2(dateValue) {
           var datetran0 = dateValue.getFullYear();
-           var datetran2 = dateValue.getMonth() + 1;
+          var datetran2 = dateValue.getMonth() + 1;
+          var datetran3 = dateValue.getDate();
+          var options = { weekday: "long" };
+          var datetran4 = dateValue.toLocaleDateString("zh-TW", options);
+          var datetranf =
+            datetran0 + "年" + datetran2 + "月" + datetran3 + "日" + datetran4;
+          return datetranf;
+        }
+        //  只有年月的
+        function datetran2(dateValue) {
+          var datetran0 = dateValue.getFullYear();
+          var datetran2 = dateValue.getMonth() + 1;
           var datetranf = datetran0 + "年" + datetran2 + "月";
           return datetranf;
         }
         // 日期置入滾動視窗
         function datetran3(dateValue) {
-        var datetran0 = dateValue.getDate();
-        var option = { weekday: 'long' };
-        var datetran2 = dateValue.toLocaleDateString('zh-TW', option);
-        var datetranf = datetran0 + "日" + "<br>" + datetran2;
-        return datetranf;
+          var datetran0 = dateValue.getDate();
+          var option = { weekday: "long" };
+          var datetran2 = dateValue.toLocaleDateString("zh-TW", option);
+          var datetranf = datetran0 + "日" + "<br>" + datetran2;
+          return datetranf;
         }
 
-
-       // 初始化 DATE 裡面的日期
-         var initialDate = new Date($("#goday_1").val());
-         var initialDateString = datetran1(initialDate);
-         var initialDateString2 = datetran2(initialDate);
+        // 初始化 DATE 裡面的日期
+        var initialDate = new Date($("#goday_1").val());
+        var initialDateString = datetran1(initialDate);
+        var initialDateString2 = datetran2(initialDate);
         $("#date_1").text(initialDateString);
-        $("#day_1").text($("#goday_1").val());       
+        $("#day_1").text($("#goday_1").val());
         $("#date_month").text(initialDateString2);
 
-        
-        //當日其變更 
+        //當日其變更
         $("#goday_1").on("change", function () {
-        const dateValue = new Date($("#goday_1").val());
-         $("#day_1").text($("#goday_1").val());
-        var datetranf = datetran1(dateValue);
-        $("#date_1").text(dateValue);
-         // 購物欄位日期
-         $("#gd").text(datetranf)
+          const dateValue = new Date($("#goday_1").val());
+          $("#day_1").text($("#goday_1").val());
+          var datetranf = datetran1(dateValue);
+          $("#date_1").text(dateValue);
+          // 購物欄位日期
+          $("#gd").text(datetranf);
 
-        // backday更換最小不能為<goday       
-        document.getElementById('backday_2').setAttribute("min",$("#goday_1").val());       
-      
+          // backday更換最小不能為<goday
+          document
+            .getElementById("backday_2")
+            .setAttribute("min", $("#goday_1").val());
 
-        // 設定月那裡變更
-        var datetranf1 = datetran2(dateValue);
-        $("#date_month").text(datetranf1);
+          // 設定月那裡變更
+          var datetranf1 = datetran2(dateValue);
+          $("#date_month").text(datetranf1);
           // 將每一天置入星期X表格
-         for (let i = 1; i <= 12; i++) {
-         const newDate = new Date(dateValue);
-         const x = datetran3(newDate);
-         $(`#w`+i).html(x);
-         dateValue.setDate(dateValue.getDate() + 1); // 每次增加一天
-       
-        // 點選時將日期輸入到的填充入其視窗
-        $(`#w`+i).on("click", function(){
-        const formattedDate = `${newDate.getFullYear()}-${(newDate.getMonth() + 1).toString().padStart(2, '0')}-${newDate.getDate().toString().padStart(2, '0')}`;
-         $(`#w${i}`).val(formattedDate);
-        const selectedDate = $(this).val();
-        $("#goday_1").val(selectedDate); 
-        $("#goday_1").trigger('change'); // 手动触发change事件        
-        });    
-        };
+          for (let i = 1; i <= 12; i++) {
+            const newDate = new Date(dateValue);
+            const x = datetran3(newDate);
+            $(`#w` + i).html(x);
+            dateValue.setDate(dateValue.getDate() + 1); // 每次增加一天
+
+            // 點選時將日期輸入到的填充入其視窗
+            $(`#w` + i).on("click", function () {
+              const formattedDate = `${newDate.getFullYear()}-${(
+                newDate.getMonth() + 1
+              )
+                .toString()
+                .padStart(2, "0")}-${newDate
+                .getDate()
+                .toString()
+                .padStart(2, "0")}`;
+              $(`#w${i}`).val(formattedDate);
+              const selectedDate = $(this).val();
+              $("#goday_1").val(selectedDate);
+              $("#goday_1").trigger("change"); // 手动触发change事件
+            });
+          }
         });
-
-
-        
-
 
         // 初始化 DATE 第二欄位 裡面的日期
         var initialDate1 = new Date($("#backday_2").val());
-        var initialDateString1= datetran2(initialDate1);
+        var initialDateString1 = datetran2(initialDate1);
         $("#date_2").text(initialDateString1);
         $("#day_2").text($("#backday_2").val());
         $("#date_month1").text(initialDateString1);
 
         // 當日其變更
         $("#backday_2").on("change", function () {
-        var dateValue1 = new Date($("#backday_2").val());
-        $("#day_2").text($("#backday_2").val());
-       
-        var datetranf1 = datetran1(dateValue1);
-        $("#date_2").text(datetranf1);
-         // 購物欄位日期
-         $("#bd").text(datetranf1)
+          var dateValue1 = new Date($("#backday_2").val());
+          $("#day_2").text($("#backday_2").val());
 
-        // 設定月那裡變更
-        var datetranf2 = datetran2(dateValue1)
-        $("#date_month1").text(datetranf2);
+          var datetranf1 = datetran1(dateValue1);
+          $("#date_2").text(datetranf1);
+          // 購物欄位日期
+          $("#bd").text(datetranf1);
 
+          // 設定月那裡變更
+          var datetranf2 = datetran2(dateValue1);
+          $("#date_month1").text(datetranf2);
 
+          // 將每一天置入星期X表格
+          for (let i = 13; i <= 24; i++) {
+            const newDate = new Date(dateValue1);
+            const x = datetran3(newDate);
+            $(`#w` + i).html(x);
+            $(`#w` + i).val(dateValue1);
+            dateValue1.setDate(dateValue1.getDate() + 1); // 每次增加一天
 
-
-
-         // 將每一天置入星期X表格
-         for (let i = 13; i <= 24; i++) {
-         const newDate = new Date(dateValue1);
-         const x = datetran3(newDate);
-         $(`#w`+i).html(x);
-         $(`#w`+i).val(dateValue1);
-         dateValue1.setDate(dateValue1.getDate() + 1); // 每次增加一天
-       
-        // 點選時將日期輸入到的填充入其視窗
-        $(`#w`+i).on("click", function(){
-        const formattedDate = `${newDate.getFullYear()}-${(newDate.getMonth() + 1).toString().padStart(2, '0')}-${newDate.getDate().toString().padStart(2, '0')}`;
-        $(`#w${i}`).val(formattedDate);
-        const selectedDate = $(this).val();
-        $("#backday_2").val(selectedDate); 
-        $("#backday_2").trigger('change'); // 手动触发change事件
-        });    
-        }});       
-
-       
-
-   
+            // 點選時將日期輸入到的填充入其視窗
+            $(`#w` + i).on("click", function () {
+              const formattedDate = `${newDate.getFullYear()}-${(
+                newDate.getMonth() + 1
+              )
+                .toString()
+                .padStart(2, "0")}-${newDate
+                .getDate()
+                .toString()
+                .padStart(2, "0")}`;
+              $(`#w${i}`).val(formattedDate);
+              const selectedDate = $(this).val();
+              $("#backday_2").val(selectedDate);
+              $("#backday_2").trigger("change"); // 手动触发change事件
+            });
+          }
+        });
       </script>
-           
-          
 
-      
+      <div class="container">
+        <div>
+          <h2>回程日期</h2>
+          <p id="date_month1">2023年 十二月</p>
+          <div class="g-scrolling-carousel carousel mb-3">
+            <div class="items">
+              <a class="btn border" id="w13"><b>星期一</b></a>
+              <a class="btn border" id="w14"><b>星期二</b></a>
+              <a class="btn border" id="w15"><b>星期三</b></a>
+              <a class="btn border" id="w16"><b>星期四</b></a>
+              <a class="btn border" id="w17"><b>星期五</b></a>
+              <a class="btn border" id="w18"><b>星期六</b></a>
+              <a class="btn border" id="w19"><b>星期七</b></a>
+              <a class="btn border" id="w20"><b>星期一</b></a>
+              <a class="btn border" id="w21"><b>星期二</b></a>
+              <a class="btn border" id="w22"><b>星期三</b></a>
+              <a class="btn border" id="w23"><b>星期四</b></a>
+              <a class="btn border" id="w24"><b>星期五</b></a>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- 滾動功能 -->
+      <script src="../google-scrolling-carousel/jquery.gScrollingCarousel.js"></script>
+      <script>
+        $(document).ready(function () {
+          $(".carousel .items").gScrollingCarousel();
+          $(".carousel-two .items").gScrollingCarousel({
+            mouseScrolling: false,
+            draggable: true,
+            snapOnDrag: false,
+            mobileNative: false,
+          });
+          $(".carousel-three .items").gScrollingCarousel({
+            scrollAmount: "single",
+          });
+          $(".carousel-four .items").gScrollingCarousel({
+            mouseScrolling: true,
+            draggable: false,
+            snapOnDrag: false,
+          });
+        });
+      </script>
 
-    <div class="container" id="table_2">
+      <div class="container" id="table_2">
         <table class="table table-striped table-bordered">
           <thead>
             <tr class="table-row">
               <th class="col-4">時間</th>
-              <th class="col-2 cabin1">經濟艙基本 Basic</th>
-              <th class="col-2 cabin2">經濟艙經典Standard</th>
-              <th class="col-2 cabin3">經濟艙尊寵 Up</th>
+              <th class="col-2">
+                <span data-cabin="cabin1">經濟艙</span>基本 Basic
+              </th>
+              <th class="col-2">
+                <span data-cabin="cabin2">經濟艙</span>經典 Standard
+              </th>
+              <th class="col-2">
+                <span data-cabin="cabin3">經濟艙</span>尊寵 Up
+              </th>
             </tr>
           </thead>
           <tr>
             <td>
-              <span id="btn7_1">11:15 香港國際機場 (HKG) </span> 直飛航班<span id="btn7_2">  13:00  臺灣桃園機場 (TPE) </span> <span id="btn7_3">直飛航班</span>
-              <span id="btn7_4">飛行時間: 01:45 </span>  EVA Air (BR891)       
+              <span id="btn7_1">11:15 香港國際機場 (HKG) </span> 直飛航班<span
+                id="btn7_2"
+              >
+                13:00 臺灣桃園機場 (TPE)
+              </span>
+              <span id="btn7_3">直飛航班</span>
+              <span id="btn7_4">飛行時間: 01:45 </span> EVA Air (BR891)
             </td>
             <td><div class="btn price-button btn7_1">TWD 4407</div></td>
             <td><div class="btn price-button btn7_2">TWD 5600</div></td>
@@ -712,8 +736,13 @@
           </tr>
           <tr>
             <td>
-              <span id="btn8_1"> 13:35 香港國際機場 (HKG) </span> 直飛航班<span id="btn8_2"> 15:20  臺灣桃園機場 (TPE) </span> <span id="btn8_3">直飛航班</span>
-              <span id="btn8_4"> 飛行時間: 01:50 </span>  EVA Air (BR891)      
+              <span id="btn8_1"> 13:35 香港國際機場 (HKG) </span> 直飛航班<span
+                id="btn8_2"
+              >
+                15:20 臺灣桃園機場 (TPE)
+              </span>
+              <span id="btn8_3">直飛航班</span>
+              <span id="btn8_4"> 飛行時間: 01:50 </span> EVA Air (BR891)
             </td>
             <td><div class="btn price-button btn8_1">TWD 4407</div></td>
             <td><div class="btn price-button btn8_2">TWD 5600</div></td>
@@ -721,378 +750,422 @@
           </tr>
           <tr>
             <td>
-              <span id="btn9_1">17:35 香港國際機場 (HKG) </span> 直飛航班<span id="btn9_2">  19:20   臺灣桃園機場 (TPE) </span> <span id="btn9_3">直飛航班</span>
-              <span id="btn9_4"> 飛行時間: 01:50 </span>  EVA Air (BR891)    
+              <span id="btn9_1">17:35 香港國際機場 (HKG) </span> 直飛航班<span
+                id="btn9_2"
+              >
+                19:20 臺灣桃園機場 (TPE)
+              </span>
+              <span id="btn9_3">直飛航班</span>
+              <span id="btn9_4"> 飛行時間: 01:50 </span> EVA Air (BR891)
             </td>
-            <td><div class="btn price-button  btn9_1">TWD 4407</div></td>
-            <td><div class="btn price-button  btn9_2">TWD 5600</div></td>
-            <td><div class="btn price-button  btn9_3">TWD 10448</div></td>
+            <td><div class="btn price-button btn9_1">TWD 4407</div></td>
+            <td><div class="btn price-button btn9_2">TWD 5600</div></td>
+            <td><div class="btn price-button btn9_3">TWD 10448</div></td>
           </tr>
           <tr>
             <td>
-              <span id="btn10_1">19:40  香港國際機場 (HKG) </span> 直飛航班<span id="btn10_2">21:25   臺灣桃園機場 (TPE) </span> <span id="btn10_3">直飛航班</span>
-              <span id="btn10_4"> 飛行時間: 01:50 </span>  EVA Air (BR891) 
+              <span id="btn10_1">19:40 香港國際機場 (HKG) </span> 直飛航班<span
+                id="btn10_2"
+                >21:25 臺灣桃園機場 (TPE)
+              </span>
+              <span id="btn10_3">直飛航班</span>
+              <span id="btn10_4"> 飛行時間: 01:50 </span> EVA Air (BR891)
             </td>
-            <td><div class="btn price-button  btn10_1">TWD 4407</div></td>
-            <td><div class="btn price-button  btn10_2">TWD 5600</div></td>
-            <td><div class="btn price-button  btn10_3">TWD 10448</div></td>
+            <td><div class="btn price-button btn10_1">TWD 4407</div></td>
+            <td><div class="btn price-button btn10_2">TWD 5600</div></td>
+            <td><div class="btn price-button btn10_3">TWD 10448</div></td>
           </tr>
           <tr>
             <td>
-              <span id="btn11_1">  21:50  香港國際機場 (HKG) </span> 直飛航班<span id="btn11_2"> 23:35臺灣桃園機場 (TPE) </span> <span id="btn11_3">直飛航班</span>
-              <span id="btn11_4"> 飛行時間: 01:50 </span>  EVA Air (BR891)               
+              <span id="btn11_1"> 21:50 香港國際機場 (HKG) </span> 直飛航班<span
+                id="btn11_2"
+              >
+                23:35臺灣桃園機場 (TPE)
+              </span>
+              <span id="btn11_3">直飛航班</span>
+              <span id="btn11_4"> 飛行時間: 01:50 </span> EVA Air (BR891)
             </td>
-            <td><div class="btn price-button  btn11_1">TWD 4407</div></td>
-            <td><div class="btn price-button  btn11_2">TWD 5600</div></td>
-            <td><div class="btn price-button  btn11_3">TWD 10448</div></td>
+            <td><div class="btn price-button btn11_1">TWD 4407</div></td>
+            <td><div class="btn price-button btn11_2">TWD 5600</div></td>
+            <td><div class="btn price-button btn11_3">TWD 10448</div></td>
           </tr>
           <tr>
             <td>
-              <span id="btn12_1"> 15:20 香港國際機場 (HKG) </span> 直飛航班<span id="btn12_2">17:10 臺灣桃園機場 (TPE) </span> <span id="btn12_3">直飛航班</span>
-              <span id="btn12_4"> 飛行時間: 01:50 </span>  EVA Air (BR891)             
+              <span id="btn12_1"> 15:20 香港國際機場 (HKG) </span> 直飛航班<span
+                id="btn12_2"
+                >17:10 臺灣桃園機場 (TPE)
+              </span>
+              <span id="btn12_3">直飛航班</span>
+              <span id="btn12_4"> 飛行時間: 01:50 </span> EVA Air (BR891)
             </td>
-            <td><div class="btn price-button  btn12_1">TWD 4407</div></td>
-            <td><div class="btn price-button  btn12_2">TWD 5600</div></td>
-            <td><div class="btn price-button  btn12_3">TWD 10448</div></td>
+            <td><div class="btn price-button btn12_1">TWD 4407</div></td>
+            <td><div class="btn price-button btn12_2">TWD 5600</div></td>
+            <td><div class="btn price-button btn12_3">TWD 10448</div></td>
           </tr>
         </table>
       </div>
-
-
-
-      <!-- 價格功能-->
-      <script>
-        var tick1 =0;
-        var tick2 =0;
-        var goColVisible = false; // 初始状态为未显示
-        var backColVisible = false; // 初始状态为未显示
-        $("#table_1 .btn.price-button").on("click",function (){
-          $("#go_col").show();
-          goColVisible = true;
-          var buttonText = $(this).text();
-          tick1 = parseInt(buttonText.replace(/TWD/g, ''));
-          Ticket1 = (tick1 * parseInt($("#AD").text()))+(tick1*parseInt($("#CH").text())*0.8)+ (tick1*parseInt($("#BA").text())*0.5)
-           $("#dol_1").text(buttonText)
-
-          if (goColVisible && backColVisible) {
-          $("#total_col").show(); // 顯示按鈕
-
-          }
-
-        })
-        $("#table_2 .btn.price-button").on("click",function (){
-        var buttonText = $(this).text();
-        tick2 = parseInt(buttonText.replace(/TWD/g, ''));
-        Ticket2 = (tick2 * parseInt($("#AD").text()))+(tick2*parseInt($("#CH").text())*0.8)+ (tick2*parseInt($("#BA").text())*0.5)
-
-         $("#dol_2").text(buttonText)
-        if(goColVisible){
-        $("#back_col").show();
-        $("#total_col").show();
-        backColVisible = true;
-        var sum = Ticket1 + Ticket2
-        $(".total_price").text(sum)
-        var tax =Math.round(sum * 0.2) 
-        $("#tax").text(tax)
-        if (goColVisible && backColVisible) {
-          $("#total_col").show(); // 顯示按鈕
-
-
-          }}  
-        })
-
-      </script>
 
       <!-- 點選添加票種 -->
       <!-- 第一行 -->
       <!-- // 第二欄位_1為第一欄配的是經濟艙種類 -->
       <script>
-        $(".btn1_1").on("click", function(){
+        $(".btn1_1").on("click", function () {
           $("#date_1").text($("#btn1_1").text());
-          $("#dep1").text($("#btn1_2").text())
-          $("#des1").text($("#btn1_3").text())
-          $("#time1").text($("#btn1_4").text())
-          $("#cabin").text($(".cabin_1").text())     
-        })
-        $(".btn1_2").on("click", function(){
+          $("#dep1").text($("#btn1_2").text());
+          $("#des1").text($("#btn1_3").text());
+          $("#time1").text($("#btn1_4").text());
+          $("#cabin").text($(".cabin_1").text());
+        });
+        $(".btn1_2").on("click", function () {
           $("#date_1").text($("#btn1_1").text());
-          $("#dep1").text($("#btn1_2").text())
-          $("#des1").text($("#btn1_3").text())
-          $("#time1").text($("#btn1_4").text())
-          $("#cabin").text($(".cabin_2").text())
-        })
-        $(".btn1_3").on("click", function(){
+          $("#dep1").text($("#btn1_2").text());
+          $("#des1").text($("#btn1_3").text());
+          $("#time1").text($("#btn1_4").text());
+          $("#cabin").text($(".cabin_2").text());
+        });
+        $(".btn1_3").on("click", function () {
           $("#date_1").text($("#btn1_1").text());
-          $("#dep1").text($("#btn1_2").text())
-          $("#des1").text($("#btn1_3").text())
-          $("#time1").text($("#btn1_4").text())
-          $("#cabin").text($(".cabin_3").text())
-        })
+          $("#dep1").text($("#btn1_2").text());
+          $("#des1").text($("#btn1_3").text());
+          $("#time1").text($("#btn1_4").text());
+          $("#cabin").text($(".cabin_3").text());
+        });
         // 第二行
-        $(".btn2_1").on("click", function(){
+        $(".btn2_1").on("click", function () {
           $("#date_1").text($("#btn2_1").text());
-          $("#dep1").text($("#btn2_2").text())
-          $("#des1").text($("#btn2_3").text())
-          $("#time1").text($("#btn2_4").text())
-          $("#cabin").text($(".cabin_1").text())     
-        })
-        $(".btn2_2").on("click", function(){
+          $("#dep1").text($("#btn2_2").text());
+          $("#des1").text($("#btn2_3").text());
+          $("#time1").text($("#btn2_4").text());
+          $("#cabin").text($(".cabin_1").text());
+        });
+        $(".btn2_2").on("click", function () {
           $("#date_1").text($("#btn2_1").text());
-          $("#dep1").text($("#btn2_2").text())
-          $("#des1").text($("#btn2_3").text())
-          $("#time1").text($("#btn2_4").text())
-          $("#cabin").text($(".cabin_2").text())
-        })
-        $(".btn2_3").on("click", function(){
+          $("#dep1").text($("#btn2_2").text());
+          $("#des1").text($("#btn2_3").text());
+          $("#time1").text($("#btn2_4").text());
+          $("#cabin").text($(".cabin_2").text());
+        });
+        $(".btn2_3").on("click", function () {
           $("#date_1").text($("#btn2_1").text());
-          $("#dep1").text($("#btn2_2").text())
-          $("#des1").text($("#btn2_3").text())
-          $("#time1").text($("#btn2_4").text())
-          $("#cabin").text($(".cabin_3").text())
-        })
+          $("#dep1").text($("#btn2_2").text());
+          $("#des1").text($("#btn2_3").text());
+          $("#time1").text($("#btn2_4").text());
+          $("#cabin").text($(".cabin_3").text());
+        });
         // 第三行
-          $(".btn3_1").on("click", function(){
+        $(".btn3_1").on("click", function () {
           $("#date_1").text($("#btn3_1").text());
-          $("#dep1").text($("#btn3_2").text())
-          $("#des1").text($("#btn3_3").text())
-          $("#time1").text($("#btn3_4").text())
-          $("#cabin").text($(".cabin_1").text())     
-        })
-        $(".btn3_2").on("click", function(){
+          $("#dep1").text($("#btn3_2").text());
+          $("#des1").text($("#btn3_3").text());
+          $("#time1").text($("#btn3_4").text());
+          $("#cabin").text($(".cabin_1").text());
+        });
+        $(".btn3_2").on("click", function () {
           $("#date_1").text($("#btn3_1").text());
-          $("#dep1").text($("#btn3_2").text())
-          $("#des1").text($("#btn3_3").text())
-          $("#time1").text($("#btn3_4").text())
-          $("#cabin").text($(".cabin_2").text())
-        })
-        $(".btn3_3").on("click", function(){
+          $("#dep1").text($("#btn3_2").text());
+          $("#des1").text($("#btn3_3").text());
+          $("#time1").text($("#btn3_4").text());
+          $("#cabin").text($(".cabin_2").text());
+        });
+        $(".btn3_3").on("click", function () {
           $("#date_1").text($("#btn3_1").text());
-          $("#dep1").text($("#btn3_2").text())
-          $("#des1").text($("#btn3_3").text())
-          $("#time1").text($("#btn3_4").text())
-          $("#cabin").text($(".cabin_3").text())
-        })
-          // 第四行
-          $(".btn4_1").on("click", function(){
+          $("#dep1").text($("#btn3_2").text());
+          $("#des1").text($("#btn3_3").text());
+          $("#time1").text($("#btn3_4").text());
+          $("#cabin").text($(".cabin_3").text());
+        });
+        // 第四行
+        $(".btn4_1").on("click", function () {
           $("#date_1").text($("#btn4_1").text());
-          $("#dep1").text($("#btn4_2").text())
-          $("#des1").text($("#btn4_3").text())
-          $("#time1").text($("#btn4_4").text())
-          $("#cabin").text($(".cabin_1").text())     
-        })
-        $(".btn4_2").on("click", function(){
+          $("#dep1").text($("#btn4_2").text());
+          $("#des1").text($("#btn4_3").text());
+          $("#time1").text($("#btn4_4").text());
+          $("#cabin").text($(".cabin_1").text());
+        });
+        $(".btn4_2").on("click", function () {
           $("#date_1").text($("#btn4_1").text());
-          $("#dep1").text($("#btn4_2").text())
-          $("#des1").text($("#btn4_3").text())
-          $("#time1").text($("#btn4_4").text())
-          $("#cabin").text($(".cabin_2").text())
-        })
-        $(".btn4_3").on("click", function(){
+          $("#dep1").text($("#btn4_2").text());
+          $("#des1").text($("#btn4_3").text());
+          $("#time1").text($("#btn4_4").text());
+          $("#cabin").text($(".cabin_2").text());
+        });
+        $(".btn4_3").on("click", function () {
           $("#date_1").text($("#btn4_1").text());
-          $("#dep1").text($("#btn4_2").text())
-          $("#des1").text($("#btn4_3").text())
-          $("#time1").text($("#btn4_4").text())
-          $("#cabin").text($(".cabin_3").text())
-        })
-          // 第五行
-          $(".btn5_1").on("click", function(){
+          $("#dep1").text($("#btn4_2").text());
+          $("#des1").text($("#btn4_3").text());
+          $("#time1").text($("#btn4_4").text());
+          $("#cabin").text($(".cabin_3").text());
+        });
+        // 第五行
+        $(".btn5_1").on("click", function () {
           $("#date_1").text($("#btn5_1").text());
-          $("#dep1").text($("#btn5_2").text())
-          $("#des1").text($("#btn5_3").text())
-          $("#time1").text($("#btn5_4").text())
-          $("#cabin").text($(".cabin_1").text())     
-        })
-        $(".btn5_2").on("click", function(){
+          $("#dep1").text($("#btn5_2").text());
+          $("#des1").text($("#btn5_3").text());
+          $("#time1").text($("#btn5_4").text());
+          $("#cabin").text($(".cabin_1").text());
+        });
+        $(".btn5_2").on("click", function () {
           $("#date_1").text($("#btn5_1").text());
-          $("#dep1").text($("#btn5_2").text())
-          $("#des1").text($("#btn5_3").text())
-          $("#time1").text($("#btn5_4").text())
-          $("#cabin").text($(".cabin_2").text())
-        })
-        $(".btn5_3").on("click", function(){
+          $("#dep1").text($("#btn5_2").text());
+          $("#des1").text($("#btn5_3").text());
+          $("#time1").text($("#btn5_4").text());
+          $("#cabin").text($(".cabin_2").text());
+        });
+        $(".btn5_3").on("click", function () {
           $("#date_1").text($("#btn5_1").text());
-          $("#dep1").text($("#btn5_2").text())
-          $("#des1").text($("#btn5_3").text())
-          $("#time1").text($("#btn5_4").text())
-          $("#cabin").text($(".cabin_3").text())
-        })
-          // 第六行
-          $(".btn6_1").on("click", function(){
+          $("#dep1").text($("#btn5_2").text());
+          $("#des1").text($("#btn5_3").text());
+          $("#time1").text($("#btn5_4").text());
+          $("#cabin").text($(".cabin_3").text());
+        });
+        // 第六行
+        $(".btn6_1").on("click", function () {
           $("#date_1").text($("#btn6_1").text());
-          $("#dep1").text($("#btn6_2").text())
-          $("#des1").text($("#btn6_3").text())
-          $("#time1").text($("#btn6_4").text())
-          $("#cabin").text($(".cabin_1").text())     
-        })
-        $(".btn6_2").on("click", function(){
+          $("#dep1").text($("#btn6_2").text());
+          $("#des1").text($("#btn6_3").text());
+          $("#time1").text($("#btn6_4").text());
+          $("#cabin").text($(".cabin_1").text());
+        });
+        $(".btn6_2").on("click", function () {
           $("#date_1").text($("#btn6_1").text());
-          $("#dep1").text($("#btn6_2").text())
-          $("#des1").text($("#btn6_3").text())
-          $("#time1").text($("#btn6_4").text())
-          $("#cabin").text($(".cabin_2").text())
-        })
-        $(".btn6_3").on("click", function(){
+          $("#dep1").text($("#btn6_2").text());
+          $("#des1").text($("#btn6_3").text());
+          $("#time1").text($("#btn6_4").text());
+          $("#cabin").text($(".cabin_2").text());
+        });
+        $(".btn6_3").on("click", function () {
           $("#date_1").text($("#btn6_1").text());
-          $("#dep1").text($("#btn6_2").text())
-          $("#des1").text($("#btn6_3").text())
-          $("#time1").text($("#btn6_4").text())
-          $("#cabin").text($(".cabin_3").text())
-        })               
-
+          $("#dep1").text($("#btn6_2").text());
+          $("#des1").text($("#btn6_3").text());
+          $("#time1").text($("#btn6_4").text());
+          $("#cabin").text($(".cabin_3").text());
+        });
       </script>
 
-    <!-- 點選添加票種 -->
+      <!-- 點選添加票種 -->
       <!-- 第二表格第一行 -->
       <!-- // 第二欄位_1為第一欄配的是經濟艙種類 -->
       <script>
-        $(".btn7_1").on("click", function(){
-        $("#date_2").text($("#btn7_1").text());
-        $("#dep2").text($("#btn7_2").text())
-        $("#des2").text($("#btn7_3").text())
-        $("#time2").text($("#btn7_4").text())
-        $("#cabin2").text($(".cabin1").text())     
-        })
-        $(".btn7_2").on("click", function(){
-        $("#date_2").text($("#btn7_1").text());
-        $("#dep2").text($("#btn7_2").text())
-        $("#des2").text($("#btn7_3").text())
-        $("#time2").text($("#btn7_4").text())
-        $("#cabin2").text($(".cabin2").text())     
-        })
-        $(".btn7_3").on("click", function(){
-        $("#date_2").text($("#btn7_1").text());
-        $("#dep2").text($("#btn7_2").text())
-        $("#des2").text($("#btn7_3").text())
-        $("#time2").text($("#btn7_4").text())
-        $("#cabin2").text($(".cabin3").text())     
-        })
+        $(".btn7_1").on("click", function () {
+          $("#date_2").text($("#btn7_1").text());
+          $("#dep2").text($("#btn7_2").text());
+          $("#des2").text($("#btn7_3").text());
+          $("#time2").text($("#btn7_4").text());
+          $("#cabin2").text($(".cabin1").text());
+        });
+        $(".btn7_2").on("click", function () {
+          $("#date_2").text($("#btn7_1").text());
+          $("#dep2").text($("#btn7_2").text());
+          $("#des2").text($("#btn7_3").text());
+          $("#time2").text($("#btn7_4").text());
+          $("#cabin2").text($(".cabin2").text());
+        });
+        $(".btn7_3").on("click", function () {
+          $("#date_2").text($("#btn7_1").text());
+          $("#dep2").text($("#btn7_2").text());
+          $("#des2").text($("#btn7_3").text());
+          $("#time2").text($("#btn7_4").text());
+          $("#cabin2").text($(".cabin3").text());
+        });
         // 第二行
-        $(".btn8_1").on("click", function(){
-        $("#date_2").text($("#btn8_1").text());
-        $("#dep2").text($("#btn8_2").text())
-        $("#des2").text($("#btn8_3").text())
-        $("#time2").text($("#btn8_4").text())
-        $("#cabin2").text($(".cabin1").text())     
-        })
-        $(".btn8_2").on("click", function(){
+        $(".btn8_1").on("click", function () {
           $("#date_2").text($("#btn8_1").text());
-          $("#dep2").text($("#btn8_2").text())
-          $("#des2").text($("#btn8_3").text())
-          $("#time2").text($("#btn8_4").text())
-          $("#cabin2").text($(".cabin2").text())     
-        })
-        $(".btn8_3").on("click", function(){
+          $("#dep2").text($("#btn8_2").text());
+          $("#des2").text($("#btn8_3").text());
+          $("#time2").text($("#btn8_4").text());
+          $("#cabin2").text($(".cabin1").text());
+        });
+        $(".btn8_2").on("click", function () {
           $("#date_2").text($("#btn8_1").text());
-          $("#dep2").text($("#btn8_2").text())
-          $("#des2").text($("#btn8_3").text())
-          $("#time2").text($("#btn8_4").text())
-          $("#cabin2").text($(".cabin3").text())     
-        })
+          $("#dep2").text($("#btn8_2").text());
+          $("#des2").text($("#btn8_3").text());
+          $("#time2").text($("#btn8_4").text());
+          $("#cabin2").text($(".cabin2").text());
+        });
+        $(".btn8_3").on("click", function () {
+          $("#date_2").text($("#btn8_1").text());
+          $("#dep2").text($("#btn8_2").text());
+          $("#des2").text($("#btn8_3").text());
+          $("#time2").text($("#btn8_4").text());
+          $("#cabin2").text($(".cabin3").text());
+        });
         // 第三行
-        $(".btn9_1").on("click", function(){
+        $(".btn9_1").on("click", function () {
           $("#date_2").text($("#btn9_1").text());
-          $("#dep2").text($("#btn9_2").text())
-          $("#des2").text($("#btn9_3").text())
-          $("#time2").text($("#btn9_4").text())
-          $("#cabin2").text($(".cabin1").text())     
-        })
-        $(".btn9_2").on("click", function(){
+          $("#dep2").text($("#btn9_2").text());
+          $("#des2").text($("#btn9_3").text());
+          $("#time2").text($("#btn9_4").text());
+          $("#cabin2").text($(".cabin1").text());
+        });
+        $(".btn9_2").on("click", function () {
           $("#date_2").text($("#btn9_1").text());
-          $("#dep2").text($("#btn9_2").text())
-          $("#des2").text($("#btn9_3").text())
-          $("#time2").text($("#btn9_4").text())
-          $("#cabin2").text($(".cabin2").text())     
-        })
-        $(".btn9_3").on("click", function(){
+          $("#dep2").text($("#btn9_2").text());
+          $("#des2").text($("#btn9_3").text());
+          $("#time2").text($("#btn9_4").text());
+          $("#cabin2").text($(".cabin2").text());
+        });
+        $(".btn9_3").on("click", function () {
           $("#date_2").text($("#btn9_1").text());
-          $("#dep2").text($("#btn9_2").text())
-          $("#des2").text($("#btn9_3").text())
-          $("#time2").text($("#btn9_4").text())
-          $("#cabin2").text($(".cabin3").text())     
-        })
-          // 第四行
-          $(".btn10_1").on("click", function(){
+          $("#dep2").text($("#btn9_2").text());
+          $("#des2").text($("#btn9_3").text());
+          $("#time2").text($("#btn9_4").text());
+          $("#cabin2").text($(".cabin3").text());
+        });
+        // 第四行
+        $(".btn10_1").on("click", function () {
           $("#date_2").text($("#btn10_1").text());
-          $("#dep2").text($("#btn10_2").text())
-          $("#des2").text($("#btn10_3").text())
-          $("#time2").text($("#btn10_4").text())
-          $("#cabin2").text($(".cabin1").text())     
-        })
-        $(".btn10_2").on("click", function(){
+          $("#dep2").text($("#btn10_2").text());
+          $("#des2").text($("#btn10_3").text());
+          $("#time2").text($("#btn10_4").text());
+          $("#cabin2").text($(".cabin1").text());
+        });
+        $(".btn10_2").on("click", function () {
           $("#date_2").text($("#btn10_1").text());
-          $("#dep2").text($("#btn10_2").text())
-          $("#des2").text($("#btn10_3").text())
-          $("#time2").text($("#btn10_4").text())
-          $("#cabin2").text($(".cabin2").text())     
-        })
-        $(".btn10_3").on("click", function(){
+          $("#dep2").text($("#btn10_2").text());
+          $("#des2").text($("#btn10_3").text());
+          $("#time2").text($("#btn10_4").text());
+          $("#cabin2").text($(".cabin2").text());
+        });
+        $(".btn10_3").on("click", function () {
           $("#date_2").text($("#btn10_1").text());
-          $("#dep2").text($("#btn10_2").text())
-          $("#des2").text($("#btn10_3").text())
-          $("#time2").text($("#btn10_4").text())
-          $("#cabin2").text($(".cabin3").text())     
-        })
-          // 第五行
-          $(".btn11_1").on("click", function(){
+          $("#dep2").text($("#btn10_2").text());
+          $("#des2").text($("#btn10_3").text());
+          $("#time2").text($("#btn10_4").text());
+          $("#cabin2").text($(".cabin3").text());
+        });
+        // 第五行
+        $(".btn11_1").on("click", function () {
           $("#date_2").text($("#btn11_1").text());
-          $("#dep2").text($("#btn11_2").text())
-          $("#des2").text($("#btn11_3").text())
-          $("#time2").text($("#btn11_4").text())
-          $("#cabin2").text($(".cabin1").text())     
-        })
-        $(".btn11_2").on("click", function(){
+          $("#dep2").text($("#btn11_2").text());
+          $("#des2").text($("#btn11_3").text());
+          $("#time2").text($("#btn11_4").text());
+          $("#cabin2").text($(".cabin1").text());
+        });
+        $(".btn11_2").on("click", function () {
           $("#date_2").text($("#btn11_1").text());
-          $("#dep2").text($("#btn11_2").text())
-          $("#des2").text($("#btn11_3").text())
-          $("#time2").text($("#btn11_4").text())
-          $("#cabin2").text($(".cabin2").text())     
-        })
-        $(".btn11_3").on("click", function(){
+          $("#dep2").text($("#btn11_2").text());
+          $("#des2").text($("#btn11_3").text());
+          $("#time2").text($("#btn11_4").text());
+          $("#cabin2").text($(".cabin2").text());
+        });
+        $(".btn11_3").on("click", function () {
           $("#date_2").text($("#btn11_1").text());
-          $("#dep2").text($("#btn11_2").text())
-          $("#des2").text($("#btn11_3").text())
-          $("#time2").text($("#btn11_4").text())
-          $("#cabin2").text($(".cabin3").text())     
-        })
-          // 第六行
-          $(".btn12_1").on("click", function(){
+          $("#dep2").text($("#btn11_2").text());
+          $("#des2").text($("#btn11_3").text());
+          $("#time2").text($("#btn11_4").text());
+          $("#cabin2").text($(".cabin3").text());
+        });
+        // 第六行
+        $(".btn12_1").on("click", function () {
           $("#date_2").text($("#btn12_1").text());
-          $("#dep2").text($("#btn12_2").text())
-          $("#des2").text($("#btn12_3").text())
-          $("#time2").text($("#btn12_4").text())
-          $("#cabin2").text($(".cabin1").text())     
-        })
-        $(".btn12_2").on("click", function(){
+          $("#dep2").text($("#btn12_2").text());
+          $("#des2").text($("#btn12_3").text());
+          $("#time2").text($("#btn12_4").text());
+          $("#cabin2").text($(".cabin1").text());
+        });
+        $(".btn12_2").on("click", function () {
           $("#date_2").text($("#btn12_1").text());
-          $("#dep2").text($("#btn12_2").text())
-          $("#des2").text($("#btn12_3").text())
-          $("#time2").text($("#btn12_4").text())
-          $("#cabin2").text($(".cabin2").text())     
-        })
-        $(".btn12_3").on("click", function(){
+          $("#dep2").text($("#btn12_2").text());
+          $("#des2").text($("#btn12_3").text());
+          $("#time2").text($("#btn12_4").text());
+          $("#cabin2").text($(".cabin2").text());
+        });
+        $(".btn12_3").on("click", function () {
           $("#date_2").text($("#btn12_1").text());
-          $("#dep2").text($("#btn12_2").text())
-          $("#des2").text($("#btn12_3").text())
-          $("#time2").text($("#btn12_4").text())
-          $("#cabin2").text($(".cabin3").text())     
-        })
+          $("#dep2").text($("#btn12_2").text());
+          $("#des2").text($("#btn12_3").text());
+          $("#time2").text($("#btn12_4").text());
+          $("#cabin2").text($(".cabin3").text());
+        });
 
+        // 觸發網頁讀取時做動
+        document.addEventListener("DOMContentLoaded", function () {
+          // 获取查询参数
+          var urlParams = new URLSearchParams(window.location.search);
+          var cabin = urlParams.get("cabin");
+          var adultQuantity = urlParams.get("adultQuantity");
+          var childrenQuantity = urlParams.get("childrenQuantity");
+          var babyQuantity = urlParams.get("babyQuantity");
+          var totalpeople =
+            parseInt(adultQuantity) +
+            parseInt(childrenQuantity) +
+            parseInt(babyQuantity);
+
+          var goday_get = urlParams.get("goday_get");
+          var backday_get = urlParams.get("backday_get");
+          var departure_get = urlParams.get("departure_get");
+          var destination_get = urlParams.get("destination_get");
+
+          // 更新页面上的文本
+          // 比較特殊要抓特殊屬性
+          var cabinElements = document.querySelectorAll("[data-cabin]");
+          cabinElements.forEach(function (element) {
+            element.innerText = cabin;
+          });
+
+          document.getElementById("AD").innerText = adultQuantity;
+          document.getElementById("CH").innerText = childrenQuantity;
+          document.getElementById("BA").innerText = babyQuantity;
+          document.getElementById("SUM_P").innerText = totalpeople;
+          // 這裡還要下判斷不然其他change功能不會吃到
+          document.getElementById("goday_1").value = goday_get;
+          document.getElementById("backday_2").value = backday_get;
+          $("#goday_1").trigger("change"); // 觸發change事件
+          $("#backday_2").trigger("change"); // 觸發change事件
+
+          document.getElementById("taipei").innerText = departure_get;
+          document.getElementById("tokyo").innerText = destination_get;
+          document.getElementById("taipei_1").innerText = departure_get;
+          document.getElementById("tokyo_1").innerText = destination_get;
+        });
       </script>
-<script>
-<!-- 獲取主頁輸入的資料 -->
-// 获取查询参数
-var urlParams = new URLSearchParams(window.location.search);
-var cabin = urlParams.get("cabin");
-var adultQuantity = urlParams.get("adultQuantity");
-var childrenQuantity = urlParams.get("childrenQuantity");
-var babyQuantity = urlParams.get("babyQuantity");
 
-// 然后，你可以在页面上使用这些值，例如，填充表单字段
-document.getElementById("cabinField").value = cabin;
-document.getElementById("adultQuantityField").value = adultQuantity;
-document.getElementById("childrenQuantityField").value = childrenQuantity;
-document.getElementById("babyQuantityField").value = babyQuantity;
-</script>
+      <!-- 價格功能-->
+      <script>
+        var Ticket2 = 0;
+        var tick2 = 0;
+        var tick1 = 0;
+        var Ticket1 = 0;
+        var goColVisible = false; // 初始状态为未显示
+        var backColVisible = false; // 初始状态为未显示
+        $("#table_1 .btn.price-button").on("click", function () {
+          var buttonText = $(this).text();
+          $("#dol_1").text(buttonText);
+          $("#go_col").show();
+          goColVisible = true;
+          var X = tick1 * parseInt($("#AD").text());
+          var Y = tick1 * parseInt($("#CH").text()) * 0.8;
+          var Z = tick1 * parseInt($("#BA").text()) * 0.5;
+          tick1 = parseInt(buttonText.replace(/TWD/g, ""));
+          // 有問題 偶爾吃到偶爾吃不到 nan
 
+          Ticket1 = X + Y + Z;
+        });
+        $("#table_2 .btn.price-button").on("click", function () {
+          if (goColVisible) {
+            backColVisible = true;
+
+            var buttonText = $(this).text();
+            $("#dol_2").text(buttonText);
+            tick2 = parseInt(buttonText.replace(/TWD/g, ""));
+            Ticket2 =
+              tick2 * parseInt($("#AD").text()) +
+              tick2 * parseInt($("#CH").text()) * 0.8 +
+              tick2 * parseInt($("#BA").text()) * 0.5;
+            var sum = Math.round(Ticket1 + Ticket2);
+            var tax = Math.round(sum * 0.2);
+
+            $("#back_col").show();
+            $("#total_col").show();
+            $(".total_price").text(sum);
+            $("#tax").text(tax);
+
+            if (goColVisible && backColVisible) {
+              $("#total_col").show(); // 顯示按鈕
+            }
+          }
+        });
+      </script>
+    </div>
   </body>
 </html>
