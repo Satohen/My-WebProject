@@ -399,6 +399,66 @@
         </table>
       </div>
 
+
+
+
+
+<!-- 這裡做訂單完成的動作 -->
+<!-- 模态框用于输入支付信息 -->
+<div class="modal" id="paymentInfoModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form id="paymentInfoForm">
+          <label for="cardNumber">信用卡号码：</label>
+          <input type="text" id="cardNumber" required><br>
+          <label for="expirationDate">有效期：</label>
+          <input type="text" id="expirationDate" required><br>
+          <label for="cvv">CVV码：</label>
+          <input type="text" id="cvv" required><br>
+          <button type="submit" class="btn btn-primary">完成订单</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <script>
+
+$("#continue").click(function() {
+  // 在此之前，确保用户已经填写了姓名和联系电话，进行相应的验证
+
+  // 显示支付信息模态框
+  $("#paymentInfoModal").modal("show");
+});
+
+
+$("#paymentInfoForm").submit(function(event) {
+  event.preventDefault(); // 阻止表单默认提交行为
+
+  // 获取用户输入的信用卡号码、有效期和CVV码
+  var cardNumber = $("#cardNumber").val();
+  var expirationDate = $("#expirationDate").val();
+  var cvv = $("#cvv").val();
+
+  // 进行支付信息验证，确保信息格式正确
+
+  // 如果验证通过，执行订单完成的操作，包括将支付信息发送到服务器
+  // 可以在这里向服务器发送订单和支付信息，然后重定向到订单完成的页面
+});
+
+</script>
+
+
+
+
+
+
+
+
+
       <!-- 啟程選單 -->
       <div class="container">
         <form action="">
@@ -727,144 +787,7 @@
       </tbody>
       </div>
 
-      <!-- 點選添加票種 -->
-      <!-- 第一行 -->
-      <!-- // 第二欄位_1為第一欄配的是經濟艙種類 -->
-      <script>
-        var urlParams = new URLSearchParams(window.location.search);
-        var cabin_get = urlParams.get("cabin");
-        $(".btn1_1").on("click", function () {
-          $("#date_1").text($("#btn1_1").text());
-          $("#dep1").text($("#btn1_2").text());
-          $("#des1").text($("#btn1_3").text());
-          $("#time1").text($("#btn1_4").text());
-          $("#cabin").html(`${cabin_get}基本 Basic`);
-        });
-        $(".btn1_2").on("click", function () {
-          $("#date_1").text($("#btn1_1").text());
-          $("#dep1").text($("#btn1_2").text());
-          $("#des1").text($("#btn1_3").text());
-          $("#time1").text($("#btn1_4").text());
-          $("#cabin").html(`${cabin_get}經典 Standard`);
-        });
-        $(".btn1_3").on("click", function () {
-          $("#date_1").text($("#btn1_1").text());
-          $("#dep1").text($("#btn1_2").text());
-          $("#des1").text($("#btn1_3").text());
-          $("#time1").text($("#btn1_4").text());
-          $("#cabin").html(`${cabin_get}尊寵 Up`);
-        });
-        // 第二行
-        $(".btn2_1").on("click", function () {
-          $("#date_1").text($("#btn2_1").text());
-          $("#dep1").text($("#btn2_2").text());
-          $("#des1").text($("#btn2_3").text());
-          $("#time1").text($("#btn2_4").text());
-          $("#cabin").html(`${cabin_get}基本 Basic`);
-        });
-        $(".btn2_2").on("click", function () {
-          $("#date_1").text($("#btn2_1").text());
-          $("#dep1").text($("#btn2_2").text());
-          $("#des1").text($("#btn2_3").text());
-          $("#time1").text($("#btn2_4").text());
-          $("#cabin").html(`${cabin_get}經典 Standard`);
-        });
-        $(".btn2_3").on("click", function () {
-          $("#date_1").text($("#btn2_1").text());
-          $("#dep1").text($("#btn2_2").text());
-          $("#des1").text($("#btn2_3").text());
-          $("#time1").text($("#btn2_4").text());
-          $("#cabin").html(`${cabin_get}尊寵 Up`);
-        });
-        // 第三行
-        $(".btn3_1").on("click", function () {
-          $("#date_1").text($("#btn3_1").text());
-          $("#dep1").text($("#btn3_2").text());
-          $("#des1").text($("#btn3_3").text());
-          $("#time1").text($("#btn3_4").text());
-          $("#cabin").html(`${cabin_get}基本 Basic`);
-        });
-        $(".btn3_2").on("click", function () {
-          $("#date_1").text($("#btn3_1").text());
-          $("#dep1").text($("#btn3_2").text());
-          $("#des1").text($("#btn3_3").text());
-          $("#time1").text($("#btn3_4").text());
-          $("#cabin").html(`${cabin_get}經典 Standard`);
-        });
-        $(".btn3_3").on("click", function () {
-          $("#date_1").text($("#btn3_1").text());
-          $("#dep1").text($("#btn3_2").text());
-          $("#des1").text($("#btn3_3").text());
-          $("#time1").text($("#btn3_4").text());
-          $("#cabin").html(`${cabin_get}尊寵 Up`);
-        });
 
-        $(".btn7_1").on("click", function () {
-          $("#date_2").text($("#btn7_1").text());
-          $("#dep2").text($("#btn7_2").text());
-          $("#des2").text($("#btn7_3").text());
-          $("#time2").text($("#btn7_4").text());
-          $("#cabin2").html(`${cabin_get}基本 Basic`);
-        });
-        $(".btn7_2").on("click", function () {
-          $("#date_2").text($("#btn7_1").text());
-          $("#dep2").text($("#btn7_2").text());
-          $("#des2").text($("#btn7_3").text());
-          $("#time2").text($("#btn7_4").text());
-          $("#cabin2").html(`${cabin_get}經典 Standard`);
-        });
-        $(".btn7_3").on("click", function () {
-          $("#date_2").text($("#btn7_1").text());
-          $("#dep2").text($("#btn7_2").text());
-          $("#des2").text($("#btn7_3").text());
-          $("#time2").text($("#btn7_4").text());
-          $("#cabin2").html(`${cabin_get}尊寵 Up`);
-        });
-        // 第二行
-        $(".btn8_1").on("click", function () {
-          $("#date_2").text($("#btn8_1").text());
-          $("#dep2").text($("#btn8_2").text());
-          $("#des2").text($("#btn8_3").text());
-          $("#time2").text($("#btn8_4").text());
-          $("#cabin2").html(`${cabin_get}基本 Basic`);
-        });
-        $(".btn8_2").on("click", function () {
-          $("#date_2").text($("#btn8_1").text());
-          $("#dep2").text($("#btn8_2").text());
-          $("#des2").text($("#btn8_3").text());
-          $("#time2").text($("#btn8_4").text());
-          $("#cabin2").html(`${cabin_get}經典 Standard`);
-        });
-        $(".btn8_3").on("click", function () {
-          $("#date_2").text($("#btn8_1").text());
-          $("#dep2").text($("#btn8_2").text());
-          $("#des2").text($("#btn8_3").text());
-          $("#time2").text($("#btn8_4").text());
-          $("#cabin2").html(`${cabin_get}尊寵 Up`);
-        });
-        // 第三行
-        $(".btn9_1").on("click", function () {
-          $("#date_2").text($("#btn9_1").text());
-          $("#dep2").text($("#btn9_2").text());
-          $("#des2").text($("#btn9_3").text());
-          $("#time2").text($("#btn9_4").text());
-          $("#cabin2").html(`${cabin_get}基本 Basic`);
-        });
-        $(".btn9_2").on("click", function () {
-          $("#date_2").text($("#btn9_1").text());
-          $("#dep2").text($("#btn9_2").text());
-          $("#des2").text($("#btn9_3").text());
-          $("#time2").text($("#btn9_4").text());
-          $("#cabin2").html(`${cabin_get}經典 Standard`);
-        });
-        $(".btn9_3").on("click", function () {
-          $("#date_2").text($("#btn9_1").text());
-          $("#dep2").text($("#btn9_2").text());
-          $("#des2").text($("#btn9_3").text());
-          $("#time2").text($("#btn9_4").text());
-          $("#cabin2").html(`${cabin_get}尊寵 Up`);
-        });
-      </script>
 
       <script>
         // 觸發網頁讀取時做動
@@ -909,59 +832,9 @@
         });
       </script>
 
-      <!-- 價格功能-->
-      <script>
-        var Ticket2 = 0;
-        var tick2 = 0;
-        var tick1 = 0;
-        var Ticket1 = 0;
-        var goColVisible = false; // 初始状态为未显示
-        var backColVisible = false; // 初始状态为未显示
-        $("#table_1 .btn.price-button").on("click", function () {
-          var buttonText = $(this).text();
-          $("#dol_1").text(buttonText);
-          $("#go_col").show();
-          goColVisible = true;
-          var X = tick1 * parseInt($("#AD").text());
-          var Y = tick1 * parseInt($("#CH").text()) * 0.8;
-          var Z = tick1 * parseInt($("#BA").text()) * 0.5;
-          tick1 = parseInt(buttonText.replace(/TWD/g, ""));
-          // 有問題 偶爾吃到偶爾吃不到 nan
 
-          Ticket1 = X + Y + Z;
-        });
-        $("#table_2 .btn.price-button").on("click", function () {
-          if (goColVisible) {
-            backColVisible = true;
-
-            var buttonText = $(this).text();
-            $("#dol_2").text(buttonText);
-            tick2 = parseInt(buttonText.replace(/TWD/g, ""));
-            Ticket2 =
-              tick2 * parseInt($("#AD").text()) +
-              tick2 * parseInt($("#CH").text()) * 0.8 +
-              tick2 * parseInt($("#BA").text()) * 0.5;
-            var sum = Math.round(Ticket1 + Ticket2);
-            var tax = Math.round(sum * 0.2);
-
-            $("#back_col").show();
-            $("#total_col").show();
-            $(".total_price").text(sum);
-            $("#tax").text(tax);
-
-            if (goColVisible && backColVisible) {
-              $("#total_col").show(); // 顯示按鈕
-            }
-          }
-        });
-      </script>
 
       <script>
-
-
-    // 你的 JavaScript 代码
-
-
         //  填寫表格divbutoon 使用NODEJS
         var destinationMapping = {
           香港: "HKG",
@@ -975,62 +848,458 @@
           "台北-桃園": "TPE",
           "台北-松山": "TSA",
         };
+        // 先清空數值
         $("#tbody").empty();
+        $("#tbody_1").empty();//
 
 
-
-
-
-
-      document.addEventListener("DOMContentLoaded", function ()  {
-
-
+        // 等待資料到齊
+        $(document).ready(function(){ 
         var departure = $("#taipei").text();
         var destination = $("#tokyo").text();
         var departure2 = $("#taipei").text();
         var destination2 = $("#tokyo").text();
-        console.log(departure)
-        console.log(destination)
+
         // 使用映射查找英文縮寫  使用組合來找到對應的班機
         var departureCode = destinationMapping[departure];
         var destinationCode = destinationMapping[destination];
         var key = departureCode + destinationCode;
-        console.log(departureCode)
-        console.log(destinationCode)
-        console.log(key)
 
+        if (key) {
+  $("#tbody").empty();
+  $("#tbody_1").empty();
 
+  // 发送 GET 请求到服务器路由，使用英文缩写
+  $.get("/todo/item/destination/" + key, function (data) {
+    var urlParams = new URLSearchParams(window.location.search);
+    var cabinif = urlParams.get("cabin");
 
-
-          if (key) {       
-            $("#tbody").empty();
-            // 發送 GET 請求到伺服器路由，使用英文縮寫
-            $.get("/todo/item/destination/")+key, function(data){
-              $.each(data, function(index, item){
-                var trHtml = ` <td>
-                <span id="btn1_1">${item.scheduledDeparture + item.departureAirport}</span> 直飛
-                <span id="btn1_2">${item.scheduledArrival + item.arrivalAirport}</span>
-                <span id="btn1_3">直飛航班</span>
-                <span id="btn1_4">飛行時間:${item.飛行時間}</span>${item.flightNumber}
+    if (cabinif == "商務艙") {
+      // 确保 data 是一个可迭代的数据类型
+      if (Array.isArray(data) || typeof data === 'object') {
+        var count = 0;
+        $.each(data, function (index, item) {
+          var trHtml = `
+            <tr>
+              <td>
+                <span id="btn${count}_1">${item.scheduledDeparture + item.departureAirport}</span><br> 直飛<br>
+                <span id="btn${count}_2">${item.scheduledArrival + item.arrivalAirport}</span><br>
+                <span id="btn${count}_3">直飛航班</span><br>
+                <span id="btn${count}_4">飛行時間:${item.飛行時間}</span>${item.flightNumber}<br>
               </td>
               <td>
-                <div class="btn price-button btn1_1">
-                  TWD <span>${item.經濟艙基本Basic}</span>
+                <div class="btn price-button btn${count}_1">
+                  TWD <span>${item.Busnise_Basic}</span>
                 </div>
               </td>
-              <td><div class="btn price-button btn1_2"${item.經濟艙經典Standard}</div></td>
-              <td><div class="btn price-button btn1_3"${item.經濟艙尊寵Up}></td>
+              <td>
+                <div class="btn price-button btn${count}_2">
+                  TWD <span>${item.Businese_Standard}</span>
+                </div>
+              </td>
+              <td>
+                <div class="btn price-button btn${count}_3">
+                  TWD <span>${item.Businese_Up}</span>
+                </div>
+              </td>
             </tr>`;
-            $("#tobody").append(trHtml);
-              })
-            }
-         
-            }   else{
-              alert("未找到該項目")
-              }
+          $("#tbody").append(trHtml);
 
+// 添加到第二個回程表格 然後第二個表格號碼為3開始
+          var trHtml_1 = `
+            <tr>
+              <td>          
+                <span id="btn${count+3}_1">${item.scheduledDeparture + item.departureAirport}</span><br> 直飛<br>
+                <span id="btn${count+3}_2">${item.scheduledArrival + item.arrivalAirport}</span><br>
+                <span id="btn${count+3}_3">直飛航班</span><br>
+                <span id="btn${count+3}_4">飛行時間:${item.飛行時間}</span>${item.flightNumber}<br>
+              </td>
+              <td>
+                <div class="btn price-button btn${count+3}_1">
+                  TWD <span>${item.Busnise_Basic}</span>
+                </div>
+              </td>
+              <td>
+                <div class="btn price-button btn${count+3}_2">
+                  TWD <span>${item.Businese_Standard}</span>
+                </div>
+              </td>
+              <td>
+                <div class="btn price-button btn${count+3}_3">
+                  TWD <span>${item.Businese_Up}</span>
+                </div>
+              </td>
+            </tr>`;
+          $("#tbody_1").append(trHtml_1);
+          count ++; //遞增btn號碼
         });
+      }
+
+          
+
+      // 填入 每個按鈕對應表格代碼
+ var urlParams = new URLSearchParams(window.location.search);
+var cabin_get = urlParams.get("cabin");
+
+for (var i = 0; i <= 2; i++) {
+  for (var j = 1; j <= 3; j++) {
+    (function () {
+      var btnSelector = `.btn${i}_${j}`;
+      var btnss1 = `#btn${i}_1`;
+      var btnss2 = `#btn${i}_2`;
+      var btnss3 = `#btn${i}_3`;
+      var btnss4 = `#btn${i}_4`;
+      var depSelector = `#dep1`;
+      var desSelector = `#des1`;
+      var timeSelector = `#time1`;
+      var cabinSelector = "#cabin";
+      var cabinType = `${cabin_get}`;
+
+      if (j === 1) {
+        cabinType = " 基本 Basic";
+      } else if (j === 2) {
+        cabinType = " 經典 Standard";
+      } else if (j === 3) {
+        cabinType = " 尊寵 Up";
+      }
+
+      $(btnSelector).on("click", function () {
+        $(depSelector).text($(btnss1).text());
+        $(desSelector).text($(btnss2).text());
+        $(timeSelector).text($(btnss4).text());
+        $(cabinSelector).html(`${cabin_get}${cabinType}`);
+      });
+    })();
+  }
+}
+
+
+      
+// 第二表格
+      for (var i = 3; i <= 5; i++) {
+       for (var j = 1; j <= 3; j++) {
+        (function () {
+          var btnSelector = `.btn${i}_${j}`;
+          var depSelector = `#dep2`;
+          var desSelector = `#des2`;
+          var btnss1 = `#btn${i}_1`;
+      var btnss2 = `#btn${i}_2`;
+      var btnss3 = `#btn${i}_3`;
+      var btnss4 = `#btn${i}_4`;
+          var timeSelector = `#time2`;
+          var cabinSelector = "#cabin2";
+          var cabinType = `${cabin_get}`;
+          if (j === 1) {
+        cabinType = " 基本 Basic";
+      } else if (j === 2) {
+        cabinType = " 經典 Standard";
+      } else if (j === 3) {
+        cabinType = " 尊寵 Up";
+      }
+
+      $(btnSelector).on("click", function () {
+        $(depSelector).text($(btnss1).text());
+        $(desSelector).text($(btnss2).text());
+        $(timeSelector).text($(btnss4).text());
+        $(cabinSelector).html(`${cabin_get}${cabinType}`);
+      });
+    })();
+  }
+}
+
+    
+      // <!-- 價格功能-->
+
+      var Ticket2 = 0;
+              var tick2 = 0;
+              var tick1 = 0;
+              var Ticket1 = 0;
+              var goColVisible = false; // 初始状态为未显示
+              var backColVisible = false; // 初始状态为未显示
+              $("#table_1 .btn.price-button").on("click", function () {
+                var buttonText = $(this).text();
+                $("#dol_1").text(buttonText);
+                $("#go_col").show();
+                goColVisible = true;
+                var X = tick1 * parseInt($("#AD").text());
+                var Y = tick1 * parseInt($("#CH").text()) * 0.8;
+                var Z = tick1 * parseInt($("#BA").text()) * 0.5;
+                tick1 = parseInt(buttonText.replace(/TWD/g, ""));
+      
+                Ticket1 = X + Y + Z;
+              });
+              $("#table_2 .btn.price-button").on("click", function () {
+                if (goColVisible) {
+                  backColVisible = true;
+      
+                  var buttonText = $(this).text();
+                  $("#dol_2").text(buttonText);
+                  tick2 = parseInt(buttonText.replace(/TWD/g, ""));
+                  console.log(tick2)
+                  Ticket2 =
+                    tick2 * parseInt($("#AD").text()) +
+                    tick2 * parseInt($("#CH").text()) * 0.8 +
+                    tick2 * parseInt($("#BA").text()) * 0.5;
+                  var sum = Math.round(Ticket1 + Ticket2);
+                  var tax = Math.round(sum * 0.2);
+      
+                  $("#back_col").show();
+                  $("#total_col").show();
+                  $(".total_price").text(sum);
+                  $("#tax").text(tax);
+      
+                  if (goColVisible && backColVisible) {
+                    $("#total_col").show(); // 顯示按鈕
+                  }
+                }
+            
+              })
+    
+    
+    }  
+
+
+
+
+    else if (cabinif == "經濟艙") {       // 确保 data 是一个可迭代的数据类型
+      if (Array.isArray(data) || typeof data === 'object') {
+        var count = 0;
+        $.each(data, function (index, item) {
+          var trHtml = `
+            <tr>
+              <td>
+                <span id="btn${count}_1">${item.scheduledDeparture + item.departureAirport}</span><br> 直飛<br>
+                <span id="btn${count}_2">${item.scheduledArrival + item.arrivalAirport}</span><br>
+                <span id="btn${count}_3">直飛航班</span><br>
+                <span id="btn${count}_4">飛行時間:${item.飛行時間}</span>${item.flightNumber}<br>
+              </td>
+              <td>
+                <div class="btn price-button btn${count}_1">
+                  TWD <span>${item.Ecnomic_Basic}</span>
+                </div>
+              </td>
+              <td>
+                <div class="btn price-button btn${count}_2">
+                  TWD <span>${item.Ecnomic_Standard}</span>
+                </div>
+              </td>
+              <td>
+                <div class="btn price-button btn${count}_3">
+                  TWD <span>${item.Ecnomic_Up}</span>
+                </div>
+              </td>
+            </tr>`;
+          $("#tbody").append(trHtml);
+
+// 添加到第二個回程表格 然後第二個表格號碼為3開始
+          var trHtml_1 = `
+            <tr>
+              <td>          
+                <span id="btn${count+3}_1">${item.scheduledDeparture + item.departureAirport}</span><br> 直飛<br>
+                <span id="btn${count+3}_2">${item.scheduledArrival + item.arrivalAirport}</span><br>
+                <span id="btn${count+3}_3">直飛航班</span><br>
+                <span id="btn${count+3}_4">飛行時間:${item.飛行時間}</span>${item.flightNumber}<br>
+              </td>
+              <td>
+                <div class="btn price-button btn${count+3}_1">
+                  TWD <span>${item.Ecnomic_Basic}</span>
+                </div>
+              </td>
+              <td>
+                <div class="btn price-button btn${count+3}_2">
+                  TWD <span>${item.Ecnomic_Standard}</span>
+                </div>
+              </td>
+              <td>
+                <div class="btn price-button btn${count+3}_3">
+                  TWD <span>${item.Ecnomic_Up}</span>
+                </div>
+              </td>
+            </tr>`;
+          $("#tbody_1").append(trHtml_1);
+          count ++; //遞增btn號碼
+        });
+      }
+
+          
+
+      // 填入 每個按鈕對應表格代碼
+ var urlParams = new URLSearchParams(window.location.search);
+var cabin_get = urlParams.get("cabin");
+
+for (var i = 0; i <= 2; i++) {
+  for (var j = 1; j <= 3; j++) {
+    (function () {
+      var btnSelector = `.btn${i}_${j}`;
+      var btnss1 = `#btn${i}_1`;
+      var btnss2 = `#btn${i}_2`;
+      var btnss3 = `#btn${i}_3`;
+      var btnss4 = `#btn${i}_4`;
+      var depSelector = `#dep1`;
+      var desSelector = `#des1`;
+      var timeSelector = `#time1`;
+      var cabinSelector = "#cabin";
+      var cabinType = `${cabin_get}`;
+
+      if (j === 1) {
+        cabinType = " 基本 Basic";
+      } else if (j === 2) {
+        cabinType = " 經典 Standard";
+      } else if (j === 3) {
+        cabinType = " 尊寵 Up";
+      }
+
+      $(btnSelector).on("click", function () {
+        $(depSelector).text($(btnss1).text());
+        $(desSelector).text($(btnss2).text());
+        $(timeSelector).text($(btnss4).text());
+        $(cabinSelector).html(`${cabin_get}${cabinType}`);
+      });
+    })();
+  }
+}
+
+
+      
+// 第二表格
+      for (var i = 3; i <= 5; i++) {
+       for (var j = 1; j <= 3; j++) {
+        (function () {
+          var btnSelector = `.btn${i}_${j}`;
+          var depSelector = `#dep2`;
+          var desSelector = `#des2`;
+          var btnss1 = `#btn${i}_1`;
+      var btnss2 = `#btn${i}_2`;
+      var btnss3 = `#btn${i}_3`;
+      var btnss4 = `#btn${i}_4`;
+          var timeSelector = `#time2`;
+          var cabinSelector = "#cabin2";
+          var cabinType = `${cabin_get}`;
+          if (j === 1) {
+        cabinType = " 基本 Basic";
+      } else if (j === 2) {
+        cabinType = " 經典 Standard";
+      } else if (j === 3) {
+        cabinType = " 尊寵 Up";
+      }
+
+      $(btnSelector).on("click", function () {
+        $(depSelector).text($(btnss1).text());
+        $(desSelector).text($(btnss2).text());
+        $(timeSelector).text($(btnss4).text());
+        $(cabinSelector).html(`${cabin_get}${cabinType}`);
+      });
+    })();
+  }
+}
+
+    
+      // <!-- 價格功能-->
+
+      var Ticket2 = 0;
+              var tick2 = 0;
+              var tick1 = 0;
+              var Ticket1 = 0;
+              var goColVisible = false; // 初始状态为未显示
+              var backColVisible = false; // 初始状态为未显示
+              $("#table_1 .btn.price-button").on("click", function () {
+                var buttonText = $(this).text();
+                $("#dol_1").text(buttonText);
+                $("#go_col").show();
+                goColVisible = true;
+                var X = tick1 * parseInt($("#AD").text());
+                var Y = tick1 * parseInt($("#CH").text()) * 0.8;
+                var Z = tick1 * parseInt($("#BA").text()) * 0.5;
+                tick1 = parseInt(buttonText.replace(/TWD/g, ""));
+      
+                Ticket1 = X + Y + Z;
+              });
+              $("#table_2 .btn.price-button").on("click", function () {
+                if (goColVisible) {
+                  backColVisible = true;
+      
+                  var buttonText = $(this).text();
+                  $("#dol_2").text(buttonText);
+                  tick2 = parseInt(buttonText.replace(/TWD/g, ""));
+                  console.log(tick2)
+                  Ticket2 =
+                    tick2 * parseInt($("#AD").text()) +
+                    tick2 * parseInt($("#CH").text()) * 0.8 +
+                    tick2 * parseInt($("#BA").text()) * 0.5;
+                  var sum = Math.round(Ticket1 + Ticket2);
+                  var tax = Math.round(sum * 0.2);
+      
+                  $("#back_col").show();
+                  $("#total_col").show();
+                  $(".total_price").text(sum);
+                  $("#tax").text(tax);
+      
+                  if (goColVisible && backColVisible) {
+                    $("#total_col").show(); // 顯示按鈕
+                  }
+                }
+            
+              })
+    
+ 
+      
+    
+    
+    
+    }  else {
+      alert("未找到該項目");
+    }
+  }); } 
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+  
+  
+  
+  
+  
+  
+  );
+
+       
+  
+
+
+
+            
       </script>
+
+
+
+
     </div>
   </body>
 </html>
