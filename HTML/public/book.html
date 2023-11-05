@@ -404,17 +404,24 @@
 
 
 <!-- 這裡做訂單完成的動作 -->
-<!-- 模态框用于输入支付信息 -->
 <div class="modal" id="paymentInfoModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <form id="paymentInfoForm">
-          <label for="cardNumber">信用卡号码：</label>
+          <label for="name_put">姓名：</label>
+          <input type="text" id="name_put" required><br>
+          <label for="gender">性別:</label>
+          <input type="text" id="gender" required><br>
+          <label for="email">email:</label>
+          <input type="email" id="email" required><br>       
+          <label for="address">聯繫地址:</label>
+          <input type="text" id="address" required><br>        
+          <label for="cardNumber">信用卡號碼：</label>
           <input type="text" id="cardNumber" required><br>
           <label for="expirationDate">有效期：</label>
           <input type="text" id="expirationDate" required><br>
-          <label for="cvv">CVV码：</label>
+          <label for="cvv">CVV碼：</label>
           <input type="text" id="cvv" required><br>
           <button type="submit" class="btn btn-primary">完成订单</button>
         </form>
@@ -427,27 +434,48 @@
 
   <script>
 
-$("#continue").click(function() {
-  // 在此之前，确保用户已经填写了姓名和联系电话，进行相应的验证
+$(document).ready(function() {
+  // 当用户点击"完成订单"按钮时执行
+  $("#continue").click(function() {
+    // 在此之前，确保用户已经填写了姓名和联系电话，进行相应的验证
 
-  // 显示支付信息模态框
-  $("#paymentInfoModal").modal("show");
+    // 显示信息框
+    $("#paymentInfoModal").modal("show");
+  });
+
+  // 当用户提交支付信息表单时执行
+  $("#paymentInfoForm").submit(function(event) {
+    event.preventDefault(); // 阻止表单默认提交行为
+
+    // 收集表单数据
+    var orderData = {
+      name: $("#name_put").val(),
+      gender: $("#gender").val(),
+      email: $("#email").val(),
+      address: $("#address").val(),
+      cardNumber: $("#cardNumber").val(),
+      expirationDate: $("#expirationDate").val(),
+      cvv: $("#cvv").val()
+    };
+
+    // 使用Ajax将数据发送到服务器
+    $.ajax({
+      type: "POST",
+      url: "/order/create", // 这是服务器接口的URL，你需要根据实际情况修改
+      data: JSON.stringify(orderData), // 将数据转换为JSON字符串
+      contentType: "application/json",
+      success: function(response) {
+        // 处理成功响应
+        alert("訂單已完成！");
+      },
+      error: function(error) {
+        // 处理错误响应
+        alert("訂單創建失敗：" + error);
+      }
+    });
+  });
 });
 
-
-$("#paymentInfoForm").submit(function(event) {
-  event.preventDefault(); // 阻止表单默认提交行为
-
-  // 获取用户输入的信用卡号码、有效期和CVV码
-  var cardNumber = $("#cardNumber").val();
-  var expirationDate = $("#expirationDate").val();
-  var cvv = $("#cvv").val();
-
-  // 进行支付信息验证，确保信息格式正确
-
-  // 如果验证通过，执行订单完成的操作，包括将支付信息发送到服务器
-  // 可以在这里向服务器发送订单和支付信息，然后重定向到订单完成的页面
-});
 
 </script>
 

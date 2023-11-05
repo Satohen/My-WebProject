@@ -148,8 +148,7 @@
           <span>|</span>
           <a href="./regis.html" class="btn">註冊</a>
         </div>
-        <!-- 搜尋 問號icon -->
-
+        <!-- 搜尋 問號icon 這個是那些icon的代碼(自己也不清楚 看不懂 直接貼) -->
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -296,9 +295,25 @@
 
       }
 
+      // GPT生成
 
+      function isValidEmail(email) {
+  const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+  return emailRegex.test(email);
+}
 
+function validateEmail() {
+  const email = document.getElementById("email").value;
+  if (isValidEmail(email)) {
+    document.getElementById("error-message").textContent = "邮箱格式有效";
+  } else {
+    document.getElementById("error-message").textContent = "邮箱格式无效";
+  }
+}
 
+// 在输入框失去焦点时进行验证
+document.getElementById("email_0").addEventListener("blur", validateEmail);
+</script>
     </script>
   </body>
 </html>

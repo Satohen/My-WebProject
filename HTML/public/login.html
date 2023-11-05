@@ -255,6 +255,8 @@
       $("#login").on("click", function () {
         var accountDe = $("#account_0").val();
         var passworDe = $("#password_0").val();
+        var accountRegex = /^[a-zA-Z0-9_]{5,}$/; // 至少5个字符，可以包含字母、数字、下划线
+        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/; // 至少8个字符，包含至少一个数字、一个小写字母和一个大写字母
 
         if (accountDe === "" || passworDe === "") {
           alert("請輸入帳號或密碼");
