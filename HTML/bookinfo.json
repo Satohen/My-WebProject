@@ -1,0 +1,22 @@
+{
+  "orderId": 123456789,
+  "name": "John Doe",
+  "gender": "Male",
+  "email": "johndoe@example.com",
+  "address": "123 Main St",
+  "cardNumber": "1234-5678-9012-3456",
+  "expirationDate": "12/25",
+  "cvv": "123",
+  "userfirstname": "WeiHen",
+  "userlastname": "Liu",
+  "password": "1234567",
+  "birth": "1996/10/10",
+  "phone": "0987654321",
+  "flightInfo": {
+    "date": "returnDate",
+    "airport": "returnAirport",
+    "destination": "returnDestination",
+    "time": "returnFlightTime",
+    "cabin": "returnCabin"
+  }
+}

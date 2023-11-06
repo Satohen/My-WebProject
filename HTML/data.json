@@ -10,7 +10,15 @@
       "scheduledDeparture": "07:10",
       "actualDeparture": "07:10",
       "scheduledArrival": "09:10",
-      "estimatedArrival": "09:10"
+      "estimatedArrival": "09:10",
+      "Busnise_Basic": 10544,
+      "Businese_Standard": 12189,
+      "Businese_Up": 16113,
+      "Ecnomic_Basic": 3807,
+      "Ecnomic_Standard": 5457,
+      "Ecnomic_Up": 9231,
+      "飛行時間": "02:00",
+      "orders": []
     },
     {
       "todoTableId": 2,
@@ -22,7 +30,15 @@
       "scheduledDeparture": "10:10",
       "actualDeparture": "10:10",
       "scheduledArrival": "12:10",
-      "estimatedArrival": "12:20"
+      "estimatedArrival": "12:20",
+      "Busnise_Basic": 10544,
+      "Businese_Standard": 12189,
+      "Businese_Up": 16113,
+      "Ecnomic_Basic": 3807,
+      "Ecnomic_Standard": 5457,
+      "Ecnomic_Up": 9231,
+      "飛行時間": "02:00",
+      "orders": []
     },
     {
       "todoTableId": 3,
@@ -34,7 +50,15 @@
       "scheduledDeparture": "15:10",
       "actualDeparture": "15:10",
       "scheduledArrival": "17:10",
-      "estimatedArrival": "17:10"
+      "estimatedArrival": "17:10",
+      "Busnise_Basic": 10544,
+      "Businese_Standard": 12189,
+      "Businese_Up": 16113,
+      "Ecnomic_Basic": 3807,
+      "Ecnomic_Standard": 5457,
+      "Ecnomic_Up": 9231,
+      "飛行時間": "02:00",
+      "orders": []
     }
   ],
 
@@ -49,7 +73,15 @@
       "scheduledDeparture": "06:30",
       "actualDeparture": "06:30",
       "scheduledArrival": "10:00",
-      "estimatedArrival": "10:00"
+      "estimatedArrival": "10:00",
+      "Busnise_Basic": 17209,
+      "Businese_Standard": 22859,
+      "Businese_Up": 27463,
+      "Ecnomic_Basic": 7693,
+      "Ecnomic_Standard": 10298,
+      "Ecnomic_Up": 14275,
+      "飛行時間": "03:25",
+      "orders": []
     },
     {
       "todoTableId": 2,
@@ -61,7 +93,15 @@
       "scheduledDeparture": "08:30",
       "actualDeparture": "08:30",
       "scheduledArrival": "12:00",
-      "estimatedArrival": "12:00"
+      "estimatedArrival": "12:00",
+      "Busnise_Basic": 17209,
+      "Businese_Standard": 22859,
+      "Businese_Up": 27463,
+      "Ecnomic_Basic": 7693,
+      "Ecnomic_Standard": 10298,
+      "Ecnomic_Up": 14275,
+      "飛行時間": "03:25",
+      "orders": []
     },
     {
       "todoTableId": 3,
@@ -73,7 +113,15 @@
       "scheduledDeparture": "13:00",
       "actualDeparture": "13:00",
       "scheduledArrival": "16:30",
-      "estimatedArrival": "16:30"
+      "estimatedArrival": "16:30",
+      "Busnise_Basic": 17209,
+      "Businese_Standard": 22859,
+      "Businese_Up": 27463,
+      "Ecnomic_Basic": 7693,
+      "Ecnomic_Standard": 10298,
+      "Ecnomic_Up": 14275,
+      "飛行時間": "03:25",
+      "orders": []
     }
   ],
 
@@ -88,7 +136,15 @@
       "scheduledDeparture": "07:50",
       "actualDeparture": "07:50",
       "scheduledArrival": "11:00",
-      "estimatedArrival": "11:00"
+      "estimatedArrival": "11:00",
+      "Busnise_Basic": 13696,
+      "Businese_Standard": 18076,
+      "Businese_Up": 20509,
+      "Ecnomic_Basic": 4053,
+      "Ecnomic_Standard": 6448,
+      "Ecnomic_Up": 12539,
+      "飛行時間": "03:10",
+      "orders": []
     },
     {
       "todoTableId": 2,
@@ -100,7 +156,15 @@
       "scheduledDeparture": "08:40",
       "actualDeparture": "08:40",
       "scheduledArrival": "12:00",
-      "estimatedArrival": "12:00"
+      "estimatedArrival": "12:00",
+      "Busnise_Basic": 13696,
+      "Businese_Standard": 18076,
+      "Businese_Up": 20509,
+      "Ecnomic_Basic": 4053,
+      "Ecnomic_Standard": 6448,
+      "Ecnomic_Up": 12539,
+      "飛行時間": "03:10",
+      "orders": []
     },
     {
       "todoTableId": 3,
@@ -112,7 +176,15 @@
       "scheduledDeparture": "20:45",
       "actualDeparture": "20:45",
       "scheduledArrival": "23:40",
-      "estimatedArrival": "23:40"
+      "estimatedArrival": "23:40",
+      "Busnise_Basic": 13696,
+      "Businese_Standard": 18076,
+      "Businese_Up": 20509,
+      "Ecnomic_Basic": 4053,
+      "Ecnomic_Standard": 6448,
+      "Ecnomic_Up": 12539,
+      "飛行時間": "03:10",
+      "orders": []
     }
   ],
   "TPEHND": [
@@ -126,7 +198,15 @@
       "scheduledDeparture": "07:50",
       "actualDeparture": "07:50",
       "scheduledArrival": "12:00",
-      "estimatedArrival": "12:00"
+      "estimatedArrival": "12:00",
+      "Busnise_Basic": 18082,
+      "Businese_Standard": 24557,
+      "Businese_Up": 31463,
+      "Ecnomic_Basic": 7519,
+      "Ecnomic_Standard": 9657,
+      "Ecnomic_Up": 15413,
+      "飛行時間": "03:35",
+      "orders": []
     },
     {
       "todoTableId": 2,
@@ -138,7 +218,15 @@
       "scheduledDeparture": "08:50",
       "actualDeparture": "08:50",
       "scheduledArrival": "13:00",
-      "estimatedArrival": "13:00"
+      "estimatedArrival": "13:00",
+      "Busnise_Basic": 18082,
+      "Businese_Standard": 24557,
+      "Businese_Up": 31463,
+      "Ecnomic_Basic": 7519,
+      "Ecnomic_Standard": 9657,
+      "Ecnomic_Up": 15413,
+      "飛行時間": "03:35",
+      "orders": []
     },
     {
       "todoTableId": 3,
@@ -150,7 +238,15 @@
       "scheduledDeparture": "15:25",
       "actualDeparture": "15:45",
       "scheduledArrival": "19:20",
-      "estimatedArrival": "19:20"
+      "estimatedArrival": "19:20",
+      "Busnise_Basic": 18082,
+      "Businese_Standard": 24557,
+      "Businese_Up": 31463,
+      "Ecnomic_Basic": 7519,
+      "Ecnomic_Standard": 9657,
+      "Ecnomic_Up": 15413,
+      "飛行時間": "03:35",
+      "orders": []
     }
   ],
 
@@ -165,7 +261,15 @@
       "scheduledDeparture": "07:00",
       "actualDeparture": "07:00",
       "scheduledArrival": "09:20",
-      "estimatedArrival": "09:20"
+      "estimatedArrival": "09:20",
+      "Busnise_Basic": 14523,
+      "Businese_Standard": 16942,
+      "Businese_Up": 18663,
+      "Ecnomic_Basic": 4057,
+      "Ecnomic_Standard": 8614,
+      "Ecnomic_Up": 12480,
+      "飛行時間": "02:20",
+      "orders": []
     },
     {
       "todoTableId": 2,
@@ -177,7 +281,15 @@
       "scheduledDeparture": "08:50",
       "actualDeparture": "08:50",
       "scheduledArrival": "11:10",
-      "estimatedArrival": "11:10"
+      "estimatedArrival": "11:10",
+      "Busnise_Basic": 14523,
+      "Businese_Standard": 16942,
+      "Businese_Up": 18663,
+      "Ecnomic_Basic": 4057,
+      "Ecnomic_Standard": 8614,
+      "Ecnomic_Up": 12480,
+      "飛行時間": "02:20",
+      "orders": []
     },
     {
       "todoTableId": 3,
@@ -189,7 +301,15 @@
       "scheduledDeparture": "16:50",
       "actualDeparture": "16:50",
       "scheduledArrival": "19:10",
-      "estimatedArrival": "19:10"
+      "estimatedArrival": "19:10",
+      "Busnise_Basic": 14523,
+      "Businese_Standard": 16942,
+      "Businese_Up": 18663,
+      "Ecnomic_Basic": 4057,
+      "Ecnomic_Standard": 8614,
+      "Ecnomic_Up": 12480,
+      "飛行時間": "02:20",
+      "orders": []
     }
   ],
 
@@ -204,7 +324,15 @@
       "scheduledDeparture": "07:00",
       "actualDeparture": "07:00",
       "scheduledArrival": "10:20",
-      "estimatedArrival": "10:20"
+      "estimatedArrival": "10:20",
+      "Busnise_Basic": 16963,
+      "Businese_Standard": 18863,
+      "Businese_Up": 21713,
+      "Ecnomic_Basic": 5341,
+      "Ecnomic_Standard": 8115,
+      "Ecnomic_Up": 11801,
+      "飛行時間": "03:20",
+      "orders": []
     },
     {
       "todoTableId": 2,
@@ -216,7 +344,15 @@
       "scheduledDeparture": "09:30",
       "actualDeparture": "09:30",
       "scheduledArrival": "11:50",
-      "estimatedArrival": "11:50"
+      "estimatedArrival": "11:50",
+      "Busnise_Basic": 16963,
+      "Businese_Standard": 18863,
+      "Businese_Up": 21713,
+      "Ecnomic_Basic": 5341,
+      "Ecnomic_Standard": 8115,
+      "Ecnomic_Up": 11801,
+      "飛行時間": "03:20",
+      "orders": []
     },
     {
       "todoTableId": 3,
@@ -228,7 +364,15 @@
       "scheduledDeparture": "15:10",
       "actualDeparture": "15:15",
       "scheduledArrival": "18:50",
-      "estimatedArrival": "18:50"
+      "estimatedArrival": "18:50",
+      "Busnise_Basic": 16963,
+      "Businese_Standard": 18863,
+      "Businese_Up": 21713,
+      "Ecnomic_Basic": 5341,
+      "Ecnomic_Standard": 8115,
+      "Ecnomic_Up": 11801,
+      "飛行時間": "03:20",
+      "orders": []
     }
   ],
 
@@ -243,7 +387,15 @@
       "scheduledDeparture": "08:10",
       "actualDeparture": "08:10",
       "scheduledArrival": "11:20",
-      "estimatedArrival": "11:20"
+      "estimatedArrival": "11:20",
+      "Busnise_Basic": 15968,
+      "Businese_Standard": 21065,
+      "Businese_Up": 25713,
+      "Ecnomic_Basic": 5981,
+      "Ecnomic_Standard": 8755,
+      "Ecnomic_Up": 12521,
+      "飛行時間": "03:10",
+      "orders": []
     },
     {
       "todoTableId": 2,
@@ -255,7 +407,15 @@
       "scheduledDeparture": "13:30",
       "actualDeparture": "13:30",
       "scheduledArrival": "16:30",
-      "estimatedArrival": "16:30"
+      "estimatedArrival": "16:30",
+      "Busnise_Basic": 15968,
+      "Businese_Standard": 21065,
+      "Businese_Up": 25713,
+      "Ecnomic_Basic": 5981,
+      "Ecnomic_Standard": 8755,
+      "Ecnomic_Up": 12521,
+      "飛行時間": "03:10",
+      "orders": []
     },
     {
       "todoTableId": 3,
@@ -267,7 +427,15 @@
       "scheduledDeparture": "16:25",
       "actualDeparture": "16:25",
       "scheduledArrival": "19:55",
-      "estimatedArrival": "19:55"
+      "estimatedArrival": "19:55",
+      "Busnise_Basic": 15968,
+      "Businese_Standard": 21065,
+      "Businese_Up": 25713,
+      "Ecnomic_Basic": 5981,
+      "Ecnomic_Standard": 8755,
+      "Ecnomic_Up": 12521,
+      "飛行時間": "03:10",
+      "orders": []
     }
   ],
 
@@ -282,7 +450,15 @@
       "scheduledDeparture": "07:10",
       "actualDeparture": "07:10",
       "scheduledArrival": "11:00",
-      "estimatedArrival": "11:00"
+      "estimatedArrival": "11:00",
+      "Busnise_Basic": 18082,
+      "Businese_Standard": 24557,
+      "Businese_Up": 31463,
+      "Ecnomic_Basic": 7955,
+      "Ecnomic_Standard": 9657,
+      "Ecnomic_Up": 14517,
+      "飛行時間": "03:00",
+      "orders": []
     },
     {
       "todoTableId": 2,
@@ -294,7 +470,15 @@
       "scheduledDeparture": "13:00",
       "actualDeparture": "13:00",
       "scheduledArrival": "17:00",
-      "estimatedArrival": "17:00"
+      "estimatedArrival": "17:00",
+      "Busnise_Basic": 18082,
+      "Businese_Standard": 24557,
+      "Businese_Up": 31463,
+      "Ecnomic_Basic": 7955,
+      "Ecnomic_Standard": 9657,
+      "Ecnomic_Up": 14517,
+      "飛行時間": "03:00",
+      "orders": []
     },
     {
       "todoTableId": 3,
@@ -306,7 +490,15 @@
       "scheduledDeparture": "16:25",
       "actualDeparture": "16:25",
       "scheduledArrival": "20:15",
-      "estimatedArrival": "20:15"
+      "estimatedArrival": "20:15",
+      "Busnise_Basic": 18082,
+      "Businese_Standard": 24557,
+      "Businese_Up": 31463,
+      "Ecnomic_Basic": 7955,
+      "Ecnomic_Standard": 9657,
+      "Ecnomic_Up": 14517,
+      "飛行時間": "03:00",
+      "orders": []
     }
   ]
 }

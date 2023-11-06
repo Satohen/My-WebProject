@@ -321,7 +321,6 @@
                         <tr><td><input type="date"  name="" id="goday"> <td><input type="date" name="" id="backday" ></td></tr>
                         <tr><td style="column-span: 2;"><label for="cabin">艙等*</label></td></tr>                        
                         <tr><td  style="column-span: 2;"><select type="text" id="cabin">
-                            <option value="頭等艙">頭等艙</option>
                             <option value="商務艙">商務艙</option>
                             <option value="經濟艙">經濟艙</option>
 
@@ -332,11 +331,11 @@
                             <td><label for="baby_quantity">嬰兒 *(2歲以下)</label></td>                        
                         </tr>
                         <!-- 注意type要設定為button才不會傳出去 -->
-                        <tr><td><button class="btn btn-success" id="btn-plus1" type="button">+</button><input type="number" id="adult_quantity">
+                        <tr><td><button class="btn btn-success" id="btn-plus1" type="button">+</button><input type="number" id="adult_quantity"  value="0">
                             <button id="btn_minus" type="button" class="btn btn-success">-</button></td> 
-                            <td><button class="btn btn-success" id="btn-plus2" type="button">+</button><input type="number" id="children_quantity">
+                            <td><button class="btn btn-success" id="btn-plus2" type="button">+</button><input type="number" id="children_quantity"  value="0">
                                 <button id="btn_minus1" type="button" class="btn btn-success" >-</button></td>
-                            <td><button class="btn btn-success" id="btn-plus3" type="button">+</button><input type="number" id="baby_quantity">
+                            <td><button class="btn btn-success" id="btn-plus3" type="button">+</button><input type="number" id="baby_quantity"   value="0">
                                 <button id="btn_minus2"  type="button" class="btn btn-success">-</button></td>                                                     
                         </tr>
                         <tr><td class="" style="column-span: 2;">使用信用卡優惠</td></tr>
@@ -347,13 +346,13 @@
                                 <input type="radio" name="discount" id="discount_95"> <label  for="discount_95">國泰世華長榮航空聯名無限卡/極致御璽卡/御璽卡年度95折購票優惠 </label> 
                             <br>
                                 <input type="radio" name="discount" id="discount_90"> <label   for="discount_90">國泰世華長榮航空聯名極致無限卡年度購票9折優惠</label>                                    
-                        <tr><td><a class="btn btn-success" href="./book.html" >訂票</a></tr>
+                        <tr><td><a class="btn btn-success" href="#" id="book_button" >訂票</a></tr>
                     </table>
 
                     <!-- +-的js 安插jquery -->
                     <script type="text/javascript">
                         // 做日期判斷
-
+                        
                         // addEventListener增加監聽事件才能click
                         function add() {
                           document.getElementById("btn-plus1").addEventListener("click", function () {
@@ -692,24 +691,38 @@
                 </tr>
     </table>
 
-<script>
-    // 獲取 表一的數值到訂購票的頁面
-    var cabin = document.getElementById("cabin").value;
-    var adultQuantity = document.getElementById("adult_quantity").value;
-    var childrenQuantity = document.getElementById("children_quantity").value;
-    var babyQuantity = document.getElementById("baby_quantity").value;
-    
-    // 构建重定向URL，附加数据作为查询参数
-    var redirectTo = "book.html?cabin=" + cabin +
-                    "&adultQuantity=" + adultQuantity +
-                    "&childrenQuantity=" + childrenQuantity +
-                    "&babyQuantity=" + babyQuantity;
-    
-    // 执行重定向
-    window.location.href = redirectTo;
-    
+    <script>
 
-</script>
+
+        $("#book_button").on("click", function(event) {
+          // 阻止默认的页面跳转
+          event.preventDefault();
+          
+          // 获取表单字段的值 
+          var goday_get = document.getElementById("goday").value;
+          var backday_get = document.getElementById("backday").value;
+          var departure_get = document.getElementById("departure_0").value;
+          var destination_get = document.getElementById("destination_0").value;
+          var cabin = document.getElementById("cabin").value;
+          var adultQuantity = document.getElementById("adult_quantity").value;
+          var childrenQuantity = document.getElementById("children_quantity").value;
+          var babyQuantity = document.getElementById("baby_quantity").value;
+        
+          // 构建重定向URL，附加数据作为查询参数
+          var redirectTo = "book.html?cabin="  + cabin +
+                          "&adultQuantity=" + adultQuantity + 
+                          "&childrenQuantity=" + childrenQuantity +
+                          "&babyQuantity=" + babyQuantity + 
+                            "&goday_get=" + goday_get + 
+                           "&backday_get="+backday_get+
+                           "&departure_get=" + departure_get +
+                           "&destination_get=" + destination_get;
+        
+          // 执行重定向
+          window.location.href = redirectTo;
+        });
+        </script>
+        
 
 
 
