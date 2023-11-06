@@ -90,15 +90,6 @@ app.delete("/todo/delete/:id", function (req, res) {
 });
 
 // 這邊開始自己魔改
-<<<<<<< HEAD
-app.get("/todo/item/destination/:code", function (req, res) {
-  var data = fs.readFileSync(dataFileName);
-  var todoList = JSON.parse(data);
-  var destinationCode = req.params.code; //獲取參數中的目的地CODE
-
-  // 指定目的地CODE相配的航班
-  var flightsToDestination = todoList[destinationCode];
-=======
 // 定義路由處理程序，用於處理目的地程式碼參數的GET請求
 
 app.get("/todo/item/destination/:code", function (req, res) {
@@ -111,7 +102,6 @@ app.get("/todo/item/destination/:code", function (req, res) {
   var flightsToDestination = todoList[destinationCode]; // 尋找具有目的地代碼參數的航班數據
   // 如果找到匹配的航班數據，將其以JSON格式回應給客戶端
   // 如果沒有找到匹配的航班數據，返回404錯誤給客戶端
->>>>>>> f57f22e69226e6d3c134e512f9da23bdf33f7d5a
 
   if (flightsToDestination) {
     res.json(flightsToDestination);
