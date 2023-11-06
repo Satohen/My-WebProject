@@ -112,7 +112,7 @@ app.get("/todo/item/destination/:code", function (req, res) {
 
 // 這邊重寫一個指令存放其他東西
 app.post("/order/create", function (req, res) {
-  var data = fs.readFileSync(bookinfo.json);
+  var data = fs.readFileSync("./bookinfo.json");
   var orderList = JSON.parse(data);
 
   if (!Array.isArray(orderList)) {
@@ -128,13 +128,24 @@ app.post("/order/create", function (req, res) {
     cardNumber: req.body.cardNumber,
     expirationDate: req.body.expirationDate,
     cvv: req.body.cvv,
-
+    flightInfo: {
+      godate: req.body.godate,
+      backdate: req.body.backdate,
+      goairport: req.body.goairport,
+      backairport: req.body.backairport,
+      godestination: req.body.godestination,
+      backdestination: req.body.backdestination,
+      gocabin: req.body.gocabin,
+      backcabin: req.body.backcabin,
+    },
     // 寫入需要資訊
-  }; // 将订单添加到订单列表
+  };
+  console.log(order);
+
   orderList.push(order);
 
   // 将更新后的订单列表重新写入到文件中
-  fs.writeFileSync("bookinfo.json", JSON.stringify(orderList, null, 2));
+  fs.writeFileSync("./bookinfo.json", JSON.stringify(orderList, null, 2));
 
   // 返回响应给客户端
   res.json({ message: "訂單創建成功", order: order });
@@ -168,5 +179,5 @@ app.post("/user/register", function (req, res) {
   fs.writeFileSync("users.json", JSON.stringify(users));
 
   // 返回注册成功或失败的响应
-  res.json({ message: "注册成功" }); // 或其他响应
+  res.json({ message: "註冊成功" }); // 或其他响应
 });

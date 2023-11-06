@@ -261,9 +261,7 @@
           </tr>
         </table>
       </div>
-      <div style="display: inline-block; margin-right: 200px">
-        <button class="btn btn-success" style="width: 250px">搜尋</button>
-      </div>
+
     </div>
     <div class="bg-success mt-2" style="height: 75px">
       <h1 class="fs-2 ps-5 pt-2" style="color: white">選擇-航班/票價</h1>
@@ -364,7 +362,7 @@
           </tr>
           <tr id="go_col" style="display: none">
             <td>
-              啟程: <span id="gd"></span><br />
+              啟程: <br />
               <span id="date_1">2024年 03月 07日 星期四</span><br />
               <span id="dep1">14:00 東京(NRT)</span><br />
               <span id="des1">17:05 台北(TPE)</span><br />
@@ -375,7 +373,7 @@
           </tr>
           <tr id="back_col" style="display: none">
             <td>
-              回程: <span id="bd"></span><br />
+              回程: <br>
               <span id="date_2">2024年 03月 07日 星期四</span><br />
               <span id="dep2">14:00 東京(NRT)</span><br />
               <span id="des2">17:05 台北(TPE)</span><br />
@@ -438,10 +436,8 @@ $(document).ready(function() {
   // 当用户点击"完成订单"按钮时执行
   $("#continue").click(function() {
     // 在此之前，确保用户已经填写了姓名和联系电话，进行相应的验证
-
     // 显示信息框
-    $("#paymentInfoModal").modal("show");
-  });
+    $("#paymentInfoModal").modal("show");  });
 
   // 当用户提交支付信息表单时执行
   $("#paymentInfoForm").submit(function(event) {
@@ -455,9 +451,22 @@ $(document).ready(function() {
       address: $("#address").val(),
       cardNumber: $("#cardNumber").val(),
       expirationDate: $("#expirationDate").val(),
-      cvv: $("#cvv").val()
+      cvv: $("#cvv").val(),
+      flightInfo:{
+      godate: $("#date_1").text(),
+      backdate: $("#date_2").text(),
+      goairport:  $("#dep1").text(),
+      backairport:  $("#dep2").text(),
+      godestination:  $("#des1").text(),
+      backdestination:  $("#des2").text(),      
+      gocabin:  $("#cabin").text(),
+      backcabin:  $("#cabin2").text()
+
+          }
     };
 
+
+ console.log(orderData);
     // 使用Ajax将数据发送到服务器
     $.ajax({
       type: "POST",
@@ -622,9 +631,8 @@ $(document).ready(function() {
           const dateValue = new Date($("#goday_1").val());
           $("#day_1").text($("#goday_1").val());
           var datetranf = datetran1(dateValue);
-          $("#date_1").text(dateValue);
+          $("#date_1").text(datetranf);
           // 購物欄位日期
-          $("#gd").text(datetranf);
 
           // backday更換最小不能為<goday
           document
@@ -674,7 +682,6 @@ $(document).ready(function() {
           var datetranf1 = datetran1(dateValue1);
           $("#date_2").text(datetranf1);
           // 購物欄位日期
-          $("#bd").text(datetranf1);
 
           // 設定月那裡變更
           var datetranf2 = datetran2(dateValue1);
@@ -913,7 +920,8 @@ $(document).ready(function() {
                 <span id="btn${count}_1">${item.scheduledDeparture + item.departureAirport}</span><br> 直飛<br>
                 <span id="btn${count}_2">${item.scheduledArrival + item.arrivalAirport}</span><br>
                 <span id="btn${count}_3">直飛航班</span><br>
-                <span id="btn${count}_4">飛行時間:${item.飛行時間}</span>${item.flightNumber}<br>
+                <span id="btn${count}_4">飛行時間:${item.飛行時間}</span>
+                <br>機號:${item.flightNumber}<br>
               </td>
               <td>
                 <div class="btn price-button btn${count}_1">
@@ -940,7 +948,8 @@ $(document).ready(function() {
                 <span id="btn${count+3}_1">${item.scheduledDeparture + item.departureAirport}</span><br> 直飛<br>
                 <span id="btn${count+3}_2">${item.scheduledArrival + item.arrivalAirport}</span><br>
                 <span id="btn${count+3}_3">直飛航班</span><br>
-                <span id="btn${count+3}_4">飛行時間:${item.飛行時間}</span>${item.flightNumber}<br>
+                <span id="btn${count+3}_4">飛行時間:${item.飛行時間}</span>
+                <br>機號:${item.flightNumber}<br>
               </td>
               <td>
                 <div class="btn price-button btn${count+3}_1">
@@ -1038,38 +1047,46 @@ for (var i = 0; i <= 2; i++) {
     
       // <!-- 價格功能-->
 
-      var Ticket2 = 0;
+ 
+
+              var Ticket2 = 0;
               var tick2 = 0;
               var tick1 = 0;
               var Ticket1 = 0;
+              var sum  = 0
+              var tax = 0
               var goColVisible = false; // 初始状态为未显示
               var backColVisible = false; // 初始状态为未显示
-              $("#table_1 .btn.price-button").on("click", function () {
+              $("#table_1 .btn.price-button").on("click", async function () {
                 var buttonText = $(this).text();
                 $("#dol_1").text(buttonText);
-                $("#go_col").show();
-                goColVisible = true;
+                $("#go_col").show();                 
+                tick1 = parseInt(buttonText.replace(/TWD/g, ""));
                 var X = tick1 * parseInt($("#AD").text());
                 var Y = tick1 * parseInt($("#CH").text()) * 0.8;
-                var Z = tick1 * parseInt($("#BA").text()) * 0.5;
-                tick1 = parseInt(buttonText.replace(/TWD/g, ""));
-      
-                Ticket1 = X + Y + Z;
+                var Z = tick1 * parseInt($("#BA").text()) * 0.5;      
+                 Ticket1 = X + Y + Z;
+                 goColVisible = true;
+
+                //  這邊要做加總否則之後不會繼續加總
+                  sum = Math.round(Ticket1 + Ticket2);
+                  tax = Math.round(sum * 0.2);
+                  $(".total_price").text(sum);
+                  $("#tax").text(tax);
+
               });
               $("#table_2 .btn.price-button").on("click", function () {
                 if (goColVisible) {
-                  backColVisible = true;
-      
+                  backColVisible = true;    
                   var buttonText = $(this).text();
                   $("#dol_2").text(buttonText);
                   tick2 = parseInt(buttonText.replace(/TWD/g, ""));
-                  console.log(tick2)
                   Ticket2 =
                     tick2 * parseInt($("#AD").text()) +
                     tick2 * parseInt($("#CH").text()) * 0.8 +
                     tick2 * parseInt($("#BA").text()) * 0.5;
-                  var sum = Math.round(Ticket1 + Ticket2);
-                  var tax = Math.round(sum * 0.2);
+                   sum = Math.round(Ticket1 + Ticket2);
+                   tax = Math.round(sum * 0.2);
       
                   $("#back_col").show();
                   $("#total_col").show();
@@ -1082,10 +1099,10 @@ for (var i = 0; i <= 2; i++) {
                 }
             
               })
+   
     
     
-    }  
-
+  }
 
 
 
@@ -1099,7 +1116,8 @@ for (var i = 0; i <= 2; i++) {
                 <span id="btn${count}_1">${item.scheduledDeparture + item.departureAirport}</span><br> 直飛<br>
                 <span id="btn${count}_2">${item.scheduledArrival + item.arrivalAirport}</span><br>
                 <span id="btn${count}_3">直飛航班</span><br>
-                <span id="btn${count}_4">飛行時間:${item.飛行時間}</span>${item.flightNumber}<br>
+                <span id="btn${count}_4">飛行時間:${item.飛行時間}</span>
+                <br>機號:${item.flightNumber}<br>
               </td>
               <td>
                 <div class="btn price-button btn${count}_1">
@@ -1126,7 +1144,8 @@ for (var i = 0; i <= 2; i++) {
                 <span id="btn${count+3}_1">${item.scheduledDeparture + item.departureAirport}</span><br> 直飛<br>
                 <span id="btn${count+3}_2">${item.scheduledArrival + item.arrivalAirport}</span><br>
                 <span id="btn${count+3}_3">直飛航班</span><br>
-                <span id="btn${count+3}_4">飛行時間:${item.飛行時間}</span>${item.flightNumber}<br>
+                <span id="btn${count+3}_4">飛行時間:${item.飛行時間}</span>
+                <br>機號:${item.flightNumber}<br>
               </td>
               <td>
                 <div class="btn price-button btn${count+3}_1">
@@ -1219,43 +1238,44 @@ for (var i = 0; i <= 2; i++) {
       });
     })();
   }
-}
-
-    
+}   
       // <!-- 價格功能-->
 
-      var Ticket2 = 0;
+              var Ticket2 = 0;
               var tick2 = 0;
               var tick1 = 0;
-              var Ticket1 = 0;
+              var Ticket1 = 0;              
               var goColVisible = false; // 初始状态为未显示
               var backColVisible = false; // 初始状态为未显示
               $("#table_1 .btn.price-button").on("click", function () {
-                var buttonText = $(this).text();
-                $("#dol_1").text(buttonText);
+                var buttonText1 = $(this).text();
+                $("#dol_1").text(buttonText1);
                 $("#go_col").show();
+                tick1 = parseInt(buttonText1.replace(/TWD/g, ""));
                 goColVisible = true;
                 var X = tick1 * parseInt($("#AD").text());
                 var Y = tick1 * parseInt($("#CH").text()) * 0.8;
                 var Z = tick1 * parseInt($("#BA").text()) * 0.5;
-                tick1 = parseInt(buttonText.replace(/TWD/g, ""));
-      
                 Ticket1 = X + Y + Z;
+                console.log(buttonText);
+                console.log(tick1);
+
               });
               $("#table_2 .btn.price-button").on("click", function () {
                 if (goColVisible) {
-                  backColVisible = true;
-      
+
+                  backColVisible = true;      
                   var buttonText = $(this).text();
                   $("#dol_2").text(buttonText);
                   tick2 = parseInt(buttonText.replace(/TWD/g, ""));
-                  console.log(tick2)
                   Ticket2 =
                     tick2 * parseInt($("#AD").text()) +
                     tick2 * parseInt($("#CH").text()) * 0.8 +
                     tick2 * parseInt($("#BA").text()) * 0.5;
                   var sum = Math.round(Ticket1 + Ticket2);
                   var tax = Math.round(sum * 0.2);
+           
+
       
                   $("#back_col").show();
                   $("#total_col").show();
