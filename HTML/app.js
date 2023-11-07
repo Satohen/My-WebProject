@@ -128,20 +128,10 @@ app.post("/order/create", function (req, res) {
     cardNumber: req.body.cardNumber,
     expirationDate: req.body.expirationDate,
     cvv: req.body.cvv,
-    flightInfo: {
-      godate: req.body.godate,
-      backdate: req.body.backdate,
-      goairport: req.body.goairport,
-      backairport: req.body.backairport,
-      godestination: req.body.godestination,
-      backdestination: req.body.backdestination,
-      gocabin: req.body.gocabin,
-      backcabin: req.body.backcabin,
-    },
+    flightInfo: req.body.flightInfo,
     // 寫入需要資訊
   };
-  console.log(order);
-
+  console.log(req.body.flightInfo);
   orderList.push(order);
 
   // 将更新后的订单列表重新写入到文件中
@@ -154,7 +144,6 @@ app.post("/order/create", function (req, res) {
 // 註冊的url
 
 app.post("/user/register", function (req, res) {
-  // 从请求中获取用户注册信息
   var userData = {
     userfirstname: req.body.userfirstname,
     userlastname: req.body.userlastname,

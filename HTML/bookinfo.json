@@ -26,7 +26,7 @@
     }
   },
   {
-    "orderId": 1699283536804,
+    "orderId": 1699367324247,
     "name": "Wei Liu",
     "gender": "2",
     "email": "cs135792716@gmail.com",
@@ -34,17 +34,15 @@
     "cardNumber": "2",
     "expirationDate": "3",
     "cvv": "4",
-    "flightInfo": {}
-  },
-  {
-    "orderId": 1699284173096,
-    "name": "Wei Liu",
-    "gender": "2",
-    "email": "cs135792716@gmail.com",
-    "address": "2",
-    "cardNumber": "2",
-    "expirationDate": "3",
-    "cvv": "4",
-    "flightInfo": {}
+    "flightInfo": {
+      "godate": "2023年11月15日星期三",
+      "backdate": "2023年11月23日星期四",
+      "goairport": "07:50桃園機場",
+      "backairport": "07:50桃園機場",
+      "godestination": "12:00成田機場",
+      "backdestination": "12:00成田機場",
+      "gocabin": "商務艙 基本 Basic",
+      "backcabin": "商務艙 基本 Basic"
+    }
   }
 ]
