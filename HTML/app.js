@@ -110,17 +110,29 @@ app.get("/todo/item/destination/:code", function (req, res) {
   }
 });
 
-// 這邊重寫一個指令存放其他東西
+
+
+
+
+
+
+
+
+
+
+
+
+// 這邊重寫一個指令存放到指定的JSON
 app.post("/order/create", function (req, res) {
-  var data = fs.readFileSync(bookinfo.json);
+  var data = fs.readFileSync("bookinfo.json");
   var orderList = JSON.parse(data);
 
   if (!Array.isArray(orderList)) {
-    orderList = []; // 如果不是数组，初始化为空数组
+    orderList = []; // 如果不是陣列，初始化為空组
   }
 
   var order = {
-    orderId: new Date().getTime(), // 使用当前时间作为订单ID
+    orderId: new Date().getTime(), // 使用當前時間作訂單ID
     name: req.body.name,
     gender: req.body.gender,
     email: req.body.email,
@@ -130,17 +142,32 @@ app.post("/order/create", function (req, res) {
     cvv: req.body.cvv,
 
     // 寫入需要資訊
-  }; // 将订单添加到订单列表
+  }; // 將訂單添加到指定的表
   orderList.push(order);
 
-  // 将更新后的订单列表重新写入到文件中
-  fs.writeFileSync("bookinfo.json", JSON.stringify(orderList, null, 2));
+  // 將更新的訂單表重新寫到到文件中
+  fs.writeFileSync("./bookinfo.json", JSON.stringify(orderList, null, 2));
 
-  // 返回响应给客户端
+  // 回應給客戶端
   res.json({ message: "訂單創建成功", order: order });
 });
 
-// 註冊的url
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 註冊的資料傳輸
 
 app.post("/user/register", function (req, res) {
   // 从请求中获取用户注册信息
@@ -157,16 +184,12 @@ app.post("/user/register", function (req, res) {
   // 将用户信息保存到文件
   var data = fs.readFileSync("users.json");
   var users = JSON.parse(data);
-
   if (!Array.isArray(users)) {
     users = []; // 如果不是数组，初始化为空数组
   }
-
   users.push(userData);
-
   // 将更新后的用户信息保存回文件
   fs.writeFileSync("users.json", JSON.stringify(users));
 
-  // 返回注册成功或失败的响应
   res.json({ message: "注册成功" }); // 或其他响应
 });

@@ -457,19 +457,19 @@ $(document).ready(function() {
       expirationDate: $("#expirationDate").val(),
       cvv: $("#cvv").val()
     };
-
-    // 使用Ajax将数据发送到服务器
+    console.log(orderData);
+    // 使用Ajax傳送到SERVER
     $.ajax({
       type: "POST",
-      url: "/order/create", // 这是服务器接口的URL，你需要根据实际情况修改
-      data: JSON.stringify(orderData), // 将数据转换为JSON字符串
+      url: "/order/create", 
+      data: JSON.stringify(orderData), //轉換JSON字符串
       contentType: "application/json",
       success: function(response) {
-        // 处理成功响应
+        // 成功給訊息
         alert("訂單已完成！");
       },
       error: function(error) {
-        // 处理错误响应
+        // 錯誤給訊息
         alert("訂單創建失敗：" + error);
       }
     });
@@ -847,7 +847,7 @@ $(document).ready(function() {
           document.getElementById("CH").innerText = childrenQuantity;
           document.getElementById("BA").innerText = babyQuantity;
           document.getElementById("SUM_P").innerText = totalpeople;
-          // 這裡還要下判斷不然其他change功能不會吃到
+          // 這裡還要下手動不然其他change功能不會吃到
           document.getElementById("goday_1").value = goday_get;
           document.getElementById("backday_2").value = backday_get;
           $("#goday_1").trigger("change"); // 觸發change事件
@@ -982,7 +982,6 @@ for (var i = 0; i <= 2; i++) {
       var timeSelector = `#time1`;
       var cabinSelector = "#cabin";
       var cabinType = `${cabin_get}`;
-
       if (j === 1) {
         cabinType = " 基本 Basic";
       } else if (j === 2) {
