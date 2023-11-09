@@ -30,6 +30,17 @@
       text-align: center;
     }
   </style>
+
+    <!-- 安插jquery -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+      // 程式放在這裏
+      // $(document).ready(function(){
+      //     $("#btn-plus1").click(function(){
+      //         $("#adult_quantity").innerHTML++;
+      //     })
+      // })
+    </script>
 </head>
 
 <body>
@@ -164,7 +175,7 @@
         <table class=" ps-3 " style="margin-left: 30%;">
           <thead>
             <th></th>
-            <h1 class="center">會員帳號</h1>
+            <h1 class="center" >會員帳號</h1>
           </thead>
           <tr>
             <td><label for="email_0">E-Mail帳號 *</label></td>
@@ -300,27 +311,14 @@
 
       // 收集表单数据
       var orderData = {
-        name: $("#name_put").val(),
-        gender: $("#gender").val(),
-        email: $("#email").val(),
-        address: $("#address").val(),
-        cardNumber: $("#cardNumber").val(),
-        expirationDate: $("#expirationDate").val(),
-        cvv: $("#cvv").val(),
-        flightInfo: {
-          godate: $("#date_1").text(),
-          backdate: $("#date_2").text(),
-          goairport: $("#dep1").text(),
-          backairport: $("#dep2").text(),
-          godestination: $("#des1").text(),
-          backdestination: $("#des2").text(),
-          gocabin: $("#cabin").text(),
-          backcabin: $("#cabin2").text(),
-          total_price: $("#total_price").text()
-
-
-        }
-      };
+        userfirstname: $("#email_0"),value(),
+        userlastname: $("#email_0"),value(),
+        gender: $("#email_0"),value(),
+        password: $("#email_0"),value(),
+        email: $("#email_0"),value(),
+        birth:$("#email_0"),value(),
+        phone: $("#email_0"),value(),
+        };
 
 
       // 使用Ajax将数据发送到服务器
