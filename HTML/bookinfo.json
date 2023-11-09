@@ -1,1 +1,25 @@
-[]
+[
+  {
+    "vicketId": "7b6b2ba0-7f01-11ee-ba1f-a3a4d6c92c7b",
+    "bookdate": "Thu Nov 09 2023 21:11:23 GMT+0800 (台北標準時間)",
+    "orderId": 1699535483738,
+    "name": "Wei Liu",
+    "gender": "男",
+    "email": "cs135792716@gmail.com",
+    "address": "1",
+    "cardNumber": "1234",
+    "expirationDate": "5678",
+    "cvv": "91011",
+    "flightInfo": {
+      "godate": "2023年11月24日星期五",
+      "backdate": "2023年11月16日星期四",
+      "goairport": "07:50桃園機場",
+      "backairport": "07:50桃園機場",
+      "godestination": "12:00成田機場",
+      "backdestination": "12:00成田機場",
+      "gocabin": "商務艙 基本 Basic",
+      "backcabin": "商務艙 經典 Standard",
+      "total_price": "119389"
+    }
+  }
+]
