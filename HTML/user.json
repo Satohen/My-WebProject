@@ -1,3 +1,65 @@
 [
-  
+  {
+    "userfirstname": "Liu",
+    "userlastname": "Wei-Hen",
+    "userchname": "Liu",
+    "gender": "男",
+    "password": "123",
+    "email": "cs135792716@gmail.com",
+    "birth": "1939217",
+    "phone": "0987654321"
+  },
+  {},
+  {
+    "userfirstname": "Liu",
+    "userlastname": "Wei-Hen",
+    "userchname": "劉",
+    "password": "1234",
+    "email": "cs135792716@gmail.com",
+    "birth": "1939217",
+    "phone": "0987654321"
+  },
+
+  {
+    "userId": 562,
+    "userfirstname": "Liu",
+    "userlastname": "Wei-Hen",
+    "userchname": "Liu",
+    "gender": "男",
+    "password": "123",
+    "email": "cs135792716@gmail.com",
+    "birth": "1939217",
+    "phone": "0987654321"
+  },
+  {
+    "userId": 833,
+    "userfirstname": "Liu",
+    "userlastname": "Wei-Hen",
+    "userchname": "Liu",
+    "gender": "男",
+    "password": "SSAD123AS1",
+    "email": "cds23134#@141564",
+    "birth": "1939217",
+    "phone": "0987654321"
+  },
+  {
+    "userfirstname": "Liu",
+    "userlastname": "Wei-Hen",
+    "userchname": "劉",
+    "gender": "男",
+    "password": "123",
+    "email": "cs135792716@gmail.com",
+    "birth": "1939217",
+    "phone": "0987654321"
+  },
+  {
+    "userfirstname": "Liu",
+    "userlastname": "Wei-Hen",
+    "userchname": "劉",
+    "gender": "男",
+    "password": "1234",
+    "email": "cs135792716@gmail.com",
+    "birth": "1939217",
+    "phone": "0987654321"
+  }
 ]

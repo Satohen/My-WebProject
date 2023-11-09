@@ -227,8 +227,8 @@
           </tr>
           <tr>
             <td><label for="">性別*</label><br>
-              <input type="radio" name="sex" value="男性" id="male"> <label for="male">男性</label>
-              <input id="" type="radio" name="sex" value="女性" class="ms-5" id="fmale"><label for="fmale">女性</label>
+              <input type="radio" name="sex" value="男" id="male"> <label for="male">男性</label>
+              <input id="" type="radio" name="sex" value="女" class="ms-5" id="fmale"><label for="fmale">女性</label>
             </td>
           </tr>
           <tr>
@@ -252,7 +252,7 @@
             </td>
           </tr>
           <tr>
-            <td><button class="btn btn-success">註冊</button></td>
+            <td><button class="btn btn-success" id="regi_btn">註冊</button></td>
           </tr>
       </form>
     </div>
@@ -292,8 +292,9 @@
       const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
       return emailRegex.test(email);
     }
+
     function validateEmail() {
-      const email = document.getElementById("email").value;
+      const email = document.getElementById("email_0").value;
       if (isValidEmail(email)) {
         document.getElementById("error-message").textContent = "email格式有效";
       } else {
@@ -306,34 +307,39 @@
 
 
     // 這裡寫註冊傳送資料
-    $.post("/registe/post", function (e) {
-      event.preventDefault(); // 阻止表单默认提交行为
+    $(document).ready(function(){
+      $("#regi_btn").on("click", function (event) {
+     event.preventDefault(); // 阻止表单默认提交行为
 
+      $.post("/registe/post", function (e) {
+      
+
+      // 男女判別
+      var genderValue = $("input[name='sex']:checked").val();
       // 收集表单数据
-      var orderData = {
+
+      var userData = {
         userfirstname: $("#en-fname").val(),
         userlastname: $("#en_name").val(),
-        userchame: $("#ch_name").val(),
-        gender: $("#email_0").val(),
+        userfchname: $("#ch_fname").val(),
+        userchname: $("#ch_name").val(),
+        gender: genderValue,
         password: $("#password_1").val(),
         email: $("#email_0").val(),
-        birth:$("#year").value()+$("#month").value()+$("#day").value(),
-        phone: $("#phone_number").value(),
+        birth:$("#year").val()+$("#month").val()+$("#day").val(),
+        phone: $("#phone_number").val(),
          };
-
          
       // 用ajax 發送
       $.ajax({
         type: "POST",
         url: "/registe/post",
-        data: JSON.stringify(orderData), //轉換JSON字符串
+        data: JSON.stringify(userData), //轉換JSON字符串
         contentType: "application/json",
         success: function (response) {
           // 成功給訊息
-          alert("訂單已完成！");
-
-          var redirectTo = "FINISH.html?id=" + response.order.vicketId;
-
+          alert("註冊成功");
+          var redirectTo = "/"
           window.location.href = redirectTo;
         },
         error: function (error) {
@@ -342,7 +348,13 @@
         }
       });
     });
+      
+      
+    })
+   
 
+    })
+    
 
 
 

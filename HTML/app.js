@@ -159,11 +159,12 @@ app.get("/order/book/:id", function (req, res) {
 // 註冊的資料傳輸
 
 app.post("/registe/post", function (req, res) {
-  // 獲取 req 所取得的訊息
+  // 獲取 req前端 所取得的訊息
   var userData = {
     userfirstname: req.body.userfirstname,
     userlastname: req.body.userlastname,
-    userchame: req.body.userchame,
+    userchfname: req.body.userchfname,
+    userchname: req.body.userchname,
     gender: req.body.gender,
     password: req.body.password,
     email: req.body.email,
@@ -172,17 +173,36 @@ app.post("/registe/post", function (req, res) {
   };
 
   //儲存到json文件
-  var data = fs.readFileSync("users.json");
+  var data = fs.readFileSync("user.json");
   var users = JSON.parse(data);
+
   if (!Array.isArray(users)) {
     users = []; // 如果不是陣列，初始化為空陣列
   }
   users.push(userData);
   // 将更新后的用户信息保存回文件
-  fs.writeFileSync("users.json", JSON.stringify(users));
+  fs.writeFileSync("user.json", JSON.stringify(users, null, 2));
 
   // 返回注册成功或失败的响应
   res.json({ message: "註冊成功" }); // 或其他响应
+});
+
+// 登入
+app.post("/login", function (req, res) {
+  // 从请求中获取用户名和密码
+  var username = req.body.username;
+  var password = req.body.password;
+
+  // 从用户数据中查找匹配的用户
+  var user = users.find((u) => u.email === username && u.password === password);
+
+  if (user) {
+    // 用户名和密码匹配，返回成功响应
+    res.json({ success: true, user: user });
+  } else {
+    // 用户名和密码不匹配，返回失败响应
+    res.json({ success: false, message: "Invalid username or password" });
+  }
 });
 
 // 之後來看
