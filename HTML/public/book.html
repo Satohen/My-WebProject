@@ -385,7 +385,7 @@
           <!-- 兩個一起做同步動作 -->
           <tr id="total_col" style="display: block; display: none">
             <td>
-              總計:TWD <span class="total_price"></span><br />
+              總計:TWD <span class="total_price" id="total_price"></span><br />
               票價及航空公司附加費:TWD<span class="total_price"></span><br />
               稅金及其他費用:TWD<span id="tax"></span><br />
               所有旅客的來回行程價格
@@ -462,7 +462,9 @@ $(document).ready(function() {
       godestination:  $("#des1").text(),
       backdestination:  $("#des2").text(),      
       gocabin:  $("#cabin").text(),
-      backcabin:  $("#cabin2").text()
+      backcabin:  $("#cabin2").text(),
+      total_price: $("#total_price").text()
+
 
           }
     };
@@ -478,7 +480,7 @@ $(document).ready(function() {
         // 成功給訊息
         alert("訂單已完成！");
         
-        var redirectTo = "FINISH.html?id="
+        var redirectTo = "FINISH.html?id="+response.order.vicketId;
 
         window.location.href = redirectTo;
       },

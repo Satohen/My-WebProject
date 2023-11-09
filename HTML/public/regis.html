@@ -1,190 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>註冊</title>
-    <meta name="description" content="Free Web tutorials" />
-    <meta name="keywords" content="HTML, CSS, JavaScript" />
-    <meta name="author" content="Liu" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-    <!-- 網頁標題icon -->
-    <link rel="icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
-    <link
-      rel="shortcut icon"
-      href="./長榮航空img/長榮小icon.png"
-      type="image/x-icon"
-    />
-    <!-- 測試用 找框架 -->
-    <style>
-      .pic {
-        border: 1px black solid;
-        width: 450;
-        height: 300;
-      }
-      /* 置中框架 */
-      .center {
-        text-align: center;
-      }
-    </style>
-  </head>
 
-  <body>
-    ---------------------------------------------------------------
-    <!-- 移動式標題列 -->
-    <nav class="navbar navbar-expand-lg bg-light fixed-top">
-      <!-- 飛機logo首頁 -->
-      <div class="d-flex jutisfy-content-start">
-        <a href="./index.html">
-          <img
-            src="./img/logo-evaair-header.png"
-            alt="長榮logo"
-            class="img-fluid w-75"
-          />
-        </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>註冊</title>
+  <meta name="description" content="Free Web tutorials" />
+  <meta name="keywords" content="HTML, CSS, JavaScript" />
+  <meta name="author" content="Liu" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <!-- 網頁標題icon -->
+  <link rel="icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
+  <!-- 測試用 找框架 -->
+  <style>
+    .pic {
+      border: 1px black solid;
+      width: 450;
+      height: 300;
+    }
+
+    /* 置中框架 */
+    .center {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  ---------------------------------------------------------------
+  <!-- 移動式標題列 -->
+  <nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <!-- 飛機logo首頁 -->
+    <div class="d-flex jutisfy-content-start">
+      <a href="./index.html">
+        <img src="./img/logo-evaair-header.png" alt="長榮logo" class="img-fluid w-75" />
+      </a>
+    </div>
+    <!-- 下拉式標題 -->
+    <div class="container-fluid">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between w-50">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            企業商務旅行
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            優惠與訂票
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            行程管理
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            無限萬里遊
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- 登入及註冊 -->
+      <div class="ms-auto">
+        <a href="./login.html" class="btn">登入</a>
+        <span>|</span>
+        <a href="./regis.html" class="btn">註冊</a>
       </div>
-      <!-- 下拉式標題 -->
-      <div class="container-fluid">
-        <ul
-          class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between w-50"
-        >
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              企業商務旅行
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              優惠與訂票
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              行程管理
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              無限萬里遊
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-
-        <!-- 登入及註冊 -->
-        <div class="ms-auto">
-          <a href="./login.html" class="btn">登入</a>
-          <span>|</span>
-          <a href="./regis.html" class="btn">註冊</a>
-        </div>
-        <!-- 搜尋 問號icon 這個是那些icon的代碼(自己也不清楚 看不懂 直接貼) -->
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            class="bi bi-question-circle"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-            />
-            <path
-              d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"
-            />
-          </svg>
-        </div>
-        <div class="ms-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            class="bi bi-search"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-            />
-          </svg>
-        </div>
+      <!-- 搜尋 問號icon 這個是那些icon的代碼(自己也不清楚 看不懂 直接貼) -->
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-question-circle"
+          viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+          <path
+            d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+        </svg>
       </div>
-    </nav>
-    <hr />
+      <div class="ms-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search"
+          viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg>
+      </div>
+    </div>
+  </nav>
+  <hr />
 
-    <!-- 註冊畫面 -->
+  <!-- 註冊畫面 -->
   <div style="background-color: lightcyan;">
     <div>
       <header style="text-align: center; font-size: 44px"><b>註冊</b></header>
@@ -196,12 +142,14 @@
     <div>
       <table style="margin-left: 30%; margin-top: 20px">
         <tr>
-          <th><p class="fs-3 text-left">歡迎您註冊成為無限萬哩遊會員</p></th>
+          <th>
+            <p class="fs-3 text-left">歡迎您註冊成為無限萬哩遊會員</p>
+          </th>
         </tr>
         <tr>
           <td>
             <p class="fs-4 text-left" style="width: 700px;">
-              成為「無限萬哩遊」會員後，當您搭乘長榮航空/立榮航空、星空聯盟航空夥伴的航班時，將可享有哩程累計及相              
+              成為「無限萬哩遊」會員後，當您搭乘長榮航空/立榮航空、星空聯盟航空夥伴的航班時，將可享有哩程累計及相
               關會員待遇。滿兩歲即可申請成為會員，我們將以電子郵件的方式寄發「無限萬哩遊」哩程核對表及電子專刊給您
               ，讓您搶先瞭解最新消息和促銷活動。
             </p>
@@ -213,107 +161,194 @@
     <!-- 註冊表格 -->
     <div>
       <form action="">
-        <table class=" ps-3 "  style="margin-left: 30%;">
-        <thead><th></th><h1 class="center">會員帳號</h1></thead>
-        <tr><td><label for="email_0">E-Mail帳號 *</label></td></tr>
-        <tr><td><p>為確保您可收到長榮航空的電子郵件，請將eservice@mh1.evaair.com加入您的通訊錄</p></td></tr>
-        <tr><td><input type="email" name="" id="email_0" /></td></tr>
-        <tr><td><label for="password_1">設定密碼 *</label>
-        <p>密碼請輸入8-30字元，最少1個大寫字母、最少1個小寫字母、最少1個數字、最少1個特殊符號(常見特殊符號字元如：!、#、$、^、*……等)，其他字元不接受。</p></td><</tr>
-
-        <tr><td> <input type="password" name="" id="password_1" /></td></tr>
-        <tr><td> <label for="password_2">確認密碼 * </label><br />
-        <input type="password" name="" id="password_2" />
-        </td></tr>
-        <thead><th><h1 class="center">個人資料</h1></th></thead>
-        <tr><td><label for="en-fname">英文姓名(與護照一致) *</label>
-          <p>範例:LIN</p>
-          <input type="text" name="" id="en-fname" />
-        </td></tr>
-        <tr><td><label for="en_name">英文名+中間名 (與護照一致) * </label>
-                <p>範例: SHIHLUNJOSEPH</p>
-                 <input type="text" name="" id="en_name" />
-            </td>
-        </tr>
-        <tr><td><label for="ch_name">中文姓</label><br />
-                <input type="text" name="" id="ch_name" /><br />
-                <label for="ch_fname">中文名</label><br />
-                <input type="text" name="" id="ch_fname" /><br />
-            </td>
-         </tr>
-         <tr><td><label for="">性別*</label><br>
-                  <input type="radio" name="sex" value="男性" id="male" > <label for="male">男性</label>
-                  <input id=""   type="radio" name="sex"  value="女性"  class="ms-5" id="fmale"><label for="fmale">女性</label>
-         </td></tr>
-         <tr><td> <label for="">生日*</label>
-                  <p>年/月/日</p>
-                  <select  name="" id="year"></select>
-
-                  <select name="" id="month"></select>
-
-                  <select name="" id="day"></select>
-
-                </td>
+        <table class=" ps-3 " style="margin-left: 30%;">
+          <thead>
+            <th></th>
+            <h1 class="center">會員帳號</h1>
+          </thead>
+          <tr>
+            <td><label for="email_0">E-Mail帳號 *</label></td>
           </tr>
-          </td></tr>
-          <tr><td><h3>手機號碼</h3>                 
-                  <label for="phone_number">手機號碼 * </label><br />
-                  <input type="text" name="" id="phone_number" />
-                </td>        
-           </tr>
-           <tr><td><button class="btn btn-success">註冊</button></td></tr>           
+          <tr>
+            <td>
+              <p>為確保您可收到長榮航空的電子郵件，請將eservice@mh1.evaair.com加入您的通訊錄</p>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="email" name="" id="email_0" /></td>
+          </tr>
+          <tr>
+            <td><label for="password_1">設定密碼 *</label>
+              <p>密碼請輸入8-30字元，最少1個大寫字母、最少1個小寫字母、最少1個數字、最少1個特殊符號(常見特殊符號字元如：!、#、$、^、*……等)，其他字元不接受。</p>
+            </td>
+
+          <tr>
+            <td> <input type="password" name="" id="password_1" /></td>
+          </tr>
+          <tr>
+            <td> <label for="password_2">確認密碼 * </label><br />
+              <input type="password" name="" id="password_2" />
+            </td>
+          </tr>
+          <thead>
+            <th>
+              <h1 class="center">個人資料</h1>
+            </th>
+          </thead>
+          <tr>
+            <td><label for="en-fname">英文姓名(與護照一致) *</label>
+              <p>範例:LIN</p>
+              <input type="text" name="" id="en-fname" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="en_name">英文名+中間名 (與護照一致) * </label>
+              <p>範例: SHIHLUNJOSEPH</p>
+              <input type="text" name="" id="en_name" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="ch_name">中文姓</label><br />
+              <input type="text" name="" id="ch_name" /><br />
+              <label for="ch_fname">中文名</label><br />
+              <input type="text" name="" id="ch_fname" /><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="">性別*</label><br>
+              <input type="radio" name="sex" value="男性" id="male"> <label for="male">男性</label>
+              <input id="" type="radio" name="sex" value="女性" class="ms-5" id="fmale"><label for="fmale">女性</label>
+            </td>
+          </tr>
+          <tr>
+            <td> <label for="">生日*</label>
+              <p>年/月/日</p>
+              <select name="" id="year"></select>
+
+              <select name="" id="month"></select>
+
+              <select name="" id="day"></select>
+
+            </td>
+          </tr>
+          </td>
+          </tr>
+          <tr>
+            <td>
+              <h3>手機號碼</h3>
+              <label for="phone_number">手機號碼 * </label><br />
+              <input type="text" name="" id="phone_number" />
+            </td>
+          </tr>
+          <tr>
+            <td><button class="btn btn-success">註冊</button></td>
+          </tr>
       </form>
     </div>
 
 
   </div>
   <!-- 寫入 生日 年月日選項 -->
-    <script>
-      var currentYear  = new Date().getFullYear();
-      var currentMonth  = new Date().getMonth();
-      var currentMonth  = new Date().getMonth();
+  <script>
+    var currentYear = new Date().getFullYear();
+    var currentMonth = new Date().getMonth();
+    var currentMonth = new Date().getMonth();
+    for (i = 1900; i <= currentYear; i++) {
+      var k = document.createElement("option");
+      k.value = i;
+      k.text = i;
+      document.getElementById("year").appendChild(k);
+    }
+    for (j = 1; j <= 12; j++) {
+      var x = document.createElement("option");
+      x.value = j;
+      x.text = j;
+      document.getElementById("month").appendChild(x);
+    }
+    for (j = 1; j <= 31; j++) {
+      var y = document.createElement("option");
+      y.value = j;
+      y.text = j;
+      document.getElementById("day").appendChild(y);
+    }
 
-      for(i=1900;i<=currentYear;i++){
-       var k = document.createElement("option");
-       k.value = i;
-       k.text = i;
-       document.getElementById("year").appendChild(k);
+
+
+
+
+    // GPT生成
+    function isValidEmail(email) {
+      const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+      return emailRegex.test(email);
+    }
+    function validateEmail() {
+      const email = document.getElementById("email").value;
+      if (isValidEmail(email)) {
+        document.getElementById("error-message").textContent = "email格式有效";
+      } else {
+        document.getElementById("error-message").textContent = "email格式無效";
       }
-
-      for(j=1; j<=12 ; j++){
-        var x = document.createElement("option");
-        x.value = j;
-        x.text = j;
-        document.getElementById("month").appendChild(x);}
+    }
+    // 在输入框失去焦点时进行验证
+    document.getElementById("email_0").addEventListener("blur", validateEmail);
 
 
-        for(j=1; j<= 31 ; j++){
-        var y = document.createElement("option");
-        y.value = j;
-        y.text = j;
-        document.getElementById("day").appendChild(y);
 
-      }
+    // 這裡寫註冊傳送資料
+    $.post("/registe/post", function (e) {
+      event.preventDefault(); // 阻止表单默认提交行为
 
-      // GPT生成
+      // 收集表单数据
+      var orderData = {
+        name: $("#name_put").val(),
+        gender: $("#gender").val(),
+        email: $("#email").val(),
+        address: $("#address").val(),
+        cardNumber: $("#cardNumber").val(),
+        expirationDate: $("#expirationDate").val(),
+        cvv: $("#cvv").val(),
+        flightInfo: {
+          godate: $("#date_1").text(),
+          backdate: $("#date_2").text(),
+          goairport: $("#dep1").text(),
+          backairport: $("#dep2").text(),
+          godestination: $("#des1").text(),
+          backdestination: $("#des2").text(),
+          gocabin: $("#cabin").text(),
+          backcabin: $("#cabin2").text(),
+          total_price: $("#total_price").text()
 
-      function isValidEmail(email) {
-  const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
-  return emailRegex.test(email);
-}
 
-function validateEmail() {
-  const email = document.getElementById("email").value;
-  if (isValidEmail(email)) {
-    document.getElementById("error-message").textContent = "邮箱格式有效";
-  } else {
-    document.getElementById("error-message").textContent = "邮箱格式无效";
-  }
-}
+        }
+      };
 
-// 在输入框失去焦点时进行验证
-document.getElementById("email_0").addEventListener("blur", validateEmail);
-</script>
-    </script>
-  </body>
+
+      // 使用Ajax将数据发送到服务器
+      $.ajax({
+        type: "POST",
+        url: "/order/create",
+        data: JSON.stringify(orderData), //轉換JSON字符串
+        contentType: "application/json",
+        success: function (response) {
+          // 成功給訊息
+          alert("訂單已完成！");
+
+          var redirectTo = "FINISH.html?id=" + response.order.vicketId;
+
+          window.location.href = redirectTo;
+        },
+        error: function (error) {
+          // 錯誤給訊息
+          alert("訂單創建失敗：" + error);
+        }
+      });
+    });
+
+
+
+
+  </script>
+
+</body>
+
 </html>

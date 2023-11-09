@@ -5,6 +5,7 @@ var app = express();
 var fs = require("fs"); // Node.js內建的檔案系統模組
 var dataFileName = "./data.json";
 var databook = "./bookinfo.json";
+const uuid = require('uuid');
 
 
 app.use(express.static("public"));
@@ -119,10 +120,10 @@ app.post("/order/create", function (req, res) {
   if (!Array.isArray(orderList)) {
     orderList = []; // 如果不是陣列，初始化為空组
   }
- 
-
+//  uuid 唯一的ticket
+  const vicetid = uuid.v1()
   var order = {
-    vicketId: req.body.sessionid,
+    vicketId: vicetid,
     bookdate: Date(),
     orderId: new Date().getTime(), // 使用當前時間作訂單ID
     name: req.body.name,
@@ -132,10 +133,10 @@ app.post("/order/create", function (req, res) {
     cardNumber: req.body.cardNumber,
     expirationDate: req.body.expirationDate,
     cvv: req.body.cvv,
-    flightInfo: req.body.flightInfo
+    total_price: req.body.SUM,
+    flightInfo: req.body.flightInfo,
     // 寫入需要資訊 
   };
-
 
   orderList.push(order);
 
@@ -153,12 +154,11 @@ app.post("/order/create", function (req, res) {
 app.get("/order/book/:id", function (req, res) {
   var data = fs.readFileSync(databook); // 讀取儲存航班資料的JSON文件
   var BOOKList = JSON.parse(data); // 解析JSON數據，將其轉換為JavaScript對象
-  var bookId = req.params.code; // 取得從HTTP請求中傳遞的目的地代碼參數
-  var BOOKINFO = BOOKList[bookId]; // 尋找具有目的地代碼參數的航班數據
-  // 如果找到匹配的航班數據，將其以JSON格式回應給客戶端
-  // 如果沒有找到匹配的航班數據，返回404錯誤給客戶端
-  if (BOOKINFO) {
-    res.json(BOOKINFO);
+  var bookId = req.params.id; // 取得從HTTP請求中傳遞的目的地代碼參數
+  var selectedOrder = BOOKList.find(order => order.vicketId === bookId);
+
+  if (selectedOrder) {
+    res.json(selectedOrder);
   } else {
     res.status(404).send("No flights to the specified destination found.");
   }
@@ -169,7 +169,7 @@ app.get("/order/book/:id", function (req, res) {
 // 註冊的資料傳輸
 
 app.post("/registe/post", function (req, res) {
-  // 从请求中获取用户注册信息
+  // 獲取 req 所取得的訊息
   var userData = {
     userfirstname: req.body.userfirstname,
     userlastname: req.body.userlastname,
@@ -180,11 +180,11 @@ app.post("/registe/post", function (req, res) {
     phone: req.body.phone,
   };
 
-  // 将用户信息保存到文件
+  //儲存到json文件
   var data = fs.readFileSync("users.json");
   var users = JSON.parse(data);
   if (!Array.isArray(users)) {
-    users = []; // 如果不是数组，初始化为空数组
+    users = []; // 如果不是陣列，初始化為空陣列
   }
   users.push(userData);
   // 将更新后的用户信息保存回文件
