@@ -421,12 +421,14 @@
           <input type="text" id="expirationDate" required><br>
           <label for="cvv">CVV碼：</label>
           <input type="text" id="cvv" required><br>
-          <button type="submit" class="btn btn-primary">完成订单</button>
+          <button type="submit" class="btn btn-primary">完成訂單</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+
 
 
 
@@ -464,9 +466,8 @@ $(document).ready(function() {
 
           }
     };
+        
 
-
- console.log(orderData);
     // 使用Ajax将数据发送到服务器
     $.ajax({
       type: "POST",
@@ -476,6 +477,10 @@ $(document).ready(function() {
       success: function(response) {
         // 成功給訊息
         alert("訂單已完成！");
+        
+        var redirectTo = "FINISH.html?id="
+
+        window.location.href = redirectTo;
       },
       error: function(error) {
         // 錯誤給訊息
@@ -485,7 +490,10 @@ $(document).ready(function() {
   });
 });
 
-
+// 暫時不動
+function doEdit(e) {
+        sessionStorage.setItem("todoTableId", e);
+    }
 </script>
 
 
@@ -1297,7 +1305,6 @@ for (var i = 0; i <= 2; i++) {
       alert("未找到該項目");
     }
   }); } 
-
 
 
 
