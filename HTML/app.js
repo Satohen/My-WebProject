@@ -163,6 +163,7 @@ app.post("/registe/post", function (req, res) {
   var userData = {
     userfirstname: req.body.userfirstname,
     userlastname: req.body.userlastname,
+    userchame: req.body.userchame,
     gender: req.body.gender,
     password: req.body.password,
     email: req.body.email,

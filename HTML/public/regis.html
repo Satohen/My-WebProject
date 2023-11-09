@@ -311,20 +311,21 @@
 
       // 收集表单数据
       var orderData = {
-        userfirstname: $("#email_0"),value(),
-        userlastname: $("#email_0"),value(),
-        gender: $("#email_0"),value(),
-        password: $("#email_0"),value(),
-        email: $("#email_0"),value(),
-        birth:$("#email_0"),value(),
-        phone: $("#email_0"),value(),
-        };
+        userfirstname: $("#en-fname").val(),
+        userlastname: $("#en_name").val(),
+        userchame: $("#ch_name").val(),
+        gender: $("#email_0").val(),
+        password: $("#password_1").val(),
+        email: $("#email_0").val(),
+        birth:$("#year").value()+$("#month").value()+$("#day").value(),
+        phone: $("#phone_number").value(),
+         };
 
-
-      // 使用Ajax将数据发送到服务器
+         
+      // 用ajax 發送
       $.ajax({
         type: "POST",
-        url: "/order/create",
+        url: "/registe/post",
         data: JSON.stringify(orderData), //轉換JSON字符串
         contentType: "application/json",
         success: function (response) {
