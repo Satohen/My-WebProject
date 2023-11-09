@@ -385,7 +385,7 @@
           <!-- 兩個一起做同步動作 -->
           <tr id="total_col" style="display: block; display: none">
             <td>
-              總計:TWD <span class="total_price"></span><br />
+              總計:TWD <span class="total_price" id="total_price"></span><br />
               票價及航空公司附加費:TWD<span class="total_price"></span><br />
               稅金及其他費用:TWD<span id="tax"></span><br />
               所有旅客的來回行程價格
@@ -421,12 +421,14 @@
           <input type="text" id="expirationDate" required><br>
           <label for="cvv">CVV碼：</label>
           <input type="text" id="cvv" required><br>
-          <button type="submit" class="btn btn-primary">完成订单</button>
+          <button type="submit" class="btn btn-primary">完成訂單</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+
 
 
 
@@ -460,32 +462,40 @@ $(document).ready(function() {
       godestination:  $("#des1").text(),
       backdestination:  $("#des2").text(),      
       gocabin:  $("#cabin").text(),
-      backcabin:  $("#cabin2").text()
+      backcabin:  $("#cabin2").text(),
+      total_price: $("#total_price").text()
+
 
           }
     };
-
-
+        
 
     // 使用Ajax将数据发送到服务器
     $.ajax({
       type: "POST",
-      url: "/order/create", // 这是服务器接口的URL，你需要根据实际情况修改
-      data: JSON.stringify(orderData), // 将数据转换为JSON字符串
+      url: "/order/create", 
+      data: JSON.stringify(orderData), //轉換JSON字符串
       contentType: "application/json",
       success: function(response) {
-        // 处理成功响应
+        // 成功給訊息
         alert("訂單已完成！");
+        
+        var redirectTo = "FINISH.html?id="+response.order.vicketId;
+
+        window.location.href = redirectTo;
       },
       error: function(error) {
-        // 处理错误响应
+        // 錯誤給訊息
         alert("訂單創建失敗：" + error);
       }
     });
   });
 });
 
-
+// 暫時不動
+function doEdit(e) {
+        sessionStorage.setItem("todoTableId", e);
+    }
 </script>
 
 
@@ -854,7 +864,7 @@ $(document).ready(function() {
           document.getElementById("CH").innerText = childrenQuantity;
           document.getElementById("BA").innerText = babyQuantity;
           document.getElementById("SUM_P").innerText = totalpeople;
-          // 這裡還要下判斷不然其他change功能不會吃到
+          // 這裡還要下手動不然其他change功能不會吃到
           document.getElementById("goday_1").value = goday_get;
           document.getElementById("backday_2").value = backday_get;
           $("#goday_1").trigger("change"); // 觸發change事件
@@ -991,7 +1001,6 @@ for (var i = 0; i <= 2; i++) {
       var timeSelector = `#time1`;
       var cabinSelector = "#cabin";
       var cabinType = `${cabin_get}`;
-
       if (j === 1) {
         cabinType = " 基本 Basic";
       } else if (j === 2) {
@@ -1298,7 +1307,6 @@ for (var i = 0; i <= 2; i++) {
       alert("未找到該項目");
     }
   }); } 
-
 
 
 

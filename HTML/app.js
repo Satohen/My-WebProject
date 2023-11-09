@@ -4,6 +4,8 @@ var cors = require("cors");
 var app = express();
 var fs = require("fs"); // Node.js內建的檔案系統模組
 var dataFileName = "./data.json";
+var databook = "./bookinfo.json";
+const uuid = require("uuid");
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -94,15 +96,11 @@ app.delete("/todo/delete/:id", function (req, res) {
 
 app.get("/todo/item/destination/:code", function (req, res) {
   var data = fs.readFileSync(dataFileName); // 讀取儲存航班資料的JSON文件
-
   var todoList = JSON.parse(data); // 解析JSON數據，將其轉換為JavaScript對象
-
   var destinationCode = req.params.code; // 取得從HTTP請求中傳遞的目的地代碼參數
-
   var flightsToDestination = todoList[destinationCode]; // 尋找具有目的地代碼參數的航班數據
   // 如果找到匹配的航班數據，將其以JSON格式回應給客戶端
   // 如果沒有找到匹配的航班數據，返回404錯誤給客戶端
-
   if (flightsToDestination) {
     res.json(flightsToDestination);
   } else {
@@ -110,17 +108,20 @@ app.get("/todo/item/destination/:code", function (req, res) {
   }
 });
 
-// 這邊重寫一個指令存放其他東西
+// 這邊重寫一個指令存放到指定的JSON
 app.post("/order/create", function (req, res) {
   var data = fs.readFileSync("./bookinfo.json");
   var orderList = JSON.parse(data);
 
   if (!Array.isArray(orderList)) {
-    orderList = []; // 如果不是数组，初始化为空数组
+    orderList = []; // 如果不是陣列，初始化為空组
   }
-
+  //  uuid 唯一的ticket
+  const vicetid = uuid.v1();
   var order = {
-    orderId: new Date().getTime(), // 使用当前时间作为订单ID
+    vicketId: vicetid,
+    bookdate: Date(),
+    orderId: new Date().getTime(), // 使用當前時間作訂單ID
     name: req.body.name,
     gender: req.body.gender,
     email: req.body.email,
@@ -128,22 +129,37 @@ app.post("/order/create", function (req, res) {
     cardNumber: req.body.cardNumber,
     expirationDate: req.body.expirationDate,
     cvv: req.body.cvv,
+    total_price: req.body.SUM,
     flightInfo: req.body.flightInfo,
     // 寫入需要資訊
   };
-  console.log(req.body.flightInfo);
+
   orderList.push(order);
 
-  // 将更新后的订单列表重新写入到文件中
+  // 将更新后的訂單列表重新写入到文件中
   fs.writeFileSync("./bookinfo.json", JSON.stringify(orderList, null, 2));
-
-  // 返回响应给客户端
+  // 回應給客戶端
   res.json({ message: "訂單創建成功", order: order });
 });
 
-// 註冊的url
+// 取得訂票資訊
+app.get("/order/book/:id", function (req, res) {
+  var data = fs.readFileSync(databook); // 讀取儲存航班資料的JSON文件
+  var BOOKList = JSON.parse(data); // 解析JSON數據，將其轉換為JavaScript對象
+  var bookId = req.params.id; // 取得從HTTP請求中傳遞的目的地代碼參數
+  var selectedOrder = BOOKList.find((order) => order.vicketId === bookId);
 
-app.post("/user/register", function (req, res) {
+  if (selectedOrder) {
+    res.json(selectedOrder);
+  } else {
+    res.status(404).send("No flights to the specified destination found.");
+  }
+});
+
+// 註冊的資料傳輸
+
+app.post("/registe/post", function (req, res) {
+  // 獲取 req 所取得的訊息
   var userData = {
     userfirstname: req.body.userfirstname,
     userlastname: req.body.userlastname,
@@ -154,19 +170,50 @@ app.post("/user/register", function (req, res) {
     phone: req.body.phone,
   };
 
-  // 将用户信息保存到文件
+  //儲存到json文件
   var data = fs.readFileSync("users.json");
   var users = JSON.parse(data);
-
   if (!Array.isArray(users)) {
-    users = []; // 如果不是数组，初始化为空数组
+    users = []; // 如果不是陣列，初始化為空陣列
   }
-
   users.push(userData);
-
   // 将更新后的用户信息保存回文件
   fs.writeFileSync("users.json", JSON.stringify(users));
 
   // 返回注册成功或失败的响应
   res.json({ message: "註冊成功" }); // 或其他响应
 });
+
+// 之後來看
+// // // app.js
+// const express = require("express");
+// const session = require("express-session");
+// const app = express();
+
+// app.use(session({
+//   secret: "your-secret-key",
+//   resave: false,
+//   saveUninitialized: true
+// }));
+
+// app.get("/", (req, res) => {
+//   if (req.session.user) {
+//     res.send("Welcome, " + req.session.user);
+//   } else {
+//     res.send("Guest");
+//   }
+// });
+
+// app.get("/login", (req, res) => {
+//   req.session.user = "John"; // Simulate a login
+//   res.send("Login successful");
+// });
+
+// app.get("/logout", (req, res) => {
+//   req.session.destroy(); // Destroy the session on logout
+//   res.send("Logged out");
+// });
+
+// app.listen(3000, () => {
+//   console.log("Server started on http://localhost:3000");
+// });
