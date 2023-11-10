@@ -30,32 +30,45 @@
     <link rel="icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
     <link rel="shortcut icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
 >
-
-    <!-- 測試用 找框架 -->
-    <style>
-        .pic {
-            border: 1px black solid;
-            width: 450;
-            height: 300;
-        }
-
-        /* 置中框架 */
-        .center {
-            text-align: center;
-        }
-    </style>
-
-
     <link rel="stylesheet" href="./animation.css">
-
-
     <title>航空首頁</title>
+      <!-- 這個是登入的css樣式 -->
+  <style>
+    .user-menu {
+      position: relative;
+      display: inline-block;
+    }
+
+    #user-info {
+      cursor: pointer;
+    }
+
+    #dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    #dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    #dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
 
 </head>
 
 <body>
-    <!-- 移動式標題列 -->
-    <nav class="navbar navbar-expand-lg bg-light fixed-top ">
+     <!-- 移動式標題列 -->
+     <nav class="navbar navbar-expand-lg bg-light fixed-top ">
         <!-- 飛機logo首頁 -->
         <div class="d-flex jutisfy-content-start"> <a href="./index.html">
                 <img src="./img/logo-evaair-header.png" alt="長榮logo" class="img-fluid w-75">
@@ -72,26 +85,26 @@
                         企業商務旅行
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">主題活動</a></li>
+                        <li><a class="dropdown-item" href="#">熱門活動</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">限時促銷</a></li>
                     </ul>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        優惠與訂票
+                        機票與訂位管理
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">登入</a></li>
+                        <li><a class="dropdown-item" href="#">訂位</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">取消全部行程</a>
                         </li>
                     </ul>
                 <li class="nav-item dropdown">
@@ -100,12 +113,12 @@
                         行程管理
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">機票定位</a></li>
+                        <li><a class="dropdown-item" href="#">管理行程</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">其他</a></li>
                     </ul>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -113,89 +126,42 @@
                         無限萬里遊
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">航班到離查詢</a></li>
+                        <li><a class="dropdown-item" href="#">機場服務</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">特別需求與協助</a></li>
                     </ul>
             </ul>
 
 
-            <!-- 登入及註冊 -->
-            <div class="ms-auto">
-                <a href="./login.html" class="btn">登入</a>
-                <span>|</span>
-                <a href="./regis.html" class="btn">註冊</a>
-            </div>
-            <!-- 搜尋 問號icon -->
+      <!-- 登入及註冊 -->
 
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                    class="bi bi-question-circle" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                    <path
-                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
-                </svg>
-            </div>
-            <div class="ms-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                </svg>
-            </div>
-
-
-
+      <nav id="loginop">
+        <div class="user-menu">
+          <!-- 使用者名稱與下拉箭頭 -->
+          <div id="user-info">
+            <span id="username">使用者名稱</span>
+            <span id="arrow">&#9660;</span>
+          </div>
+          <!-- 下拉式選單 -->
+          <div id="dropdown-content">
+            <a href="#" id="profile-link">會員頁面</a>
+            <a href="#" id="logout-link">登出</a>
+          </div>
         </div>
-    </nav>
+      </nav>
+
+      <!-- 登入及註冊 -->
+      <div class="ms-auto">
+        <a href="./login.html" id="toLogin" class="btn">登入</a>
+        <span>|</span>
+        <a href="./regis.html" class="btn">註冊</a>
+      </div>
+  </nav>
     <hr>
 
-    <!-- <ul class="nav">
-        <li class="nav-item">優惠與訂票</li>
-        <ul class="dropdown1 nav">
-            <a class="nav-item" href="https://www.evaair.com/zh-tw/plan-and-book/special-offers/eva-choices/">
-
-        </ul>
-
-        <li>行程管理</li>
-        <ul class="dropdown2">
-            <li>機票定位</li>
-            <li>管理行程</li>
-            <li>其他</li>
-        </ul>
-        <li class="">飛行準備</li>
-        <ul class="dropdown3">
-            <li>機隊介紹</li>
-            <li>機艙體驗</li>
-            <li>行李資訊</li>
-            <li>機場服務</li>
-            <li>特別需求與協助</li>
-            <li>航班到離查詢</li>
-        </ul>
-        <li>無限萬里遊</li>
-        <ul class="dropdown4">
-            <li>加入會員</li>
-            <li>關於無限萬里遊</li>
-            <li>里程獎勵計畫</li>
-            <li>會員獨享優惠</li>
-            <li>帳戶管理</li>
-        </ul>
-        <li>企業商務旅行</li>
-        <ul class="dropdown5">
-            <li>主題活動</li>
-            <li>熱門活動</li>
-            <li>限時促銷</li>
-        </ul>
-    </ul>
-    </nav> -->
-
-
-
-
-    <!-- JavaScript -->
     <!-- 動畫滾輪 -->
     <!-- Slideshow container -->
     <a href="https://www.evaair.com/zh-tw/index.html">模仿首頁</a>
@@ -739,14 +705,170 @@
                            "&departure_get=" + departure_get +
                            "&destination_get=" + destination_get;
         
-          // 定向
+          // 到哪個網頁
           window.location.href = redirectTo;
         });
-        </script>
+
+
+
+    //檢查是否登入 並給予名字(其他頁面需要)
+    var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (currentUser) {
+      // 用户已登录，显示用户名
+      console.log("用戶已登入:", currentUser.userfirstname);
+      var genderTtitle = currentUser.gender === "男" ? "先生" : "女士";
+      var userLoginName = currentUser.userchname + genderTtitle;
+      $("#toLogin").css("visibility", "hidden")
+      $("#loginop").css("visibility", "visible")
+      $("#username").text(userLoginName)
+    } else {
+      // 用户未登录
+      console.log("未登入狀態");
+      $("#toLogin").css("visibility", "visible"); // 显示登录按钮
+      $("#loginop").css("visibility", "hidden");
+    }
+  </script>
+  <!-- 這是登入切換得js -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 获取页面元素
+      var userInfo = document.getElementById("user-info");
+      var dropdownContent = document.getElementById("dropdown-content");
+      var profileLink = document.getElementById("profile-link");
+      var logoutLink = document.getElementById("logout-link");
+
+      // 假设用户已登录，设置用户名
+      var username = localStorage.getItem("username");
+
+      if (username) {
+        document.getElementById("username").innerText = username;
+      }
+
+      // 用户信息点击事件，显示/隐藏下拉菜单
+      userInfo.addEventListener("click", function () {
+        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+      });
+
+      // 会员页面链接点击事件
+      profileLink.addEventListener("click", function () {
+        // 如果用户已登录，重定向到会员页面
         
+          window.location.href = "./membership.html";
+ 
+      });
 
+      // 登出链接点击事件
+      logoutLink.addEventListener("click", function () {
+        // 清除登录状态和用户名
+        localStorage.removeItem("currentUser");
 
+        // 重定向到登录页面
+        window.location.href = "./login.html";
+      });
+    });
+  </script>
+        
+   
+  </script>
+  <!-- 這是登入切換得js -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 获取页面元素
+      var userInfo = document.getElementById("user-info");
+      var dropdownContent = document.getElementById("dropdown-content");
+      var profileLink = document.getElementById("profile-link");
+      var logoutLink = document.getElementById("logout-link");
 
+      // 假设用户已登录，设置用户名
+      var username = localStorage.getItem("username");
+
+      if (username) {
+        document.getElementById("username").innerText = username;
+      }
+
+      // 用户信息点击事件，显示/隐藏下拉菜单
+      userInfo.addEventListener("click", function () {
+        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+      });
+
+      // 会员页面链接点击事件
+      profileLink.addEventListener("click", function () {
+        // 如果用户已登录，重定向到会员页面
+        
+          window.location.href = "./membership.html";
+ 
+      });
+
+      // 登出链接点击事件
+      logoutLink.addEventListener("click", function () {
+        // 清除登录状态和用户名
+        localStorage.removeItem("currentUser");
+
+        // 重定向到登录页面
+        window.location.href = "./login.html";
+      });
+    });
+
+      //檢查是否登入 並給予名字(其他頁面需要)
+      var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      if (currentUser) {
+        // 用户已登录，显示用户名
+        console.log("用戶已登入:", currentUser.userfirstname);
+        var genderTtitle = currentUser.gender === "男" ? "先生" : "女士";
+        var userLoginName = currentUser.userchname + genderTtitle;
+        $("#toLogin").css("visibility", "hidden")
+        $("#loginop").css("visibility", "visible")
+        $("#username").text(userLoginName)
+      } else {
+        // 用户未登录
+        console.log("未登入狀態");
+        $("#toLogin").css("visibility", "visible"); // 显示登录按钮
+        $("#loginop").css("visibility", "hidden");
+      }
+  </script>
+  <!-- 這是登入切換得js -->
+  <script> 
+  
+      document.addEventListener("DOMContentLoaded", function () {
+        // 获取页面元素
+        var userInfo = document.getElementById("user-info");
+        var dropdownContent = document.getElementById("dropdown-content");
+        var profileLink = document.getElementById("profile-link");
+        var logoutLink = document.getElementById("logout-link");
+  
+        // 假设用户已登录，设置用户名
+        var username = localStorage.getItem("username");
+  
+        if (username) {
+          document.getElementById("username").innerText = username;
+        }
+  
+        // 用户信息点击事件，显示/隐藏下拉菜单
+        userInfo.addEventListener("click", function () {
+          dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+        });
+  
+        // 会员页面链接点击事件
+        profileLink.addEventListener("click", function () {
+          // 如果用户已登录，重定向到会员页面
+          
+            window.location.href = "./membership.html";
+   
+        });
+  
+        // 登出链接点击事件
+        logoutLink.addEventListener("click", function () {
+          // 清除登录状态和用户名
+          localStorage.removeItem("currentUser");
+  
+          // 重定向到登录页面
+          window.location.href = "./login.html";
+        });
+      });
+    </script>
+    
 </body>
+
+
 
 </html>

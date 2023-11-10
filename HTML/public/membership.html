@@ -17,109 +17,141 @@
     <!-- 網頁標題icon -->
     <link rel="icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
     <link rel="shortcut icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
+    <!-- 安插jquery -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+
+    </script>
+
+
+    <!-- 這個是登入的css樣式 -->
+    <style>
+        .user-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        #user-info {
+            cursor: pointer;
+        }
+
+        #dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        #dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 
 <body>
     <!-- 移動式標題列 -->
-    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top ">
         <!-- 飛機logo首頁 -->
-        <div class="d-flex jutisfy-content-start">
-            <a href="./index.html">
-                <img src="./img/logo-evaair-header.png" alt="長榮logo" class="img-fluid w-75" />
+        <div class="d-flex jutisfy-content-start"> <a href="./index.html">
+                <img src="./img/logo-evaair-header.png" alt="長榮logo" class="img-fluid w-75">
             </a>
         </div>
+
         <!-- 下拉式標題 -->
         <div class="container-fluid">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between w-50">
-                <li class="nav-item dropdown">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between  w-50">
+                <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         企業商務旅行
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">主題活動</a></li>
+                        <li><a class="dropdown-item" href="#">熱門活動</a></li>
                         <li>
-                            <hr class="dropdown-divider" />
+                            <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">限時促銷</a></li>
                     </ul>
-                </li>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        優惠與訂票
+                        機票與訂位管理
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">登入</a></li>
+                        <li><a class="dropdown-item" href="#">訂位</a></li>
                         <li>
-                            <hr class="dropdown-divider" />
+                            <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">取消全部行程</a>
                         </li>
                     </ul>
-                </li>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         行程管理
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">機票定位</a></li>
+                        <li><a class="dropdown-item" href="#">管理行程</a></li>
                         <li>
-                            <hr class="dropdown-divider" />
+                            <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">其他</a></li>
                     </ul>
-                </li>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         無限萬里遊
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">航班到離查詢</a></li>
+                        <li><a class="dropdown-item" href="#">機場服務</a></li>
                         <li>
-                            <hr class="dropdown-divider" />
+                            <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">特別需求與協助</a></li>
                     </ul>
-                </li>
             </ul>
+
+
+            <!-- 登入及註冊 -->
+
+            <nav id="loginop">
+                <div class="user-menu">
+                    <!-- 使用者名稱與下拉箭頭 -->
+                    <div id="user-info">
+                        <span id="username">使用者名稱</span>
+                        <span id="arrow">&#9660;</span>
+                    </div>
+                    <!-- 下拉式選單 -->
+                    <div id="dropdown-content">
+                        <a href="#" id="profile-link">會員頁面</a>
+                        <a href="#" id="logout-link">登出</a>
+                    </div>
+                </div>
+            </nav>
 
             <!-- 登入及註冊 -->
             <div class="ms-auto">
-                <a href="./login.html" class="btn">登入</a>
+                <a href="./login.html" id="toLogin" class="btn">登入</a>
                 <span>|</span>
                 <a href="./regis.html" class="btn">註冊</a>
             </div>
-            <!-- 搜尋 問號icon -->
-
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                    class="bi bi-question-circle" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                    <path
-                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
-                </svg>
-            </div>
-            <div class="ms-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                </svg>
-            </div>
-        </div>
     </nav>
-    <hr />
+    <hr>
 
 
     <!-- 會員畫面 -->
@@ -148,56 +180,43 @@
                             <img src="./長榮航空img/綠卡.png" alt="">
 
                             <figcaption>
-                                您目前的會員卡籍是綠卡
+                                您目前的會員卡籍是 <span id="cardLevel">綠卡</span>
                             </figcaption>
                         </figure>
                     </th>
                     <th class="col-4">
-                        <p>會員卡號： 3342791001
+                        <p>會員卡號：<span id="cardID"> 3342791001</span>
                         </p>
                         <p> <a href="" class="btn btn-success">會員資料</a> 填寫進階資訊獲得500哩唷
                         </p>
 
                         <p class="small"> 有效期限</p>
                         <p style="position:relative; margin-top: -20px;">永久有效</p>
-                        
-                        
 
-                 
+
+
+
 
             </thead>
-          
+
             <tbody>
 
-
-
-          
                 <tr class="row mt-5">
-
                     <td class="col-3"></td>
                     <td class="col-4">
                         <h2>更多優惠</h2>
                         <p>想要有更多優惠嗎?晉升銀卡可享受額外15%的卡籍加贈獎勵哩程喔!還有各項的訂位、選位及機場服務，趕快安排下趟旅程吧!
                         </p>
-
-
                         <h2>晉升卡籍</h2>
                         現會籍效期連續12個月內</p>
-                        <p> 計算區間：2023年4月1日-2023年10月20日
-                            截止日： 2024年3月31日
-                            不含五日內累計之長榮/立榮、星空聯盟航班哩程
-
-                     
-
-
+                        <p> 計算區間：2023年11月16日-2024年11月15日
+                            截止日：2024年11月15日
+                            不含五日內累計之長榮、星空聯盟航班哩程
                     </td>
                     <td class="col-4">
-
-                      
                         <p>
-                        <a href="" class="btn btn-success">各卡籍優惠待遇</a>
+                            <a href="" class="btn btn-success">各卡籍優惠待遇</a>
                         <p>
-
                         </p>
                     </td>
 
@@ -205,118 +224,150 @@
                 </tr>
                 <tr class="row">
                     <td class="col-3"></td>
-                    <td class="col-4">   <p>
-                        <b>卡籍哩程 + 航段數 銀卡/星盟銀卡</b>
-                        <br>
-                        您已累積0哩 +0次有效航段<br>
-                        只需30,000哩 +4有效航段</p>
+                    <td class="col-4">
+                        <p>
+                            <b>卡籍哩程 + 航段數 銀卡/星盟銀卡</b>
+                            <br>
+                            您已累積0哩 +0次有效航段<br>
+                            只需30,000哩 +4有效航段
+                        </p>
                         <!-- 進度條 -->
-                        <div class="progress"> 
-                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="30000"></div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                                aria-valuemin="0" aria-valuemax="30000"></div>
                         </div>
-                        <div class="progress-text">  
-                            0/30,000 哩              
+                        <div class="progress-text">
+                            0/30,000 哩
                         </div>
 
-                        <div class="progress"> 
-                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="4"></div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                                aria-valuemin="0" aria-valuemax="4"></div>
                         </div>
-                        <div class="progress-text">  
+                        <div class="progress-text">
                             0/4 有效航段
                         </div>
 
-                   </td>
+                    </td>
                     <td class="col-4">
                         <p><b>或航段數 銀卡/星盟銀卡</b>
                             <br>
                             您已累積0次有效航段<br>
-                            只需26次有效航段</p>
- 
-                        <div class="progress"> 
-                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="26"></div>
+                            只需26次有效航段
+                        </p>
+
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                                aria-valuemin="0" aria-valuemax="26"></div>
                         </div>
-                        <div class="progress-text">  
-                            0/26 有效航段</td>
-                        </div>
+                        <div class="progress-text">
+                            0/26 有效航段
+                    </td>
+    </div>
 
 
-                </tr>
+    </tr>
 
 
-            </tbody>
+    </tbody>
 
-        </table>
+    </table>
+
+    
+    
+   
+    
+    
+    
+    
+    <!-- 寫入 會員資料 -->
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            var username = currentUser.email;
+            var password = currentUser.password;
 
 
-        <!-- 會員資料 -->
+            $.get("/membership", { username: username, password: password })
+                .done(function (data) {
+                    if (data.success) {
+                        $("#en_fname").val(data.user.userfirstname)
+                        $("#en_name").val(data.user.userlastname)
+                        $("#cardLevel").text("30000121344")
+                        $("#cardLevelName").text("GC")
+                        $("#ch_fname").val(data.user.userchname)
+                        $("#ch_name").val(data.user.userfchname)
+                        $("#emailChange").val(data.user.userfirstname)
+                        $("#phone_number").val(data.user.phone)
+                        console.log(data)
+                    }
+                    else {
+                        alert("錯誤", data)
+                    }
+                })
 
-        <table class="mt-5">
+
+        })
 
 
-            <thead></thead>
-            <th></th>
+    </script>
 
+
+
+
+
+
+
+
+
+    <!-- 會員資料 -->
+
+    <table class="mt-5  table " id="profileData" >
+        <thead>
             <tr>
-                <td>會員資料
-                    基本資訊
-                    進階資訊
-                    其他設定
-                    * 必填欄位
-
-                    個人資料
-                    基本資料包含您的個人資料與E-mail、手機號碼等聯絡資料。
-
-                    護照上的英文姓名
-                    LIU WE***N
-
-                    會員卡籍
-                    GC
-
-                    會員卡號
-                    3342791001
-
-                    中文姓
-                    劉
-
-                    中文名
-                    *亨
-
-                    國籍/地區*
-
-                    TAIWAN
-                    身分證字號
-                    Q1******8
-
-                    性別*
-
-                    男性
-
-                    女性
-                    生日
-                    西元1**6年0*月1*日
-
-                    Email帳號*
-                    若您變更的資料中有包含E-mail，本公司將於5分鐘內寄送認證通知信至您更新的E-mail信箱，請於1小時內依說明完成認證，否則不會變更成功，為確保您可收到長榮航空的電子郵件，請將eservice@mh1.evaair.com加入您的通訊錄
-
-                    c*********6@gmail.com
-                    檢查E-Mail帳號是否可用!
-
-                    將上述E-mail帳號作為登入帳號之使用
-                    手機號碼*
-
-                    國碼*
-
-                    TAIWAN 886
-                    手機號碼*
-                    098*****10
-                    更新</td>
+                <th>個人資料</th>
+                <th>基本資料包含您的個人資料與E-mail、手機號碼等聯絡資料。</th>
             </tr>
+        </thead>
+        <tr>
+            <td>護照上的英文姓:</td>
+            <td><input type="text" name="" id="en_fname" value="LIU"></td>
+        </tr>
+        <tr>
+            <td>護照上的英文名:</td>
+            <td><input type="text" name="" id="en_name" value="WE***N"></td>
+        </tr>
+        <tr>
+            <td>會員卡籍:</td>
+            <td><span id="cardLevelName">GC</span></td>
+        </tr>
+        <tr>
+            <td>會員卡號:</td>
+            <td><span id="cardID">3342791001</span></td>
+        </tr>
+        <tr>
+            <td>中文姓</td>
+            <td><input type="text" name="" id="ch_fname" value="劉"></td>
+        </tr>
+        <tr>
+            <td>中文名</td>
+            <td><input type="text" name="" id="ch_name" value="*亨"></span></td>
+        </tr>
+        <tr>
+            <td>Email帳號<p>
+            </td>
+            <td><input type="email" name="" id="emailChange"></td>
+        </tr>
+        <tr>
+            <td>手機號碼</td>
+            <td><input type="tel" value="098*****10" id="phone_number"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><a href="" class="btn btn-success" >更新</a> </td>
 
-
-
-
-
-        </table>
+        </tr>
+    </table>
 
 
 
@@ -324,6 +375,72 @@
     </div>
 
 
+
+
+
+
+
+    <script>
+        //檢查是否登入 並給予名字(其他頁面需要)
+        var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        if (currentUser) {
+            // 用户已登录，显示用户名
+            console.log("用戶已登入:", currentUser.userfirstname);
+            var genderTtitle = currentUser.gender === "男" ? "先生" : "女士";
+            var userLoginName = currentUser.userchname + genderTtitle;
+            $("#toLogin").css("visibility", "hidden")
+            $("#loginop").css("visibility", "visible")
+            $("#username").text(userLoginName)
+        } else {
+            // 用户未登录
+            console.log("未登入狀態");
+            $("#toLogin").css("visibility", "visible"); // 显示登录按钮
+            $("#loginop").css("visibility", "hidden");
+        }
+
+
+    </script>
+    <!-- 這是登入切換得js -->
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // 获取页面元素
+            var userInfo = document.getElementById("user-info");
+            var dropdownContent = document.getElementById("dropdown-content");
+            var profileLink = document.getElementById("profile-link");
+            var logoutLink = document.getElementById("logout-link");
+
+            // 假设用户已登录，设置用户名
+            var username = localStorage.getItem("username");
+
+            if (username) {
+                document.getElementById("username").innerText = username;
+            }
+
+            // 用户信息点击事件，显示/隐藏下拉菜单
+            userInfo.addEventListener("click", function () {
+                dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+            });
+
+            // 会员页面链接点击事件
+            profileLink.addEventListener("click", function () {
+                // 如果用户已登录，重定向到会员页面
+
+                window.location.href = "./membership.html";
+
+            });
+
+            // 登出链接点击事件
+            logoutLink.addEventListener("click", function () {
+                // 清除登录状态和用户名
+                localStorage.removeItem("currentUser");
+
+                // 重定向到登录页面
+                window.location.href = "./login.html";
+            });
+        });
+    </script>
 </body>
 
 </html>

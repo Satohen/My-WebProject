@@ -5,7 +5,9 @@ var app = express();
 var fs = require("fs"); // Node.js內建的檔案系統模組
 var dataFileName = "./data.json";
 var databook = "./bookinfo.json";
-const uuid = require("uuid");
+const uuid = require("uuid");//uuid模組 製造唯一的序號用
+const router = express.Router() //路由模組
+
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -142,9 +144,13 @@ app.post("/order/create", function (req, res) {
   res.json({ message: "訂單創建成功", order: order });
 });
 
+
+
+
+
 // 取得訂票資訊
 app.get("/order/book/:id", function (req, res) {
-  var data = fs.readFileSync(databook); // 讀取儲存航班資料的JSON文件
+  var data = fs.readFileSync("./bookinfo.json"); // 讀取儲存航班資料的JSON文件
   var BOOKList = JSON.parse(data); // 解析JSON數據，將其轉換為JavaScript對象
   var bookId = req.params.id; // 取得從HTTP請求中傳遞的目的地代碼參數
   var selectedOrder = BOOKList.find((order) => order.vicketId === bookId);
@@ -191,54 +197,44 @@ app.post("/registe/post", function (req, res) {
 
 
 // 登入
+app.get("/login", function (req, res) {
+  var data = fs.readFileSync("user.json");
+  var users = JSON.parse(data);
+  // 从前端请求中获取值
+  var username = req.query.username;
+  var password = req.query.password;
 
-app.post("/login", function (req, res) {
-  // 從前端請求取到值
-  var username = req.body.username;
-  var password = req.body.password;
-  // 從帳號資料庫查找匹配的用戶
-  
+  // 在用户数组中查找匹配的用户
   var user = users.find((u) => u.email === username && u.password === password);
 
   if (user) {
-    // 用户名和密码匹配，返回成功响应
-    res.json({ success: true, user: user });
+    // 如果用户名和密码匹配，返回成功响应
+    res.json({ success: true, user: user});
   } else {
-    // 用户名和密码不匹配，返回失败响应
-    res.json({ success: false, message: "Invalid username or password" });
+    // 如果用户名和密码不匹配，返回失败响应
+    res.json({ success: false, message: "不存在的帳號或密碼" });
   }
 });
 
-// 之後來看
-// // // app.js
-// const express = require("express");
-// const session = require("express-session");
-// const app = express();
 
-// app.use(session({
-//   secret: "your-secret-key",
-//   resave: false,
-//   saveUninitialized: true
-// }));
 
-// app.get("/", (req, res) => {
-//   if (req.session.user) {
-//     res.send("Welcome, " + req.session.user);
-//   } else {
-//     res.send("Guest");
-//   }
-// });
 
-// app.get("/login", (req, res) => {
-//   req.session.user = "John"; // Simulate a login
-//   res.send("Login successful");
-// });
+// 會員資料讀取
+app.get("/membership", function(req,res){
+  var data = fs.readFileSync("user.json")
+  var users = JSON.parse(data);
+  var username = req.query.username;
+  var password = req.query.password;
+  // 在用户数组中查找匹配的用户
+  var user = users.find((u) => u.email === username && u.password === password);
+  if(user){
+    res.json({ success: true, user: user })
+  }else{
+    alert("發生預期外的錯誤")
+  }
 
-// app.get("/logout", (req, res) => {
-//   req.session.destroy(); // Destroy the session on logout
-//   res.send("Logged out");
-// });
 
-// app.listen(3000, () => {
-//   console.log("Server started on http://localhost:3000");
-// });
+
+})
+
+
