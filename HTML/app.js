@@ -129,7 +129,7 @@ app.post("/order/create", function (req, res) {
     cardNumber: req.body.cardNumber,
     expirationDate: req.body.expirationDate,
     cvv: req.body.cvv,
-    total_price: req.body.SUM,
+    total_price: req.body.total_price,
     flightInfo: req.body.flightInfo,
     // 寫入需要資訊
   };
@@ -187,13 +187,17 @@ app.post("/registe/post", function (req, res) {
   res.json({ message: "註冊成功" }); // 或其他响应
 });
 
+
+
+
 // 登入
+
 app.post("/login", function (req, res) {
-  // 从请求中获取用户名和密码
+  // 從前端請求取到值
   var username = req.body.username;
   var password = req.body.password;
-
-  // 从用户数据中查找匹配的用户
+  // 從帳號資料庫查找匹配的用戶
+  
   var user = users.find((u) => u.email === username && u.password === password);
 
   if (user) {
