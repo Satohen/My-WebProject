@@ -9,7 +9,6 @@
     "birth": "1939217",
     "phone": "0987654321"
   },
-  {},
   {
     "userfirstname": "Liu",
     "userlastname": "Wei-Hen",
@@ -61,7 +60,14 @@
     "birth": "1939217",
     "phone": "0987654321"
   },
-  {},
+  {
+    "userfirstname": "Liu",
+    "userlastname": "Wei-Hen",
+    "userchfname": "韋亨",
+    "userchname": "劉",
+    "email": "cs135792716@gmail.com",
+    "phone": "0919243567"
+  },
   {
     "userfirstname": "Liu",
     "userlastname": "Wei-Hen",

@@ -298,7 +298,7 @@
                         $("#cardLevelName").text("GC")
                         $("#ch_fname").val(data.user.userchname)
                         $("#ch_name").val(data.user.userfchname)
-                        $("#emailChange").val(data.user.userfirstname)
+                        $("#emailChange").val(data.user.email)
                         $("#phone_number").val(data.user.phone)
                         console.log(data)
                     }
@@ -312,14 +312,6 @@
 
 
     </script>
-
-
-
-
-
-
-
-
 
     <!-- 會員資料 -->
 
@@ -364,13 +356,10 @@
             <td><input type="tel" value="098*****10" id="phone_number"></td>
         </tr>
         <tr>
-            <td colspan="2" style="text-align: center;"><a href="" class="btn btn-success" >更新</a> </td>
+            <td  colspan="2" style="text-align: center;"><a href="" type="button" class="btn btn-success" id="replace">更新</a> </td>
 
         </tr>
     </table>
-
-
-
 
     </div>
 
@@ -381,6 +370,50 @@
 
 
     <script>
+        // 將資料丟到後端去做更新的動作
+        $("#replace").on("click",function(event){
+            // 防止跳轉
+            event.preventDefault();
+            var DATA = {
+                userfirstname: $("#en_fname").val(),
+                userlastname: $("#en_name").val(),
+                userchfname: $("#ch_fname").val(),
+                userchname: $("#ch_name").val(),
+                email: $("#emailChange").val(),
+                phone: $("#phone_number").val()
+            }
+            $.ajax({
+    type: "put",
+    url: "/profileChange",
+    data: JSON.stringify(DATA),
+    contentType: "application/json",
+    success: function (response) {
+        // 成功給訊息
+        alert("更新完成！");
+
+        // 获取最新的用户信息
+        $.get("/membership", { username: DATA.email, password: DATA.password })
+            .done(function (data) {
+                if (data.success) {
+                    // 更新 localStorage 中的用户信息
+                    localStorage.setItem("currentUser", JSON.stringify(data.user));
+                }
+            })
+            .fail(function (error) {
+                console.error("Error fetching user data", error);
+            });
+    },
+    error: function (error) {
+        // 錯誤給訊息
+        alert("更新失敗!" + error);
+    }
+});
+
+        })
+
+
+
+
         //檢查是否登入 並給予名字(其他頁面需要)
         var currentUser = JSON.parse(localStorage.getItem("currentUser"));
         if (currentUser) {

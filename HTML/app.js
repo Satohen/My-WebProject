@@ -212,6 +212,7 @@ app.get("/login", function (req, res) {
 app.get("/membership", function (req, res) {
   var data = fs.readFileSync("user.json");
   var users = JSON.parse(data);
+
   var username = req.query.username;
   var password = req.query.password;
   // 在用户数组中查找匹配的用户
@@ -220,5 +221,58 @@ app.get("/membership", function (req, res) {
     res.json({ success: true, user: user });
   } else {
     alert("發生預期外的錯誤");
+  }
+});
+
+// 自己寫的
+// app.put("/profileChange", function (req, res) {
+//   var data = fs.readFileSync("user.json");
+//   var users = JSON.stringify(data);
+//   var username = req.query.username;
+//   var password = req.query.password;
+//   var user = users.find((u) => u.email === username && u.password === password);
+//   if (user) {
+//     users.userfirstname = req.body.userfirstname;
+//     users.userlastname = eq.body.userlastname;
+//     users.userchfname = req.body.userchfname;
+//     users.userchname = req.body.userchname;
+//     users.email = req.body.email;
+//     users.phone = req.body.phone;
+
+//     fs.writeFileSync("user.json", JSON.stringify(users, null, "\t"));
+//     res.json({ success: true, message: "個人資料更新成功" });
+//   } else {
+//     // 用户名和密码不匹配，返回失败响应
+//     res.json({ success: false, message: "更新失敗" });
+//   }
+// });
+
+app.put("/profileChange", function (req, res) {
+  var data = fs.readFileSync("user.json", "utf8");
+  var users = JSON.parse(data);
+  var username = req.query.username;
+  var password = req.query.password;
+
+  // 在用户数组中查找匹配的用户
+  var userIndex = users.findIndex(
+    (u) => u.email === username && u.password === password
+  );
+
+  if (userIndex !== -1) {
+    // 找到匹配的用户，更新用户信息
+    users[userIndex].userfirstname = req.body.userfirstname;
+    users[userIndex].userlastname = req.body.userlastname;
+    users[userIndex].userchfname = req.body.userchfname;
+    users[userIndex].userchname = req.body.userchname;
+    users[userIndex].email = req.body.email;
+    users[userIndex].phone = req.body.phone;
+
+    // 将更新后的用户信息写回文件
+    fs.writeFileSync("./user.json", JSON.stringify(users, null, 2));
+
+    res.json({ success: true, message: "個人資料更新成功" });
+  } else {
+    // 用户名和密码不匹配，返回失败响应
+    res.json({ success: false, message: "更新失敗，未找到匹配的用戶" });
   }
 });
