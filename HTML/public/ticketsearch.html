@@ -53,6 +53,7 @@
       background-color: #f1f1f1;
     }
   </style>
+  
 </head>
 
 <body>
@@ -154,115 +155,70 @@
 
 
       <!-- 選擇欄位 -->
-      <div class="" style="margin-top: 60px; margin-left: 10%;">
-        <table id="select_table">
-          <tr>
-            <th>
-              <p>
-              <h3>日期</h3>
-              </p><input type="date" id="datePicker" />
-            </th>
-            <th>
-              <p>
-              <h3>起點</h3>
-              </p><select type="select" id="input_go">
-                <option value="台北-桃園">台北-桃園</option>
-                <option value="台北-松山">台北-松山</option>
-            </th>
-            <th>
-              <p>
-              <h3>終點</h3>
-              </p><select type="select" id="input_back">
-                <option value="東京">東京</option>
-                <option value="大阪">大阪</option>
-                <option value="沖繩">沖繩</option>
-                <option value="首爾">首爾</option>
-                <option value="曼谷">曼谷</option>
-                <option value="香港">香港</option>
-                <option value="福岡">福岡</option>
-            </th>
-            <th></th>
-          </tr>
-        </table>
-      </div>
+     
       <!-- 顯示欄位 -->
       <div class="" style="margin-top: 60px; margin-left: 10%;">
         <fieldset style="object-fit: contain; border: 2px solid lightslategray; width: 80%; ">
-          <legend>航班到離動態</legend>
+          <legend>訂單代號: <span id="vicketId"></span></legend>
+          <legend>訂位代號: <span id="orderid"></span></legend>
           <table id="jobList" class="table" style="object-fit: contain; width: 100%; ">
             <thead>
               <tr>
                 <th>
-                  <h4 id="th_date"></h4>
+                  <h5 id="th_date" >(網路購票) <span id="gotype">幾段航班 </span><br><span id="AD">0</span>大人/ <span id="CH">0</span>小孩/ <span id="BA">0</span>嬰兒</h5>
                 </th>
                 <th>
                   <h4 id="th_go"></h4>
                 </th>
                 <th>
-                  <h4 id="th_back"></h4>
+                  <h4 id="" ></h4>
                 </th>
                 <th>
-                  <h4 id=""></h4>
+                    <h4 id="" ></h4>
                 </th>
-                <th>
-                </th>
-                <th>
-                </th>
+
               </tr>
             </thead>
-            <tr class="bg-success" style="height: 5%; color: white;">
-              <td>班機編號
-              </td>
-              <td>行程</td>
-              <td>航班狀態</td>
-              <td>啟程點</td>
+            <tr class="bg-success" style="height: 10%; color: white;">
+              <td >起飛(當地時間)</td>
+              <td>啟程地</td>
               <td>目的地</td>
-              <td>出發時間</td>
-              <td>抵達時間</td>
+              <td>艙種類</td>
+              <td>機位狀態</td>
             </tr>
             <tbody id="tbody">
               <tr>
-                <td id="f_id">班機編號
-                </td>
-                <td id="f_agenda">行程</td>
-                <td id="f_status">航班狀態</td>
-                <td id="f_go">出發</td>
-                <td id="f_goal">抵達</td>
-                <td></td>
+                <td id="flight_time_1">起飛當地時間</td>
+                <td id="departure_1">啟程地</td>
+                <td id="destination_1">目的地</td>
+                <td id="cabinType_1">目的地</td>
+                <td id="sit_status_1">已確認</td>
               </tr>
-              <tr>
-                <td>班機編號
-                </td>
-                <td>行程</td>
-                <td>航班狀態</td>
-                <td>出發</td>
-                <td>抵達</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>班機編號
-                </td>
-                <td>行程</td>
-                <td>航班狀態</td>
-                <td>出發</td>
-                <td>抵達</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>班機編號
-                </td>
-                <td>行程</td>
-                <td>航班狀態</td>
-                <td>出發</td>
-                <td>抵達</td>
-                <td></td>
-              </tr>
+              <div id="back_div">
+              <tr id="back_tr">
+                <td id="flight_time_2">回程當地時間</td>
+                <td id="departure_2">啟程地</td>
+                <td id="destination_2">目的地</td>
+                <td id="cabinType_2">目的地</td>
+                <td id="sit_status_2">已確認</td>
+              </tr>    
+            </div>        
             </tbody>
           </table>
         </fieldset>
       </div>
 
       <script type="text/javascript" src="search.js"></script>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -282,143 +238,69 @@
           // 用户未登录
           console.log("未登入狀態");
           $("#toLogin").css("visibility", "visible"); // 显示登录按钮
-          $("#loginop").css("visibility", "hidden"); }      
-          
-          
+          $("#loginop").css("visibility", "hidden");
+        }
 
 
 
 
-        // 這裡需要添加其他目的地的映射(就是設條件找json檔案)
-        var destinationMapping = {
-          "香港": "HKG",
-          "大阪": "KIX",
-          "曼谷": "BKK",
-          "東京": "NRT",
-          "沖繩": "OKA",
-          "首爾": "ICN",
-          "福岡": "FUK",
-          "東京": "HND",
-          "台北-桃園": "TPE",
-          "台北-松山": "TSA"
-        };
-        $("#tbody").empty();
 
 
-        $("#input_go, #input_back").on("change", function () {
-          var departure = $("#input_go").val();
-          var destination = $("#input_back").val();
+    //    這裡寫載入時讀取資料
+        $(document).ready(function(){
+            var ordersearch = new URLSearchParams(window.location.search);
+            var orderId = ordersearch.get("id");
+            var url = "/order/book/"+ orderId
+            console.log(url)
+            
 
-          // 使用映射查找英文縮寫  使用組合來找到對應的班機
-          var departureCode = destinationMapping[departure];
-          var destinationCode = destinationMapping[destination];
-          var key = departureCode + destinationCode;
+            $.get(url, function(e){
+            let item = e; 
+            $("#vicketId").text( item.vicketId.substring(0,4));
+            $("#orderid").text( item.orderId);
+            $("#gotype").text(item.ticketype);
+            $("#AD").text(item.AD);
+            $("#CH").text(item.CH);
+            $("#BA").text(item.BA);
+            $("#flight_time_1").text(item.flightInfo.godate);
+            $("#departure_1").text(item.flightInfo.goairport);
+            $("#destination_1").text(item.flightInfo.godestination);
+            $("#cabinType_1").text(item.cabintype_1);
+            $("#sit_status_1").text("已確認");
+            $("#flight_time_2").text(item.flightInfo.backdate);
+            $("#departure_2").text(item.flightInfo.backairport);
+            $("#destination_2").text(item.flightInfo.backdestination);
+            $("#cabinType_2").text(item.cabintype_2);
+            $("#sit_status_2").text("已確認");  
+            console.log(e);
+            console.log(item.flightInfo.total_price);
+            console.log(item.flightInfo.total_price);   
+            // 發送 GET 請求到伺服器路由，使用英文縮寫    
+            
+            //  確認是否為單程票
+            var confirm = item.ticketype
+             if(confirm === "2個航段" ){
+                $("#back_div").css("display","block")
+             }else{
+                $("#back_div").css("display","none")
+                $("#back_tr").empty()
+             }
 
-          if (key) {
-            $("#tbody").empty();
-            // 發送 GET 請求到伺服器路由，使用英文縮寫
-            $.get("/todo/item/destination/" + key, function (data) {
-              $.each(data, function (index, item) {
-                var trHtml = `
-          <tr>
-            <td id="f_id">${item.flightNumber}</td>
-            <td id="f_agenda">${item.itinerary}</td>
-            <td id="f_status">${item.flightStatus}</td>
-            <td id="f_go">${item.departureAirport}</td>
-            <td id="f_goal">${item.arrivalAirport}</td>
-            <td>${item.scheduledDeparture}</td>
-            <td>${item.scheduledArrival}</td>
-          </tr>
-        `;
-        $("#tbody").append(trHtml);
-              });
-            });
-          } else {
-            alert("未找到目的地。");
-          }
-        });
+            }) 
+    });
+
+
+
+
+
+       
+
+
+
+
+
 
       </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <div class="mt-5 pt-2" style="background-color: lightgray; width: 80%; margin-left: 10%;">
-        <ul>
-          <div style="width:90px;  border-radius: 40%; background: darkgray; text-align: center;">注意事項</div>
-          <li>由於航班情況可能隨時更改，建議您隨時留意網站上提供的班機訊息服務或與本公司當地機場和辦事處聯絡。</li>
-          <li>目前尚無法提供部分包機及非本公司營運之聯航航班資料。
-          </li>
-          <li>您可於航班時刻表線上查詢查詢未來360天內之客機航班時刻表。
-          </li>
-          <li>線上申請/列印航班到離證明限航班抵達後至180天內申請，若超過180天，需臨櫃辦理。
-          </li>
-        </ul>
-      </div>
-
-
-
-<script>
-  // 一 載入就 填入
-$(document).ready(function(){
-
-
-  var departure = $("#input_go").val();
-  var destination = $("#input_back").val();
-  var departureCode = destinationMapping[departure];
-  var destinationCode = destinationMapping[destination];
-  var key = departureCode + destinationCode;
-
-  if (key) {
-    $("#tbody").empty();
-
-    // 發送 GET 請求到伺服器路由，使用英文縮寫
-    $.get("/todo/item/destination/" + key, function (data) {
-      // 清空表格
-      $("#tbody").empty();
-
-      // 遍歷數據，將資料添加到表格中
-      $.each(data, function (index, item) {
-        var trHtml = `
-          <tr>
-            <td id="f_id">${item.flightNumber}</td>
-            <td id="f_agenda">${item.itinerary}</td>
-            <td id="f_status">${item.flightStatus}</td>
-            <td id="f_go">${item.departureAirport}</td>
-            <td id="f_goal">${item.arrivalAirport}</td>
-            <td>${item.scheduledDeparture}</td>
-            <td>${item.scheduledArrival}</td>
-          </tr>
-        `;
-        $("#tbody").append(trHtml);
-      });
-    });
-  } else {
-    alert("未找到目的地。");
-  }
-});
-</script>
-
-
-
-
-
-
-
 
 
 
@@ -427,11 +309,8 @@ $(document).ready(function(){
 
         document.addEventListener("DOMContentLoaded", function () {
 
-     
-          
-          
-          
-          // 獲取頁面元素
+
+          // 获取页面元素
           var userInfo = document.getElementById("user-info");
           var dropdownContent = document.getElementById("dropdown-content");
           var profileLink = document.getElementById("profile-link");
@@ -464,16 +343,7 @@ $(document).ready(function(){
 
             // 重定向到登录页面
             window.location.href = "./login.html";
-
-
-
-
-
-
           });
-
-
-          
         });
 
 

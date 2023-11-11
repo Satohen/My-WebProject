@@ -132,6 +132,12 @@ app.post("/order/create", function (req, res) {
     cvv: req.body.cvv,
     total_price: req.body.total_price,
     flightInfo: req.body.flightInfo,
+    AD: req.body.AD,
+    CH: req.body.CH,
+    BA: req.body.BA,
+    ticketype: req.body.ticketype,
+    cabintype_1: req.body.cabintype_1,
+    cabintype_2: req.body.cabintype_2,
     // 寫入需要資訊
   };
 
@@ -148,7 +154,9 @@ app.get("/order/book/:id", function (req, res) {
   var data = fs.readFileSync("./bookinfo.json"); // 讀取儲存航班資料的JSON文件
   var BOOKList = JSON.parse(data); // 解析JSON數據，將其轉換為JavaScript對象
   var bookId = req.params.id; // 取得從HTTP請求中傳遞的目的地代碼參數
-  var selectedOrder = BOOKList.find((order) => order.vicketId === bookId);
+  var selectedOrder = BOOKList.find(
+    (order) => order.vicketId === bookId || order.orderId.toString() === bookId
+  );
 
   if (selectedOrder) {
     res.json(selectedOrder);

@@ -367,13 +367,17 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <form id="paymentInfoForm">
-              <label for="name_put">姓名：</label>
-              <input type="text" id="name_put" required><br>
-              <label for="gender">性別:</label>
-              <input type="text" id="gender" required><br>
-              <label for="email">email:</label>
-              <input type="email" id="email" required><br>
+            <form id="paymentInfoForm">         
+              <table> 
+                <tr><td> <label for="name_put">姓名：</label><input type="text" id="name_put" required></td></tr>
+                <tr><td> <label  for="gender">性別:</label><select  type="text" id="gender" required>
+                  <option value="男">男</option>
+                  <option value="女">女</option></select></td></tr>
+                <tr><td><label for="email">email: </label><input type="email" id="email" required>
+              </table>           
+            
+             
+            
               <label for="address">聯繫地址:</label>
               <input type="text" id="address" required><br>
               <label for="cardNumber">信用卡號碼：</label>
@@ -416,6 +420,12 @@
             cardNumber: $("#cardNumber").val(),
             expirationDate: $("#expirationDate").val(),
             cvv: $("#cvv").val(),
+            AD: $("#AD").text(),
+            CH: $("#CH").text(),
+            BA: $("#BA").text(),
+            cabintype_1:$("#cabin").text(),
+            cabintype_2:$("#cabin2").text(),
+            ticketype:"2個航段",                               
             flightInfo: {
               godate: $("#date_1").text(),
               backdate: $("#date_2").text(),
@@ -425,10 +435,10 @@
               backdestination: $("#des2").text(),
               gocabin: $("#cabin").text(),
               backcabin: $("#cabin2").text(),
+              tickprice_1:$("#dol_1").text(),
+              tickprice_2:$("#dol_2").text(),
               total_price: $("#total_price").text()
-
-
-            }
+              }
           };
           // 使用Ajax将数据发送到服务器
           $.ajax({
@@ -931,8 +941,8 @@
                   var trHtml_1 = `
             <tr>
               <td>          
-                <span id="btn${count + 3}_1">${item.scheduledDeparture + item.departureAirport}</span><br> 直飛<br>
-                <span id="btn${count + 3}_2">${item.scheduledArrival + item.arrivalAirport}</span><br>
+                <span id="btn${count + 3}_1">${item.scheduledDeparture + item.arrivalAirport}</span><br> 直飛<br>
+                <span id="btn${count + 3}_2">${item.scheduledArrival + item.departureAirport}</span><br>
                 <span id="btn${count + 3}_3">直飛航班</span><br>
                 <span id="btn${count + 3}_4">飛行時間:${item.飛行時間}</span>
                 <br>機號:${item.flightNumber}<br>
@@ -1126,8 +1136,8 @@
                   var trHtml_1 = `
             <tr>
               <td>          
-                <span id="btn${count + 3}_1">${item.scheduledDeparture + item.departureAirport}</span><br> 直飛<br>
-                <span id="btn${count + 3}_2">${item.scheduledArrival + item.arrivalAirport}</span><br>
+                <span id="btn${count + 3}_1">${item.scheduledDeparture + item.arrivalAirport}</span><br> 直飛<br>
+                <span id="btn${count + 3}_2">${item.scheduledArrival + item.departureAirport}</span><br>
                 <span id="btn${count + 3}_3">直飛航班</span><br>
                 <span id="btn${count + 3}_4">飛行時間:${item.飛行時間}</span>
                 <br>機號:${item.flightNumber}<br>

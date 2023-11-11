@@ -406,6 +406,12 @@
             cardNumber: $("#cardNumber").val(),
             expirationDate: $("#expirationDate").val(),
             cvv: $("#cvv").val(),
+            AD: $("#AD").text(),
+            CH: $("#CH").text(),
+            BA: $("#BA").text(),
+            cabintype_1:$("#cabin").text(),
+            cabintype_2:$("#cabin2").text(),
+            ticketype:"1個航段",                               
             flightInfo: {
               godate: $("#date_1").text(),
               backdate: $("#date_2").text(),
@@ -415,10 +421,10 @@
               backdestination: $("#des2").text(),
               gocabin: $("#cabin").text(),
               backcabin: $("#cabin2").text(),
+              tickprice_1:$("#dol_1").text(),
+              tickprice_2:$("#dol_2").text(),
               total_price: $("#total_price").text()
-
-
-            }
+              }
           };
           // 使用Ajax将数据发送到服务器
           $.ajax({

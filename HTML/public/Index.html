@@ -463,6 +463,9 @@ $(document).ready(function () {
                         // 第二列表單的
                             // 使用jquery
                             $(document).ready( function(){
+                                $("#goday").val(today);
+                                $("#backday").val(today);
+                                $("#arrival_time").val(today);
                                 $("#arrival_time").prop("min", today);
 
                             });                
@@ -516,7 +519,7 @@ $(document).ready(function () {
                     <option value="出發">出發</option>
                     <option value="抵達">抵達</option>                   
                     <td><input type="date" name="" id="arrival_time"></td></tr>
-                <tr><td><a class="btn btn-success" href="./Search_Flight.html">搜尋</a></tr>
+                <tr><td><a class="btn btn-success" href="" id="Search_Flight">搜尋</a></tr>
             </table>
             </form>
         </div>
@@ -533,17 +536,17 @@ $(document).ready(function () {
                 <tr><td style="column-span: 3;">
                         <label for="family_name">姓 *</label>
                         <p>(例如:陳禹暘，[姓]填入CHEN)</p>
-                        <input type="text" name="" id="family_name">
+                        <input type="text" name="" id="family_name" required>
                      </td>
                 </tr>
                 <br><br>
                 <tr><td style="column-span: 3;">
                     <label for="first_name">名*</label>
                     <p>(例如:陳禹暘，[名]填入YUYANG。若您的訂位姓名只有「姓」，請直接略過此欄位。)</p>
-                    <input type="text" name="" id="first_name">
+                    <input type="text" name="" id="first_name" required >
                     </td>
                 </tr>  
-                <tr><td class="center"><a class="btn btn-success" id="login">登入</a></tr>            
+                <tr><td class="center"><a class="btn btn-success" id="check_vicket">報到</a></tr>            
             </table>
             </form>
          </div>
@@ -691,7 +694,46 @@ $(document).ready(function () {
 
     <script>
 
+// 報到按鈕登入
+$("#check_vicket").on("click",function(event){
+    event.preventDefault();
+    var id = $("#vicket_number").val();
+    var family_name =  $("#family_name").val();
+    var first_name =  $("#first_name").val();
 
+
+    var redirectTo = "ticketsearch.html?id="  + id +
+                        "&family_name=" + family_name + 
+                        "&first_name=" + first_name;
+    window.location.href = redirectTo;
+})
+
+
+// 搜尋航班按鈕登入
+$("#Search_Flight").on("click",function(event){
+    event.preventDefault();
+    var departure = $("#departure").val();
+    var destination = $("#destination").val();
+    var go_datetime =  $("#arrival_time").val();
+    var goto = $("#goal").val();
+
+    var redirectTo = "Search_Flight.html?departure="  + departure +
+                        "&destination=" + destination +
+                        "&go_datetime=" + go_datetime +
+                        "&goto=" + goto;
+    window.location.href = redirectTo;
+})
+
+
+
+
+
+
+
+
+
+
+// 訂票按鈕輸入
         $("#book_button").on("click", function(event) {
           // 阻止默认的页面跳转
           event.preventDefault();
