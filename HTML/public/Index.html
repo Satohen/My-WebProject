@@ -250,6 +250,26 @@
         <li class="nav-item nav-link"><a href="#check_in"    class="btn btn-success" data-bs-toggle="pill">預辦登機/報到</a></li>
     </ul>
 </div>
+
+
+<script>
+
+$(document).ready(function () {  
+ 
+        // 行程如果變化的時候 做改變  要學起來
+        $("input[name='行程']").change(function () {
+            if ($("#comeback").prop("checked")) {
+                $("#backday_label").show();
+                $("#backday").show();
+            } else {
+                // 選擇單程，隱藏回程日期
+                $("#backday_label").hide();
+                $("#backday").hide();
+            }
+        });
+    });
+
+</script>
     <!-- 隱藏式問卷 -->
     <div class="tab-content ">
         <!-- 這裡先預設做動 -->
@@ -259,7 +279,7 @@
                     <table class=" ps-3 "  style="margin-left: 35%;">
                         <thead><th style="column-span: 2;"><h3>機票</h3></th></thead>
 
-                        <tr><td><input type="radio" name="行程"  id="comeback" data-confirm="1"checked><label for="comeback">來回</label> <input  class="ms-5"type="radio" name="行程" id="go" data-confirm="0" ><label for="go" >單程</label></td>
+                        <tr><td><input type="radio" name="行程"  id="comeback" data-confirm="1" checked><label for="comeback">來回</label> <input  class="ms-5"type="radio" name="行程" id="go" data-confirm="0" ><label for="go" >單程</label></td>
                             <td><a href="https://booking.evaair.com/flyeva/EVA/B2C/booking-multi.aspx?lang=zh-tw"> 
                                 不同點進出/中途停留/多個城市</a>
                             </td>
@@ -304,15 +324,19 @@
                             <td><button class="btn btn-success" id="btn-plus3" type="button">+</button><input type="number" id="baby_quantity"   value="0">
                                 <button id="btn_minus2"  type="button" class="btn btn-success">-</button></td>                                                     
                         </tr>
-                        <tr><td class="" style="column-span: 2;">使用信用卡優惠</td></tr>
-                        <tr><td><input type="radio" name="card_choice" id="use_card"><label for="use_card">是</label></td><td><input type="radio" name="card_choice" id="no_card"><label for="no_card">否</label></td></tr>
-                            <!-- 隱藏的表單(信用卡優惠) -->
+                        <!-- 先不要 -->
+                         <!-- <tr><td class="" style="column-span: 2;">使用信用卡優惠</td></tr>
+                        <tr><td><input type="radio" name="card_choice" id="use_card"><label for="use_card">是</label></td><td><input type="radio" name="card_choice" id="no_card"><label for="no_card">否</label></td></tr> -->
+                            <!-- 隱藏的表單(信用卡優惠) --><!-- 
                         <tr id="cupon" style="display: none; column-span: 2;"><td>國泰世華銀行
                             <br>
                                 <input type="radio" name="discount" id="discount_95"> <label  for="discount_95">國泰世華長榮航空聯名無限卡/極致御璽卡/御璽卡年度95折購票優惠 </label> 
                             <br>
-                                <input type="radio" name="discount" id="discount_90"> <label   for="discount_90">國泰世華長榮航空聯名極致無限卡年度購票9折優惠</label>                                    
-                        <tr><td><a class="btn btn-success" href="#" id="book_button" >訂票</a></tr>
+                                <input type="radio" name="discount" id="discount_90"> <label   for="discount_90">國泰世華長榮航空聯名極致無限卡年度購票9折優惠</label>  </td></tr> -->
+                                
+                                
+
+                        <tr><td colspan="3" style="text-align: center;"><a class="btn btn-success" href="#" id="book_button" >訂票</a></tr> 
                     </table>
 
                     <!-- +-的js 安插jquery -->
@@ -695,8 +719,10 @@
           var childrenQuantity = document.getElementById("children_quantity").value;
           var babyQuantity = document.getElementById("baby_quantity").value;
         
-          // 构建重定向URL，附加数据作为查询参数
-          var redirectTo = "book.html?cabin="  + cabin +
+
+          if ($("#comeback").is(":checked")) {
+           // 构建重定向URL，附加数据作为查询参数
+           var redirectTo = "book.html?cabin="  + cabin +
                           "&adultQuantity=" + adultQuantity + 
                           "&childrenQuantity=" + childrenQuantity +
                           "&babyQuantity=" + babyQuantity + 
@@ -707,26 +733,28 @@
         
           // 到哪個網頁
           window.location.href = redirectTo;
+        } else if ($("#go").is(":checked")){
+        // 选择了單程
+                   // 构建重定向URL，附加数据作为查询参数
+                   var redirectTo = "bookone.html?cabin="  + cabin +
+                          "&adultQuantity=" + adultQuantity + 
+                          "&childrenQuantity=" + childrenQuantity +
+                          "&babyQuantity=" + babyQuantity + 
+                            "&goday_get=" + goday_get + 
+                           "&backday_get="+backday_get+
+                           "&departure_get=" + departure_get +
+                           "&destination_get=" + destination_get;
+        
+          // 到哪個網頁
+          window.location.href = redirectTo;
+        }else{
+            alert("未選擇行程")
+        }
+       
         });
 
 
 
-    //檢查是否登入 並給予名字(其他頁面需要)
-    var currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    if (currentUser) {
-      // 用户已登录，显示用户名
-      console.log("用戶已登入:", currentUser.userfirstname);
-      var genderTtitle = currentUser.gender === "男" ? "先生" : "女士";
-      var userLoginName = currentUser.userchname + genderTtitle;
-      $("#toLogin").css("visibility", "hidden")
-      $("#loginop").css("visibility", "visible")
-      $("#username").text(userLoginName)
-    } else {
-      // 用户未登录
-      console.log("未登入狀態");
-      $("#toLogin").css("visibility", "visible"); // 显示登录按钮
-      $("#loginop").css("visibility", "hidden");
-    }
   </script>
   <!-- 這是登入切換得js -->
   <script>
@@ -815,7 +843,7 @@
         // 用户已登录，显示用户名
         console.log("用戶已登入:", currentUser.userfirstname);
         var genderTtitle = currentUser.gender === "男" ? "先生" : "女士";
-        var userLoginName = currentUser.userchname + genderTtitle;
+        var userLoginName = currentUser.userchfname + genderTtitle;
         $("#toLogin").css("visibility", "hidden")
         $("#loginop").css("visibility", "visible")
         $("#username").text(userLoginName)

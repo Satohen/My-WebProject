@@ -157,6 +157,24 @@ app.get("/order/book/:id", function (req, res) {
   }
 });
 
+// 給一個亂數卡號
+const usedCardIDs = [];
+
+function generateUniqueCardID() {
+  // 生成一个6位数的随机卡号
+  const cardID = Math.floor(Math.random() * 900000) + 100000;
+
+  // 检查是否已经存在，如果存在重新生成
+  if (usedCardIDs.includes(cardID)) {
+    return generateUniqueCardID();
+  }
+
+  // 将新生成的卡号加入已使用列表
+  usedCardIDs.push(cardID);
+
+  return cardID.toString();
+}
+
 // 註冊的資料傳輸
 
 app.post("/registe/post", function (req, res) {
@@ -171,6 +189,7 @@ app.post("/registe/post", function (req, res) {
     email: req.body.email,
     birth: req.body.birth,
     phone: req.body.phone,
+    cardID: generateUniqueCardID(), // 使用生成的卡号
   };
 
   //儲存到json文件
@@ -210,69 +229,39 @@ app.get("/login", function (req, res) {
 
 // 會員資料讀取
 app.get("/membership", function (req, res) {
-  var data = fs.readFileSync("user.json");
+  var data = fs.readFileSync("./user.json");
   var users = JSON.parse(data);
-
   var username = req.query.username;
-  var password = req.query.password;
   // 在用户数组中查找匹配的用户
-  var user = users.find((u) => u.email === username && u.password === password);
+  var user = users.find((u) => u.email === username);
   if (user) {
     res.json({ success: true, user: user });
   } else {
-    alert("發生預期外的錯誤");
+    console.log("發生預期外的錯誤");
   }
 });
 
 // 自己寫的
-// app.put("/profileChange", function (req, res) {
-//   var data = fs.readFileSync("user.json");
-//   var users = JSON.stringify(data);
-//   var username = req.query.username;
-//   var password = req.query.password;
-//   var user = users.find((u) => u.email === username && u.password === password);
-//   if (user) {
-//     users.userfirstname = req.body.userfirstname;
-//     users.userlastname = eq.body.userlastname;
-//     users.userchfname = req.body.userchfname;
-//     users.userchname = req.body.userchname;
-//     users.email = req.body.email;
-//     users.phone = req.body.phone;
-
-//     fs.writeFileSync("user.json", JSON.stringify(users, null, "\t"));
-//     res.json({ success: true, message: "個人資料更新成功" });
-//   } else {
-//     // 用户名和密码不匹配，返回失败响应
-//     res.json({ success: false, message: "更新失敗" });
-//   }
-// });
-
 app.put("/profileChange", function (req, res) {
-  var data = fs.readFileSync("user.json", "utf8");
+  var data = fs.readFileSync("user.json");
   var users = JSON.parse(data);
-  var username = req.query.username;
-  var password = req.query.password;
+  var username = req.body.email;
 
-  // 在用户数组中查找匹配的用户
-  var userIndex = users.findIndex(
-    (u) => u.email === username && u.password === password
-  );
+  var userfind = users.find((u) => u.email === username);
+  if (userfind) {
+    // 找到匹配的用户，替换整个用户对象为请求中的数据
+    userfind.userfirstname = req.body.userfirstname || userfind.userfirstname;
+    userfind.userlastname = req.body.userlastname || userfind.userlastname;
+    userfind.userchfname = req.body.userchfname || userfind.userchfname;
+    userfind.userchname = req.body.userchname || userfind.userchname;
+    userfind.email = req.body.email || userfind.email;
+    userfind.phone = req.body.phone || userfind.phone;
+    userfind.password = req.body.password || userfind.password;
 
-  if (userIndex !== -1) {
-    // 找到匹配的用户，更新用户信息
-    users[userIndex].userfirstname = req.body.userfirstname;
-    users[userIndex].userlastname = req.body.userlastname;
-    users[userIndex].userchfname = req.body.userchfname;
-    users[userIndex].userchname = req.body.userchname;
-    users[userIndex].email = req.body.email;
-    users[userIndex].phone = req.body.phone;
-
-    // 将更新后的用户信息写回文件
-    fs.writeFileSync("./user.json", JSON.stringify(users, null, 2));
-
+    fs.writeFileSync("user.json", JSON.stringify(users, null, "\t"));
     res.json({ success: true, message: "個人資料更新成功" });
   } else {
     // 用户名和密码不匹配，返回失败响应
-    res.json({ success: false, message: "更新失敗，未找到匹配的用戶" });
+    res.json({ success: false, message: "更新失敗" });
   }
 });

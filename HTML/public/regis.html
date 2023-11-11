@@ -251,10 +251,10 @@
                 </td>
               </tr>
               <tr>
-                <td><label for="ch_name">中文姓</label><br />
-                  <input type="text" name="" id="ch_name" /><br />
-                  <label for="ch_fname">中文名</label><br />
+                <td><label for="ch_fname">中文姓</label><br />
                   <input type="text" name="" id="ch_fname" /><br />
+                  <label for="ch_name">中文名</label><br />
+                  <input type="text" name="" id="ch_name" /><br />
                 </td>
               </tr>
               <tr>
@@ -406,9 +406,8 @@
         var currentUser = JSON.parse(localStorage.getItem("currentUser"));
         if (currentUser) {
           // 用户已登录，显示用户名
-          console.log("用戶已登入:", currentUser.userfirstname);
           var genderTtitle = currentUser.gender === "男" ? "先生" : "女士";
-          var userLoginName = currentUser.userchname + genderTtitle;
+          var userLoginName = currentUser.userchfname + genderTtitle;
           $("#toLogin").css("visibility", "hidden")
           $("#loginop").css("visibility", "visible")
           $("#username").text(userLoginName)

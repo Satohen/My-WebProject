@@ -221,11 +221,10 @@
       <table class="row">
         <tr>
           <th>出發日期</th>
-          <th>回程日期</th>
+     
         </tr>
         <tr>
           <td><input type="date" id="goday_1" /></td>
-          <td><input type="date" id="backday_2" /></td>
         </tr>
       </table>
     </div>
@@ -306,10 +305,13 @@
       godayInput.setAttribute("min", today);
     }
     setdate("goday_1");
-    setdate("backday_2");
   </script>
 
   <div>
+
+
+
+
     <!-- 旁邊的購物車 -->
 
     <div class="position-fixed top-0 end-0" style="width: 350px; margin-top: 290px; margin-right: 150px">
@@ -321,7 +323,7 @@
             <span id="BA">0</span>:嬰兒
           </td>
         </tr>
-        <tr id="go_col" style="display: none">
+        <tr id="go_col" style="display: none;">
           <td>
             啟程: <br />
             <span id="date_1">2024年 03月 07日 星期四</span><br />
@@ -332,19 +334,7 @@
             價格:<span id="dol_1"></span>
           </td>
         </tr>
-        <tr id="back_col" style="display: none">
-          <td>
-            回程: <br>
-            <span id="date_2">2024年 03月 07日 星期四</span><br />
-            <span id="dep2">14:00 東京(NRT)</span><br />
-            <span id="des2">17:05 台北(TPE)</span><br />
-            <span id="time2">飛行時間 04:05, 直飛航班</span><br />
-            票價類型: <span id="cabin2">經濟艙</span><br />
-            價格:<span id="dol_2"></span>
-          </td>
-        </tr>
-        <!-- 兩個一起做同步動作 -->
-        <tr id="total_col" style="display: block; display: none">
+        <tr id="total_col" style="display: none;">
           <td>
             總計:TWD <span class="total_price" id="total_price"></span><br />
             票價及航空公司附加費:TWD<span class="total_price"></span><br />
@@ -452,7 +442,6 @@
         });
       });
 
-
     </script>
 
 
@@ -463,106 +452,7 @@
 
 
 
-    <!-- 啟程選單 -->
-    <div class="container">
-      <form action="">
-        <table id="table_1" class="table table-striped table-bordered">
-          <thead>
-            <tr class="table-row">
-              <th class="col-4">時間</th>
-              <th class="col-2">
-                <span data-cabin="cabin1">經濟艙</span>基本 Basic
-              </th>
-              <th class="col-2">
-                <span data-cabin="cabin2">經濟艙</span>經典 Standard
-              </th>
-              <th class="col-2">
-                <span data-cabin="cabin3">經濟艙</span>尊寵 Up
-              </th>
-            </tr>
-          </thead>
-          <tr>
-            <tbody id="tbody">
-              <td>
-                <span id="btn1_1">07:00 臺灣桃園機場 (TPE)</span> 直飛
-                <span id="btn1_2">08:50 香港國際機場 (HKG)</span>
-                <span id="btn1_3">直飛航班</span>
-                <span id="btn1_4">飛行時間: 01:50</span> EVA Air (BR891)
-              </td>
-              <td>
-                <div class="btn price-button btn1_1">
-                  TWD <span>3812</span>
-                </div>
-              </td>
-              <td>
-                <div class="btn price-button btn1_2">TWD: 5602</div>
-              </td>
-              <td>
-                <div class="btn price-button btn1_3">TWD: 10448</div>
-              </td>
-          </tr>
-          <tr>
-            <td>
-              <span id="btn2_1"> 12:15 臺灣桃園機場 (TPE)</span> 直飛航班<span id="btn2_2">14:10 香港國際機場 (HKG)</span>
-              <span id="btn2_3">直飛航班</span>
-              <span id="btn2_4">飛行時間: 01:50</span> EVA Air (BR891)
-            </td>
-            <td>
-              <div class="btn price-button btn2_1">TWD 4407</div>
-            </td>
-            <td>
-              <div class="btn price-button btn2_2">TWD 5600</div>
-            </td>
-            <td>
-              <div class="btn price-button btn2_3">TWD 10448</div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span id="btn3_1"> 16:35 臺灣桃園機場 (TPE)</span> 直飛航班<span id="btn3_2">
-                18:30 香港國際機場 (HKG)
-              </span>
-              <span id="btn3_3">直飛航班</span>
-              <span id="btn3_4">飛行時間: 01:50 </span> EVA Air (BR891)
-            </td>
-            <td>
-              <div class="btn price-button btn3_1">TWD 4407</div>
-            </td>
-            <td>
-              <div class="btn price-button btn3_2">TWD 5600</div>
-            </td>
-            <td>
-              <div class="btn price-button btn3_3">TWD 10448</div>
-            </td>
-          </tr>
-          </tbody>
-        </table>
-      </form>
-    </div>
-
-    <!-- 當日航班種時間 -->
-    <div style="background-color: azure">
-      <table>
-        <tr>
-          <th>
-            <img src="./長榮航空img/小綠飛機.webp" alt="" style="width: 70px; height: 70px" />
-          </th>
-          <th>
-            <h1 id="tokyo_1"></h1>
-          </th>
-          <th>
-            <h1>-></h1>
-          </th>
-          <th>
-            <h1 id="taipei_1"></h1>
-          </th>
-          <th>
-            <h1 id="day_2" style="text-align: end; width: 1000px">日期</h1>
-          </th>
-        </tr>
-      </table>
-    </div>
-
+   
     <!-- 動態日期 -->
     <script>
       // 有年月日的
@@ -608,10 +498,7 @@
         $("#date_1").text(datetranf);
         // 購物欄位日期
 
-        // backday更換最小不能為<goday
-        document
-          .getElementById("backday_2")
-          .setAttribute("min", $("#goday_1").val());
+
 
         // 設定月那裡變更
         var datetranf1 = datetran2(dateValue);
@@ -641,74 +528,9 @@
         }
       });
 
-      // 初始化 DATE 第二欄位 裡面的日期
-      var initialDate1 = new Date($("#backday_2").val());
-      var initialDateString1 = datetran2(initialDate1);
-      $("#date_2").text(initialDateString1);
-      $("#day_2").text($("#backday_2").val());
-      $("#date_month1").text(initialDateString1);
-
-      // 當日其變更
-      $("#backday_2").on("change", function () {
-        var dateValue1 = new Date($("#backday_2").val());
-        $("#day_2").text($("#backday_2").val());
-
-        var datetranf1 = datetran1(dateValue1);
-        $("#date_2").text(datetranf1);
-        // 購物欄位日期
-
-        // 設定月那裡變更
-        var datetranf2 = datetran2(dateValue1);
-        $("#date_month1").text(datetranf2);
-
-        // 將每一天置入星期X表格
-        for (let i = 13; i <= 24; i++) {
-          const newDate = new Date(dateValue1);
-          const x = datetran3(newDate);
-          $(`#w` + i).html(x);
-          $(`#w` + i).val(dateValue1);
-          dateValue1.setDate(dateValue1.getDate() + 1); // 每次增加一天
-
-          // 點選時將日期輸入到的填充入其視窗
-          $(`#w` + i).on("click", function () {
-            const formattedDate = `${newDate.getFullYear()}-${(
-              newDate.getMonth() + 1
-            )
-              .toString()
-              .padStart(2, "0")}-${newDate
-                .getDate()
-                .toString()
-                .padStart(2, "0")}`;
-            $(`#w${i}`).val(formattedDate);
-            const selectedDate = $(this).val();
-            $("#backday_2").val(selectedDate);
-            $("#backday_2").trigger("change"); // 手动触发change事件
-          });
-        }
-      });
+    
     </script>
-
-    <div class="container">
-      <div>
-        <h2>回程日期</h2>
-        <p id="date_month1">2023年 十二月</p>
-        <div class="g-scrolling-carousel carousel mb-3">
-          <div class="items">
-            <a class="btn border" id="w13"><b>星期一</b></a>
-            <a class="btn border" id="w14"><b>星期二</b></a>
-            <a class="btn border" id="w15"><b>星期三</b></a>
-            <a class="btn border" id="w16"><b>星期四</b></a>
-            <a class="btn border" id="w17"><b>星期五</b></a>
-            <a class="btn border" id="w18"><b>星期六</b></a>
-            <a class="btn border" id="w19"><b>星期七</b></a>
-            <a class="btn border" id="w20"><b>星期一</b></a>
-            <a class="btn border" id="w21"><b>星期二</b></a>
-            <a class="btn border" id="w22"><b>星期三</b></a>
-            <a class="btn border" id="w23"><b>星期四</b></a>
-            <a class="btn border" id="w24"><b>星期五</b></a>
-          </div>
-        </div>
-      </div>
+  
     </div>
 
     <!-- 滾動功能 -->
@@ -733,80 +555,82 @@
       });
     </script>
 
-    <div class="container" id="table_2">
-      <table class="table table-striped table-bordered">
-        <thead>
-          <tr class="table-row">
-            <th class="col-4">時間</th>
-            <th class="col-2">
-              <span data-cabin="cabin1">經濟艙</span>基本 Basic
-            </th>
-            <th class="col-2">
-              <span data-cabin="cabin2">經濟艙</span>經典 Standard
-            </th>
-            <th class="col-2">
-              <span data-cabin="cabin3">經濟艙</span>尊寵 Up
-            </th>
-          </tr>
-        </thead>
-        <tr>
-          <tbody id="tbody_1">
-            <td>
-              <span id="btn7_1">11:15 香港國際機場 (HKG) </span> 直飛航班<span id="btn7_2">
-                13:00 臺灣桃園機場 (TPE)
-              </span>
-              <span id="btn7_3">直飛航班</span>
-              <span id="btn7_4">飛行時間: 01:45 </span> EVA Air (BR891)
-            </td>
-            <td>
-              <div class="btn price-button btn7_1">TWD 4407</div>
-            </td>
-            <td>
-              <div class="btn price-button btn7_2">TWD 5600</div>
-            </td>
-            <td>
-              <div class="btn price-button btn7_3">TWD 10448</div>
-            </td>
-        </tr>
-        <tr>
-          <td>
-            <span id="btn8_1"> 13:35 香港國際機場 (HKG) </span> 直飛航班<span id="btn8_2">
-              15:20 臺灣桃園機場 (TPE)
-            </span>
-            <span id="btn8_3">直飛航班</span>
-            <span id="btn8_4"> 飛行時間: 01:50 </span> EVA Air (BR891)
-          </td>
-          <td>
-            <div class="btn price-button btn8_1">TWD 4407</div>
-          </td>
-          <td>
-            <div class="btn price-button btn8_2">TWD 5600</div>
-          </td>
-          <td>
-            <div class="btn price-button btn8_3">TWD 10448</div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span id="btn9_1">17:35 香港國際機場 (HKG) </span> 直飛航班<span id="btn9_2">
-              19:20 臺灣桃園機場 (TPE)
-            </span>
-            <span id="btn9_3">直飛航班</span>
-            <span id="btn9_4"> 飛行時間: 01:50 </span> EVA Air (BR891)
-          </td>
-          <td>
-            <div class="btn price-button btn9_1">TWD 4407</div>
-          </td>
-          <td>
-            <div class="btn price-button btn9_2">TWD 5600</div>
-          </td>
-          <td>
-            <div class="btn price-button btn9_3">TWD 10448</div>
-          </td>
-        </tr>
-      </table>
-      </tbody>
-    </div>
+        <!-- 啟程選單 -->
+        <div class="container">
+          <form action="">
+            <table id="table_1" class="table table-striped table-bordered">
+              <thead>
+                <tr class="table-row">
+                  <th class="col-4">時間</th>
+                  <th class="col-2">
+                    <span data-cabin="cabin1">經濟艙</span>基本 Basic
+                  </th>
+                  <th class="col-2">
+                    <span data-cabin="cabin2">經濟艙</span>經典 Standard
+                  </th>
+                  <th class="col-2">
+                    <span data-cabin="cabin3">經濟艙</span>尊寵 Up
+                  </th>
+                </tr>
+              </thead>
+              <tr>
+                <tbody id="tbody">
+                  <td>
+                    <span id="btn1_1">07:00 臺灣桃園機場 (TPE)</span> 直飛
+                    <span id="btn1_2">08:50 香港國際機場 (HKG)</span>
+                    <span id="btn1_3">直飛航班</span>
+                    <span id="btn1_4">飛行時間: 01:50</span> EVA Air (BR891)
+                  </td>
+                  <td>
+                    <div class="btn price-button btn1_1">
+                      TWD <span>3812</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="btn price-button btn1_2">TWD: 5602</div>
+                  </td>
+                  <td>
+                    <div class="btn price-button btn1_3">TWD: 10448</div>
+                  </td>
+              </tr>
+              <tr>
+                <td>
+                  <span id="btn2_1"> 12:15 臺灣桃園機場 (TPE)</span> 直飛航班<span id="btn2_2">14:10 香港國際機場 (HKG)</span>
+                  <span id="btn2_3">直飛航班</span>
+                  <span id="btn2_4">飛行時間: 01:50</span> EVA Air (BR891)
+                </td>
+                <td>
+                  <div class="btn price-button btn2_1">TWD 4407</div>
+                </td>
+                <td>
+                  <div class="btn price-button btn2_2">TWD 5600</div>
+                </td>
+                <td>
+                  <div class="btn price-button btn2_3">TWD 10448</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span id="btn3_1"> 16:35 臺灣桃園機場 (TPE)</span> 直飛航班<span id="btn3_2">
+                    18:30 香港國際機場 (HKG)
+                  </span>
+                  <span id="btn3_3">直飛航班</span>
+                  <span id="btn3_4">飛行時間: 01:50 </span> EVA Air (BR891)
+                </td>
+                <td>
+                  <div class="btn price-button btn3_1">TWD 4407</div>
+                </td>
+                <td>
+                  <div class="btn price-button btn3_2">TWD 5600</div>
+                </td>
+                <td>
+                  <div class="btn price-button btn3_3">TWD 10448</div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
 
 
 
@@ -825,7 +649,6 @@
           parseInt(babyQuantity);
 
         var goday_get = urlParams.get("goday_get");
-        var backday_get = urlParams.get("backday_get");
         var departure_get = urlParams.get("departure_get");
         var destination_get = urlParams.get("destination_get");
 
@@ -842,17 +665,13 @@
         document.getElementById("SUM_P").innerText = totalpeople;
         // 這裡還要下手動不然其他change功能不會吃到
         document.getElementById("goday_1").value = goday_get;
-        document.getElementById("backday_2").value = backday_get;
         $("#goday_1").trigger("change"); // 觸發change事件
-        $("#backday_2").trigger("change"); // 觸發change事件
 
         document.getElementById("taipei").innerText = departure_get;
         document.getElementById("tokyo").innerText = destination_get;
-        document.getElementById("taipei_1").innerText = departure_get;
-        document.getElementById("tokyo_1").innerText = destination_get;
+
       });
     </script>
-
 
 
     <script>
@@ -871,8 +690,6 @@
       };
       // 先清空數值
       $("#tbody").empty();
-      $("#tbody_1").empty();//
-
 
       // 等待資料到齊
       $(document).ready(function () {
@@ -963,7 +780,6 @@
               // 填入 每個按鈕對應表格代碼
               var urlParams = new URLSearchParams(window.location.search);
               var cabin_get = urlParams.get("cabin");
-
               for (var i = 0; i <= 2; i++) {
                 for (var j = 1; j <= 3; j++) {
                   (function () {
@@ -977,6 +793,7 @@
                     var timeSelector = `#time1`;
                     var cabinSelector = "#cabin";
                     var cabinType = `${cabin_get}`;
+
                     if (j === 1) {
                       cabinType = " 基本 Basic";
                     } else if (j === 2) {
@@ -994,54 +811,10 @@
                   })();
                 }
               }
-
-
-
-              // 第二表格
-              for (var i = 3; i <= 5; i++) {
-                for (var j = 1; j <= 3; j++) {
-                  (function () {
-                    var btnSelector = `.btn${i}_${j}`;
-                    var depSelector = `#dep2`;
-                    var desSelector = `#des2`;
-                    var btnss1 = `#btn${i}_1`;
-                    var btnss2 = `#btn${i}_2`;
-                    var btnss3 = `#btn${i}_3`;
-                    var btnss4 = `#btn${i}_4`;
-                    var timeSelector = `#time2`;
-                    var cabinSelector = "#cabin2";
-                    var cabinType = `${cabin_get}`;
-                    if (j === 1) {
-                      cabinType = " 基本 Basic";
-                    } else if (j === 2) {
-                      cabinType = " 經典 Standard";
-                    } else if (j === 3) {
-                      cabinType = " 尊寵 Up";
-                    }
-
-                    $(btnSelector).on("click", function () {
-                      $(depSelector).text($(btnss1).text());
-                      $(desSelector).text($(btnss2).text());
-                      $(timeSelector).text($(btnss4).text());
-                      $(cabinSelector).html(`${cabin_get}${cabinType}`);
-                    });
-                  })();
-                }
-              }
-
-
               // <!-- 價格功能-->
 
-
-
-              var Ticket2 = 0;
-              var tick2 = 0;
               var tick1 = 0;
-              var Ticket1 = 0;
-              var sum = 0
-              var tax = 0
-              var goColVisible = false; // 初始状态为未显示
-              var backColVisible = false; // 初始状态为未显示
+              var Ticket1 = 0;              
               $("#table_1 .btn.price-button").on("click", async function () {
                 var buttonText = $(this).text();
                 $("#dol_1").text(buttonText);
@@ -1051,47 +824,22 @@
                 var Y = tick1 * parseInt($("#CH").text()) * 0.8;
                 var Z = tick1 * parseInt($("#BA").text()) * 0.5;
                 Ticket1 = X + Y + Z;
-                goColVisible = true;
-
                 //  這邊要做加總否則之後不會繼續加總
-                sum = Math.round(Ticket1 + Ticket2);
-                tax = Math.round(sum * 0.2);
+                var sum = Math.round(Ticket1);
+                var tax = Math.round(sum * 0.2);
                 $(".total_price").text(sum);
                 $("#tax").text(tax);
+                $("#total_col").show(); // 顯示按鈕
+
 
               });
-              $("#table_2 .btn.price-button").on("click", function () {
-                if (goColVisible) {
-                  backColVisible = true;
-                  var buttonText = $(this).text();
-                  $("#dol_2").text(buttonText);
-                  tick2 = parseInt(buttonText.replace(/TWD/g, ""));
-                  Ticket2 =
-                    tick2 * parseInt($("#AD").text()) +
-                    tick2 * parseInt($("#CH").text()) * 0.8 +
-                    tick2 * parseInt($("#BA").text()) * 0.5;
-                  sum = Math.round(Ticket1 + Ticket2);
-                  tax = Math.round(sum * 0.2);
-
-                  $("#back_col").show();
-                  $("#total_col").show();
-                  $(".total_price").text(sum);
-                  $("#tax").text(tax);
-
-                  if (goColVisible && backColVisible) {
-                    $("#total_col").show(); // 顯示按鈕
-                  }
-                }
-
-              })
 
 
 
-            }
 
 
 
-            else if (cabinif == "經濟艙") {       // 确保 data 是一个可迭代的数据类型
+            }else if (cabinif == "經濟艙") {       // 确保 data 是一个可迭代的数据类型
               if (Array.isArray(data) || typeof data === 'object') {
                 var count = 0;
                 $.each(data, function (index, item) {
@@ -1191,98 +939,28 @@
                 }
               }
 
-
-
-              // 第二表格
-              for (var i = 3; i <= 5; i++) {
-                for (var j = 1; j <= 3; j++) {
-                  (function () {
-                    var btnSelector = `.btn${i}_${j}`;
-                    var depSelector = `#dep2`;
-                    var desSelector = `#des2`;
-                    var btnss1 = `#btn${i}_1`;
-                    var btnss2 = `#btn${i}_2`;
-                    var btnss3 = `#btn${i}_3`;
-                    var btnss4 = `#btn${i}_4`;
-                    var timeSelector = `#time2`;
-                    var cabinSelector = "#cabin2";
-                    var cabinType = `${cabin_get}`;
-                    if (j === 1) {
-                      cabinType = " 基本 Basic";
-                    } else if (j === 2) {
-                      cabinType = " 經典 Standard";
-                    } else if (j === 3) {
-                      cabinType = " 尊寵 Up";
-                    }
-
-                    $(btnSelector).on("click", function () {
-                      $(depSelector).text($(btnss1).text());
-                      $(desSelector).text($(btnss2).text());
-                      $(timeSelector).text($(btnss4).text());
-                      $(cabinSelector).html(`${cabin_get}${cabinType}`);
-                    });
-                  })();
-                }
-              }
-              // <!-- 價格功能-->
-
-              var Ticket2 = 0;
-              var tick2 = 0;
+         
+              // <!-- 價格功能-->            
               var tick1 = 0;
-              var Ticket1 = 0;
-              var sum = 0
-              var tax = 0
-              var goColVisible = false; // 初始状态为未显示
-              var backColVisible = false; // 初始状态为未显示
-              $("#table_1 .btn.price-button").on("click", async function () {
-                var buttonText = $(this).text();
-                $("#dol_1").text(buttonText);
+              var Ticket1 = 0;         
+              $("#table_1 .btn.price-button").on("click", function () {
+                var buttonText1 = $(this).text();
+                $("#dol_1").text(buttonText1);
                 $("#go_col").show();
-                tick1 = parseInt(buttonText.replace(/TWD/g, ""));
+                tick1 = parseInt(buttonText1.replace(/TWD/g, ""));
+                goColVisible = true;
                 var X = tick1 * parseInt($("#AD").text());
                 var Y = tick1 * parseInt($("#CH").text()) * 0.8;
                 var Z = tick1 * parseInt($("#BA").text()) * 0.5;
                 Ticket1 = X + Y + Z;
-                goColVisible = true;
-
-                //  這邊要做加總否則之後不會繼續加總
-                sum = Math.round(Ticket1 + Ticket2);
-                tax = Math.round(sum * 0.2);
+                 //  這邊要做加總否則之後不會繼續加總
+                var sum = Math.round(Ticket1);
+                var tax = Math.round(sum * 0.2);
                 $(".total_price").text(sum);
                 $("#tax").text(tax);
+                $("#total_col").show(); // 顯示按鈕
+
               });
-              $("#table_2 .btn.price-button").on("click", function () {
-                if (goColVisible) {
-
-                  backColVisible = true;
-                  var buttonText = $(this).text();
-                  $("#dol_2").text(buttonText);
-                  tick2 = parseInt(buttonText.replace(/TWD/g, ""));
-                  Ticket2 =
-                    tick2 * parseInt($("#AD").text()) +
-                    tick2 * parseInt($("#CH").text()) * 0.8 +
-                    tick2 * parseInt($("#BA").text()) * 0.5;
-                  var sum = Math.round(Ticket1 + Ticket2);
-                  var tax = Math.round(sum * 0.2);
-
-
-
-                  $("#back_col").show();
-                  $("#total_col").show();
-                  $(".total_price").text(sum);
-                  $("#tax").text(tax);
-
-                  if (goColVisible && backColVisible) {
-                    $("#total_col").show(); // 顯示按鈕
-                  }
-                }
-
-              })
-
-
-
-
-
 
             } else {
               alert("未找到該項目");
@@ -1291,33 +969,6 @@
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       }
 
 
@@ -1325,27 +976,22 @@
 
 
 
-      );
+);
 
 
 
 
-      //檢查是否登入 並給予名字(其他頁面需要)
-      var currentUser = JSON.parse(localStorage.getItem("currentUser"));
-      if (currentUser) {
-        // 用户已登录，显示用户名
-        console.log("用戶已登入:", currentUser.userchfname);
-        var genderTtitle = currentUser.gender === "男" ? "先生" : "女士";
-        var userLoginName = currentUser.userchfname + genderTtitle;
-        $("#toLogin").css("visibility", "hidden")
-        $("#loginop").css("visibility", "visible")
-        $("#username").text(userLoginName)
-      } else {
-        // 用户未登录
-        console.log("未登入狀態");
-        $("#toLogin").css("visibility", "visible"); // 显示登录按钮
-        $("#loginop").css("visibility", "hidden");
-      }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1359,6 +1005,21 @@
 
     <!-- 這是登入切換得js -->
     <script>
+      //檢查是否登入 並給予名字(其他頁面需要)
+      var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      if (currentUser) {
+        // 用户已登录，显示用户名
+        var genderTtitle = currentUser.gender === "男" ? "先生" : "女士";
+        var userLoginName = currentUser.userchfname + genderTtitle;
+        $("#toLogin").css("visibility", "hidden")
+        $("#loginop").css("visibility", "visible")
+        $("#username").text(userLoginName)
+      } else {
+        // 用户未登录
+        console.log("未登入狀態");
+        $("#toLogin").css("visibility", "visible"); // 显示登录按钮
+        $("#loginop").css("visibility", "hidden");
+      }
 
 
       document.addEventListener("DOMContentLoaded", function () {
@@ -1397,6 +1058,8 @@
           window.location.href = "./login.html";
         });
       });
+
+
     </script>
 </body>
 

@@ -1,81 +1,67 @@
 [
   {
-    "userfirstname": "Liu",
-    "userlastname": "Wei-Hen",
-    "userchname": "Liu",
-    "gender": "男",
-    "password": "123",
-    "email": "cs135792716@gmail.com",
-    "birth": "1939217",
-    "phone": "0987654321"
-  },
-  {
-    "userfirstname": "Liu",
-    "userlastname": "Wei-Hen",
-    "userchname": "劉",
-    "password": "1234",
-    "email": "cs135792716@gmail.com",
-    "birth": "1939217",
-    "phone": "0987654321"
-  },
-  {
-    "userId": 562,
-    "userfirstname": "Liu",
-    "userlastname": "Wei-Hen",
-    "userchname": "Liu",
-    "gender": "男",
-    "password": "123",
-    "email": "cs135792716@gmail.com",
-    "birth": "1939217",
-    "phone": "0987654321"
-  },
-  {
-    "userId": 833,
-    "userfirstname": "Liu",
-    "userlastname": "Wei-Hen",
-    "userchname": "Liu",
-    "gender": "男",
-    "password": "SSAD123AS1",
-    "email": "cds23134#@141564",
-    "birth": "1939217",
-    "phone": "0987654321"
-  },
-  {
-    "userfirstname": "Liu",
-    "userlastname": "Wei-Hen",
-    "userchname": "劉",
-    "gender": "男",
-    "password": "123",
-    "email": "cs135792716@gmail.com",
-    "birth": "1939217",
-    "phone": "0987654321"
-  },
-  {
-    "userfirstname": "Liu",
-    "userlastname": "Wei-Hen",
-    "userchname": "劉",
-    "gender": "男",
-    "password": "1234",
-    "email": "cs135792716@gmail.com",
-    "birth": "1939217",
-    "phone": "0987654321"
-  },
-  {
-    "userfirstname": "Liu",
-    "userlastname": "Wei-Hen",
-    "userchfname": "韋亨",
-    "userchname": "劉",
-    "email": "cs135792716@gmail.com",
-    "phone": "0919243567"
-  },
-  {
-    "userfirstname": "Liu",
-    "userlastname": "Wei-Hen",
-    "userchname": "劉",
+    "userfirstname": "Houng",
+    "userlastname": "Wei-ZE",
+    "userchfname": "黃",
+    "userchname": "偉哲",
     "gender": "男",
     "password": "123456",
     "email": "cs135792716@gmail.com",
-    "birth": "190011",
+    "birth": "1977217",
     "phone": "0987654321"
+  },
+  {},
+  {
+    "userfirstname": "IKEA",
+    "userlastname": "IKEA",
+    "userchfname": "奇雅",
+    "userchname": "依",
+    "gender": "女",
+    "password": "123",
+    "email": "s123456@gmail.com",
+    "birth": "19531231",
+    "phone": "0932323232"
+  },
+  {},
+  {
+    "userfirstname": "Liu",
+    "userlastname": "Wei-Hen",
+    "userchfname": "奇雅",
+    "userchname": "林",
+    "gender": "女",
+    "password": "12",
+    "email": "s123@gmail.com",
+    "birth": "19611225",
+    "phone": "092112121"
+  },
+  {
+    "cardID": "952809"
+  },
+  {
+    "userfirstname": "Li",
+    "userlastname": "亞齊",
+    "userchfname": "Yagi",
+    "userchname": "李",
+    "gender": "女",
+    "password": "1",
+    "email": "s1@gmail.com",
+    "birth": "1921929",
+    "phone": "09486486",
+    "cardID": "367950"
+  },
+  {
+    "cardID": "578144"
+  },
+  {
+    "userfirstname": "XI",
+    "userlastname": "WEIHEN",
+    "userchfname": "席",
+    "userchname": "韋亨",
+    "gender": "男",
+    "password": "12",
+    "email": "s12@gmail.com",
+    "birth": "19181119",
+    "phone": "0912312345",
+    "cardID": "281918"
   }
 ]

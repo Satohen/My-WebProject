@@ -187,7 +187,7 @@
                     <th class="col-4">
                         <p>會員卡號：<span id="cardID"> 3342791001</span>
                         </p>
-                        <p> <a href="" class="btn btn-success">會員資料</a> 填寫進階資訊獲得500哩唷
+                        <p> <a  class="btn btn-success" id="profieChange">會員資料更改</a>
                         </p>
 
                         <p class="small"> 有效期限</p>
@@ -288,19 +288,23 @@
             var username = currentUser.email;
             var password = currentUser.password;
 
-
             $.get("/membership", { username: username, password: password })
                 .done(function (data) {
                     if (data.success) {
                         $("#en_fname").val(data.user.userfirstname)
                         $("#en_name").val(data.user.userlastname)
-                        $("#cardLevel").text("30000121344")
+                        $("#cardLevel").html(":綠卡")
                         $("#cardLevelName").text("GC")
-                        $("#ch_fname").val(data.user.userchname)
-                        $("#ch_name").val(data.user.userfchname)
+                        $("#ch_fname").val(data.user.userchfname)
+                        $("#ch_name").val(data.user.userchname)
                         $("#emailChange").val(data.user.email)
                         $("#phone_number").val(data.user.phone)
-                        console.log(data)
+                        $("#password").val(data.user.password)
+                        $("#cardID").text(data.user.cardID)
+                        $("#cardIDch").text(data.user.cardID)
+
+                        console.log(data.user.cardID)
+
                     }
                     else {
                         alert("錯誤", data)
@@ -315,7 +319,7 @@
 
     <!-- 會員資料 -->
 
-    <table class="mt-5  table " id="profileData" >
+    <table class="mt-5  table " id="profileData" style="display: none;">
         <thead>
             <tr>
                 <th>個人資料</th>
@@ -336,7 +340,7 @@
         </tr>
         <tr>
             <td>會員卡號:</td>
-            <td><span id="cardID">3342791001</span></td>
+            <td><span id="cardIDch">3342791001</span></td>
         </tr>
         <tr>
             <td>中文姓</td>
@@ -349,8 +353,16 @@
         <tr>
             <td>Email帳號<p>
             </td>
-            <td><input type="email" name="" id="emailChange"></td>
+            <td><input type="email" name="" id="emailChange" readonly></td>
         </tr>
+        <tr>
+            <td>密碼</td>
+            <td>
+                <input type="password" name="" id="password">
+                <input type="checkbox" onclick="togglePassword()"> 顯示密碼
+            </td>
+        </tr>       
+        
         <tr>
             <td>手機號碼</td>
             <td><input type="tel" value="098*****10" id="phone_number"></td>
@@ -369,58 +381,83 @@
 
 
 
+
+
     <script>
+        // 這邊使用切換表讓使用者能看到密碼
+function togglePassword() {
+    var passwordField = document.getElementById("password");
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+    } else {
+        passwordField.type = "password";
+    }
+}
+
+$("#profieChange").on("click", function() {
+    $("#profileData").toggle();
+});
+
+
+ 
+
+
+
+
+
         // 將資料丟到後端去做更新的動作
         $("#replace").on("click",function(event){
+          var currentUser = JSON.parse(localStorage.getItem("currentUser"));
             // 防止跳轉
             event.preventDefault();
             var DATA = {
-                userfirstname: $("#en_fname").val(),
-                userlastname: $("#en_name").val(),
-                userchfname: $("#ch_fname").val(),
-                userchname: $("#ch_name").val(),
-                email: $("#emailChange").val(),
-                phone: $("#phone_number").val()
-            }
-            $.ajax({
-    type: "put",
-    url: "/profileChange",
-    data: JSON.stringify(DATA),
-    contentType: "application/json",
-    success: function (response) {
-        // 成功給訊息
-        alert("更新完成！");
+                         userfirstname: $("#en_fname").val(),
+                         userlastname: $("#en_name").val(),
+                         userchfname: $("#ch_fname").val(),
+                         userchname: $("#ch_name").val(),
+                         email: $("#emailChange").val(),
+                         phone: $("#phone_number").val(),
+                         password: $("#password").val()
 
-        // 获取最新的用户信息
-        $.get("/membership", { username: DATA.email, password: DATA.password })
-            .done(function (data) {
-                if (data.success) {
-                    // 更新 localStorage 中的用户信息
-                    localStorage.setItem("currentUser", JSON.stringify(data.user));
-                }
-            })
-            .fail(function (error) {
-                console.error("Error fetching user data", error);
-            });
-    },
-    error: function (error) {
-        // 錯誤給訊息
-        alert("更新失敗!" + error);
-    }
-});
+                         }
+                         $.ajax({
+                        type: "put",
+                        url: "/profileChange",
+                        data: JSON.stringify(DATA),
+                        contentType: "application/json",
+                        success: function (response){
+                         // 获取最新的用户信息
+                        $.get("/membership", { username: DATA.email, password: DATA.password })
+                         .done(function (data) {
+                        if (data.success) {
+                        // 更新 localStorage 中的用户信息
+                        localStorage.setItem("currentUser", JSON.stringify(data.user)); // 成功給訊息
+                         alert("更新完成！");
+                             }
+                         })
+                         .fail(function (error) {
+                             console.error("Error fetching user data", error);
+                         });
+                 },
+                 error: function (error) {
+                     // 錯誤給訊息
+                     alert("更新失敗!" + error);
+                 }
+                                    });             
 
-        })
-
-
+                     })
 
 
+
+
+
+        
         //檢查是否登入 並給予名字(其他頁面需要)
         var currentUser = JSON.parse(localStorage.getItem("currentUser"));
         if (currentUser) {
             // 用户已登录，显示用户名
-            console.log("用戶已登入:", currentUser.userfirstname);
             var genderTtitle = currentUser.gender === "男" ? "先生" : "女士";
-            var userLoginName = currentUser.userchname + genderTtitle;
+            var userLoginName = currentUser.userchfname + genderTtitle;
             $("#toLogin").css("visibility", "hidden")
             $("#loginop").css("visibility", "visible")
             $("#username").text(userLoginName)
