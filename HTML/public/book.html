@@ -830,7 +830,7 @@
         var destination_get = urlParams.get("destination_get");
 
         // 更新页面上的文本
-        // 比較特殊要抓特殊屬性
+        // 比較特殊要抓特殊屬性(此頁面有data-cabin屬性的)
         var cabinElements = document.querySelectorAll("[data-cabin]");
         cabinElements.forEach(function (element) {
           element.innerText = cabin;

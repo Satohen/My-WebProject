@@ -280,8 +280,7 @@ $(document).ready(function () {
                         <thead><th style="column-span: 2;"><h3>機票</h3></th></thead>
 
                         <tr><td><input type="radio" name="行程"  id="comeback" data-confirm="1" checked><label for="comeback">來回</label> <input  class="ms-5"type="radio" name="行程" id="go" data-confirm="0" ><label for="go" >單程</label></td>
-                            <td><a href="https://booking.evaair.com/flyeva/EVA/B2C/booking-multi.aspx?lang=zh-tw"> 
-                                不同點進出/中途停留/多個城市</a>
+                            <td>
                             </td>
                             <td></td>
                         </tr>                        
@@ -416,13 +415,7 @@ $(document).ready(function () {
                             }
                             })
                         }
-                        function credic (){
-                            document.getElementById("use_card").addEventListener("click",function(){
-                                
-                                
-                                document.getElementById("cupon").style.display = "table-row";
-
-                            })}                    
+     
 
                     //來回標籤
                             function goonce() {
@@ -442,7 +435,6 @@ $(document).ready(function () {
                         minus();
                         minus1();
                         minus2();
-                        credic();
                         goonce() 
                         comehome()
                         //  判斷日期
@@ -469,11 +461,26 @@ $(document).ready(function () {
                                 $("#backday").prop("min", today);
                             });
                         // 第二列表單的
-                            使用jquery
+                            // 使用jquery
                             $(document).ready( function(){
-                                $("#arrival_time").prop("min", today);                           
+                                $("#arrival_time").prop("min", today);
 
                             });                
+
+                            $("#goday").on("change", function () {
+    // 當出發日期改變時
+    const godayValue = new Date($("#goday").val());
+
+    // 更換回程日期的最小值
+    document.getElementById("backday").setAttribute("min", $("#goday").val());
+
+    // 如果回程日期早於出發日期，則將其設置為出發日期
+    const backdayValue = new Date($("#backday").val());
+    if (backdayValue < godayValue) {
+        $("#backday").val($("#goday").val());
+    }
+});
+                            
                       </script>                     
                 </form>
             </div>
@@ -542,26 +549,7 @@ $(document).ready(function () {
          </div>
         </div>
 
-<!-- 這裡處理 登入之後切換畫面 -->
-        <script>
 
-            if(usernamee == "Gues"){
-                $("#login").text("登入")     
-                $("#login").prop("href","./login.html") 
-            }else
-            {
-                $("#login").text("登出")
-                $("#login").prop("href","/logout.html") 
-                // 添加点击事件处理程序以执行登出操作
-                $("#login").click(function(e) {
-                 e.preventDefault(); // 阻止默认的超链接行为
-                  // 执行登出操作，例如向服务器发送登出请求
-                    // 之后可以重定向到登录页或执行其他操作
-                alert("执行登出操作"); // 这里演示弹出警告
-                });
-            }
-
-        </script>
 
 
 
@@ -589,8 +577,7 @@ $(document).ready(function () {
             <div class="col-3">
                 <figure>
                     <img class="img-fluid" src="./img/首爾.jpg" alt="景點說明" style="object-fit: contain;">
-                    <a
-                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    <a href="hot.html?departure_get=台北-桃園&destination_get=首爾">
                         <figcaption class="textt"><b>台北(TPE)-首爾(ICN)</b>
                             <div>TWD 12000起</div>
                         </figcaption>
@@ -598,11 +585,11 @@ $(document).ready(function () {
                 </figure>
             </div>
 
+
             <div class="col-3">
                 <figure>
                     <img class="img-fluid" src="./img/大阪.jpg" alt="景點說明" style="object-fit: contain; ">
-                    <a
-                        href="https://booking.evsaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    <a              href="hot.html?departure_get=台北-桃園&destination_get=大阪">
                         <figcaption class="textt"><b>台北(TPE)-大阪(KTX)</b>
                             <div>TWD 15438</div>
                         </figcaption>
@@ -614,7 +601,7 @@ $(document).ready(function () {
                 <figure>
                     <img class="img-fluid" src="./img/曼谷.jpg" alt="景點說明" style="object-fit: contain;">
                     <a
-                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    href="hot.html?departure_get=台北-桃園&destination_get=曼谷">
                         <figcaption class="textt"><b>台北 (TPE) -曼谷(BBK)</b>
                             <div class="orange">TWD 9603</div>
                         </figcaption>
@@ -626,8 +613,8 @@ $(document).ready(function () {
                 <figure>
                     <img class="img-fluid" src="./img/東京.jpg" alt="景點說明" style="object-fit: contain;">
                     <a
-                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
-                        <figcaption class="textt"><b>台北 (TPE) -東京(HND)</b>
+                    href="hot.html?departure_get=台北-松山&destination_get=東京">
+                        <figcaption class="textt"><b>台北 (TSA) -東京(NRT)</b>
                             <div class="orange">TWD 15930</div>
                         </figcaption>
                     </a>
@@ -639,7 +626,7 @@ $(document).ready(function () {
                 <figure>
                     <img class="img-fluid" src="./img/到東京.jpg" alt="景點說明" style="object-fit: contain;">
                     <a
-                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    href="hot.html?departure_get=台北-桃園&destination_get=東京">
                         <figcaption class="textt"><b>台北 (TPE) -東京(HND)</b>
                             <div class="orange">TWD 16689</div>
                         </figcaption>
@@ -650,7 +637,7 @@ $(document).ready(function () {
                 <figure>
                     <img class="img-fluid" src="./img/到沖繩.jpg" alt="景點說明" style="object-fit: contain;">
                     <a
-                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    href="hot.html?departure_get=台北-桃園&destination_get=沖繩">
                         <figcaption class="textt"><b>台北 (TPE) -沖繩(OKA)</b>
                             <div class="orange">TWD 9606</div>
                         </figcaption>
@@ -661,7 +648,7 @@ $(document).ready(function () {
                 <figure>
                     <img class="img-fluid" src="./img/到福岡.jpg" alt="景點說明" style="object-fit: contain;">
                     <a
-                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    href="hot.html?departure_get=台北-桃園&destination_get=福岡">
                         <figcaption class="textt"><b>台北 (TPE) -福岡(FUK)</b>
                             <div class="orange">TWD 13041</div>
                         </figcaption>
@@ -672,7 +659,7 @@ $(document).ready(function () {
                 <figure>
                     <img class="img-fluid" src="./img/到香港.jpg" alt="景點說明" style="object-fit: contain;">
                     <a
-                        href="https://booking.evaair.com/flyeva/EVA/B2C/booking-online.aspx?gGoDep=TPE&gGoArr=HKG&gGoYYYYMM=202311&gGoDD=29&gBackYYYYMM=202311&gBackDD=29&gSegment=2&gcabinclass=EY#x-roundTrip">
+                    href="hot.html?departure_get=台北-桃園&destination_get=香港">
                         <figcaption class="textt"><b>台北 (TPE) -香港(HKG)</b>
                             <div class="orange">TWD 9055</div>
                         </figcaption>
@@ -719,6 +706,7 @@ $(document).ready(function () {
           var childrenQuantity = document.getElementById("children_quantity").value;
           var babyQuantity = document.getElementById("baby_quantity").value;
         
+   
 
           if ($("#comeback").is(":checked")) {
            // 构建重定向URL，附加数据作为查询参数
