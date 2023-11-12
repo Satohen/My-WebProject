@@ -25,7 +25,7 @@
   <!-- 這個是登入的css樣式 -->
   <style>
     .user-menu {
-      position: relative;
+      position: absolute;
       display: inline-block;
     }
 
@@ -127,7 +127,7 @@
 
     <!-- 登入及註冊 -->
 
-    <nav id="loginop">
+    <nav id="loginop" style="margin-left: 600px; margin-bottom: 25px;  ">
       <div class="user-menu">
         <!-- 使用者名稱與下拉箭頭 -->
         <div id="user-info">
@@ -283,10 +283,7 @@
           console.log("未登入狀態");
           $("#toLogin").css("visibility", "visible"); // 显示登录按钮
           $("#loginop").css("visibility", "hidden"); }      
-          
-          
-
-
+                 
 
 
         // 這裡需要添加其他目的地的映射(就是設條件找json檔案)

@@ -63,5 +63,20 @@
     "birth": "19181119",
     "phone": "0912312345",
     "cardID": "281918"
+  },
+  {
+    "cardID": "237109"
+  },
+  {
+    "userfirstname": "Wu",
+    "userlastname": "EME",
+    "userchfname": "吳",
+    "userchname": "宜美",
+    "gender": "女",
+    "password": "123",
+    "email": "bachi123@gmail.com",
+    "birth": "196171",
+    "phone": "0987987987",
+    "cardID": "504366"
   }
 ]

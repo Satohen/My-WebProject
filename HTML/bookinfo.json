@@ -60,5 +60,36 @@
     "ticketype": "2個航段",
     "cabintype_1": "商務艙 經典 Standard",
     "cabintype_2": "商務艙 經典 Standard"
+  },
+  {
+    "vicketId": "62ae0a60-80f5-11ee-986e-a55a60d57df7",
+    "bookdate": "Sun Nov 12 2023 08:49:50 GMT+0800 (台北標準時間)",
+    "orderId": 1699750190598,
+    "name": "吳宜鎂",
+    "gender": "女",
+    "email": "bachi123@gmail.com",
+    "address": "無名小鎮",
+    "cardNumber": "123456789",
+    "expirationDate": "88/99",
+    "cvv": "321",
+    "flightInfo": {
+      "godate": "2023年11月14日星期二",
+      "backdate": "2023年11月18日星期六",
+      "goairport": "07:50桃園機場",
+      "backairport": "08:50成田機場",
+      "godestination": "12:00成田機場",
+      "backdestination": "13:00桃園機場",
+      "gocabin": "經濟艙 尊寵 Up",
+      "backcabin": "經濟艙 尊寵 Up",
+      "tickprice_1": "\n                  TWD 15413\n                ",
+      "tickprice_2": "\n                  TWD 15413\n                ",
+      "total_price": "61652"
+    },
+    "AD": "2",
+    "CH": "0",
+    "BA": "0",
+    "ticketype": "2個航段",
+    "cabintype_1": "經濟艙 尊寵 Up",
+    "cabintype_2": "經濟艙 尊寵 Up"
   }
 ]

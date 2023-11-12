@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>訂票表單</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .form-container {
+      margin-left: 35%;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      color: #007bff;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    .btn-success {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="form-container">
+    <form action="">
+      <h3 class="text-center">機票</h3>
+
+      <div class="row mb-3">
+        <div class="col">
+          <input type="radio" name="行程" id="comeback" data-confirm="1" checked>
+          <label for="comeback">來回</label>
+          <input class="ms-5" type="radio" name="行程" id="go" data-confirm="0">
+          <label for="go">單程</label>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col">
+          <label for="departure_0">出發地*</label>
+          <select class="form-select" id="departure_0">
+            <option value="台北-桃園">台北-桃園</option>
+            <option value="台北-松山">台北-松山</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="destination_0">目的地*</label>
+          <select class="form-select" id="destination_0">
+            <option value="東京">東京</option>
+            <option value="大阪">大阪</option>
+            <!-- 其他目的地選項 -->
+          </select>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col">
+          <label for="goday">出發日期*</label>
+          <input type="date" class="form-control" id="goday">
+        </div>
+        <div class="col">
+          <label id="backday_label" for="backday">回程日期*</label>
+          <input type="date" class="form-control" id="backday">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col">
+          <label for="cabin">艙等*</label>
+          <select class="form-select" id="cabin">
+            <option value="商務艙">商務艙</option>
+            <option value="經濟艙">經濟艙</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col">
+          <label for="adult_quantity">大人 *(12歲以上)</label>
+          <div class="input-group">
+            <button class="btn btn-success" type="button" id="btn-plus1">+</button>
+            <input type="number" class="form-control" id="adult_quantity" value="0">
+            <button class="btn btn-success" type="button" id="btn_minus">-</button>
+          </div>
+        </div>
+        <div class="col">
+          <label for="children_quantity">小孩 *(2-11)</label>
+          <div class="input-group">
+            <button class="btn btn-success" type="button" id="btn-plus2">+</button>
+            <input type="number" class="form-control" id="children_quantity" value="0">
+            <button class="btn btn-success" type="button" id="btn_minus1">-</button>
+          </div>
+        </div>
+        <div class="col">
+          <label for="baby_quantity">嬰兒 *(2歲以下)</label>
+          <div class="input-group">
+            <button class="btn btn-success" type="button" id="btn-plus3">+</button>
+            <input type="number" class="form-control" id="baby_quantity" value="0">
+            <button class="
+

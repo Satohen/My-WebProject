@@ -25,7 +25,7 @@
   <!-- 這個是登入的css樣式 -->
   <style>
     .user-menu {
-      position: relative;
+      position: absolute;
       display: inline-block;
     }
 
@@ -151,8 +151,8 @@
         </ul>  
         <!-- 登入及註冊 -->
 
-        <nav id="loginop">
-          <div class="user-menu">
+        <nav id="loginop" style="margin-left: 600px; margin-bottom: 25px;  ">
+            <div class="user-menu">
             <!-- 使用者名稱與下拉箭頭 -->
             <div id="user-info">
               <span id="username">使用者名稱</span>
@@ -483,10 +483,16 @@ $(document).ready(function(){
 
 
 </script>
+
+
+<script type="text/javascript" src="/nav.js"></script>
+
+
 <!-- 在<body>標籤結束前引入Bootstrap JS和Popper.js -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 
 
 </body>
