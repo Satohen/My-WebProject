@@ -25,6 +25,90 @@
   <!-- 安插登入按鈕的css -->
   <link rel="stylesheet" href="./個樣式css資料/登入按鈕.css">
 
+
+
+
+  <!-- 搜尋表格css -->
+  <style>
+    /* 通用樣式 */
+.container {
+  padding: 2rem;
+}
+
+/* 表格樣式 */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+
+.table-responsive {
+  border: 1px solid #dee2e6;
+  border-radius: .25rem;
+}
+
+/* 輸入組樣式 */
+.input-group-text {
+  min-width: 80px; /* 確保標籤寬度一致 */
+}
+
+/* 按钮样式 */
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+/* 表頭樣式 */
+.thead-dark th {
+  background-color: #343a40;
+  color: #fff;
+}
+
+
+
+
+/* 注意事項css */
+
+.notice-container {
+  background-color: #f8f9fa; /* 輕灰色背景 */
+  border-left: 4px solid rgba(255, 0, 0, 0.835); /* 藍色左邊框作為強調 */
+  padding: 20px; /* 內邊距 */
+  margin: 30px auto; /* 居中且有上下間距 */
+  border-radius: 5px; /* 輕微圓角 */
+  max-width: 80%; /* 最大寬度限制 */
+  box-shadow: 0 2px 4px rgba(0,0,0,.1); /* 箱型陰影 */
+}
+
+.notice-header {
+  background: darkgray;
+  color: white;
+  border-radius: 50%;
+  width: 100px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 0.9rem;
+}
+
+.notice-list {
+  list-style: none; /* 移除列表符號 */
+  padding-left: 0; /* 移除內置的填充 */
+}
+
+.notice-list li {
+  padding: 5px 0; /* 列表項目上下填充 */
+  border-bottom: 1px solid #e9ecef; /* 底部邊框 */
+}
+
+.notice-list li:last-child {
+  border-bottom: none; /* 最後一個列表項目沒有底部邊框 */
+}
+
+  </style>
 </head>
 
 <body>
@@ -122,116 +206,62 @@
 
 
 
-
+<!-- 尋找頁面 -->
       <!-- 選擇欄位 -->
-      <div class="" style="margin-top: 60px; margin-left: 10%;">
-        <table id="select_table">
-          <tr>
-            <th>
-              <p>
-              <h3>日期</h3>
-              </p><input type="date" id="datePicker" />
-            </th>
-            <th>
-              <p>
-              <h3>起點</h3>
-              </p><select type="select" id="input_go">
-                <option value="台北-桃園">台北-桃園</option>
-                <option value="台北-松山">台北-松山</option>
-            </th>
-            <th>
-              <p>
-              <h3>終點</h3>
-              </p><select type="select" id="input_back">
-                <option value="東京">東京</option>
-                <option value="大阪">大阪</option>
-                <option value="沖繩">沖繩</option>
-                <option value="首爾">首爾</option>
-                <option value="曼谷">曼谷</option>
-                <option value="香港">香港</option>
-                <option value="福岡">福岡</option>
-            </th>
-            <th></th>
-          </tr>
-        </table>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <!-- 選擇欄位 -->
+            <div class="mb-4">
+              <div class="input-group mb-3">
+                <span class="input-group-text">日期</span>
+                <input type="date" class="form-control" id="datePicker">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text">起點</span>
+                <select class="form-control" id="input_go">
+                  <option value="台北-桃園">台北-桃園</option>
+                  <option value="台北-松山">台北-松山</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text">終點</span>
+                <select type="select" class="form-control" id="input_back">
+                  <option value="東京">東京</option>
+                  <option value="大阪">大阪</option>
+                  <option value="沖繩">沖繩</option>
+                  <option value="首爾">首爾</option>
+                  <option value="曼谷">曼谷</option>
+                  <option value="香港">香港</option>
+                  <option value="福岡">福岡</option>
+                  <!-- 其他選項 -->
+                </select>
+              </div>
+            </div>
+            
+            <!-- 顯示欄位 -->
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>班機編號</th>
+                    <th>行程</th>
+                    <th>航班狀態</th>
+                    <th>起飛點</th>
+                    <th>目的地</th>
+                    <th>出發時間</th>
+                    <th>抵達時間</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                  <!-- 动态生成的行 -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- 顯示欄位 -->
-      <div class="" style="margin-top: 60px; margin-left: 10%;">
-        <fieldset style="object-fit: contain; border: 2px solid lightslategray; width: 80%; ">
-          <legend>航班到離動態</legend>
-          <table id="jobList" class="table" style="object-fit: contain; width: 100%; ">
-            <thead>
-              <tr>
-                <th>
-                  <h4 id="th_date"></h4>
-                </th>
-                <th>
-                  <h4 id="th_go"></h4>
-                </th>
-                <th>
-                  <h4 id="th_back"></h4>
-                </th>
-                <th>
-                  <h4 id=""></h4>
-                </th>
-                <th>
-                </th>
-                <th>
-                </th>
-              </tr>
-            </thead>
-            <tr class="bg-success" style="height: 5%; color: white;">
-              <td>班機編號
-              </td>
-              <td>行程</td>
-              <td>航班狀態</td>
-              <td>啟程點</td>
-              <td>目的地</td>
-              <td>出發時間</td>
-              <td>抵達時間</td>
-            </tr>
-            <tbody id="tbody">
-              <tr>
-                <td id="f_id">班機編號
-                </td>
-                <td id="f_agenda">行程</td>
-                <td id="f_status">航班狀態</td>
-                <td id="f_go">出發</td>
-                <td id="f_goal">抵達</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>班機編號
-                </td>
-                <td>行程</td>
-                <td>航班狀態</td>
-                <td>出發</td>
-                <td>抵達</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>班機編號
-                </td>
-                <td>行程</td>
-                <td>航班狀態</td>
-                <td>出發</td>
-                <td>抵達</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>班機編號
-                </td>
-                <td>行程</td>
-                <td>航班狀態</td>
-                <td>出發</td>
-                <td>抵達</td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </fieldset>
-      </div>
-
+      
       <script type="text/javascript" src="search.js"></script>
 
 
@@ -323,19 +353,17 @@
 
 
 
+<!-- 注意事項欄位 -->
+<div class="notice-container">
+  <div class="notice-header">注意事項</div>
+  <ul class="notice-list">
+    <li>由於航班情況可能隨時更改，建議您隨時留意網站上提供的班機訊息服務或與本公司當地機場和辦事處聯絡。</li>
+    <li>目前尚無法提供部分包機及非本公司營運之聯航航班資料。</li>
+    <li>您可於航班時刻表線上查詢查詢未來360天內之客機航班時刻表。</li>
+    <li>線上申請/列印航班到離證明限航班抵達後至180天內申請，若超過180天，需臨櫃辦理。</li>
+  </ul>
+</div>
 
-      <div class="mt-5 pt-2" style="background-color: lightgray; width: 80%; margin-left: 10%;">
-        <ul>
-          <div style="width:90px;  border-radius: 40%; background: darkgray; text-align: center;">注意事項</div>
-          <li>由於航班情況可能隨時更改，建議您隨時留意網站上提供的班機訊息服務或與本公司當地機場和辦事處聯絡。</li>
-          <li>目前尚無法提供部分包機及非本公司營運之聯航航班資料。
-          </li>
-          <li>您可於航班時刻表線上查詢查詢未來360天內之客機航班時刻表。
-          </li>
-          <li>線上申請/列印航班到離證明限航班抵達後至180天內申請，若超過180天，需臨櫃辦理。
-          </li>
-        </ul>
-      </div>
 
 
 

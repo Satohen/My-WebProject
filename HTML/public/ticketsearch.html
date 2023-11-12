@@ -36,7 +36,35 @@
     <!-- 安插登入按鈕的css -->
     <link rel="stylesheet" href="./個樣式css資料/登入按鈕.css">
 
+<!-- 表格美化css -->
+<style>
+  /* 通用邊框和間距 */
+fieldset {
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
 
+/* 標題和欄位頭 */
+legend {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* 表格樣式 */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+
+/* 表頭 */
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+</style>
 
 </head>
 
@@ -136,35 +164,25 @@
 
       <!-- 選擇欄位 -->     
       <!-- 顯示欄位 -->
-      <div class="" style="margin-top: 60px; margin-left: 10%;">
-        <fieldset style="object-fit: contain; border: 2px solid lightslategray; width: 80%; ">
-          <legend>訂單代號: <span id="vicketId"></span></legend>
-          <legend>訂位代號: <span id="orderid"></span></legend>
-          <table id="jobList" class="table" style="object-fit: contain; width: 100%; ">
+      <div class="container mt-5">
+        <fieldset class="border p-4">
+          <legend class="w-auto px-2">訂單代號: <span id="vicketId"></span></legend>
+          <legend class="w-auto px-2">訂位代號: <span id="orderid"></span></legend>
+          <table id="jobList" class="table table-striped">
             <thead>
               <tr>
-                <th>
-                  <h5 id="th_date" >(網路購票) <span id="gotype">幾段航班 </span><br><span id="AD">0</span>大人/ <span id="CH">0</span>小孩/ <span id="BA">0</span>嬰兒</h5>
+                <th colspan="5">
+                  <h5 id="th_date">(網路購票) <span id="gotype">幾段航班 </span><br><span id="AD">0</span>大人/ <span id="CH">0</span>小孩/ <span id="BA">0</span>嬰兒</h5>
                 </th>
-                <th>
-                  <h4 id="th_go"></h4>
-                </th>
-                <th>
-                  <h4 id="" ></h4>
-                </th>
-                <th>
-                    <h4 id="" ></h4>
-                </th>
-
+              </tr>
+              <tr class="bg-success text-white">
+                <td>起飛(當地時間)</td>
+                <td>啟程地</td>
+                <td>目的地</td>
+                <td>艙種類</td>
+                <td>機位狀態</td>
               </tr>
             </thead>
-            <tr class="bg-success" style="height: 10%; color: white;">
-              <td >起飛(當地時間)</td>
-              <td>啟程地</td>
-              <td>目的地</td>
-              <td>艙種類</td>
-              <td>機位狀態</td>
-            </tr>
             <tbody id="tbody">
               <tr>
                 <td id="flight_time_1">起飛當地時間</td>
@@ -173,19 +191,18 @@
                 <td id="cabinType_1">目的地</td>
                 <td id="sit_status_1">已確認</td>
               </tr>
-              <div id="back_div">
               <tr id="back_tr">
                 <td id="flight_time_2">回程當地時間</td>
                 <td id="departure_2">啟程地</td>
                 <td id="destination_2">目的地</td>
                 <td id="cabinType_2">目的地</td>
                 <td id="sit_status_2">已確認</td>
-              </tr>    
-            </div>        
+              </tr>        
             </tbody>
           </table>
         </fieldset>
       </div>
+      
 
       <script type="text/javascript" src="search.js"></script>
 

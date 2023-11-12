@@ -145,6 +145,33 @@ img.img-fluid {
 }
 
 
+/* 滾動圖片的文字 */
+/* Slideshow text style */
+.text {
+  position: absolute; /* 定位到圖片上 */
+  bottom: 10%; /* 距離底部一定距離 */
+  left: 10%; /* 距離左邊一定距離 */
+  background-color: rgba(240, 128, 128, 0.5); /* 半透明背景 */
+  color: white; /* 白色文字 */
+  font-weight: bold; /* 加粗文字 */
+  border-radius: 50%; /* 圓形背景 */
+  padding: 20px; /* 內邊距 */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3); /* 文字陰影 */
+  z-index: 10; /* 確保文字在圖片上方 */
+}
+
+/* Adjust the size of the text container to be more responsive */
+.text.h-25.w-25 {
+  width: 50vw; /* 寬度為視口寬度的25% */
+  height: 50vw; /* 高度也是視口寬度的25% */
+  display: flex; /* 使用Flexbox進行居中 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  text-align: center; /* 文字居中 */
+  max-width: 250px; /* 最大寬度限制 */
+  max-height: 250px; /* 最大高度限制 */
+  font-size: calc(10px + 1vw); /* 基於視口寬度的自適應字體大小 */
+}
 
 
 
@@ -265,19 +292,19 @@ img.img-fluid {
         <div class="mySlides fade ">
             <div class="numbertext">1 / 3</div>
             <img src="./長榮航空img/跑登場景1.jpg" class="img-fluid" style="  width:100% ; object-fit: contain;">
-            <div class="text h-25 w-25" style="border-radius: 50%; background: lightcoral;">聯名卡</div>
+            <div class="text h-25 w-25" style="border-radius: 50%; ">聯名卡</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
             <img src="./長榮航空img/跑登場景2.jpg" class="img-fluid" style="width:100% ; object-fit: contain;">
-            <div class="text h-25 w-25" style="border-radius: 50%; background: lightcoral;">最優服務</div>
+            <div class="text h-25 w-25" style="border-radius: 50%;  ">最優服務</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
             <img src="./長榮航空img/跑登場景3.jpg" class="img-fluid" style="width:100% ; object-fit: contain;">
-            <div class="text  h-25 w-25" style="border-radius: 50%; background: lightcoral;">日本雙人行</div>
+            <div class="text  h-25 w-25" style="border-radius: 50%; ">日本雙人行</div>
         </div>
 
         <!-- Next and previous buttons -->
@@ -296,14 +323,22 @@ img.img-fluid {
 
 
 
-    <!-- 切換問卷區 -->
-<div>
-    <ul class="nav nav-fill nav-pills  flex-md-row  flex-column">
-        <li class="nav-item nav-link"><a href="#tickets"    class="btn btn-success" data-bs-toggle="pill">機票</a></li>
-        <li class="nav-item nav-link"><a href="#fligt_status" class="btn btn-success" data-bs-toggle="pill">航班到離動態</a></li>
-        <li class="nav-item nav-link"><a href="#check_in"    class="btn btn-success" data-bs-toggle="pill">預辦登機/報到</a></li>
+<!-- 切換問卷區 -->
+<div class="d-flex justify-content-center">
+    <ul class="nav nav-pills flex-md-row flex-column" style="max-width: 600px;">
+        <li class="nav-item flex-grow-1">
+            <a href="#tickets" class="btn btn-success mx-1 flex-fill" data-bs-toggle="pill">預定前往機票</a>
+        </li>
+        <li class="nav-item flex-grow-1">
+            <a href="#fligt_status" class="btn btn-success mx-1 flex-fill" data-bs-toggle="pill">航班到離動態</a>
+        </li>
+        <li class="nav-item flex-grow-1">
+            <a href="#check_in" class="btn btn-success mx-1 flex-fill" data-bs-toggle="pill">預辦登機/報到</a>
+        </li>
     </ul>
 </div>
+
+
 
 
 
