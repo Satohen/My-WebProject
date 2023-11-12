@@ -29,13 +29,10 @@
   <!-- 安插jquery -->
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript">
-    // 程式放在這裏
-    // $(document).ready(function(){
-    //     $("#btn-plus1").click(function(){
-    //         $("#adult_quantity").innerHTML++;
-    //     })
-    // })
   </script>
+
+  <!-- 安插登入按鈕的css -->
+  <link rel="stylesheet" href="./個樣式css資料/登入按鈕.css">
 
   <!-- 滾動選單 -->
   <link rel="stylesheet" href="../google-scrolling-carousel/jquery.gScrollingCarousel.css" />
@@ -85,37 +82,60 @@
       background-color: #0056b3;
       /* 鼠标悬停时的背景颜色 */
     }
-  </style>
-  <!-- 這個是登入的css樣式 -->
-  <style>
-    .user-menu {
-      position: absolute;
-      display: inline-block;
-    }
 
-    #user-info {
-      cursor: pointer;
-    }
 
-    #dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
 
-    #dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
 
-    #dropdown-content a:hover {
-      background-color: #f1f1f1;
-    }
+/* 購物欄位樣式 */
+/* 購物車整體風格 */
+.cart-container {
+  background-color: #f7f7f7; /* 輕微灰色背景 */
+  border-left: 4px solid #0d6efd; /* 左邊藍色邊框以示區分 */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* 陰影效果增加立體感 */
+}
+
+/* 每個項目卡片的風格 */
+.cart-item {
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  margin-bottom: 15px; /* 增加間距 */
+  padding: 15px; /* 內邊距增加空間 */
+}
+
+/* 按鈕風格 */
+.btn-success {
+  background-color: #198754; /* 較深的綠色 */
+  border-color: #198754;
+}
+
+.btn-success:hover {
+  background-color: #157347; /* 滑鼠懸停時的顏色變化 */
+  border-color: #157347;
+}
+
+/* 標題風格 */
+.cart-header {
+  background-color: #0d6efd; /* 藍色背景 */
+  color: #fff; /* 白色字體 */
+  padding: 10px 15px; /* 內邊距 */
+  border-radius: 8px 8px 0 0; /* 圓角僅在上方 */
+}
+
+/* 文本風格 */
+.fw-bold {
+  color: #000; /* 黑色字體更易閱讀 */
+  margin-bottom: 10px; /* 增加下邊距 */
+}
+
+/* 區分各個項目 */
+.divider {
+  border-bottom: 1px solid #e1e1e1; /* 分隔線 */
+  margin-top: 15px; /* 上邊距 */
+  margin-bottom: 15px; /* 下邊距 */
+}
+
+
   </style>
 </head>
 
@@ -189,13 +209,13 @@
           </ul>
 
 
-    <!-- 登入及註冊 -->
 
-    <nav id="loginop" style="margin-left: 600px; margin-bottom: 25px;  ">
+    <!-- 登入及註冊 -->
+    <nav id="loginop" style="margin-left: 560px; margin-bottom: 40px;  ">
       <div class="user-menu">
         <!-- 使用者名稱與下拉箭頭 -->
-        <div id="user-info">
-          <span id="username">使用者名稱</span>
+        <div id="user-info" class="btn">
+          <span id="username"  >使用者名稱</span>
           <span id="arrow">&#9660;</span>
         </div>
         <!-- 下拉式選單 -->
@@ -213,7 +233,7 @@
       <a href="./regis.html" class="btn">註冊</a>
     </div>
 </nav>
-  <hr>
+
 
   <!-- 搜尋表格 -->
   <div class="mt-5" style="background-color: lightyellow">
@@ -311,52 +331,68 @@
 
   <div>
     <!-- 旁邊的購物車 -->
-
-    <div class="position-fixed top-0 end-0" style="width: 350px; margin-top: 290px; margin-right: 150px">
-      <table class="table table-bordered table-warning">
-        <tr>
-          <td>
-            <span id="SUM_P"> </span>:旅客<br />
-            <span id="AD">0</span>:成人<span id="CH">0</span>:小孩
-            <span id="BA">0</span>:嬰兒
-          </td>
-        </tr>
-        <tr id="go_col" style="display: none">
-          <td>
-            啟程: <br />
-            <span id="date_1">2024年 03月 07日 星期四</span><br />
-            <span id="dep1">14:00 東京(NRT)</span><br />
-            <span id="des1">17:05 台北(TPE)</span><br />
-            <span id="time1">飛行時間 04:05, 直飛航班</span><br />
-            票價類型: <span id="cabin">經濟艙</span><br />
-            價格:<span id="dol_1"></span>
-          </td>
-        </tr>
-        <tr id="back_col" style="display: none">
-          <td>
-            回程: <br>
-            <span id="date_2">2024年 03月 07日 星期四</span><br />
-            <span id="dep2">14:00 東京(NRT)</span><br />
-            <span id="des2">17:05 台北(TPE)</span><br />
-            <span id="time2">飛行時間 04:05, 直飛航班</span><br />
-            票價類型: <span id="cabin2">經濟艙</span><br />
-            價格:<span id="dol_2"></span>
-          </td>
-        </tr>
-        <!-- 兩個一起做同步動作 -->
-        <tr id="total_col" style="display: block; display: none">
-          <td>
-            總計:TWD <span class="total_price" id="total_price"></span><br />
-            票價及航空公司附加費:TWD<span class="total_price"></span><br />
-            稅金及其他費用:TWD<span id="tax"></span><br />
-            所有旅客的來回行程價格
-            (包含附加服務、稅金和燃油附加費用-若機票未使用或部分使用，未使用之稅金可退款。訂位服務費不可退款。)
-            <br />
-            <button id="continue" class="btn btn-success">繼續</button>
-          </td>
-        </tr>
-      </table>
+    <div class="position-fixed end-0 p-3" style="top: 50px; width: 350px; height: 100vh; overflow-y: auto;">
+      <div class="card shadow cart-container">
+        <div class="cart-header bg-primary text-white">
+          <h5 class="my-0">您的訂單</h5>
+        </div>
+        <div class="card-body bg-light">
+          <!-- 旅客信息 -->
+          <div class="cart-item mb-4 px-3">
+            <p class="fw-bold mb-2">旅客信息</p>
+            <div class="divider"></div>
+            <div>
+              <span id="SUM_P"></span>:總旅客<br>
+              <span id="AD">0</span>:成人
+              <span id="CH">0</span>:小孩
+              <span id="BA">0</span>:嬰兒
+            </div>
+          </div>
+          
+          <!-- 啟程 -->
+          <div id="go_col" class="cart-item mb-4 px-3" style="display: none;">
+            <p class="fw-bold">啟程</p>
+            <div class="divider"></div>
+            <div>
+              <p id="date_1">2024年 03月 07日 星期四</p>
+              <p id="dep1">14:00 東京(NRT)</p>
+              <p id="des1">17:05 台北(TPE)</p>
+              <p id="time1">飛行時間 04:05, 直飛航班</p>
+              <p>票價類型: <span id="cabin">經濟艙</span></p>
+              <p>價格: <span id="dol_1"></span></p>
+            </div>
+          </div>
+    
+          <!-- 回程 -->
+          <div id="back_col" class="cart-item mb-4 px-3" style="display: none;">
+            <p class="fw-bold">回程</p>
+            <div class="divider"></div>
+            <div>
+              <p id="date_2">2024年 03月 07日 星期四</p>
+              <p id="dep2">14:00 東京(NRT)</p>
+              <p id="des2">17:05 台北(TPE)</p>
+              <p id="time2">飛行時間 04:05, 直飛航班</p>
+              <p>票價類型: <span id="cabin2">經濟艙</span></p>
+              <p>價格: <span id="dol_2"></span></p>
+            </div>
+          </div>
+    
+          <!-- 總計 -->
+          <div id="total_col" class="cart-item mb-4 px-3" style="display: none;">
+            <p class="fw-bold">總計</p>
+            <div class="divider"></div>
+            <div>
+              <p>TWD <span class="total_price" id="total_price"></span></p>
+              <p>票價及航空公司附加費: TWD <span class="total_price"></span></p>
+              <p>稅金及其他費用: TWD <span id="tax"></span></p>
+              <p>所有旅客的來回行程價格 (包含附加服務、稅金和燃油附加費用)</p>
+            </div>
+            <button id="continue" class="btn btn-success w-100">繼續</button>
+          </div>
+        </div>
+      </div>
     </div>
+    
 
 
 
@@ -366,27 +402,47 @@
     <div class="modal" id="paymentInfoModal">
       <div class="modal-dialog">
         <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">訂單信息</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
           <div class="modal-body">
-            <form id="paymentInfoForm">         
-              <table> 
-                <tr><td> <label for="name_put">姓名：</label><input type="text" id="name_put" required></td></tr>
-                <tr><td> <label  for="gender">性別:</label><select  type="text" id="gender" required>
+            <form id="paymentInfoForm">
+              <div class="mb-3">
+                <label for="name_put" class="form-label">姓名：</label>
+                <input type="text" class="form-control" id="name_put" required>
+              </div>
+              <div class="mb-3">
+                <label for="gender" class="form-label">性別:</label>
+                <select class="form-select" id="gender" required>
+                  <option value="">請選擇...</option>
                   <option value="男">男</option>
-                  <option value="女">女</option></select></td></tr>
-                <tr><td><label for="email">email: </label><input type="email" id="email" required>
-              </table>           
-            
-             
-            
-              <label for="address">聯繫地址:</label>
-              <input type="text" id="address" required><br>
-              <label for="cardNumber">信用卡號碼：</label>
-              <input type="text" id="cardNumber" required><br>
-              <label for="expirationDate">有效期：</label>
-              <input type="text" id="expirationDate" required><br>
-              <label for="cvv">CVV碼：</label>
-              <input type="text" id="cvv" required><br>
-              <button type="submit" class="btn btn-primary">完成訂單</button>
+                  <option value="女">女</option>
+                </select>
+              </div>           
+              <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">聯繫地址:</label>
+                <input type="text" class="form-control" id="address" required>
+              </div>
+              <div class="mb-3">
+                <label for="cardNumber" class="form-label">信用卡號碼：</label>
+                <input type="text" class="form-control" id="cardNumber" required>
+              </div>
+              <div class="mb-3">
+                <label for="expirationDate" class="form-label">有效期：</label>
+                <input type="text" class="form-control" id="expirationDate" required>
+              </div>
+              <div class="mb-3">
+                <label for="cvv" class="form-label">CVV碼：</label>
+                <input type="text" class="form-control" id="cvv" required>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">完成訂單</button>
+              </div>
             </form>
           </div>
         </div>
@@ -1302,8 +1358,17 @@
 
     </script>
 
+<!-- 返回頂部按鈕 -->
+<a href="#top" target="" style="cursor: pointer;">
+  <figure id="smart" class="position-fixed bottom-0 end-0">
+      <img src="./img/bot.gif" style="object-fit: contain; height: 70px; width:70px; z-index: 1;"> 
+  <figcaption style="font-size:17px; text-align: center;">至頂</figcaption>
+  </figure>
+</a>
+<script type="text/javascript" src="./js資料庫/向上移動.js"></script>
 
 <!-- 這個是關於登入切換的js檔案 -->
-<script type="text/javascript" src="/nav.js"></script>
+<script type="text/javascript" src="nav.js"></script>
  
+
 </html>

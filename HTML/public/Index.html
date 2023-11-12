@@ -9,7 +9,11 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Liu">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- 網頁標題icon -->
+    <link rel="icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
+    <title>航空首頁</title>
     <!-- 安插bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -26,43 +30,128 @@
     </script>
 
 
-    <!-- 網頁標題icon -->
-    <link rel="icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
->
+    <!-- 滾動軸動畫css -->
     <link rel="stylesheet" href="./animation.css">
-    <title>航空首頁</title>
-      <!-- 這個是登入的css樣式 -->
-  <style>
-    .user-menu {
-      position: absolute;
-      display: inline-block;      
+    <!-- 安插登入按鈕的css -->
+    <link rel="stylesheet" href="./個樣式css資料/登入按鈕.css">
+
+   
+<!-- 這邊是 隱藏式表單的css -->
+<style>
+    .form-container {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .tab-content {
+        margin-top: 20px;
+    }
+    .form-table th, .form-table td {
+        padding: 10px;
+        text-align: left;
+    }
+    .center {
+        text-align: center;
+    }
+    .btn-plus-minus {
+        margin: 0 5px;
+    }
+    .number-input {
+        width: 50px;
+        text-align: center;
+    }
+    .tab-pane {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
     }
 
-    #user-info {
-      cursor: pointer;
-    }
+    /* 增加邊框圓角 */
+.form-container, .tab-pane, .btn {
+    border-radius: 8px;
+}
 
-    #dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
+/* 添加背景顏色 */
+.tab-content {
+    background-color: #f2f2f2; /* 這裡可以換成您喜歡的顏色 */
+}
 
-    #dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
+/* 文字陰影 */
+h3 {
+    text-shadow: 1px 1px 2px #aaaaaa;
+}
 
-    #dropdown-content a:hover {
-      background-color: #f1f1f1;
-    }
-  </style>
+/* 熱門服務區css */
+/* 熱門服務區域樣式 */
+.hot-service {
+    background-color: #f8f9fa; /* 輕灰色背景 */
+    padding: 20px 0; /* 上下間距 */
+}
+
+/* 熱門經濟艙標題樣式 */
+.hot-service h2 {
+    color: #333; /* 深色文字 */
+    margin-bottom: 30px; /* 標題下方間距 */
+}
+
+/* 圖片說明樣式 */
+figcaption.textt {
+    background-color: #ffffff; /* 白色背景 */
+    padding: 10px; /* 內邊距 */
+    border: 1px solid #ddd; /* 邊框 */
+    border-radius: 4px; /* 圓角 */
+    text-align: center; /* 文字置中 */
+    margin-top: -10px; /* 調整位置，使之覆蓋圖片底部 */
+    position: relative; /* 相對定位 */
+    z-index: 10; /* 層級 */
+}
+
+figure a{
+    text-decoration: none; /* 移除下劃線 */
+
+}
+
+
+/* 超連結樣式 */
+a:hover figcaption.textt {
+    background-color: #e9ecef; /* 滑鼠懸停時的背景色 */
+}
+
+/* 價格標籤樣式 */
+figcaption.textt div.orange {
+    color: #e67e22; /* 橙色文字 */
+    font-weight: bold; /* 粗體 */
+    margin-top: 5px; /* 上方間距 */
+}
+
+/* 統一圖片樣式 */
+img.img-fluid {
+    border-radius: 4px; /* 圖片圓角 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 陰影效果 */
+}
+
+/* 底部說明文字 */
+.hot-service p {
+    text-align: center; /* 置中對齊 */
+    color: #666; /* 深灰色文字 */
+    font-style: italic; /* 斜體 */
+    margin-top: 20px; /* 上方間距 */
+}
+
+/* 使每個 figure 之間有間距 */
+.figure-spacing {
+    padding: 15px; /* 內邊距 */
+}
+
+
+
+
+
+
+
+</style>
+
 
 </head>
 
@@ -136,13 +225,18 @@
             </ul>
 
 
-      <!-- 登入及註冊 -->
 
-      <nav id="loginop" style="margin-left: 600px; margin-bottom: 25px;  ">
+
+
+
+
+
+    <!-- 登入及註冊 -->
+    <nav id="loginop" style="margin-left: 560px; margin-bottom: 40px;  ">
         <div class="user-menu">
           <!-- 使用者名稱與下拉箭頭 -->
-          <div id="user-info">
-            <span id="username">使用者名稱</span>
+          <div id="user-info" class="btn">
+            <span id="username"  >使用者名稱</span>
             <span id="arrow">&#9660;</span>
           </div>
           <!-- 下拉式選單 -->
@@ -152,7 +246,7 @@
           </div>
         </div>
       </nav>
-
+  
       <!-- 登入及註冊 -->
       <div class="ms-auto">
         <a href="./login.html" id="toLogin" class="btn">登入</a>
@@ -160,11 +254,12 @@
         <a href="./regis.html" class="btn">註冊</a>
       </div>
   </nav>
-    <hr>
+  
+
+
 
     <!-- 動畫滾輪 -->
     <!-- Slideshow container -->
-    <a href="https://www.evaair.com/zh-tw/index.html">模仿首頁</a>
     <div class="slideshow_container ">
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade ">
@@ -196,52 +291,11 @@
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
     </div>
-    <script>
-        let slideIndex = 1;
-        let slideInterval;
-        showSlides(slideIndex);
-        function startSlideShow() {
-        slideInterval = setInterval(function () {
-        plusSlides(1); // 自動前進到下一張幻燈片
-        }, 2000);  }// 2秒切換一次      
-
-        startSlideShow(); // 啟動自動輪播    
-        // Next/previous controls
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-            // 使用者操作後，重設自動輪播計時器
-            clearInterval(slideInterval);
-            startSlideShow();
-            // 開始新的自動輪播計時器
-        }
-        // Thumbnail image controls
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }  
-    </script>
-    <hr>
+  
 
 
 
 
-
-    
     <!-- 切換問卷區 -->
 <div>
     <ul class="nav nav-fill nav-pills  flex-md-row  flex-column">
@@ -252,325 +306,217 @@
 </div>
 
 
+
+
+
+
+<!-- 滾動圖片的js -->
+
 <script>
+    let slideIndex = 1;
+    let slideInterval;
+    showSlides(slideIndex);
+    function startSlideShow() {
+    slideInterval = setInterval(function () {
+    plusSlides(1); // 自動前進到下一張幻燈片
+    }, 2000);  }// 2秒切換一次      
 
-$(document).ready(function () {  
- 
-        // 行程如果變化的時候 做改變  要學起來
-        $("input[name='行程']").change(function () {
-            if ($("#comeback").prop("checked")) {
-                $("#backday_label").show();
-                $("#backday").show();
-            } else {
-                // 選擇單程，隱藏回程日期
-                $("#backday_label").hide();
-                $("#backday").hide();
-            }
-        });
-    });
-
-</script>
-    <!-- 隱藏式問卷 -->
-    <div class="tab-content ">
-        <!-- 這裡先預設做動 -->
-        <div class="tab-pane bg-light" id="tickets">
-            <div class="">
-                <form action="">
-                    <table class=" ps-3 "  style="margin-left: 35%;">
-                        <thead><th style="column-span: 2;"><h3>機票</h3></th></thead>
-
-                        <tr><td><input type="radio" name="行程"  id="comeback" data-confirm="1" checked><label for="comeback">來回</label> <input  class="ms-5"type="radio" name="行程" id="go" data-confirm="0" ><label for="go" >單程</label></td>
-                            <td>
-                            </td>
-                            <td></td>
-                        </tr>                        
-                        <tr><td><label for="departure_0">出發地*</label></th><th><label for="destination_0">目的地*</label></td></tr>
-                        <br>
-                        <tr><td><select type="text" name="" id="departure_0">
-                            <option value="台北-桃園">台北-桃園</option>
-                            <option value="台北-松山">台北-松山</option>
-                            </td> 
-                            <td><select type="text" id="destination_0">                            
-                                <option value="東京">東京</option>
-                                <option value="大阪">大阪</option>
-                                <option value="沖繩">沖繩</option>
-                                <option value="首爾">首爾</option>
-                                <option value="曼谷">曼谷</option>
-                                <option value="香港">香港</option>
-                                <option value="福岡">福岡</option>
-                            </td></tr>
-                        <tr><td style="column-span: 2;"><h3>查詢選擇</h3></td></tr>
-                        <tr><td><label for="goday">出發日期*</label></td><td ><label id="backday_label" for="backday">回程日期*</label></td></tr>
-                        <br>
-                        <br>
-                        <tr><td><input type="date"  name="" id="goday"> <td><input type="date" name="" id="backday" ></td></tr>
-                        <tr><td style="column-span: 2;"><label for="cabin">艙等*</label></td></tr>                        
-                        <tr><td  style="column-span: 2;"><select type="text" id="cabin">
-                            <option value="商務艙">商務艙</option>
-                            <option value="經濟艙">經濟艙</option>
-
-
-                        </td></tr>
-                        <tr><td><label for="adult_quantity">大人 *(12歲以上)</label></td> 
-                            <td><label for="children_quantity">小孩 *(2-11)</label></td>
-                            <td><label for="baby_quantity">嬰兒 *(2歲以下)</label></td>                        
-                        </tr>
-                        <!-- 注意type要設定為button才不會傳出去 -->
-                        <tr><td><button class="btn btn-success" id="btn-plus1" type="button">+</button><input type="number" id="adult_quantity"  value="0">
-                            <button id="btn_minus" type="button" class="btn btn-success">-</button></td> 
-                            <td><button class="btn btn-success" id="btn-plus2" type="button">+</button><input type="number" id="children_quantity"  value="0">
-                                <button id="btn_minus1" type="button" class="btn btn-success" >-</button></td>
-                            <td><button class="btn btn-success" id="btn-plus3" type="button">+</button><input type="number" id="baby_quantity"   value="0">
-                                <button id="btn_minus2"  type="button" class="btn btn-success">-</button></td>                                                     
-                        </tr>
-                        <!-- 先不要 -->
-                         <!-- <tr><td class="" style="column-span: 2;">使用信用卡優惠</td></tr>
-                        <tr><td><input type="radio" name="card_choice" id="use_card"><label for="use_card">是</label></td><td><input type="radio" name="card_choice" id="no_card"><label for="no_card">否</label></td></tr> -->
-                            <!-- 隱藏的表單(信用卡優惠) --><!-- 
-                        <tr id="cupon" style="display: none; column-span: 2;"><td>國泰世華銀行
-                            <br>
-                                <input type="radio" name="discount" id="discount_95"> <label  for="discount_95">國泰世華長榮航空聯名無限卡/極致御璽卡/御璽卡年度95折購票優惠 </label> 
-                            <br>
-                                <input type="radio" name="discount" id="discount_90"> <label   for="discount_90">國泰世華長榮航空聯名極致無限卡年度購票9折優惠</label>  </td></tr> -->
-                                
-                                
-
-                        <tr><td colspan="3" style="text-align: center;"><a class="btn btn-success" href="#" id="book_button" >訂票</a></tr> 
-                    </table>
-
-                    <!-- +-的js 安插jquery -->
-                    <script type="text/javascript">
-                        // 做日期判斷
-                        
-                        // addEventListener增加監聽事件才能click
-                        function add() {
-                          document.getElementById("btn-plus1").addEventListener("click", function () {
-                            // 獲得當前數量值                            
-                            var currentQuantity = parseInt(document.getElementById("adult_quantity").value);                      
-                            // 增加數量並更新輸入框的值
-                            if (!isNaN(currentQuantity)) {
-                                document.getElementById("adult_quantity").value = currentQuantity + 1;
-                            } else {
-                                document.getElementById("adult_quantity").value = 1;
-                            }
-                          });
-                        }                      
-
-                        function add1() {
-                          document.getElementById("btn-plus2").addEventListener("click", function () {
-                            // 獲得當前數量值                            
-                            var currentQuantity = parseInt(document.getElementById("children_quantity").value);                      
-                            // 增加數量並更新輸入框的值
-                            if (!isNaN(currentQuantity)) {
-                                document.getElementById("children_quantity").value = currentQuantity + 1;
-                            } else {
-                                document.getElementById("children_quantity").value = 1;
-                            }
-                          });
-                        }      
-
-                        
-                        function add2() {
-                          document.getElementById("btn-plus3").addEventListener("click", function () {
-                            // 獲得當前數量值                            
-                            var currentQuantity = parseInt(document.getElementById("baby_quantity").value);                      
-                            // 增加數量並更新輸入框的值
-                            if (!isNaN(currentQuantity)) {
-                                document.getElementById("baby_quantity").value = currentQuantity + 1;
-                            } else {
-                                document.getElementById("baby_quantity").value = 1;
-                            }
-                          });
-                        } 
-                        
-                        function minus(){
-                            document.getElementById("btn_minus").addEventListener("click",function(){
-                            var currentQuantity  = parseInt(document.getElementById("adult_quantity").value);
-                            if(!isNaN(currentQuantity) && currentQuantity != 0 ){
-                                document.getElementById("adult_quantity").value = currentQuantity - 1;
-                            } else{
-                                document.getElementById("adult_quantity").value = 0 ;
-                            }
-                            })
-                        }
-
-                        function minus1(){
-                            document.getElementById("btn_minus1").addEventListener("click",function(){
-                            var currentQuantity  = parseInt(document.getElementById("children_quantity").value);
-                            if(!isNaN(currentQuantity) && currentQuantity != 0 ){
-                                document.getElementById("children_quantity").value = currentQuantity - 1;
-                            }else{
-                                document.getElementById("children_quantity").value = 0 ;
-
-                            }
-                            })
-                        }
-                        function minus2(){
-                            document.getElementById("btn_minus2").addEventListener("click",function(){
-                            var currentQuantity  = parseInt(document.getElementById("baby_quantity").value);
-                            if(!isNaN(currentQuantity) && currentQuantity != 0 ){
-                                document.getElementById("baby_quantity").value = currentQuantity - 1;
-                            }else{
-                                document.getElementById("baby_quantity").value = 0 ;
-                            }
-                            })
-                        }
-     
-
-                    //來回標籤
-                            function goonce() {
-                             document.getElementById("go").addEventListener("click", function () {             
-                             document.getElementById("backday_label").style.display = "none" ;
-                             document.getElementById("backday").style.display = "none" ;
-                            })};
-                             function comehome() {
-                             document.getElementById("comeback").addEventListener("click", function () {
-                             document.getElementById("backday_label").style.display = "table-row" ;
-                             document.getElementById("backday").style.display = "table-row" ;
-                            })};
-                                
-                        add();
-                        add1();       
-                        add2();
-                        minus();
-                        minus1();
-                        minus2();
-                        goonce() 
-                        comehome()
-                        //  判斷日期
-                        // 获取今天的日期  gpt 產生
-                            var today = new Date();
-                            var dd = today.getDate();
-                            var mm = today.getMonth() + 1; // 月份从0开始，所以要加1
-                            var yyyy = today.getFullYear();                         
-                        // 如果日期和月份是单数，前面添加0
-                            if (dd < 10) {
-                              dd = dd.toString().padStart(2, '0');
-                            }
-                            if (mm < 10) {
-                              mm = mm.toString().padStart(2, '0');
-                            }
-                        // 日期設置今天日期
-                            today = yyyy + '-' + mm + '-' + dd;
-                        // 日期输入
-                            var godayInput = document.getElementById("goday");
-                        // 出發日期最小值今天
-                            godayInput.setAttribute("min", today);
-                            // 回程日期最小為今天
-                            $(document).ready(function( ) {
-                                $("#backday").prop("min", today);
-                            });
-                        // 第二列表單的
-                            // 使用jquery
-                            $(document).ready( function(){
-                                $("#goday").val(today);
-                                $("#backday").val(today);
-                                $("#arrival_time").val(today);
-                                $("#arrival_time").prop("min", today);
-
-                            });                
-
-                            $("#goday").on("change", function () {
-    // 當出發日期改變時
-    const godayValue = new Date($("#goday").val());
-
-    // 更換回程日期的最小值
-    document.getElementById("backday").setAttribute("min", $("#goday").val());
-
-    // 如果回程日期早於出發日期，則將其設置為出發日期
-    const backdayValue = new Date($("#backday").val());
-    if (backdayValue < godayValue) {
-        $("#backday").val($("#goday").val());
+    startSlideShow(); // 啟動自動輪播    
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+        // 使用者操作後，重設自動輪播計時器
+        clearInterval(slideInterval);
+        startSlideShow();
+        // 開始新的自動輪播計時器
     }
-});
-                            
-                      </script>                     
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }  
+</script>
+
+
+
+
+
+
+
+
+
+
+    <!-- 隱藏式表單 -->   
+    <div class="container">
+        <div class="tab-content ">
+            <!-- 這裡先預設做動 -->
+            <div class="tab-pane bg-light" id="tickets">
+                <div class="">
+                    <form action="">
+                        <table class=" ps-3 "  style="margin-left: 25%;">
+                            <thead><th style="column-span: 2;"><h3>機票</h3></th></thead>
+    
+                            <tr><td><input type="radio" name="行程"  id="comeback" data-confirm="1" checked><label for="comeback">來回</label> <input  class="ms-5"type="radio" name="行程" id="go" data-confirm="0" ><label for="go" >單程</label></td>
+                                <td>
+                                </td>
+                                <td></td>
+                            </tr>                        
+                            <tr><td><label for="departure_0">出發地*</label></th><th><label for="destination_0">目的地*</label></td></tr>
+                            <br>
+                            <tr><td><select type="text" name="" id="departure_0">
+                                <option value="台北-桃園">台北-桃園</option>
+                                <option value="台北-松山">台北-松山</option>
+                                </td> 
+                                <td><select type="text" id="destination_0">                            
+                                    <option value="東京">東京</option>
+                                    <option value="大阪">大阪</option>
+                                    <option value="沖繩">沖繩</option>
+                                    <option value="首爾">首爾</option>
+                                    <option value="曼谷">曼谷</option>
+                                    <option value="香港">香港</option>
+                                    <option value="福岡">福岡</option>
+                                </td></tr>
+                            <tr><td style="column-span: 2;"><h3>查詢選擇</h3></td></tr>
+                            <tr><td><label for="goday">出發日期*</label></td><td ><label id="backday_label" for="backday">回程日期*</label></td></tr>
+                            <br>
+                            <br>
+                            <tr><td><input type="date"  name="" id="goday"> <td><input type="date" name="" id="backday" ></td></tr>
+                            <tr><td style="column-span: 2;"><label for="cabin">艙等*</label></td></tr>                        
+                            <tr><td  style="column-span: 2;"><select type="text" id="cabin">
+                                <option value="商務艙">商務艙</option>
+                                <option value="經濟艙">經濟艙</option>
+    
+    
+                            </td></tr>
+                            <tr><td><label for="adult_quantity">大人 *(12歲以上)</label></td> 
+                                <td><label for="children_quantity">小孩 *(2-11)</label></td>
+                                <td><label for="baby_quantity">嬰兒 *(2歲以下)</label></td>                        
+                            </tr>
+                            <!-- 注意type要設定為button才不會傳出去 -->
+                            <tr><td><button class="btn btn-success" id="btn-plus1" type="button">+</button><input type="number" id="adult_quantity"  value="0">
+                                <button id="btn_minus" type="button" class="btn btn-success">-</button></td> 
+                                <td><button class="btn btn-success" id="btn-plus2" type="button">+</button><input type="number" id="children_quantity"  value="0">
+                                    <button id="btn_minus1" type="button" class="btn btn-success" >-</button></td>
+                                <td><button class="btn btn-success" id="btn-plus3" type="button">+</button><input type="number" id="baby_quantity"   value="0">
+                                    <button id="btn_minus2"  type="button" class="btn btn-success">-</button></td>                                                     
+                            </tr>
+                            <!-- 先不要 -->
+                             <!-- <tr><td class="" style="column-span: 2;">使用信用卡優惠</td></tr>
+                            <tr><td><input type="radio" name="card_choice" id="use_card"><label for="use_card">是</label></td><td><input type="radio" name="card_choice" id="no_card"><label for="no_card">否</label></td></tr> -->
+                                <!-- 隱藏的表單(信用卡優惠) --><!-- 
+                            <tr id="cupon" style="display: none; column-span: 2;"><td>國泰世華銀行
+                                <br>
+                                    <input type="radio" name="discount" id="discount_95"> <label  for="discount_95">國泰世華長榮航空聯名無限卡/極致御璽卡/御璽卡年度95折購票優惠 </label> 
+                                <br>
+                                    <input type="radio" name="discount" id="discount_90"> <label   for="discount_90">國泰世華長榮航空聯名極致無限卡年度購票9折優惠</label>  </td></tr> -->
+                                    
+                                    
+    
+                            <tr><td colspan="3" style="text-align: center;"><a class="btn btn-success" href="#" id="book_button" >訂票</a></tr> 
+                        </table>
+    
+                        
+                    </form>
+                </div>
+            </div>
+    
+            <!-- 表格2 -->
+            <div class="tab-pane bg-light" id="fligt_status">
+                <form action="" >
+                <table class=" ps-2"  style="margin-left: 35%;">   
+                    <thead><th for="departure"><h3>出發地與目的地</h3></th></thead>            
+                    <tr><td><label for="departure">出發地*</label></td><td><label for="destination">目的地*</label></td></tr>
+                    <br>
+                    <tr><td><select type="text" name="" id="departure"> 
+                            <option value="台北-桃園">台北-桃園</option>
+                            <option value="台北-松山">台北-松山</option>d> 
+                            <td><select type="text" id="destination">
+                            <option value="東京">東京</option>
+                            <option value="大阪">大阪</option>
+                            <option value="沖繩">沖繩</option>
+                            <option value="首爾">首爾</option>
+                            <option value="曼谷">曼谷</option>
+                            <option value="香港">香港</option>
+                            <option value="福岡">福岡</option>                    
+                        </td>
+                    </tr>
+                    <tr><td style="column-span: 2;"><h3>查詢選擇</h3></td></tr>
+                    <tr><td><label for="goal">航班出發/抵達*</label></td><td><label for="arrival_time">日期*</label></td></tr>
+                    <br>
+                    <tr><td><select type="text" name="" id="goal"> 
+                        <option value="出發">出發</option>
+                        <option value="抵達">抵達</option>                   
+                        <td><input type="date" name="" id="arrival_time"></td></tr>
+                    <tr><td><a class="btn btn-success" href="" id="Search_Flight">搜尋</a></tr>
+                </table>
                 </form>
             </div>
-        </div>
-
-
-            <!-- 搜尋需要用js -->       
-
-        <!-- 表格2 -->
-        <div class="tab-pane bg-light" id="fligt_status">
-            <form action="" class="border">
-            <table class=" ps-2"  style="margin-left: 35%;">   
-                <thead><th for="departure"><h3>出發地與目的地</h3></th></thead>            
-                <tr><td><label for="departure">出發地*</label></td><td><label for="destination">目的地*</label></td></tr>
-                <br>
-                <tr><td><select type="text" name="" id="departure"> 
-                        <option value="台北-桃園">台北-桃園</option>
-                        <option value="台北-松山">台北-松山</option>d> 
-                        <td><select type="text" id="destination">
-                        <option value="東京">東京</option>
-                        <option value="大阪">大阪</option>
-                        <option value="沖繩">沖繩</option>
-                        <option value="首爾">首爾</option>
-                        <option value="曼谷">曼谷</option>
-                        <option value="香港">香港</option>
-                        <option value="福岡">福岡</option>                    
-                    </td>
-                </tr>
-                <tr><td style="column-span: 2;"><h3>查詢選擇</h3></td></tr>
-                <tr><td><label for="goal">航班出發/抵達*</label></td><td><label for="arrival_time">日期*</label></td></tr>
-                <br>
-                <tr><td><select type="text" name="" id="goal"> 
-                    <option value="出發">出發</option>
-                    <option value="抵達">抵達</option>                   
-                    <td><input type="date" name="" id="arrival_time"></td></tr>
-                <tr><td><a class="btn btn-success" href="" id="Search_Flight">搜尋</a></tr>
-            </table>
-            </form>
-        </div>
-        <!-- 表格3 -->
-        <div class="tab-pane bg-light" id="check_in">
-            <form action="">
-            <table class=" ps-2" style="margin-left: 35%;"> 
-                <thead><th style="column-span:3;"><h3>訂位代號/機票號碼登入</h3></th></thead>            
-                <tr><td style="column-span: 3;"><label for="vicket_number">訂位代號/機票號碼/電子雜項交換券</label></td></tr>
-                <br>
-                <tr><td style="column-span: 3;"><p> 請輸入訂位代號共6位數字或英文字母，亦可輸入機票或電子雜項交換券號碼共 13位數字。</p></td></tr>
-                <tr><td><input type="text" id="vicket_number" style="column-span: 3;"></td></tr>
-                <br><br>
-                <tr><td style="column-span: 3;">
-                        <label for="family_name">姓 *</label>
-                        <p>(例如:陳禹暘，[姓]填入CHEN)</p>
-                        <input type="text" name="" id="family_name" required>
-                     </td>
-                </tr>
-                <br><br>
-                <tr><td style="column-span: 3;">
-                    <label for="first_name">名*</label>
-                    <p>(例如:陳禹暘，[名]填入YUYANG。若您的訂位姓名只有「姓」，請直接略過此欄位。)</p>
-                    <input type="text" name="" id="first_name" required >
-                    </td>
-                </tr>  
-                <tr><td class="center"><a class="btn btn-success" id="check_vicket">報到</a></tr>            
-            </table>
-            </form>
-         </div>
-        </div>
+            <!-- 表格3 -->
+            <div class="tab-pane bg-light" id="check_in">
+                <form action="">
+                <table class=" ps-2" style="margin-left: 35%;"> 
+                    <thead><th style="column-span:3;"><h3>訂位代號/機票號碼登入</h3></th></thead>            
+                    <tr><td style="column-span: 3;"><label for="vicket_number">訂位代號/機票號碼/電子雜項交換券</label></td></tr>
+                    <br>
+                    <tr><td style="column-span: 3;"><p> 請輸入訂位代號共6位數字或英文字母，亦可輸入機票或電子雜項交換券號碼共 13位數字。</p></td></tr>
+                    <tr><td><input type="text" id="vicket_number" style="column-span: 3;"></td></tr>
+                    <br><br>
+                    <tr><td style="column-span: 3;">
+                            <label for="family_name">姓 *</label>
+                            <p>(例如:陳禹暘，[姓]填入CHEN)</p>
+                            <input type="text" name="" id="family_name" required>
+                         </td>
+                    </tr>
+                    <br><br>
+                    <tr><td style="column-span: 3;">
+                        <label for="first_name">名*</label>
+                        <p>(例如:陳禹暘，[名]填入YUYANG。若您的訂位姓名只有「姓」，請直接略過此欄位。)</p>
+                        <input type="text" name="" id="first_name" required >
+                        </td>
+                    </tr>  
+                    <tr><td class="center"><a class="btn btn-success" id="check_vicket">報到</a></tr>            
+                </table>
+                </form>
+             </div>
+            </div>
+    </div>
 
 
 
 
 
-    <hr>
-    <!-- 智能服務區 小超人 -->
-    <a href="https://evachat.evaair.com/EVAAIRWebChat/index.html?fromTitle=%0A%20%0A%20%20%20%20%20%20%20%20%E9%A6%96%E9%A0%81%20-%20%E9%95%B7%E6%A6%AE%E8%88%AA%E7%A9%BA%20%7C%20%E5%8F%B0%E7%81%A3%20Taiwan%20(%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87)%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20&fromDevice=WEB_SITE&fromUrl=https://www.evaair.com/zh-tw/index.html&tenantCode=23225229-01&r=2020120301"
-        target="_blank">
-
-        <figure id="smart" class="position-fixed bottom-0 end-0">
-            <img src="./img/bot.gif" style="object-fit: contain; height: 70px;
-                width:70px; z-index: 1;">
-            <figcaption style="object-fit: contain; font-size:17px; color: black;">
-                智能服務
-            </figcaption>
-        </figure>
-    </a>
 
 
+
+
+
+
+<!-- 返回頂部按鈕 -->
+<a href="#top" target="" style="cursor: pointer;">
+    <figure id="smart" class="position-fixed bottom-0 end-0">
+        <img src="./img/bot.gif" style="object-fit: contain; height: 70px; width:70px; z-index: 1;"> 
+    <figcaption style="font-size:17px; text-align: center;">至頂</figcaption>
+    </figure>
+</a>
+<script type="text/javascript" src="./js資料庫/向上移動.js"></script>
+
+
+<!-- 熱門服務區 -->
     <div class="row">
         <div class="col-12">
             <h2 style="text-align: center;">最新熱門經濟艙來回優惠</h2>
@@ -582,7 +528,7 @@ $(document).ready(function () {
                     <img class="img-fluid" src="./img/首爾.jpg" alt="景點說明" style="object-fit: contain;">
                     <a href="hot.html?departure_get=台北-桃園&destination_get=首爾">
                         <figcaption class="textt"><b>台北(TPE)-首爾(ICN)</b>
-                            <div>TWD 12000起</div>
+                            <div class="orange">TWD 12000起</div>
                         </figcaption>
                     </a>
                 </figure>
@@ -594,7 +540,7 @@ $(document).ready(function () {
                     <img class="img-fluid" src="./img/大阪.jpg" alt="景點說明" style="object-fit: contain; ">
                     <a              href="hot.html?departure_get=台北-桃園&destination_get=大阪">
                         <figcaption class="textt"><b>台北(TPE)-大阪(KTX)</b>
-                            <div>TWD 15438</div>
+                            <div class="orange">TWD 15438</div>
                         </figcaption>
                     </a>
                 </figure>
@@ -692,6 +638,39 @@ $(document).ready(function () {
                 </tr>
     </table>
 
+<!-- 做行程選單變化 -->
+    <script>
+        $(document).ready(function () {          
+                // 行程如果變化的時候 做改變  要學起來
+                $("input[name='行程']").change(function () {
+                    if ($("#comeback").prop("checked")) {
+                        $("#backday_label").show();
+                        $("#backday").show();
+                    } else {
+                        // 選擇單程，隱藏回程日期
+                        $("#backday_label").hide();
+                        $("#backday").hide();
+                    }
+                });
+            });        
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script>
 
 // 報到按鈕登入
@@ -785,12 +764,161 @@ $("#Search_Flight").on("click",function(event){
 
 
 
-  </script>
 
-        
-   
+
+  </script>
  <!-- 這個是關於登入切換的js檔案 -->
-<script type="text/javascript" src="/nav.js"></script>
+        <!-- 時間+-的js 安插jquery -->
+        <script type="text/javascript">
+            // 做日期判斷
+            
+            // addEventListener增加監聽事件才能click
+            function add() {
+              document.getElementById("btn-plus1").addEventListener("click", function () {
+                // 獲得當前數量值                            
+                var currentQuantity = parseInt(document.getElementById("adult_quantity").value);                      
+                // 增加數量並更新輸入框的值
+                if (!isNaN(currentQuantity)) {
+                    document.getElementById("adult_quantity").value = currentQuantity + 1;
+                } else {
+                    document.getElementById("adult_quantity").value = 1;
+                }
+              });
+            }                      
+
+            function add1() {
+              document.getElementById("btn-plus2").addEventListener("click", function () {
+                // 獲得當前數量值                            
+                var currentQuantity = parseInt(document.getElementById("children_quantity").value);                      
+                // 增加數量並更新輸入框的值
+                if (!isNaN(currentQuantity)) {
+                    document.getElementById("children_quantity").value = currentQuantity + 1;
+                } else {
+                    document.getElementById("children_quantity").value = 1;
+                }
+              });
+            }      
+
+            
+            function add2() {
+              document.getElementById("btn-plus3").addEventListener("click", function () {
+                // 獲得當前數量值                            
+                var currentQuantity = parseInt(document.getElementById("baby_quantity").value);                      
+                // 增加數量並更新輸入框的值
+                if (!isNaN(currentQuantity)) {
+                    document.getElementById("baby_quantity").value = currentQuantity + 1;
+                } else {
+                    document.getElementById("baby_quantity").value = 1;
+                }
+              });
+            } 
+            
+            function minus(){
+                document.getElementById("btn_minus").addEventListener("click",function(){
+                var currentQuantity  = parseInt(document.getElementById("adult_quantity").value);
+                if(!isNaN(currentQuantity) && currentQuantity != 0 ){
+                    document.getElementById("adult_quantity").value = currentQuantity - 1;
+                } else{
+                    document.getElementById("adult_quantity").value = 0 ;
+                }
+                })
+            }
+
+            function minus1(){
+                document.getElementById("btn_minus1").addEventListener("click",function(){
+                var currentQuantity  = parseInt(document.getElementById("children_quantity").value);
+                if(!isNaN(currentQuantity) && currentQuantity != 0 ){
+                    document.getElementById("children_quantity").value = currentQuantity - 1;
+                }else{
+                    document.getElementById("children_quantity").value = 0 ;
+
+                }
+                })
+            }
+            function minus2(){
+                document.getElementById("btn_minus2").addEventListener("click",function(){
+                var currentQuantity  = parseInt(document.getElementById("baby_quantity").value);
+                if(!isNaN(currentQuantity) && currentQuantity != 0 ){
+                    document.getElementById("baby_quantity").value = currentQuantity - 1;
+                }else{
+                    document.getElementById("baby_quantity").value = 0 ;
+                }
+                })
+            }
+
+
+        //來回標籤
+                function goonce() {
+                 document.getElementById("go").addEventListener("click", function () {             
+                 document.getElementById("backday_label").style.display = "none" ;
+                 document.getElementById("backday").style.display = "none" ;
+                })};
+                 function comehome() {
+                 document.getElementById("comeback").addEventListener("click", function () {
+                 document.getElementById("backday_label").style.display = "table-row" ;
+                 document.getElementById("backday").style.display = "table-row" ;
+                })};
+                    
+            add();
+            add1();       
+            add2();
+            minus();
+            minus1();
+            minus2();
+            goonce() 
+            comehome()
+            //  判斷日期
+            // 获取今天的日期  gpt 產生
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth() + 1; // 月份从0开始，所以要加1
+                var yyyy = today.getFullYear();                         
+            // 如果日期和月份是单数，前面添加0
+                if (dd < 10) {
+                  dd = dd.toString().padStart(2, '0');
+                }
+                if (mm < 10) {
+                  mm = mm.toString().padStart(2, '0');
+                }
+            // 日期設置今天日期
+                today = yyyy + '-' + mm + '-' + dd;
+            // 日期输入
+                var godayInput = document.getElementById("goday");
+            // 出發日期最小值今天
+                godayInput.setAttribute("min", today);
+                // 回程日期最小為今天
+                $(document).ready(function( ) {
+                    $("#backday").prop("min", today);
+                });
+            // 第二列表單的
+                // 使用jquery
+                $(document).ready( function(){
+                    $("#goday").val(today);
+                    $("#backday").val(today);
+                    $("#arrival_time").val(today);
+                    $("#arrival_time").prop("min", today);
+
+                });                
+
+                $("#goday").on("change", function () {
+// 當出發日期改變時
+const godayValue = new Date($("#goday").val());
+
+// 更換回程日期的最小值
+document.getElementById("backday").setAttribute("min", $("#goday").val());
+
+// 如果回程日期早於出發日期，則將其設置為出發日期
+const backdayValue = new Date($("#backday").val());
+if (backdayValue < godayValue) {
+$("#backday").val($("#goday").val());
+}
+});
+                
+                
+</script>                     
+   
+<script type="text/javascript" src="nav.js"></script>
+
  
 
     

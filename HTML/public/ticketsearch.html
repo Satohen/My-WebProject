@@ -32,37 +32,11 @@
 >
   <link rel="stylesheet" href="./animation.css">
   <title>航空首頁</title>
-    <!-- 這個是登入的css樣式 -->
-<style>
-  .user-menu {
-    position: absolute;
-    display: inline-block;      
-  }
+  
+    <!-- 安插登入按鈕的css -->
+    <link rel="stylesheet" href="./個樣式css資料/登入按鈕.css">
 
-  #user-info {
-    cursor: pointer;
-  }
 
-  #dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  #dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-
-  #dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-</style>
 
 </head>
 
@@ -137,12 +111,11 @@
 
 
     <!-- 登入及註冊 -->
-
-    <nav id="loginop" style="margin-left: 600px; margin-bottom: 25px;  ">
+    <nav id="loginop" style="margin-left: 560px; margin-bottom: 40px;  ">
       <div class="user-menu">
         <!-- 使用者名稱與下拉箭頭 -->
-        <div id="user-info">
-          <span id="username">使用者名稱</span>
+        <div id="user-info" class="btn">
+          <span id="username"  >使用者名稱</span>
           <span id="arrow">&#9660;</span>
         </div>
         <!-- 下拉式選單 -->
@@ -160,7 +133,7 @@
       <a href="./regis.html" class="btn">註冊</a>
     </div>
 </nav>
-  <hr>
+
       <!-- 選擇欄位 -->     
       <!-- 顯示欄位 -->
       <div class="" style="margin-top: 60px; margin-left: 10%;">
@@ -270,7 +243,15 @@
 
 
 <!-- 這個是關於登入切換的js檔案 -->
-<script type="text/javascript" src="/nav.js"></script>
+<script type="text/javascript" src="nav.js"></script>
+<!-- 返回頂部按鈕 -->
+<a href="#top" target="" style="cursor: pointer;">
+  <figure id="smart" class="position-fixed bottom-0 end-0">
+      <img src="./img/bot.gif" style="object-fit: contain; height: 70px; width:70px; z-index: 1;"> 
+  <figcaption style="font-size:17px; text-align: center;">至頂</figcaption>
+  </figure>
+</a>
+<script type="text/javascript" src="./js資料庫/向上移動.js"></script>
  
 
 </body>
