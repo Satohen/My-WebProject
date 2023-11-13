@@ -452,6 +452,18 @@
         $("#paymentInfoForm").submit(function (event) {
           event.preventDefault(); // 阻止表单默认提交行为
 
+          // 當用戶已登入自動填入
+          var currentUser = JSON.parse(localStorage.getItem("currentUser"))
+          var userName = currentUser.userchfname + currentUser.userchname
+          if(currentUser){
+
+            $("#name_put").val(userName)
+            $("#gender").val(currentUser.gender)
+            $("#email").val(currentUser.email)
+            $("#address").val(currentUser.address);
+
+          }
+
           // 收集表单数据
           var orderData = {
             name: $("#name_put").val(),
