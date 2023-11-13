@@ -37,15 +37,12 @@
 
   <!-- 安插jquery -->
   <script type="text/javascript" src="jquery.js"></script>
-  <script type="text/javascript">
-    // 程式放在這裏
-    // $(document).ready(function(){
-    //     $("#btn-plus1").click(function(){
-    //         $("#adult_quantity").innerHTML++;
-    //     })
-    // })
-  </script>
- 
+  <!-- 錯誤訊息 -->
+     <style>
+      .error-message {
+          color: red;
+      }
+  </style>
 </head>
 
 <body>
@@ -154,36 +151,36 @@
                     <p class="lead text-center">歡迎您註冊成為會員</p>
                     <form>
                         <div class="mb-3">
-                            <label for="email_0" class="form-label">E-Mail帳號 *</label>
+                            <label for="email_0" class="form-label">E-Mail帳號 *</label><span id="emailError" class="error-message" ></span>
                             <input type="email" class="form-control" id="email_0" placeholder="請輸入您的電子郵件">
                         </div>
                         <div class="mb-3">
-                            <label for="password_1" class="form-label">設定密碼 *</label>
+                            <label for="password_1" class="form-label">設定密碼 *</label><span id="password_error" class="error-message" ></span>
                             <input type="password" class="form-control" id="password_1" placeholder="請設定密碼">
                         </div>
                         <div class="mb-3">
-                            <label for="password_2" class="form-label">確認密碼 *</label>
+                            <label for="password_2" class="form-label">確認密碼 *</label><span id="depassword_error" class="error-message" ></span>
                             <input type="password" class="form-control" id="password_2" placeholder="再次輸入密碼">
                         </div>
                         <h2 class="h4 mb-3">個人資料</h2>
                         <div class="mb-3">
-                            <label for="en-fname" class="form-label">英文姓名(與護照一致) *</label>
+                            <label for="en-fname" class="form-label">英文姓名(與護照一致) *</label><span id="en_fname_error" class="error-message" ></span>
                             <input type="text" class="form-control" id="en-fname" placeholder="姓氏">
                         </div>
                         <div class="mb-3">
-                            <label for="en_name" class="form-label">英文名+中間名 (與護照一致) *</label>
+                            <label for="en_name" class="form-label">英文名+中間名 (與護照一致) *</label><span id="en_name_error" class="error-message" ></span>
                             <input type="text" class="form-control" id="en_name" placeholder="名字+中間名">
                         </div>
                         <div class="mb-3">
                             <label for="ch_fname" class="form-label">中文姓*</label>
-                            <input type="text" class="form-control" id="ch_fname" placeholder="中文姓">
+                            <input type="text" class="form-control" id="ch_fname" placeholder="中文姓"><span id="ch_fname_error" class="error-message" ></span>
                         </div>
                         <div class="mb-3">
-                            <label for="ch_name" class="form-label">中文名*</label>
+                            <label for="ch_name" class="form-label">中文名*</label><span id="ch_name_error" class="error-message" ></span>
                             <input type="text" class="form-control" id="ch_name" placeholder="中文名">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">性別*</label><br>
+                          <label class="form-label">性別*</label><span id="gender_error" class="error-message" ></span><br>
                           <div class="form-check form-check-inline">
                             <input type="radio" name="sex" value="男" class="form-check-input" id="male">
                             <label for="male" class="form-check-label">男性</label>
@@ -194,7 +191,7 @@
                           </div>
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">生日*</label><br>
+                          <label class="form-label">生日*</label><span id="birth_error" class="error-message" ></span><br><br>
                           <div class="d-flex justify-content-start">
                             <select name="" id="year" class="form-select me-1" style="width: auto;">
                               <!-- 年份選項 -->
@@ -206,11 +203,10 @@
                               <!-- 日選項 -->
                             </select>
                           </div>
-                        </div>
-                        
+                        </div>                        
                       <div class="mb-3">
                         <h3>手機號碼</h3>
-                        <label for="phone_number" class="form-label">手機號碼 *</label>
+                        <label for="phone_number" class="form-label">手機號碼 *</label><span id="phone_number_error" class="error-message" ></span><br>
                         <input type="text" class="form-control" id="phone_number" placeholder="09********">
                     </div>                
                     <div class="d-grid gap-2">
@@ -253,22 +249,20 @@
 
 
 
-        // GPT生成
-        function isValidEmail(email) {
-          const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
-          return emailRegex.test(email);
-        }
+  
 
-        function validateEmail() {
-          const email = document.getElementById("email_0").value;
-          if (isValidEmail(email)) {
-            document.getElementById("error-message").textContent = "email格式有效";
-          } else {
-            document.getElementById("error-message").textContent = "email格式無效";
-          }
-        }
-        // 在输入框失去焦点时进行验证
-        document.getElementById("email_0").addEventListener("blur", validateEmail);
+
+
+
+
+
+
+          
+   
+   
+
+
+
 
 
 
@@ -277,8 +271,67 @@
           $("#regi_btn").on("click", function (event) {
             event.preventDefault(); // 阻止表单默认提交行为
 
-            $.post("/registe/post", function (e) {
 
+
+
+
+
+
+
+
+
+
+
+            // 傳送表單資料
+        $.post("/registe/post", function (e) {
+          // 檢測密碼判斷資料是否正確
+          function isValidEmail(email) {
+          const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+          return emailRegex.test(email);
+        }       
+
+          // 檢查 Email 格式
+          if (!isValidEmail($("#email_0").val())) {          
+            $("#emailError").text("非email格式/未輸入");
+            return; // 結束函式，不提交表單
+           }  
+        else {
+          $("#emailError").text(""); // 清除錯誤訊息
+          }
+
+          
+          // 檢查密碼格式不能小於六個字
+          if ($("#password_1").val().length < 6) {          
+            $("#password_error").text("密碼長度不足");
+             return; // 結束函式，不提交表單
+           }  
+        else {
+          $("#password_error").text("");// 清除錯誤訊息
+          }
+
+          // 檢查密碼是否與驗證密碼相同
+          if ($("#password_1").val() !== $("#password_2").val()) {
+            $("#depassword_error").text("驗證密碼與密碼不相同");
+            return;
+          }
+          else{
+            $("#depassword_error").text("");//後面不再追述        
+
+          }
+
+
+          // 檢查所有欄位是否填寫
+          if (!$("#en-fname").val() || !$("#en_name").val() || !$("#ch_fname").val() || 
+          !$("#ch_name").val()|| !$("input[name='sex']:checked").val() || 
+          !$("#year").val() || !$("#month").val() || !$("#day").val() || 
+           !$("#phone_number").val())
+          {
+            alert("必填資料不可為空");
+    
+   
+        return; // 結束函式，不提交表單
+          }
+                 
 
               // 男女判別
               var genderValue = $("input[name='sex']:checked").val();
@@ -313,6 +366,16 @@
                   alert("訂單創建失敗：" + error);
                 }
               });
+
+
+
+
+
+
+
+
+        
+
             });
           })
 
