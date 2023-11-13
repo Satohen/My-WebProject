@@ -1,97 +1,53 @@
 [
 	{
-		"userfirstname": "Houng",
-		"userlastname": "Wei-ZE",
-		"userchfname": "黃",
-		"userchname": "偉哲",
-		"gender": "男",
-		"password": "123456",
-		"email": "cs135792716@gmail.com",
-		"birth": "1977217",
-		"phone": "0987654321"
-	},
-	{},
-	{
-		"userfirstname": "IKEA",
-		"userlastname": "IKEA",
-		"userchfname": "奇雅",
-		"userchname": "依",
-		"gender": "女",
-		"password": "123",
-		"email": "s123456@gmail.com",
-		"birth": "19531231",
-		"phone": "0932323232"
-	},
-	{},
-	{
-		"userfirstname": "Liu",
-		"userlastname": "Wei-Hen",
-		"userchfname": "奇雅",
-		"userchname": "林",
-		"gender": "女",
-		"password": "12",
-		"email": "s123@gmail.com",
-		"birth": "19611225",
-		"phone": "092112121"
+		"cardID": "683781",
+		"mileage": "",
+		"fligtcount": "",
+		"ticket": ""
 	},
 	{
-		"cardID": "952809"
-	},
-	{
-		"userfirstname": "Li",
-		"userlastname": "亞齊",
-		"userchfname": "Yagi",
-		"userchname": "李",
-		"gender": "女",
-		"password": "1",
-		"email": "s1@gmail.com",
-		"birth": "1921929",
-		"phone": "09486486",
-		"cardID": "367950"
-	},
-	{
-		"cardID": "578144"
-	},
-	{
-		"userfirstname": "XI",
-		"userlastname": "WEIHEN",
-		"userchfname": "席",
-		"userchname": "韋亨",
-		"gender": "男",
-		"password": "12",
-		"email": "s12@gmail.com",
-		"birth": "19181119",
-		"phone": "0912312345",
-		"cardID": "281918"
-	},
-	{
-		"cardID": "237109"
-	},
-	{
-		"userfirstname": "Wu",
-		"userlastname": "EME",
-		"userchfname": "吳",
-		"userchname": "宜美",
-		"gender": "女",
-		"password": "123",
-		"email": "bachi123@gmail.com",
-		"birth": "196171",
-		"phone": "0987987987",
-		"cardID": "504366"
-	},
-	{
-		"cardID": "123321"
-	},
-	{
-		"userfirstname": "Lin",
-		"userlastname": "Chen-Wei",
+		"userfirstname": "liu",
+		"userlastname": "韋亨",
 		"userchfname": "林",
-		"userchname": "成偉",
+		"userchname": "狗狗",
 		"gender": "男",
 		"password": "123",
-		"email": "test123@gmail.com",
-		"birth": "19881220",
-		"phone": "0928288288",
-		"cardID": "773127"
+		"email": "cs135792716@gmail.com",
+		"birth": "197611",
+		"phone": "9123456",
+		"cardID": "683781",
+		"mileage": 3832,
+		"fligtcount": 4,
+		"ticket": {
+			"vicketId": "8506ec40-81f8-11ee-8195-c7e080cec7fa",
+			"bookdate": "Mon Nov 13 2023 15:44:47 GMT+0800 (台北標準時間)",
+			"orderId": 1699861487876,
+			"name": "劉韋亨",
+			"gender": "男",
+			"email": "cs135792716@gmail.com",
+			"address": "ADCSAFSF",
+			"cardNumber": "123",
+			"expirationDate": "123",
+			"cvv": "123",
+			"flightInfo": {
+				"godate": "2023年11月13日星期一",
+				"backdate": "2023年11月13日星期一",
+				"goairport": "07:50桃園機場",
+				"backairport": "07:50成田機場",
+				"godestination": "12:00成田機場",
+				"backdestination": "12:00桃園機場",
+				"gocabin": "商務艙 基本 Basic",
+				"backcabin": "商務艙 基本 Basic",
+				"tickprice_1": "\n                  TWD 18082\n                ",
+				"tickprice_2": "\n                  TWD 18082\n                ",
+				"total_price": "72328"
+			},
+			"AD": "2",
+			"CH": "0",
+			"BA": "0",
+			"ticketype": "2個航段",
+			"cabintype_1": "商務艙 基本 Basic",
+			"cabintype_2": "商務艙 基本 Basic"
+		}
 	}
 ]

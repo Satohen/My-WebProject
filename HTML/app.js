@@ -167,7 +167,6 @@ app.get("/order/book/:id", function (req, res) {
 
 // 給一個亂數卡號
 const usedCardIDs = [];
-
 function generateUniqueCardID() {
   // 生成一个6位数的随机卡号
   const cardID = Math.floor(Math.random() * 900000) + 100000;
@@ -176,15 +175,13 @@ function generateUniqueCardID() {
   if (usedCardIDs.includes(cardID)) {
     return generateUniqueCardID();
   }
-
   // 将新生成的卡号加入已使用列表
   usedCardIDs.push(cardID);
-
   return cardID.toString();
 }
 
 // 註冊的資料傳輸
-
+var cardID = generateUniqueCardID() // 使用生成的卡号
 app.post("/registe/post", function (req, res) {
   // 獲取 req前端 所取得的訊息
   var userData = {
@@ -197,7 +194,10 @@ app.post("/registe/post", function (req, res) {
     email: req.body.email,
     birth: req.body.birth,
     phone: req.body.phone,
-    cardID: generateUniqueCardID(), // 使用生成的卡号
+    cardID: cardID,
+    mileage: "",
+    fligtcount:"",
+    ticket:""
   };
 
   //儲存到json文件
@@ -254,10 +254,13 @@ app.put("/profileChange", function (req, res) {
   var data = fs.readFileSync("user.json");
   var users = JSON.parse(data);
   var username = req.body.email;
-
   var userfind = users.find((u) => u.email === username);
+  // var total_mileage = parseInt(userfind.mileage) + parseInt(req.body.mileage);
+  // var total_fligtcount = parseInt(userfind.fligtcount)+ parseInt(fligtcount);
+  // console.log(total_mileage);
+
   if (userfind) {
-    // 找到匹配的用户，替换整个用户对象为请求中的数据
+    // 找到匹配的用户，替换整个用户对象為请求中的数据
     userfind.userfirstname = req.body.userfirstname || userfind.userfirstname;
     userfind.userlastname = req.body.userlastname || userfind.userlastname;
     userfind.userchfname = req.body.userchfname || userfind.userchfname;
@@ -265,11 +268,49 @@ app.put("/profileChange", function (req, res) {
     userfind.email = req.body.email || userfind.email;
     userfind.phone = req.body.phone || userfind.phone;
     userfind.password = req.body.password || userfind.password;
+    // 這裡是買票的訊息 加入里程
+    userfind.mileage = (parseInt(userfind.mileage)  || 0) + (parseInt(req.body.mileage)  || 0);
+    userfind.fligtcount = (parseInt(userfind.fligtcount)   || 0) + ( parseInt(req.body.fligtcount ) || 0);
+    userfind.ticket = req.body.item || userfind.ticket;
 
     fs.writeFileSync("user.json", JSON.stringify(users, null, "\t"));
     res.json({ success: true, message: "個人資料更新成功" });
   } else {
     // 用户名和密码不匹配，返回失败响应
     res.json({ success: false, message: "更新失敗" });
+  }
+});
+
+
+
+// 刪除訂單功能
+app.delete("/bookinfo/delete", function (req, res) {
+  var data = fs.readFileSync("bookinfo.json");
+  var bookinfo = JSON.parse(data);
+  var bookId = req.body.deleteOID; // 取得從HTTP請求中傳遞的目的地代碼參數
+  var bookvid = req.body.deleteVID;
+
+  var selectedOrder = bookinfo.findIndex(
+    (order) => order.vicketId === bookvid || order.orderId.toString() === bookId
+  );
+
+
+  console.log(selectedOrder)
+
+  if (selectedOrder) {
+    // 找到了要刪除的訂單，獲取它的索引   
+
+    // 從數組中刪除該訂單
+    bookinfo.splice(selectedIndex, 1);
+
+
+    // 將更新後的數據寫回文件
+    fs.writeFileSync("bookinfo.json", JSON.stringify(bookinfo, null, "\t"));
+
+    // 發送成功的回應
+    res.send("訂單已刪除");
+  } else {
+    // 如果找不到要刪除的訂單，返回相應的錯誤信息
+    res.status(404).send("找不到指定的訂單");
   }
 });

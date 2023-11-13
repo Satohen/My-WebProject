@@ -1,6 +1,6 @@
 /* 登入按鈕的css*/
 .user-menu {
-  position: absolute;
+  position: relative;
   display: inline-block;
 }
 
@@ -31,4 +31,9 @@
 .btn {
   box-shadow: 2px 2px 5px #aaaaaa;
   border: 1px solid #28a745;
+}
+
+#loginop{
+   margin-left: 490px;
+   margin-bottom: 0px; 
 }

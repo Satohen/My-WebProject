@@ -15,8 +15,8 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
     <!-- 網頁標題icon -->
-    <link rel="icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="./長榮航空img/長榮小icon.png" type="image/x-icon" />
+    <link rel="icon" href="./長榮航空img/unicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./長榮航空img/unicon.png" type="image/x-icon" />
     <!-- 安插jquery -->
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript">
@@ -24,82 +24,82 @@
     </script>
 
 
-   
+
     <!-- 安插登入按鈕的css -->
     <link rel="stylesheet" href="./個樣式css資料/登入按鈕.css">
 
 
     <!-- 會員表格的css -->
-    <style>.member-card .card-image {
-        width: 50%;
-        height: auto;
-    }
-    
-    .promotion-section, .progress-section {
-        background: #f8f9fa;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0,0,0,.1);
-    }
-    
-    .progress-bar {
-        background-color: #28a745;
-        transition: width 0.6s ease;
-    }
-    
-    .btn-success {
-        color: #fff;
-        background-color: #28a745;
-        border-color: #28a745;
-    }
-    
-    .btn-success:hover {
-        color: #fff;
-        background-color: #218838;
-        border-color: #1e7e34;
-    }
-    
-    .btn-primary {
-        color: #fff;
-        background-color: #007bff;
-        border-color: #007bff;
-    }
-    
-    .btn-primary:hover {
-        color: #fff;
-        background-color: #0069d9;
-        border-color: #0062cc;
-    }
+    <style>
+        .member-card .card-image {
+            width: 50%;
+            height: auto;
+        }
+
+        .promotion-section,
+        .progress-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
+        }
+
+        .progress-bar {
+            background-color: #28a745;
+            transition: width 0.6s ease;
+        }
+
+        .btn-success {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-success:hover {
+            color: #fff;
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
     </style>
-        <!-- /* 會員資料卡片風格 */ -->
- <style>
+    <!-- /* 會員資料卡片風格 */ -->
+    <style>
+        .card {
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+        }
 
-.card {
-  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
-}
+        .card-header {
+            background-color: #f7f7f7;
+        }
 
-.card-header {
-  background-color: #f7f7f7;
-}
+        .form-label {
+            font-weight: bold;
+        }
 
-.form-label {
-  font-weight: bold;
-}
+        .form-control {
+            border-radius: 0.25rem;
+        }
 
-.form-control {
-  border-radius: 0.25rem;
-}
+        #updateProfile {
+            width: 50%;
+            padding: 0.375rem 0.75rem;
+        }
 
-#updateProfile {
-  width: 50%;
-  padding: 0.375rem 0.75rem;
-}
-
-/* 顯示密碼的切換 */
-.toggle-password {
-  cursor: pointer;
-}
-
+        /* 顯示密碼的切換 */
+        .toggle-password {
+            cursor: pointer;
+        }
     </style>
 
 </head>
@@ -174,30 +174,30 @@
             </ul>
 
 
-        <!-- 登入及註冊 -->
-        <nav id="loginop" style="margin-left: 560px; margin-bottom: 40px;  ">
-            <div class="user-menu">
-              <!-- 使用者名稱與下拉箭頭 -->
-              <div id="user-info" class="btn">
-                <span id="username"  >使用者名稱</span>
-                <span id="arrow">&#9660;</span>
-              </div>
-              <!-- 下拉式選單 -->
-              <div id="dropdown-content">
-                <a href="#" id="profile-link">會員頁面</a>
-                <a href="#" id="logout-link">登出</a>
-              </div>
+            <!-- 登入及註冊 -->
+            <nav id="loginop">
+                <div class="user-menu">
+                    <!-- 使用者名稱與下拉箭頭 -->
+                    <div id="user-info" class="btn">
+                        <span id="username">使用者名稱</span>
+                        <span id="arrow">&#9660;</span>
+                    </div>
+                    <!-- 下拉式選單 -->
+                    <div id="dropdown-content">
+                        <a href="#" id="profile-link">會員頁面</a>
+                        <a href="#" id="logout-link">登出</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- 登入及註冊 -->
+            <div class="ms-auto">
+                <a href="./login.html" id="toLogin" class="btn">登入</a>
+                <span>|</span>
+                <a href="./regis.html" class="btn">註冊</a>
             </div>
-          </nav>
-      
-          <!-- 登入及註冊 -->
-          <div class="ms-auto">
-            <a href="./login.html" id="toLogin" class="btn">登入</a>
-            <span>|</span>
-            <a href="./regis.html" class="btn">註冊</a>
-          </div>
-      </nav>
-      
+    </nav>
+
 
 
     <!-- 會員畫面 -->
@@ -216,27 +216,29 @@
                             <a href="#" class="btn btn-success" id="profileChange">會員資料更改</a>
                         </div>
                     </div>
-                </div>   
+                </div>
                 <div class="progress-section mt-4">
                     <h2>晉升卡籍</h2>
-                    <p>現會籍效期連續12個月內，計算區間：2023年11月16日-2024年11月15日，截止日：2024年11月15日。不含五日內累計之長榮、星空聯盟航班哩程。</p>
+                    <p>現會籍效期連續12個月內，計算區間：2023年11月16日-2024年11月15日，截止日：2024年11月15日。不含五日內累計之宇宙聯盟航班哩程。</p>
                     <div class="progress mb-2">
-                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="30000"></div>
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="30000" id="mileagebar" ></div>
                     </div>
-                    <p class="text-center">0/30,000 哩</p>
+                    <p class="text-center"><span id="mileage">0</span>/30,000 哩</p>
                     <div class="progress mb-2">
-                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="4"></div>
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="10" id="fligtcountbar"></div>
                     </div>
-                    <p class="text-center">0/4 有效航段</p>
+                    <p class="text-center"><span id="fligtcount">0</span>/10 有效航段</p>
                 </div>
             </div>
         </div>
     </div>
-    
 
 
-<!-- 會員資料區 -->
-    <div class="container mt-5">
+
+    <!-- 會員資料區 -->
+    <div class="container mt-5" id="profileData" style="display: none;">
         <div class="card">
             <div class="card-header">
                 個人資料
@@ -284,7 +286,8 @@
                         <label for="password" class="form-label">密碼:</label>
                         <input type="password" class="form-control" id="password">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="showPassword" onclick="togglePassword()">
+                            <input type="checkbox" class="form-check-input" id="showPassword"
+                                onclick="togglePassword()">
                             <label class="form-check-label" for="showPassword">顯示密碼</label>
                         </div>
                     </div>
@@ -301,123 +304,137 @@
             </div>
         </div>
     </div>
-    
 
 
 
 
 
-<!-- 寫入 會員資料 -->
-<script>
 
-    document.addEventListener("DOMContentLoaded", function () {
-        var currentUser = JSON.parse(localStorage.getItem("currentUser"));
-        var username = currentUser.email;
-        var password = currentUser.password;
+    <!-- 寫入 會員資料 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            var username = currentUser.email;
+            var password = currentUser.password;
+            $.get("/membership", { username: username, password: password })
+                .done(function (data) {
+                    if (data.success) {
+                        $("#en_fname").val(data.user.userfirstname)
+                        $("#en_name").val(data.user.userlastname)
+                        $("#cardLevel").html("綠卡")
+                        $("#cardLevelName").text("GC")
+                        $("#ch_fname").val(data.user.userchfname)
+                        $("#ch_name").val(data.user.userchname)
+                        $("#emailChange").val(data.user.email)
+                        $("#phone_number").val(data.user.phone)
+                        $("#password").val(data.user.password)
+                        $("#cardID").text(data.user.cardID)
+                        $("#cardIDch").text(data.user.cardID)
 
-        $.get("/membership", { username: username, password: password })
-            .done(function (data) {
-                if (data.success) {
-                    $("#en_fname").val(data.user.userfirstname)
-                    $("#en_name").val(data.user.userlastname)
-                    $("#cardLevel").html(":綠卡")
-                    $("#cardLevelName").text("GC")
-                    $("#ch_fname").val(data.user.userchfname)
-                    $("#ch_name").val(data.user.userchname)
-                    $("#emailChange").val(data.user.email)
-                    $("#phone_number").val(data.user.phone)
-                    $("#password").val(data.user.password)
-                    $("#cardID").text(data.user.cardID)
-                    $("#cardIDch").text(data.user.cardID)
-
-                    console.log(data.user.cardID)
-
-                }
-                else {
-                    alert("錯誤", data)
-                }
-            })
+                        // 進度條 
+                        var factortmile = data.user.mileage;
+                        var maxmile =  $("#mileagebar").attr("aria-valuemax")
+                        var mileagePercentage = (parseInt(factortmile)/parseInt( maxmile)) * 100;
 
 
-    })
+
+                        var factortCount = data.user.fligtcount;
+                        var maxCount = $("#fligtcountbar").attr("aria-valuemax")
+                        var countPercentage = (parseInt(factortCount)/parseInt(maxCount)) * 100;
+                        console.log(factortCount)
+                        $("#mileage").text(data.user.mileage)
+                        $("#mileagebar").css("width", mileagePercentage + "%")
+                        $("#fligtcount").text(data.user.fligtcount  )
+                        $("#fligtcountbar").css("width",countPercentage + "%")
 
 
-</script>
+
+                    }
+                    else {
+                        alert("錯誤", data)
+                    }
+                })
+
+
+        })
+
+
+    </script>
 
 
 
 
     <script>
         // 這邊使用切換表讓使用者能看到密碼
-function togglePassword() {
-    var passwordField = document.getElementById("password");
-    if (passwordField.type === "password") {
-        passwordField.type = "text";
-    } else {
-        passwordField.type = "password";
-    }
-}
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
 
-$("#profileChange").on("click", function() {
-    $("#profileData").toggle();
-});
+        $("#profileChange").on("click", function () {
+            $("#profileData").toggle();
+        });
 
 
- 
+
 
 
 
 
 
         // 將資料丟到後端去做更新的動作
-        $("#updateProfile").on("click",function(event){
-          var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        $("#updateProfile").on("click", function (event) {
+            var currentUser = JSON.parse(localStorage.getItem("currentUser"));
             // 防止跳轉
             event.preventDefault();
             var DATA = {
-                         userfirstname: $("#en_fname").val(),
-                         userlastname: $("#en_name").val(),
-                         userchfname: $("#ch_fname").val(),
-                         userchname: $("#ch_name").val(),
-                         email: $("#emailChange").val(),
-                         phone: $("#phone_number").val(),
-                         password: $("#password").val()
+                userfirstname: $("#en_fname").val(),
+                userlastname: $("#en_name").val(),
+                userchfname: $("#ch_fname").val(),
+                userchname: $("#ch_name").val(),
+                email: $("#emailChange").val(),
+                phone: $("#phone_number").val(),
+                password: $("#password").val()
 
-                         }
-                         $.ajax({
-                        type: "put",
-                        url: "/profileChange",
-                        data: JSON.stringify(DATA),
-                        contentType: "application/json",
-                        success: function (response){
-                         // 得到用戶更新後的訊息
-                        $.get("/membership", { username: DATA.email, password: DATA.password })
-                         .done(function (data) {
-                        if (data.success) {
-                        // 更新localstorage中的訊息
-                        localStorage.setItem("currentUser", JSON.stringify(data.user)); // 成功給訊息
-                         alert("更新完成！");
-                        //  重新整理頁面
-                         window.location.reload();
-                             }
-                         })
-                         .fail(function (error) {
-                             console.error("Error fetching user data", error);
-                         });
-                 },
-                 error: function (error) {
-                     // 錯誤給訊息
-                     alert("更新失敗!" + error);
-                 }
-                                    });             
+            }
+            $.ajax({
+                type: "put",
+                url: "/profileChange",
+                data: JSON.stringify(DATA),
+                contentType: "application/json",
+                success: function (response) {
+                    // 得到用戶更新後的訊息
+                    $.get("/membership", { username: DATA.email, password: DATA.password })
+                        .done(function (data) {
+                            if (data.success) {
+                                // 更新localstorage中的訊息
+                                localStorage.setItem("currentUser", JSON.stringify(data.user)); // 成功給訊息
+                                alert("更新完成！");
+                                //  重新整理頁面
+                                window.location.reload();
+                            }
+                        })
+                        .fail(function (error) {
+                            console.error("Error fetching user data", error);
+                        });
+                },
+                error: function (error) {
+                    // 錯誤給訊息
+                    alert("更新失敗!" + error);
+                }
+            });
 
-                     })
-
-
+        })
 
 
 
-        
+
+
+
         //檢查是否登入 並給予名字(其他頁面需要)
         var currentUser = JSON.parse(localStorage.getItem("currentUser"));
         if (currentUser) {
@@ -478,13 +495,13 @@ $("#profileChange").on("click", function() {
         });
     </script>
     <!-- 返回頂部按鈕 -->
-<a href="#top" target="" style="cursor: pointer;">
-    <figure id="smart" class="position-fixed bottom-0 end-0">
-        <img src="./img/bot.gif" style="object-fit: contain; height: 70px; width:70px; z-index: 1;"> 
-    <figcaption style="font-size:17px; text-align: center;">至頂</figcaption>
-    </figure>
-</a>
-<script type="text/javascript" src="./js資料庫/向上移動.js"></script>
+    <a href="#top" target="" style="cursor: pointer;">
+        <figure id="smart" class="position-fixed bottom-0 end-0">
+            <img src="./img/bot.gif" style="object-fit: contain; height: 70px; width:70px; z-index: 1;">
+            <figcaption style="font-size:17px; text-align: center;"></figcaption>
+        </figure>
+    </a>
+    <script type="text/javascript" src="./js資料庫/向上移動.js"></script>
 </body>
 
 </html>
