@@ -1,7 +1,7 @@
 /* 登入按鈕的css*/
 .user-menu {
-  position: relative;
-  display: inline-block;
+  position: absolute;
+  display: flex;
 }
 
 #user-info {
@@ -34,6 +34,6 @@
 }
 
 #loginop{
-   margin-left: 490px;
-   margin-bottom: 0px; 
+   margin-left: 500px;
+   margin-bottom: 50px; 
 }

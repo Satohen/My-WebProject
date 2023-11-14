@@ -417,12 +417,12 @@
                 <input type="text" class="form-control" id="cardNumber" required>
               </div>
               <div class="mb-3">
-                <label for="expirationDate" class="form-label">有效期：</label>
+                <label for="expirationDate" class="form-label">有效期(mm/yy)：</label>
                 <input type="text" class="form-control" id="expirationDate" required>
               </div>
               <div class="mb-3">
                 <label for="cvv" class="form-label">CVV碼：</label>
-                <input type="text" class="form-control" id="cvv" required>
+                <input type="password" class="form-control" id="cvv" required>
               </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">完成訂單</button>
@@ -450,13 +450,12 @@
 
         // 当用户提交支付信息表单时执行
         $("#paymentInfoForm").submit(function (event) {
-          event.preventDefault(); // 阻止表单默认提交行为
+          event.preventDefault(); // 阻止表單默認提交行為
 
           // 當用戶已登入自動填入
           var currentUser = JSON.parse(localStorage.getItem("currentUser"))
-          var userName = currentUser.userchfname + currentUser.userchname
           if(currentUser){
-
+            var userName = currentUser.userchfname + currentUser.userchname
             $("#name_put").val(userName)
             $("#gender").val(currentUser.gender)
             $("#email").val(currentUser.email)
