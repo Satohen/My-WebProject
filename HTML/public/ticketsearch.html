@@ -31,7 +31,7 @@
   <link rel="shortcut icon" href="./長榮航空img/unicon.png" type="image/x-icon" />
 
   <link rel="stylesheet" href="./animation.css">
-  <title>航空首頁</title>
+  <title>機票查詢</title>
 
   <!-- 安插登入按鈕的css -->
   <link rel="stylesheet" href="./個樣式css資料/登入按鈕.css">
@@ -218,8 +218,40 @@
       var ordersearch = new URLSearchParams(window.location.search);
       var orderId = ordersearch.get("id");
       var url = "/order/book/" + orderId
-      console.log(url)
+
+      $("#vicketId").empty();
+      $("#orderid").empty();
+      $("#gotype").empty();
+      $("#flight_time_1").empty();
+      $("#departure_1").empty();
+      $("#destination_1").empty();
+      $("#sit_status_1").empty();
+      $("#flight_time_2").empty();
+      $("#departure_2").empty();
+      $("#destination_2").empty();
+      $("#sit_status_2").empty();
+      $("#cabinType_1").empty();
+      $("#cabinType_2").empty();
+
+
+
+
+
       $.get(url, function (e) {
+      $("#vicketId").empty();
+      $("#orderid").empty();
+      $("#gotype").empty();
+      $("#flight_time_1").empty();
+      $("#departure_1").empty();
+      $("#destination_1").empty();
+      $("#sit_status_1").empty();
+      $("#flight_time_2").empty();
+      $("#departure_2").empty();
+      $("#destination_2").empty();
+      $("#sit_status_2").empty();
+      $("#cabinType_1").empty();
+      $("#cabinType_2").empty();
+
         let item = e;
         $("#vicketId").text(item.vicketId.substring(0, 4));
         $("#orderid").text(item.orderId);
@@ -251,34 +283,45 @@
           $("#back_tr").empty()
         }
         else {
-          // 先砍掉原本文字
-          $(document).ready(function () {
-            $("#tbody").empty();
-          })
+      // 先砍掉原本文字
+      $(document).ready(function () {
+      $("#vicketId").empty();
+      $("#orderid").empty();
+      $("#gotype").empty();
+      $("#flight_time_1").empty();
+      $("#departure_1").empty();
+      $("#destination_1").empty();
+      $("#sit_status_1").empty();
+      $("#flight_time_2").empty();
+      $("#departure_2").empty();
+      $("#destination_2").empty();
+      $("#sit_status_2").empty();
+      $("#cabinType_1").empty();
+      $("#cabinType_2").empty();          })
         }
       })
     });
 
     // 刪除訂單
     $("#delete").on("click", function () {
-var isConfirmed = confirm("您確定要取消此筆機票預訂嗎?");
+      var isConfirmed = confirm("您確定要取消此筆機票預訂嗎?");
 
-if (isConfirmed) {
+      if (isConfirmed) {
+        var deleteVID = $("#vicketId").text();
+        var deleteOID = $("#orderid").text()
+        var result = $.ajax({
+          type: "delete",
+          url: "/bookinfo/delete/",
+          data: { deleteVID: deleteVID, deleteOID: deleteOID },
+          success: function (response) {
+          alert(response);    
+          window.location.reload();
 
-      var deleteVID = $("#vicketId").text();
-      var deleteOID = $("#orderid").text()
-      var result = $.ajax({
-        type: "delete",
-        url: "/bookinfo/delete/",
-        data: { deleteVID: deleteVID, deleteOID: deleteOID },
-        success: function (response) {
-          alert(response);
+          },
+        }
+        )
+      } else {
         window.location.reload();
-
-        },
-      }
-      )} else{
-
       }
 
     })

@@ -239,6 +239,7 @@ app.get("/login", function (req, res) {
 app.get("/membership", function (req, res) {
   var data = fs.readFileSync("./user.json");
   var users = JSON.parse(data);
+  // query撈取url上ˋ的username
   var username = req.query.username;
   // 在用户数组中查找匹配的用户
   var user = users.find((u) => u.email === username);
@@ -297,11 +298,10 @@ app.delete("/bookinfo/delete", function (req, res) {
 
   console.log(selectedOrder)
 
-  if (selectedOrder) {
-    // 找到了要刪除的訂單，獲取它的索引   
-
+  if (selectedOrder!== -1) {
+    // 找到了要刪除的訂單，獲取它的索引 
     // 從數組中刪除該訂單
-    bookinfo.splice(selectedIndex, 1);
+    bookinfo.splice(selectedOrder, 1);
 
 
     // 將更新後的數據寫回文件
