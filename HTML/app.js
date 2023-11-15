@@ -196,8 +196,8 @@ app.post("/registe/post", function (req, res) {
     phone: req.body.phone,
     cardID: cardID,
     mileage: "",
-    fligtcount:"",
-    ticket:""
+    fligtcount: "",
+    ticket: ""
   };
 
   //儲存到json文件
@@ -270,8 +270,8 @@ app.put("/profileChange", function (req, res) {
     userfind.phone = req.body.phone || userfind.phone;
     userfind.password = req.body.password || userfind.password;
     // 這裡是買票的訊息 加入里程
-    userfind.mileage = (parseInt(userfind.mileage)  || 0) + (parseInt(req.body.mileage)  || 0);
-    userfind.fligtcount = (parseInt(userfind.fligtcount)   || 0) + ( parseInt(req.body.fligtcount ) || 0);
+    userfind.mileage = (parseInt(userfind.mileage) || 0) + (parseInt(req.body.mileage) || 0);
+    userfind.fligtcount = (parseInt(userfind.fligtcount) || 0) + (parseInt(req.body.fligtcount) || 0);
     userfind.ticket = req.body.item || userfind.ticket;
 
     fs.writeFileSync("user.json", JSON.stringify(users, null, "\t"));
@@ -298,7 +298,7 @@ app.delete("/bookinfo/delete", function (req, res) {
 
   console.log(selectedOrder)
 
-  if (selectedOrder!== -1) {
+  if (selectedOrder !== -1) {
     // 找到了要刪除的訂單，獲取它的索引 
     // 從數組中刪除該訂單
     bookinfo.splice(selectedOrder, 1);
