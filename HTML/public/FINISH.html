@@ -163,6 +163,7 @@
       // 取得當地資料
       var currentUser = JSON.parse(localStorage.getItem("currentUser"));
       var email = currentUser.email
+      // 正則表示法取得數值(二個航段 或一個航段 取數值)
       var fligtcount = item.ticketype.match(/\d+/);
       var mileage = Math.round(parseInt(item.flightInfo.total_price) / 30, 0);
       var ticketData = {
