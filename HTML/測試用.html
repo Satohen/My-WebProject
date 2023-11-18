@@ -1,80 +1,79 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <title>機票訂購表單</title>
-    <style>
-/* 通用邊框和間距 */
-fieldset {
-  border: 2px solid #ddd;
-  border-radius: 4px;
-}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cockpit Layout</title>
+  <style>
+    #cockpitCanvas {
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="cockpitCanvas" width="600" height="400"></canvas>
 
-/* 標題和欄位頭 */
-legend {
-  font-size: 1.2em;
-  font-weight: bold;
-}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const canvas = document.getElementById('cockpitCanvas');
+      const ctx = canvas.getContext('2d');
 
-/* 表格樣式 */
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0,0,0,.05);
-}
+      function drawCockpit() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-/* 表頭 */
-.bg-success {
-  background-color: #28a745 !important;
-}
+        // Draw cockpit elements
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(50, 50, 200, 150);
 
-.text-white {
-  color: #fff !important;
-}
+        ctx.fillStyle = 'red';
+        ctx.fillRect(100, 100, 20, 20);
 
-    </style>
-  </head>
-  <body>
-    <div class="container mt-5">
-      <fieldset class="border p-4">
-        <legend class="w-auto px-2">訂單代號: <span id="vicketId"></span></legend>
-        <legend class="w-auto px-2">訂位代號: <span id="orderid"></span></legend>
-        <table id="jobList" class="table table-striped">
-          <thead>
-            <tr>
-              <th colspan="5">
-                <h5 id="th_date">(網路購票) <span id="gotype">幾段航班 </span><br><span id="AD">0</span>大人/ <span id="CH">0</span>小孩/ <span id="BA">0</span>嬰兒</h5>
-              </th>
-            </tr>
-            <tr class="bg-success text-white">
-              <td>起飛(當地時間)</td>
-              <td>啟程地</td>
-              <td>目的地</td>
-              <td>艙種類</td>
-              <td>機位狀態</td>
-            </tr>
-          </thead>
-          <tbody id="tbody">
-            <tr>
-              <td id="flight_time_1">起飛當地時間</td>
-              <td id="departure_1">啟程地</td>
-              <td id="destination_1">目的地</td>
-              <td id="cabinType_1">目的地</td>
-              <td id="sit_status_1">已確認</td>
-            </tr>
-            <tr id="back_tr">
-              <td id="flight_time_2">回程當地時間</td>
-              <td id="departure_2">啟程地</td>
-              <td id="destination_2">目的地</td>
-              <td id="cabinType_2">目的地</td>
-              <td id="sit_status_2">已確認</td>
-            </tr>        
-          </tbody>
-        </table>
-      </fieldset>
-    </div>
-    
+        // Add more elements as needed...
+
+        // Example: Draw text
+        ctx.fillStyle = 'black';
+        ctx.font = '16px Arial';
+        ctx.fillText('Pilot Seat', 60, 120);
+
+        // Add more text or labels...
+
+        // Example: Draw a circle
+        ctx.beginPath();
+        ctx.arc(150, 150, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = 'green';
+        ctx.fill();
+        ctx.stroke();
+
+        // Add more shapes or graphics...
+
+        // Example: Draw lines
+        ctx.beginPath();
+        ctx.moveTo(200, 50);
+        ctx.lineTo(250, 50);
+        ctx.lineTo(225, 20);
+        ctx.closePath();
+        ctx.fillStyle = 'yellow';
+        ctx.fill();
+        ctx.stroke();
+
+        // Add more lines or paths...
+
+        // Add more drawing instructions as needed...
+      }
+
+      // Initial drawing
+      drawCockpit();
+
+      // Example: Handle user click
+      canvas.addEventListener('click', function (event) {
+        const rect = canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        console.log(`Clicked at (${x}, ${y})`);
+        // Add logic to handle user click...
+      });
+    });
+  </script>
+</body>
 </html>
