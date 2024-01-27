@@ -17,82 +17,6 @@ app.listen(3000);
 console.log("Web伺服器就緒，開始接受用戶端連線.");
 console.log("「Ctrl + C」可結束伺服器程式.");
 
-app.get("/todo/list", function (req, res) {
-  var data = fs.readFileSync(dataFileName);
-  var todoList = JSON.parse(data);
-  res.set("Content-type", "application/json");
-  res.send(JSON.stringify(todoList));
-});
-
-app.get("/todo/item/:id", function (req, res) {
-  var data = fs.readFileSync(dataFileName);
-  var todoList = JSON.parse(data);
-
-  var targetIndex = -1;
-  for (let i = 0; i < todoList.length; i++) {
-    if (todoList[i].todoTableId.toString() == req.params.id.toString()) {
-      targetIndex = i;
-      break;
-    }
-  }
-  if (targetIndex < 0) {
-    res.send("not found");
-    return;
-  }
-
-  res.set("Content-Type", "application/json");
-  res.send(JSON.stringify(todoList[targetIndex]));
-});
-
-app.post("/todo/create", function (req, res) {
-  var data = fs.readFileSync(dataFileName);
-  var todoList = JSON.parse(data);
-  var item = {
-    todoTableId: new Date().getTime(),
-    title: req.body.title,
-    isComplete: req.body.isComplete,
-  };
-  todoList.push(item);
-  fs.writeFileSync("./data.json", JSON.stringify(todoList, null, "\t"));
-  res.send("row inserted.");
-});
-
-app.put("/todo/item", function (req, res) {
-  var data = fs.readFileSync(dataFileName);
-  var todoList = JSON.parse(data);
-  for (let i = 0; i < todoList.length; i++) {
-    if (todoList[i].todoTableId == req.body.todoTableId) {
-      todoList[i].title = req.body.title;
-      todoList[i].isComplete = req.body.isComplete;
-      break;
-    }
-  }
-  fs.writeFileSync("./data.json", JSON.stringify(todoList, null, "\t"));
-  res.send("row updated.");
-});
-
-app.delete("/todo/delete/:id", function (req, res) {
-  var data = fs.readFileSync(dataFileName);
-  var todoList = JSON.parse(data);
-
-  var deleteIndex = -1;
-  for (let i = 0; i < todoList.length; i++) {
-    if (todoList[i].todoTableId.toString() == req.params.id.toString()) {
-      deleteIndex = i;
-      break;
-    }
-  }
-  if (deleteIndex < 0) {
-    res.send("not found");
-    return;
-  }
-
-  todoList.splice(deleteIndex, 1);
-  fs.writeFileSync("./data.json", JSON.stringify(todoList, null, "\t"));
-  res.send("row deleted.");
-});
-
-// 這邊開始自己魔改
 // 定義路由處理程序，用於處理目的地程式碼參數的GET請求
 
 app.get("/todo/item/destination/:code", function (req, res) {
@@ -143,7 +67,7 @@ app.post("/order/create", function (req, res) {
 
   orderList.push(order);
 
-  // 将更新后的訂單列表重新写入到文件中
+  // 將更新後的訂單列表重新寫入到文件中
   fs.writeFileSync("./bookinfo.json", JSON.stringify(orderList, null, 2));
   // 回應給客戶端
   res.json({ message: "訂單創建成功", order: order });
@@ -168,20 +92,20 @@ app.get("/order/book/:id", function (req, res) {
 // 給一個亂數卡號
 const usedCardIDs = [];
 function generateUniqueCardID() {
-  // 生成一个6位数的随机卡号
+  // 生成6位數的随機卡號
   const cardID = Math.floor(Math.random() * 900000) + 100000;
 
-  // 检查是否已经存在，如果存在重新生成
+  // 檢查是否已經存在，如果存在重新生成
   if (usedCardIDs.includes(cardID)) {
     return generateUniqueCardID();
   }
-  // 将新生成的卡号加入已使用列表
+  // 新生成的卡號加入已使用列表
   usedCardIDs.push(cardID);
   return cardID.toString();
 }
 
 // 註冊的資料傳輸
-var cardID = generateUniqueCardID() // 使用生成的卡号
+var cardID = generateUniqueCardID() // 使用生成的卡號
 app.post("/registe/post", function (req, res) {
   // 獲取 req前端 所取得的訊息
   var userData = {
@@ -208,11 +132,11 @@ app.post("/registe/post", function (req, res) {
     users = []; // 如果不是陣列，初始化為空陣列
   }
   users.push(userData);
-  // 将更新后的用户信息保存回文件
+  // 將更新後的用户信息保存回文件
   fs.writeFileSync("user.json", JSON.stringify(users, null, 2));
 
-  // 返回注册成功或失败的响应
-  res.json({ message: "註冊成功" }); // 或其他响应
+  // 返回註冊成功或失敗的回應
+  res.json({ message: "註冊成功" }); 
 });
 
 // 登入
@@ -227,10 +151,10 @@ app.get("/login", function (req, res) {
   var user = users.find((u) => u.email === username && u.password === password);
 
   if (user) {
-    // 如果用户名和密码匹配，返回成功响应
+    // 如果用户名和密碼符合，返回成功回應
     res.json({ success: true, user: user });
   } else {
-    // 如果用户名和密码不匹配，返回失败响应
+    // 如果用户名和密碼不符合，返回失敗回應
     res.json({ success: false, message: "不存在的帳號或密碼" });
   }
 });
@@ -241,7 +165,7 @@ app.get("/membership", function (req, res) {
   var users = JSON.parse(data);
   // query撈取url上ˋ的username
   var username = req.query.username;
-  // 在用户数组中查找匹配的用户
+  // 在用户中查找符合的用户
   var user = users.find((u) => u.email === username);
   if (user) {
     res.json({ success: true, user: user });
@@ -250,7 +174,7 @@ app.get("/membership", function (req, res) {
   }
 });
 
-// 自己寫的
+
 app.put("/profileChange", function (req, res) {
   var data = fs.readFileSync("user.json");
   var users = JSON.parse(data);
@@ -261,7 +185,7 @@ app.put("/profileChange", function (req, res) {
   // console.log(total_mileage);
 
   if (userfind) {
-    // 找到匹配的用户，替换整个用户对象為请求中的数据
+    // 找到符合的用户，替換整用户對象為請求中的數據
     userfind.userfirstname = req.body.userfirstname || userfind.userfirstname;
     userfind.userlastname = req.body.userlastname || userfind.userlastname;
     userfind.userchfname = req.body.userchfname || userfind.userchfname;
