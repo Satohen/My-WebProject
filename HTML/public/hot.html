@@ -274,26 +274,8 @@
             $("#departure_0").val(departure_get)
             $("#destination_0").val(destination_get)
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
         // 做日期判斷
-
         // addEventListener增加監聽事件才能click
         function add() {
             document.getElementById("btn-plus1").addEventListener("click", function () {
@@ -391,13 +373,13 @@
         minus2();
         goonce()
         comehome()
-        //  判斷日期
-        // 获取今天的日期  gpt 產生
+        // 判斷日期*(重要)
+        // 獲取今天的日期
         var today = new Date();
         var dd = today.getDate();
-        var mm = today.getMonth() + 1; // 月份从0开始，所以要加1
+        var mm = today.getMonth() + 1; // 月份從0開始，所以要加1
         var yyyy = today.getFullYear();
-        // 如果日期和月份是单数，前面添加0
+        // 如果日期和月份是單數，前面添加0
         if (dd < 10) {
             dd = dd.toString().padStart(2, '0');
         }
@@ -406,7 +388,7 @@
         }
         // 日期設置今天日期
         today = yyyy + '-' + mm + '-' + dd;
-        // 日期输入
+        // 日期輸入
         var godayInput = document.getElementById("goday");
         // 出發日期最小值今天
         godayInput.setAttribute("min", today);
@@ -439,10 +421,10 @@
 
 
         $("#book_button").on("click", function (event) {
-            // 阻止默认的页面跳转
+            // 防止默認的頁面跳轉
             event.preventDefault();
 
-            // 获取表单字段的值 
+            // 獲取表端字段的值 
             var goday_get = document.getElementById("goday").value;
             var backday_get = document.getElementById("backday").value;
             var departure_get = document.getElementById("departure_0").value;
