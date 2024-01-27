@@ -445,9 +445,9 @@
             $("#loginop").css("visibility", "visible")
             $("#username").text(userLoginName)
         } else {
-            // 用户未登录
+            // 用户未登入
             console.log("未登入狀態");
-            $("#toLogin").css("visibility", "visible"); // 显示登录按钮
+            $("#toLogin").css("visibility", "visible"); // 顯示登入按鈕
             $("#loginop").css("visibility", "hidden");
         }
 
@@ -458,38 +458,38 @@
 
 
         document.addEventListener("DOMContentLoaded", function () {
-            // 获取页面元素
+            // 獲取頁面元素
             var userInfo = document.getElementById("user-info");
             var dropdownContent = document.getElementById("dropdown-content");
             var profileLink = document.getElementById("profile-link");
             var logoutLink = document.getElementById("logout-link");
 
-            // 假设用户已登录，设置用户名
+            // 假设用户已登入，設置用户名
             var username = localStorage.getItem("username");
 
             if (username) {
                 document.getElementById("username").innerText = username;
             }
 
-            // 用户信息点击事件，显示/隐藏下拉菜单
+            // 用户信息點擊事件，顯示/隱藏下拉菜單
             userInfo.addEventListener("click", function () {
                 dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
             });
 
-            // 会员页面链接点击事件
+            // 會員頁面點擊事件
             profileLink.addEventListener("click", function () {
-                // 如果用户已登录，重定向到会员页面
+                // 如果用户已登入，重定向到會員頁面
 
                 window.location.href = "./membership.html";
 
             });
 
-            // 登出链接点击事件
+            // 登出連結點擊事件
             logoutLink.addEventListener("click", function () {
-                // 清除登录状态和用户名
+                // 清除登入狀態和用户名
                 localStorage.removeItem("currentUser");
 
-                // 重定向到登录页面
+                // 重定向到登入頁面
                 window.location.href = "./login.html";
             });
         });
