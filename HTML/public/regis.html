@@ -244,43 +244,10 @@
           y.text = j;
           document.getElementById("day").appendChild(y);
         }
-
-
-
-
-
-  
-
-
-
-
-
-
-
-          
-   
-   
-
-
-
-
-
-
         // 這裡寫註冊傳送資料
         $(document).ready(function () {
           $("#regi_btn").on("click", function (event) {
-            event.preventDefault(); // 阻止表单默认提交行为
-
-
-
-
-
-
-
-
-
-
-
+            event.preventDefault(); // 防止表單默認提交
 
             // 傳送表單資料
         $.post("/registe/post", function (e) {
@@ -315,7 +282,7 @@
             return;
           }
           else{
-            $("#depassword_error").text("");//後面不再追述        
+            $("#depassword_error").text("");     
 
           }
 
@@ -335,7 +302,7 @@
 
               // 男女判別
               var genderValue = $("input[name='sex']:checked").val();
-              // 收集表单数据
+              // 收集表單數據
 
               var userData = {
                 userfirstname: $("#en-fname").val(),
@@ -365,32 +332,16 @@
                   // 錯誤給訊息
                   alert("訂單創建失敗：" + error);
                 }
-              });
-
-
-
-
-
-
-
-
-        
-
+              });     
             });
           })
 
         })
 
-
-
-
       </script>
 
 
       <script>
-
-
-
 
         $("#cancel").on("click", function () {
           window.location.href = "./index.html";
@@ -399,16 +350,16 @@
         //檢查是否登入 並給予名字(其他頁面需要)
         var currentUser = JSON.parse(localStorage.getItem("currentUser"));
         if (currentUser) {
-          // 用户已登录，显示用户名
+          // 用户已登入，顯示用户名
           var genderTtitle = currentUser.gender === "男" ? "先生" : "女士";
           var userLoginName = currentUser.userchfname + genderTtitle;
           $("#toLogin").css("visibility", "hidden")
           $("#loginop").css("visibility", "visible")
           $("#username").text(userLoginName)
         } else {
-          // 用户未登录
+          // 用户未登入
           console.log("未登入狀態");
-          $("#toLogin").css("visibility", "visible"); // 显示登录按钮
+          $("#toLogin").css("visibility", "visible"); // 顯示登入按鈕
           $("#loginop").css("visibility", "hidden");
         }
 
@@ -418,37 +369,37 @@
       <!-- 這是登入切換得js -->
       <script>
         document.addEventListener("DOMContentLoaded", function () {
-          // 获取页面元素
+          // 獲取頁面元素
           var userInfo = document.getElementById("user-info");
           var dropdownContent = document.getElementById("dropdown-content");
           var profileLink = document.getElementById("profile-link");
           var logoutLink = document.getElementById("logout-link");
 
-          // 假设用户已登录，设置用户名
+          // 假設用户已登入，設置用户名
           var username = localStorage.getItem("username");
 
           if (username) {
             document.getElementById("username").innerText = username;
           }
 
-          // 用户信息点击事件，显示/隐藏下拉菜单
+          // 用户信息點擊事件，顯示/隱藏下拉菜單
           userInfo.addEventListener("click", function () {
             dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
           });
 
-          // 会员页面链接点击事件
+          // 會員頁面連結點擊事件
           profileLink.addEventListener("click", function () {
-            // 如果用户已登录，重定向到會員頁面
+            // 如果用户已登入，重定向到會員頁面
 
 0
           });
 
-          // 登出链接点击事件
+          // 登出連結點擊事件
           logoutLink.addEventListener("click", function () {
-            // 清除登录状态和用户名
+            // 清除登入狀態和用户名
             localStorage.removeItem("currentUser");
 
-            // 重定向到登录页面
+            // 重定向到登入页面
             window.location.href = "./login.html";
           });
         });
