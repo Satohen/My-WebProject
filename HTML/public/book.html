@@ -70,17 +70,17 @@
       background-color: gray;
       /* 背景颜色 */
       color: #fff;
-      /* 文本颜色 */
+      /* 文本顏色 */
       cursor: pointer;
-      /* 鼠标变为手指形状 */
+      /* 游標變成手指形状 */
       transition: background-color 0.3s;
-      /* 平滑过渡效果 */
+      /* 平滑過去效果 */
       height: 75px;
     }
 
     .price-button:hover {
       background-color: #0056b3;
-      /* 鼠标悬停时的背景颜色 */
+      /* 游標停止的背景颜色 */
     }
 
 
@@ -306,17 +306,17 @@
   <script>
     // 設定日期最小值
     function transfer() {
-      // 獲取今天的日期  gpt 產生
+      // 獲取今天的日期 
       var today = new Date();
       var dd = today.getDate();
-      var mm = today.getMonth() + 1; // 月份從0开始，所以要加1
+      var mm = today.getMonth() + 1; // 月份從0開始，所以要加1
       var yyyy = today.getFullYear();
       // 前面添加0
       dd = dd.toString().padStart(2, "0");
       mm = mm.toString().padStart(2, "0");
       // 日期設置今天日期
       today = yyyy + "-" + mm + "-" + dd;
-      // 日期输入
+      // 日期輸入
       return today;
     }
     function setdate(x) {
@@ -456,10 +456,10 @@
     <script>
 
       $(document).ready(function () {
-        // 当用户点击"完成订单"按钮时执行
+        // 當用户點擊"完成訂單"按鈕執行
         $("#continue").click(function () {
-          // 在此之前，确保用户已经填写了姓名和联系电话，进行相应的验证
-          // 显示信息框
+          // 在此之前，確保用户已經填寫了姓名和聯繫電話，進行驗證
+          // 顯示信息框
           $("#paymentInfoModal").modal("show");
         });
 
@@ -471,14 +471,12 @@
             $("#gender").val(currentUser.gender)
             $("#email").val(currentUser.email)
             $("#address").val(currentUser.address)
-
           }
-
-
+        
         // 當用戶提交表單時候
         $("#paymentInfoForm").submit(function (event) {
           event.preventDefault(); // 阻止表單默認提交
-          // 收集表单数据
+          // 收集表單數據
           var orderData = {
             name: $("#name_put").val(),
             gender: $("#gender").val(),
@@ -507,7 +505,7 @@
               total_price: $("#total_price").text()
               }
           };
-          // 使用Ajax将数据发送到服务器
+          // 使用Ajax將數據發送到伺服器
           $.ajax({
             type: "POST",
             url: "/order/create",
@@ -516,9 +514,7 @@
             success: function (response) {
               // 成功給訊息
               alert("訂單已完成！");
-
               var redirectTo = "FINISH.html?id=" + response.order.vicketId;
-
               window.location.href = redirectTo;
             },
             error: function (error) {
