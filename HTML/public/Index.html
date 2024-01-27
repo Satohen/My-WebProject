@@ -172,11 +172,6 @@ img.img-fluid {
   max-height: 250px; /* 最大高度限制 */
   font-size: calc(10px + 1vw); /* 基於視口寬度的自適應字體大小 */
 }
-
-
-
-
-
 </style>
 
 
@@ -338,13 +333,6 @@ img.img-fluid {
     </ul>
 </div>
 
-
-
-
-
-
-
-
 <!-- 滾動圖片的js -->
 
 <script>
@@ -386,12 +374,6 @@ img.img-fluid {
         dots[slideIndex - 1].className += " active";
     }  
 </script>
-
-
-
-
-
-
 
 
 
@@ -716,7 +698,7 @@ $("#Search_Flight").on("click",function(event){
 
 // 訂票按鈕輸入
         $("#book_button").on("click", function(event) {
-          // 阻止默认的页面跳转
+          // 阻止默認的頁面跳轉
           event.preventDefault();
           
           // 获取表单字段的值 
@@ -732,7 +714,7 @@ $("#Search_Flight").on("click",function(event){
    
 
           if ($("#comeback").is(":checked")) {
-           // 构建重定向URL，附加数据作为查询参数
+           // 建構重定向URL，附加數據做為查詢參數
            var redirectTo = "book.html?cabin="  + cabin +
                           "&adultQuantity=" + adultQuantity + 
                           "&childrenQuantity=" + childrenQuantity +
@@ -870,12 +852,12 @@ $("#Search_Flight").on("click",function(event){
             goonce() 
             comehome()
             //  判斷日期
-            // 获取今天的日期  gpt 產生
+            // 獲取今天的日期
                 var today = new Date();
                 var dd = today.getDate();
-                var mm = today.getMonth() + 1; // 月份从0开始，所以要加1
+                var mm = today.getMonth() + 1; // 月份從0開始，所以要加1
                 var yyyy = today.getFullYear();                         
-            // 如果日期和月份是单数，前面添加0
+            // 如果日期和月份是單數，前面添加0
                 if (dd < 10) {
                   dd = dd.toString().padStart(2, '0');
                 }
@@ -884,7 +866,7 @@ $("#Search_Flight").on("click",function(event){
                 }
             // 日期設置今天日期
                 today = yyyy + '-' + mm + '-' + dd;
-            // 日期输入
+            // 日期輸入
                 var godayInput = document.getElementById("goday");
             // 出發日期最小值今天
                 godayInput.setAttribute("min", today);
