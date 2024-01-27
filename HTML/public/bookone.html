@@ -29,7 +29,7 @@
   <!-- 安插jquery -->
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript">
-    // 程式放在這裏
+    // 程式放在這裡
     // $(document).ready(function(){
     //     $("#btn-plus1").click(function(){
     //         $("#adult_quantity").innerHTML++;
@@ -75,15 +75,15 @@
       color: #fff;
       /* 文本颜色 */
       cursor: pointer;
-      /* 鼠标变为手指形状 */
+      /* 游標變手指形狀 */
       transition: background-color 0.3s;
-      /* 平滑过渡效果 */
+      /* 平滑過去的效果 */
       height: 75px;
     }
 
     .price-button:hover {
       background-color: #0056b3;
-      /* 鼠标悬停时的背景颜色 */
+      /* 游標停止的背景顏色 */
     }
 
 
@@ -283,7 +283,7 @@
       </tr>
     </table>
   </div>
-  <!-- 套用別人做的選項選項 -->
+  <!-- 套用jq別人做的選項選項 -->
   <div class="container">
     <div>
       <h2 id="date_selectday">出發日期</h2>
@@ -312,7 +312,7 @@
   <script>
     // 設定日期最小值
     function transfer() {
-      // 獲取今天的日期  gpt 產生
+      // 獲取今天的日期
       var today = new Date();
       var dd = today.getDate();
       var mm = today.getMonth() + 1; // 月份從0开始，所以要加1
@@ -441,14 +441,14 @@
     <script>
 
       $(document).ready(function () {
-        // 当用户点击"完成订单"按钮时执行
+        // 當用户點擊"完成訂單"按鈕執行
         $("#continue").click(function () {
-          // 在此之前，确保用户已经填写了姓名和联系电话，进行相应的验证
-          // 显示信息框
+          // 在此之前，確保用户已填寫姓名和聯繫電話，進行相應的驗證
+          // 顯示訊息框
           $("#paymentInfoModal").modal("show");
         });
 
-        // 当用户提交支付信息表单时执行
+        // 當用户提交支付信息表單執行
         $("#paymentInfoForm").submit(function (event) {
           event.preventDefault(); // 阻止表單默認提交行為
 
@@ -463,7 +463,7 @@
 
           }
 
-          // 收集表单数据
+          // 收集表單數據
           var orderData = {
             name: $("#name_put").val(),
             gender: $("#gender").val(),
@@ -492,7 +492,7 @@
               total_price: $("#total_price").text()
               }
           };
-          // 使用Ajax将数据发送到服务器
+          // 使用Ajax將數據發送到伺服器
           $.ajax({
             type: "POST",
             url: "/order/create",
